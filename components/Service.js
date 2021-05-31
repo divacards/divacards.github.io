@@ -1,45 +1,99 @@
-import React from 'react';
-import { Container, Row, Col } from "reactstrap";
+import React from "react";
+import {
+  ChatIcon,
+  GlobeIcon,
+  LibraryIcon,
+  LightningBoltIcon,
+} from "@heroicons/react/outline";
+
+const ServiceHeader = (props) => {
+  return (
+    <div className="lg:text-center">
+      <p className="uppercase font-semibold text-pink-400">{props.sectionName}</p>
+      <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        {props.title}
+      </h2>
+      <p className="mt-4 max-w-screen-xl text-xl leading-7 text-lightgray lg:mx-auto">
+        {props.desc}
+      </p>
+    </div>
+  );
+};
+
+const ServiceItem = (props) => {
+  return (
+    <div className="flex space-x-4">
+      <div>{props.icon}</div>
+      <div>
+        <h3 className="mb-2 font-semibold text-gray">{props.title}</h3>
+        <p className="leading-normal text-lightgray">{props.desc}</p>
+      </div>
+    </div>
+  );
+};
 
 const Service = () => {
   const services = [
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-    { title : "Lorem Ipsum", desc : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-  ]
-  
+    {
+      title: "Lorem Ipsum",
+      desc: "Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize. Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize.",
+    },
+    {
+      title: "Lorem Ipsum",
+      desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    },
+    {
+      title: "Lorem Ipsum",
+      desc: "Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize. Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize.",
+    },
+    {
+      title: "Lorem Ipsum",
+      desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    },
+  ];
+  const height = 40;
+  const width = 40;
   return (
-    <section className="section" id="service">
-      <Container>
-        <Row className="justify-content-center">
-          <Col lg={6} md={8}>
-            <div className="title text-center mb-5">
-              <h3 className="font-weight-normal text-dark"><span className="text-warning">Services</span></h3>
-              <p className="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          {
-            services.map((service, key) =>
-              <Col key={key} lg={4} md={6}>
-                <div>
-                  <div className="mb-5">
-                      <i className={service.icon}></i>
-                  </div>
-                  <h5 className="text-dark font-weight-normal pt-1 mb-4">{service.title}</h5>
-                  <p className="text-muted mb-4">{service.desc}</p>
-                </div>
-              </Col>
-            )
-          }
-        </Row>
-      </Container>
+    <section className="flex flex-col items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 py-8 relative">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ServiceHeader
+          title="Services"
+          sectionName="cross-chain nfts"
+          desc="Describe your awesome services. Describe your awesome services. Describe your awesome services."
+        ></ServiceHeader>
+        <div className="mt-10 relative mx-auto grid lg:grid-cols-2 gap-10 content-center">
+          <ServiceItem
+            icon={<GlobeIcon height={height} width={width} className="text-pink-500" />}
+            title="Service #1"
+            desc={services[0].desc}
+          ></ServiceItem>
+          <ServiceItem
+            icon={
+              <LightningBoltIcon
+                height={height}
+                width={width}
+                className="text-pink-500"
+              />
+            }
+            title="Service #2"
+            desc={services[1].desc}
+          ></ServiceItem>
+          <ServiceItem
+            icon={
+              <LibraryIcon height={height} width={width} className="text-pink-500" />
+            }
+            title="Service #3"
+            desc={services[2].desc}
+          ></ServiceItem>
+          <ServiceItem
+            icon={<ChatIcon height={height} width={width} className="text-pink-500" />}
+            title="Service #4"
+            desc={services[3].desc}
+          ></ServiceItem>
+        </div>
+      </div>
     </section>
   );
-}
+};
 
 export default Service;

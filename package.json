@@ -9,11 +9,17 @@
     "export": "next export"
   },
   "dependencies": {
-    "bootstrap": "^5.0.1",
+    "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
+    "aos": "^2.3.4",
     "next": "10.2.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "reactstrap": "^8.9.0"
+    "react-dom": "17.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.2",
+    "tailwindo": "^1.0.5"
+  }
 }

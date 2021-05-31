@@ -1,76 +1,69 @@
-import React from 'react';
-import { Container, Row, Col } from "reactstrap";
+import React from "react";
+
+const LinkContainer = (props) => {
+  const items = props.links.map((link) => (
+    <li key={link.link}>
+      <a
+        className="hover:text-pink-500 font-semibold block text-sm py-2"
+        href={link.link}
+      >
+        {link.title}
+      </a>
+    </li>
+  ));
+  return (
+    <div className="w-full my-8 lg:my-0 lg:w-4/12 px-4 ml-auto">
+      <span className="block uppercase text-gray-500 text-sm font-semibold mb-2">
+        {props.linkTitle}
+      </span>
+      <ul className="list-unstyled text-gray-500">{items}</ul>
+    </div>
+  );
+};
 
 const Footer = () => {
   const links = [
-    { id : 1, title : "Feature",
-      child : [
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" }
-      ]
-    },
-    { id : 2, title : "About Us",
-      child : [
-          { title : "Contact Us", link : "/" },
-          { title : "FAQs", link : "/" },
-          { title : "Privacy Policy", link : "/" },
-      ]
-    },
+    { title: "About", link: "/about" },
+    { title: "Pricing", link: "/pricing" },
+    { title: "Solutions", link: "/solutions" },
   ];
-  
-  return (
-    <section className="footer section">
-      <Container>
-        <Row>
-          <Col lg={4}>
-              <div className="mb-4">
-                <p className="text-muted mt-4 mb-2">email@email.com</p>
-                <h6 className="text-muted font-weight-normal">+99 1234-5678-9</h6>
-              </div>
-          </Col>
-          <Col lg={8}>
-            <Row>
-              {
-                links.map((link, key) =>
-                  <Col key={key} md={4}>
-                    <h6 className="text-dark mb-3">{link.title}</h6>
-                    <ul className="list-unstyled company-sub-menu">
-                      {
-                        link.child.map((fLink, key) =>
-                          <li key={key}><a href={fLink.link}>{fLink.title}</a></li>
-                        )
-                      }
-                    </ul>
-                  </Col>
-                )
-              }
-              
-              <Col md={4}>
-                <h6 className="text-dark mb-3">Our Address</h6>
-                <p className="text-muted f-14">1234 Lorem Ipsum dummy text, 12345</p>
-                <h6 className="text-muted pb-2">Email: email@email.com</h6>
-                <ul className="list-unstyled footer-social-list mt-4">
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-facebook"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-instagram"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-linkedin"></i></a></li>
-                </ul>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
+  const otherLinks = [
+    { title: "Press", link: "/press" },
+    { title: "Terms of Services", link: "/tos" },
+    { title: "Privacy", link: "/privacy" },
+  ];
 
-        <Row className="mt-5">
-          <Col md={12}>
-            <div className="text-center text-muted">
-              <p className="mb-0 f-15">2020 © Name. Design by Name</p>
+  return (
+    <footer className="flex justify-center bg-gray-100 text-black py-4">
+      <div className="container max-w-screen-xl px-4">
+        <div className="flex flex-wrap justify-around">
+          {/* LEFT */}
+          <div className="w-full lg:w-6/12 px-4">
+            <h3 className="text-3xl font-semibold mb-4 md:mb-0">We are here to help</h3>
+            <p className="text-lg mt-0 mb-2 text-gray-500">
+              We look forward to having you be part of our community.
+            </p>
+          </div>
+          {/* RIGHT */}
+          <div className="w-full lg:w-6/12 lg:px-4">
+            <div className="flex flex-wrap items-top mb-6">
+              <LinkContainer linkTitle="Useful Links" links={links}></LinkContainer>
+              <LinkContainer
+                linkTitle="Other Resources"
+                links={otherLinks}
+              ></LinkContainer>
             </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap place-content-center">
+          <div className="text-sm text-lightgray font-semibold py-1">
+            Copyright © 2021 diva.cards
+          </div>
+        </div>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

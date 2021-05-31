@@ -1,22 +1,22 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Feature from '../components/Feature';
-import Service from '../components/Service';
-import About from '../components/About';
-import Footer from '../components/Footer';
+import Feature from "../components/Feature";
+import Service from "../components/Service";
+import About from "../components/About";
+import Footer from "../components/Footer";
 
-const Index = () => {
+export default function Index() {
   return (
-    <Layout pageTitle="Landing Page Nextjs">
+    <Layout pageTitle="diva cards">
       <Header />
-      <Hero />
-      <Feature/>
-      <Service />
-      <About />
+      <main>
+        <Hero />
+        {/* <Feature /> */}
+        <Service />
+        {/* <About /> */}
+      </main>
       <Footer />
     </Layout>
-  )
+  );
 }
-
-export default Index;
