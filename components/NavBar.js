@@ -12,7 +12,7 @@ const BigButton = (props) => {
 
 const NavBar = () => {
   return (
-    <nav className="hidden md:flex md:items-center md:w-auto">
+    <nav className="flex flex-col lg:flex-row">
       <Button>
         <Link href="/collections">Collections</Link>
       </Button>
