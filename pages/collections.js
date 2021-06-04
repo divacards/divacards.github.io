@@ -4,16 +4,28 @@ import Footer from "../components/Footer";
 import Select from "react-select";
 import React, { useState } from "react";
 
-const CustomSelect = (props) => (
-  <Select
-    id={props.id}
-    instanceId={props.instanceId}
-    placeholder={props.placeholder}
-    options={props.options}
-    onChange={props.onChange}
-    className="p-4 w-10/12 lg:w-2/12"
-  />
-);
+const CustomSelect = (props) => {
+  return (
+    <Select
+      id={props.id}
+      instanceId={props.instanceId}
+      isMulti={props.isMulti}
+      placeholder={props.placeholder}
+      options={props.options}
+      onChange={props.onChange}
+      theme={(theme) => ({
+        ...theme,
+        // borderRadius: 0,
+        colors: {
+          ...theme.colors,
+          primary: "hotpink",
+          neutral10: "lavender",
+        },
+      })}
+      className="p-4 w-10/12 lg:w-3/12"
+    />
+  );
+};
 
 const Filters = (props) => {
   return (
@@ -29,7 +41,8 @@ const Filters = (props) => {
       <CustomSelect
         id="artist-select"
         instanceId="artist-select"
-        placeholder="Select an artist"
+        isMulti={true}
+        placeholder="Select artists"
         options={props.artistOpts}
         onChange={props.onArtistSelect}
       ></CustomSelect>
@@ -46,12 +59,27 @@ const Filters = (props) => {
 };
 
 const DeckViewer = (props) => {
+  const deck = props.deck;
+
+  const cards = deck.cards;
+  if (props.reversed) {
+    cards.reverse();
+  }
+
   return (
-    <section className="flex flex-col">
-      <p className="mx-auto border-b-2"> {props.title} </p>
-      <div className="grid grid-rows-3 grid-cols-3 gap-3 mx-auto p-4">
-        {props.decks.map((item) => (
-          <span key={item.name}>{item.name}</span>
+    <section className="flex flex-col max-w-screen-xl mx-auto px-4 py-2 md:px-6 md:py-4">
+      <span className="px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
+        {deck.title}
+      </span>
+      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto p-4">
+        {cards.map((card) => (
+          <div key={card.name} className="flex flex-col gap-2">
+            <img
+              className="mx-auto w-1/2 lg:w-10/12 rounded shadow-gray"
+              src={card.img}
+            ></img>
+            <span className="mx-auto">{card.name}</span>
+          </div>
         ))}
       </div>
     </section>
@@ -75,43 +103,80 @@ export default function Collections() {
     { value: "desc", label: "Descending" },
   ];
 
+  const takaDeck = {
+    title: "taka's deck",
+    cards: [
+      { name: "[taka] placeholder A", img: "./images/6S.png" },
+      { name: "[taka] placeholder B", img: "./images/9H.png" },
+      { name: "[taka] placeholder C", img: "./images/6S.png" },
+      { name: "[taka] placeholder D", img: "./images/9H.png" },
+      { name: "[taka] placeholder E", img: "./images/6S.png" },
+      { name: "[taka] placeholder F", img: "./images/9H.png" },
+    ],
+  };
+
+  const akihoDeck = {
+    title: "akiho's deck",
+    cards: [
+      { name: "[akiho] placeholder A", img: "./images/9H.png" },
+      { name: "[akiho] placeholder B", img: "./images/6S.png" },
+      { name: "[akiho] placeholder C", img: "./images/9H.png" },
+      { name: "[akiho] placeholder D", img: "./images/6S.png" },
+      { name: "[akiho] placeholder E", img: "./images/9H.png" },
+      { name: "[akiho] placeholder F", img: "./images/6S.png" },
+    ],
+  };
+
+  const decksMap = {
+    akiho: akihoDeck,
+    taka: takaDeck,
+  };
+
   const [deckSelected, onDeckSelect] = useState(null);
-  const [artistSelected, onArtistSelect] = useState(null);
+  const [artistSelected, onArtistSelect] = useState([]);
   const [orderSelected, onOrderSelect] = useState(null);
 
-  const showSelected = (selected) => (
-    <p>[DEBUG] You selected {selected !== null ? selected.value : "nothing"}</p>
-  );
-  const showDeckViewer = (artist, akihoDecks, takaDecks) => {
-    if (artist && artist.value == "taka") {
-      return <DeckViewer title={takaDecks.title} decks={takaDecks.decks} />;
-    } else if (artist && artist.value == "akiho") {
-      return <DeckViewer title={akihoDecks.title} decks={akihoDecks.decks} />;
+  const showSelected = (selected) => {
+    let text = "[DEBUG] You selected ";
+    if (!selected) {
+      text += "nothing";
+    } else {
+      if (Array.isArray(selected)) {
+        text += selected.map((item) => item.value).join(" ");
+      } else {
+        text += selected.value;
+      }
     }
+
+    return <span className="mx-4">{text}</span>;
   };
 
-  const takaDecks = {
-    title: "takaDecks",
-    decks: [
-      { name: "[taka] placeholder A" },
-      { name: "[taka] placeholder B" },
-      { name: "[taka] placeholder C" },
-      { name: "[taka] placeholder D" },
-      { name: "[taka] placeholder E" },
-      { name: "[taka] placeholder F" },
-    ],
-  };
+  const showDeckViewer = (artistsSelected, decksMap, order) => {
+    const artists = artistsSelected.map((item) => item.value);
+    const decks = [];
+    if (artists.length === 0) {
+      // show all
+      decks.push(...Object.entries(decksMap));
+    } else {
+      // show selected
+      for (const [key, deck] of Object.entries(decksMap)) {
+        if (artists.includes(key)) {
+          decks.push([key, deck]);
+        }
+      }
+    }
 
-  const akihoDecks = {
-    title: "akihoDecks",
-    decks: [
-      { name: "[akiho] placeholder A" },
-      { name: "[akiho] placeholder B" },
-      { name: "[akiho] placeholder C" },
-      { name: "[akiho] placeholder D" },
-      { name: "[akiho] placeholder E" },
-      { name: "[akiho] placeholder F" },
-    ],
+    return (
+      <>
+        {decks.map(([key, deck], index) => (
+          <DeckViewer
+            key={key + "-" + index}
+            deck={deck}
+            reversed={order && order.value === "desc" ? true : false}
+          />
+        ))}
+      </>
+    );
   };
 
   return (
@@ -126,12 +191,12 @@ export default function Collections() {
           orderOpts={orderOpts}
           onOrderSelect={onOrderSelect}
         ></Filters>
-        <div className="flex flex-row gap-2 max-w-screen-xl mx-auto p-2 md:p-3">
+        <div className="flex flex-row gap-2 max-w-screen-xl mx-auto px-4 md:px-6">
           {showSelected(deckSelected)}
           {showSelected(artistSelected)}
           {showSelected(orderSelected)}
         </div>
-        {showDeckViewer(artistSelected, akihoDecks, takaDecks)}
+        {showDeckViewer(artistSelected, decksMap, orderSelected)}
       </main>
       <Footer />
     </Layout>

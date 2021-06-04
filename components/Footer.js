@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="flex justify-center bg-gray-100 text-black py-4">
+    <footer className="flex justify-center bg-gray-200 text-black py-4">
       <div className="container max-w-screen-xl px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
