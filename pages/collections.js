@@ -71,7 +71,7 @@ const DeckViewer = (props) => {
       <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
         {deck.title}
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto p-4 relative">
+      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col gap-2">
             <img
