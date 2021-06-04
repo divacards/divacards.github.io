@@ -18,7 +18,7 @@ const Hero = () => {
             Buy Cards
           </button>
           <button className="lg:mx-2 px-4 py-2 border border-transparent text-xl btn-white focus:outline-none md:px-6   font-semibold text-pink-500">
-            Diva DAO
+            Air Drop 
           </button>
         </div>
       </div>
