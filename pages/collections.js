@@ -68,14 +68,14 @@ const DeckViewer = (props) => {
 
   return (
     <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-      <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
+      <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold mb-10">
         {deck.title}
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col gap-2">
             <img
-              className="mx-auto w-1/2 lg:w-10/12 rounded shadow-gray"
+              className="mx-auto w-1/2 lg:w-10/12 rounded"
               src={card.img}
             ></img>
             <span className="mx-auto">{card.name}</span>
@@ -103,31 +103,49 @@ export default function Collections() {
     { value: "desc", label: "Descending" },
   ];
 
+  const kuronDeck = {
+    title: "kuron's deck",
+    cards: [
+      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
+      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
+      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
+      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
+    ],
+  };
+
   const takaDeck = {
     title: "taka's deck",
     cards: [
-      { name: "[taka] placeholder A", img: "./images/6S.png" },
-      { name: "[taka] placeholder B", img: "./images/9H.png" },
-      { name: "[taka] placeholder C", img: "./images/6S.png" },
-      { name: "[taka] placeholder D", img: "./images/9H.png" },
-      { name: "[taka] placeholder E", img: "./images/6S.png" },
-      { name: "[taka] placeholder F", img: "./images/9H.png" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
     ],
   };
 
   const akihoDeck = {
     title: "akiho's deck",
     cards: [
-      { name: "[akiho] placeholder A", img: "./images/9H.png" },
-      { name: "[akiho] placeholder B", img: "./images/6S.png" },
-      { name: "[akiho] placeholder C", img: "./images/9H.png" },
-      { name: "[akiho] placeholder D", img: "./images/6S.png" },
-      { name: "[akiho] placeholder E", img: "./images/9H.png" },
-      { name: "[akiho] placeholder F", img: "./images/6S.png" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder A", img: "./images/back0.svg" },
+      { name: "[taka] placeholder A", img: "./images/back3.svg" },
     ],
   };
 
   const decksMap = {
+    kuron: kuronDeck,
     akiho: akihoDeck,
     taka: takaDeck,
   };
