@@ -67,7 +67,7 @@ const DeckViewer = (props) => {
   }
 
   return (
-    <section className="lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+    <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
       <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
         {deck.title}
       </div>
