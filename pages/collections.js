@@ -29,7 +29,7 @@ const CustomSelect = (props) => {
 
 const Filters = (props) => {
   return (
-    <section className="flex flex-col lg:flex-row max-w-screen-xl mx-auto p-4 md:p-6">
+    <section className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
       <CustomSelect
         id="deck-select"
         instanceId="deck-select"
@@ -67,11 +67,11 @@ const DeckViewer = (props) => {
   }
 
   return (
-    <section className="flex flex-col max-w-screen-xl mx-auto px-4 py-2 md:px-6 md:py-4">
-      <span className="px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
+    <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+      <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold">
         {deck.title}
-      </span>
-      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto p-4">
+      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col gap-2">
             <img
@@ -191,7 +191,7 @@ export default function Collections() {
           orderOpts={orderOpts}
           onOrderSelect={onOrderSelect}
         ></Filters>
-        <div className="flex flex-row gap-2 max-w-screen-xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
           {showSelected(deckSelected)}
           {showSelected(artistSelected)}
           {showSelected(orderSelected)}

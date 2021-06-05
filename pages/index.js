@@ -7,13 +7,13 @@ import Footer from "../components/Footer";
 export default function Index() {
   return (
     <Layout pageTitle="diva cards">
-      <Header />
-      <main>
-        <Hero />
-        {/* <Feature /> */}
-        <Service />
-        {/* <About /> */}
-      </main>
+        <Header />
+        <main>
+          <Hero />
+          {/* <Feature /> */}
+          <Service />
+          {/* <About /> */}
+        </main>
       <Footer />
     </Layout>
   );
