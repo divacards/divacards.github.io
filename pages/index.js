@@ -8,10 +8,12 @@ export default function Index() {
   return (
     <Layout pageTitle="diva cards">
         <Header />
-        <Hero />
-        {/* <Feature /> */}
-        <Service />
-        {/* <About /> */}
+        <main>
+          <Hero />
+          {/* <Feature /> */}
+          <Service />
+          {/* <About /> */}
+        </main>
       <Footer />
     </Layout>
   );
