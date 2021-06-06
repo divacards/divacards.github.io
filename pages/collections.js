@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Select from "react-select";
 import React, { useState } from "react";
 
+import cards from "../public/data/cards.json"
+
 const CustomSelect = (props) => {
   return (
     <Select
@@ -68,17 +70,17 @@ const DeckViewer = (props) => {
 
   return (
     <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-      <div className="max-w-screen-xl px-auto text-center mx-4 border-b-2 text-gray-700 text-xl font-bold mb-10">
+      <div className="min-w-full px-auto text-center border-b-4 border-black text-gray-800 py-4 text-3xl font-bold mb-10 font-cursive">
         {deck.title}
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col gap-2">
             <img
               className="mx-auto w-1/2 lg:w-10/12 rounded"
               src={card.img}
             ></img>
-            <span className="mx-auto">{card.name}</span>
+            <span className="mx-auto font-cursive">{card.name}</span>
           </div>
         ))}
       </div>
