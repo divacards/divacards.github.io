@@ -1,0 +1,29 @@
+{
+  "data": [
+    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
+    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
+
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
+    { "name": "[taka] placeholder A", "img": "./images/back3.svg" }
+  ]
+}
