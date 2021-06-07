@@ -163,7 +163,7 @@ const NavBar = () => {
     <nav className="flex flex-col lg:flex-row p-4 lg:p-0">
       {pageLinks.map((pl) => {
         return (
-          <Button>
+          <Button key={pl.text}>
             <Link href={pl.href}>
               <span className={router.pathname === pl.href ? "font-bold" : null}>
                 {pl.text}
