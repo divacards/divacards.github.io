@@ -4,8 +4,6 @@ import Footer from "../components/Footer";
 import Select from "react-select";
 import React, { useState } from "react";
 
-import cards from "../public/data/cards.json"
-
 const CustomSelect = (props) => {
   return (
     <Select
@@ -70,16 +68,13 @@ const DeckViewer = (props) => {
 
   return (
     <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-      <div className="min-w-full px-auto text-center border-b-4 border-black text-gray-800 py-4 text-3xl font-bold mb-10 font-cursive">
+      <div className="min-w-full px-auto text-center border-b-4 border-black text-gray-800 py-4 text-3xl font-semibold mb-10 font-cursive">
         {deck.title}
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col gap-2">
-            <img
-              className="mx-auto w-1/2 lg:w-10/12 rounded"
-              src={card.img}
-            ></img>
+            <img className="mx-auto w-1/2 lg:w-10/12 rounded" src={card.img}></img>
             <span className="mx-auto font-cursive">{card.name}</span>
           </div>
         ))}
@@ -108,13 +103,13 @@ export default function Collections() {
   const kuronDeck = {
     title: "kuron's deck",
     cards: [
-      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
-      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
-      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
-      { name: "[akiho] placeholder F", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder F", img: "./images/H10.svg" },
+      { name: "[kuron] placeholder A", img: "./images/H10.svg" },
+      { name: "[kuron] placeholder B", img: "./images/back0.svg" },
+      { name: "[kuron] placeholder C", img: "./images/H10.svg" },
+      { name: "[kuron] placeholder D", img: "./images/back0.svg" },
+      { name: "[kuron] placeholder E", img: "./images/H10.svg" },
+      { name: "[kuron] placeholder F", img: "./images/back0.svg" },
+      { name: "[kuron] placeholder G", img: "./images/H10.svg" },
     ],
   };
 
@@ -122,27 +117,27 @@ export default function Collections() {
     title: "taka's deck",
     cards: [
       { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[taka] placeholder B", img: "./images/back3.svg" },
+      { name: "[taka] placeholder C", img: "./images/back0.svg" },
+      { name: "[taka] placeholder D", img: "./images/back3.svg" },
+      { name: "[taka] placeholder E", img: "./images/back0.svg" },
+      { name: "[taka] placeholder F", img: "./images/back3.svg" },
+      { name: "[taka] placeholder G", img: "./images/back0.svg" },
+      { name: "[taka] placeholder H", img: "./images/back3.svg" },
     ],
   };
 
   const akihoDeck = {
     title: "akiho's deck",
     cards: [
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder A", img: "./images/back3.svg" },
+      { name: "[akiho] placeholder A", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder B", img: "./images/back3.svg" },
+      { name: "[akiho] placeholder C", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder D", img: "./images/back3.svg" },
+      { name: "[akiho] placeholder E", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder F", img: "./images/back3.svg" },
+      { name: "[akiho] placeholder G", img: "./images/back0.svg" },
+      { name: "[akiho] placeholder H", img: "./images/back3.svg" },
     ],
   };
 

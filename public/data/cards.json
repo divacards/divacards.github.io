@@ -1,29 +1,64 @@
 {
   "data": [
-    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/back0.svg" },
-    { "name": "[akiho] placeholder F", "img": "./images/H10.svg" },
-
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back0.svg" },
-    { "name": "[taka] placeholder A", "img": "./images/back3.svg" }
+    {
+      "name": "[akiho] placeholder A",
+      "img": "./images/H10.svg"
+    },
+    {
+      "name": "[akiho] placeholder B",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[akiho] placeholder C",
+      "img": "./images/H10.svg"
+    },
+    {
+      "name": "[akiho] placeholder D",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[akiho] placeholder F",
+      "img": "./images/H10.svg"
+    },
+    {
+      "name": "[akiho] placeholder F",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[akiho] placeholder G",
+      "img": "./images/H10.svg"
+    },
+    {
+      "name": "[taka] placeholder A",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[taka] placeholder B",
+      "img": "./images/back3.svg"
+    },
+    {
+      "name": "[taka] placeholder C",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[taka] placeholder D",
+      "img": "./images/back3.svg"
+    },
+    {
+      "name": "[taka] placeholder E",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[taka] placeholder F",
+      "img": "./images/back3.svg"
+    },
+    {
+      "name": "[taka] placeholder G",
+      "img": "./images/back0.svg"
+    },
+    {
+      "name": "[taka] placeholder H",
+      "img": "./images/back3.svg"
+    }
   ]
 }
