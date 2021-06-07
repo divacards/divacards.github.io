@@ -12,7 +12,7 @@ export function getLibrary(provider) {
 const Layout = (props) => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
-      <main className="bg-gray-100">
+      <main className="bg-white">
         <Head>
           <title>{props.pageTitle}</title>
         </Head>

@@ -15,4 +15,7 @@
   .text-lightpink {
     @apply text-pink-500 text-opacity-75;
   }
+  .text-highlight {
+    @apply text-purple-500 font-semibold;
+  }
 }

@@ -5,7 +5,6 @@ import Head from "next/head";
 import "aos/dist/aos.css";
 
 import "../styles/globals.css";
-import "../styles/header.css";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
