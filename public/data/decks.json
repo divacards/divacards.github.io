@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "name": "kuron0",
+      "title": "Kuron's deck",
+      "cards": [ ],
+      "featured": 0
+    },
+    {
+      "name": "taka0",
+      "title": "Taka's deck",
+      "cards": [ ],
+      "featured": 1
+    },
+    {
+      "name": "ackey0",
+      "title": "Ackey's deck",
+      "cards": [ ],
+      "featured": 0
+    }
+  ]
+}

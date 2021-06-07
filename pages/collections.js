@@ -4,7 +4,9 @@ import Footer from "../components/Footer";
 import Select from "react-select";
 import React, { useState } from "react";
 
+//Data from JSON
 import cards from "../public/data/cards.json"
+import decks from "../public/data/decks.json"
 
 const CustomSelect = (props) => {
   return (
@@ -24,14 +26,52 @@ const CustomSelect = (props) => {
           neutral10: "lavender",
         },
       })}
-      className="p-4 w-10/12 lg:w-3/12"
+      className="p-1 w-12/12 lg:w-3/12"
     />
   );
 };
 
-const Filters = (props) => {
+const CardFilters = (props) => {
   return (
-    <section className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+    <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+      <CustomSelect
+        id="suite-select"
+        instanceId="suite-select"
+        isMulti={true}
+        placeholder="Select suite"
+        options={props.suiteOpts}
+        onChange={props.onSuiteSelect}
+      ></CustomSelect>
+
+      <CustomSelect
+        id="order-select"
+        instanceId="order-select"
+        placeholder="Select an order"
+        options={props.orderOpts}
+        onChange={props.onOrderSelect}
+      ></CustomSelect>
+    </section>
+  );
+};
+
+const BlockchainFilters = (props) => {
+  return (
+    <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+      <CustomSelect
+        id="blockchain-select"
+        instanceId="blockchain-select"
+        isMulti={true}
+        placeholder="Select network"
+        options={props.blockchainOpts}
+        onChange={props.onBlockchainSelect}
+      ></CustomSelect>
+    </section>
+  );
+};
+
+const DeckFilters = (props) => {
+  return (
+    <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
       <CustomSelect
         id="deck-select"
         instanceId="deck-select"
@@ -39,6 +79,8 @@ const Filters = (props) => {
         options={props.deckOpts}
         onChange={props.onDeckSelect}
       ></CustomSelect>
+
+
 
       <CustomSelect
         id="artist-select"
@@ -49,13 +91,6 @@ const Filters = (props) => {
         onChange={props.onArtistSelect}
       ></CustomSelect>
 
-      <CustomSelect
-        id="order-select"
-        instanceId="order-select"
-        placeholder="Select an order"
-        options={props.orderOpts}
-        onChange={props.onOrderSelect}
-      ></CustomSelect>
     </section>
   );
 };
@@ -100,9 +135,23 @@ export default function Collections() {
     { value: "akiho", label: "Akiho" },
   ];
 
+  const suiteOpts = [
+    { value: "s", label: "Spades" },
+    { value: "h", label: "Hearts" },
+    { value: "c", label: "Clubs" },
+    { value: "d", label: "Diamonds" },
+    { value: "j", label: "Jokers" },
+  ];
+
+  const blockchainOpts = [
+    { value: "0", label: "Ethereum" },
+    { value: "1", label: "BSC" },
+  ];
+
+
   const orderOpts = [
-    { value: "asc", label: "Ascending" },
-    { value: "desc", label: "Descending" },
+    { value: "asc_rarity", label: "Low to high by Rarity" },
+    { value: "desc_rarity", label: "High to low by Rarity" },
   ];
 
   const kuronDeck = {
@@ -153,6 +202,8 @@ export default function Collections() {
   };
 
   const [deckSelected, onDeckSelect] = useState(null);
+  const [suiteSelected, onSuiteSelect] = useState(null);
+  const [blockchainSelected, onBlockchainSelect] = useState(null);
   const [artistSelected, onArtistSelect] = useState([]);
   const [orderSelected, onOrderSelect] = useState(null);
 
@@ -203,19 +254,29 @@ export default function Collections() {
     <Layout pageTitle="diva cards">
       <Header />
       <main>
-        <Filters
+        <BlockchainFilters
+          blockchainOpts={blockchainOpts}
+          onBlockchainSelect={onBlockchainSelect}
+        ></BlockchainFilters>
+        <DeckFilters
           deckOpts={deckOpts}
           onDeckSelect={onDeckSelect}
           artistOpts={artistOpts}
           onArtistSelect={onArtistSelect}
+        ></DeckFilters>
+        <CardFilters
+          suiteOpts={suiteOpts}
+          onSuiteSelect={onSuiteSelect}
           orderOpts={orderOpts}
           onOrderSelect={onOrderSelect}
-        ></Filters>
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+        ></CardFilters>
+        {/* <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
           {showSelected(deckSelected)}
+          {showSelected(suiteSelected)}
+          {showSelected(blockchainSelected)}
           {showSelected(artistSelected)}
           {showSelected(orderSelected)}
-        </div>
+        </div> */}
         {showDeckViewer(artistSelected, decksMap, orderSelected)}
       </main>
       <Footer />
