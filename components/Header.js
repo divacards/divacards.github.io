@@ -6,18 +6,23 @@ import { useWeb3React } from "@web3-react/core";
 import { formatEther } from "@ethersproject/units";
 
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { InlineIcon } from "@iconify/react";
+
 import classNames from "classnames";
 
 import { useEagerConnect, useInactiveListener } from "../hooks";
 import { getErrorMessage, injected } from "../connectors";
 
 import Button from "./Button";
+import Avatar from "./Avatar";
+import { ETH_ICON } from "./Icon";
 
 function shortenETHAddr(addr) {
   const len = addr.length;
   return addr.substring(0, 8) + ".." + addr.substring(len - 6, len);
 }
+
 const Logo = (props) => {
   return (
     <button className="focus:outline-none p-4 lg:p-0">
@@ -46,14 +51,6 @@ const BigButton = () => {
     </button>
   );
 };
-{
-  /* <button
-className="rounded-full border-2 px-6 py-3"
-onClick={() => (active ? deactivate() : null)}
->
-TODO: I'm Avatar, click me to disconnect
-</button> */
-}
 
 const MenuItem = (props) => (
   <Menu.Item onClick={props.onClick}>
@@ -61,7 +58,7 @@ const MenuItem = (props) => (
       <a
         href="#"
         className={classNames(
-          active ? "bg-pink-200 text-gray-900" : "text-gray-700",
+          active ? "bg-pink-700 opacity-75 text-gray-100" : "text-gray-700",
           "block px-4 py-2 text-sm"
         )}
       >
@@ -101,15 +98,15 @@ const AvatarDropdown = () => {
   }, [account, library, chainId]);
 
   return (
-    <Menu as="div" className="relative inline-block py-4 text-left">
+    <Menu as="div" className="relative mx-auto inline-block py-4 text-left">
       {({ open }) => (
         <>
-          <div>
-            <Menu.Button className="rounded-full border-2 ml-4 px-4 py-3 divide-x divide-pink-300">
-              <span className="px-2">{balance ? formatEther(balance) : ""} ETH</span>
-              <span className="px-2">Avatar[TODO]</span>
-            </Menu.Button>
-          </div>
+          <Menu.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300">
+            <span className="px-2 my-auto text-highlight">
+              {balance ? formatEther(balance) : ""} ETH
+            </span>
+            <Avatar value={account}></Avatar>
+          </Menu.Button>
 
           <Transition
             show={open}
@@ -121,14 +118,30 @@ const AvatarDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="origin-top-right absolute right-0 mt-2 w-auto rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300">
+            <Menu.Items className="flex flex-col origin-top-right absolute right-0 mt-2 w-48 rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300">
               <div className="py-1">
                 <Menu.Item>
                   <div className="flex flex-col px-4 py-2 text-sm">
-                    <span>
-                      {account === null ? "no account" : shortenETHAddr(account)}
-                    </span>
-                    <span>{balance ? formatEther(balance) : ""} ETH</span>
+                    <div className="flex flex-row gap-1">
+                      <span className="text-black font-semibold opacity-75">
+                        {account === null ? "no account" : shortenETHAddr(account)}
+                      </span>
+
+                      <button className="inline my-auto w-4 h-4">
+                        <ClipboardCopyIcon
+                          className="text-gray-500 opacity-75"
+                          onClick={() => {
+                            navigator.clipboard.writeText(account);
+                          }}
+                        ></ClipboardCopyIcon>
+                      </button>
+                    </div>
+                    <div className="flex flex-row gap-2">
+                      <InlineIcon className="my-auto" icon={ETH_ICON} color="gray" />
+                      <span className="text-highlight">
+                        {balance ? formatEther(balance) : ""} ETH
+                      </span>
+                    </div>
                   </div>
                 </Menu.Item>
               </div>
