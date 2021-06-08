@@ -1,35 +1,13 @@
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Select from "react-select";
-import React, { useState } from "react";
+import { CustomSelect, CustomRadioGroup } from "../components/Custom";
 
 //Data from JSON
 import cards from "../public/data/cards.json"
 import decks from "../public/data/decks.json"
 
-const CustomSelect = (props) => {
-  return (
-    <Select
-      id={props.id}
-      instanceId={props.instanceId}
-      isMulti={props.isMulti}
-      placeholder={props.placeholder}
-      options={props.options}
-      onChange={props.onChange}
-      theme={(theme) => ({
-        ...theme,
-        // borderRadius: 0,
-        colors: {
-          ...theme.colors,
-          primary: "hotpink",
-          neutral10: "lavender",
-        },
-      })}
-      className="p-1 w-12/12 lg:w-3/12"
-    />
-  );
-};
 
 const CardFilters = (props) => {
   return (
@@ -53,21 +31,31 @@ const CardFilters = (props) => {
     </section>
   );
 };
-
 const BlockchainFilters = (props) => {
-  return (
-    <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
-      <CustomSelect
-        id="blockchain-select"
-        instanceId="blockchain-select"
-        isMulti={true}
-        placeholder="Select network"
-        options={props.blockchainOpts}
-        onChange={props.onBlockchainSelect}
-      ></CustomSelect>
-    </section>
-  );
+    return (
+        <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+            <CustomRadioGroup
+                items={props.blockchainOpts}
+                id="blockchain-select"
+                onChange={props.onBlockchainSelect}
+            ></CustomRadioGroup>
+        </section>
+    );
 };
+// const BlockchainFilters = (props) => {
+//   return (
+//     <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+//       <CustomSelect
+//         id="blockchain-select"
+//         instanceId="blockchain-select"
+//         isMulti={true}
+//         placeholder="Select network"
+//         options={props.blockchainOpts}
+//         onChange={props.onBlockchainSelect}
+//       ></CustomSelect>
+//     </section>
+//   );
+// };
 
 const DeckFilters = (props) => {
   return (
