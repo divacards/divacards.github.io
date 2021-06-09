@@ -7,8 +7,8 @@ import {ChatIcon} from "@heroicons/react/outline";
 const ChainIcon = ({value, label, state, onChange}) => {
     const checked = value == state;
     switch (value) {
-    case "0": return <InlineIcon className="w-8 m-auto" icon={ETH_ICON} color="gray" onClick={e => onChange(e.target.value)}/>;
-    case "1": return <ChatIcon className="w-8 m-auto"/>;
+    case "0": return <InlineIcon className="w-8 m-auto" icon={ETH_ICON} color="gray" onClick={e => onChange(value)}/>;
+    case "1": return <InlineIcon className="w-8 m-auto" icon={ETH_ICON} color="gray" onClick={e => onChange(value)}/>;
     default: return null;
     }
 };

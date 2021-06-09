@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?47bbdn');
+  src:  url('fonts/icomoon.eot?47bbdn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?47bbdn') format('truetype'),
+    url('fonts/icomoon.woff?47bbdn') format('woff'),
+    url('fonts/icomoon.svg?47bbdn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-polygon-matic-logo:before {
+  content: "\e905";
+  color: #8247e5;
+}
+.icon-ethereum-eth-logo .path1:before {
+  content: "\e906";
+  color: rgb(52, 52, 52);
+}
+.icon-ethereum-eth-logo .path2:before {
+  content: "\e907";
+  margin-left: -0.6142578125em;
+  color: rgb(140, 140, 140);
+}
+.icon-ethereum-eth-logo .path3:before {
+  content: "\e908";
+  margin-left: -0.6142578125em;
+  color: rgb(60, 60, 59);
+}
+.icon-ethereum-eth-logo .path4:before {
+  content: "\e909";
+  margin-left: -0.6142578125em;
+  color: rgb(140, 140, 140);
+}
+.icon-ethereum-eth-logo .path5:before {
+  content: "\e90a";
+  margin-left: -0.6142578125em;
+  color: rgb(20, 20, 20);
+}
+.icon-ethereum-eth-logo .path6:before {
+  content: "\e90b";
+  margin-left: -0.6142578125em;
+  color: rgb(57, 57, 57);
+}
+.icon-binance-coin-bnb-logo:before {
+  content: "\e90c";
+  color: #f3ba2f;
+}
+.icon-joker:before {
+  content: "\e900";
+}
+.icon-clubs:before {
+  content: "\e901";
+}
+.icon-diamonds:before {
+  content: "\e902";
+  color: #ea6868;
+}
+.icon-hearts:before {
+  content: "\e903";
+  color: #ea6868;
+}
+.icon-spades:before {
+  content: "\e904";
+}
