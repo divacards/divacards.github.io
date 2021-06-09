@@ -6,7 +6,7 @@ import { ClipboardCopyIcon } from "@heroicons/react/outline";
 import { Menu, Transition } from "@headlessui/react";
 import { ETH_ICON } from "../components/Icon";
 import Avatar from "../components/Avatar";
-import BlockchainFilters from "./BlockchainFilters";
+import {BlockchainFilters} from "./Filter";
 
 import { useWeb3React } from "@web3-react/core";
 import { formatEther } from "@ethersproject/units";
@@ -108,7 +108,11 @@ const Wallet = (props) => {
                               }}
                             ></ClipboardCopyIcon>
                           </button>
-                          <BlockchainFilters {...props}/>
+                          <BlockchainFilters
+                            opts={props.blockchainOpts}
+                            onChange={props.onBlockchainSelect}
+                            state={props.state}
+                          />
                         </div>
                       </Menu.Item>
                     </div>

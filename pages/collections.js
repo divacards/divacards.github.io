@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
+
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { CustomSelect } from "../components/Custom";
+import { CustomSelect, CustomRadioGroup } from "../components/Custom";
+import { SuiteFilters } from "../boxes/Filter";
 
 //Data from JSON
-import cards from "../public/data/cards.json"
-import decks from "../public/data/decks.json"
+import cards from "../public/data/cards.json";
+import decks from "../public/data/decks.json";
 
-
+function reducer(state, action) {
+    return state;
+}
 const CardFilters = (props) => {
     return (
         <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
-          <CustomSelect
+          <SuiteFilters
             id="suite-select"
-            instanceId="suite-select"
-            isMulti={true}
-            placeholder="Select suite"
-            options={props.suiteOpts}
+            instanceid="suite-select"
+            opts={props.suiteOpts}
+            state={props.suite}
             onChange={props.onSuiteSelect}
-          ></CustomSelect>
+          />
 
+          
           <CustomSelect
             id="order-select"
             instanceId="order-select"
@@ -162,8 +166,9 @@ export default function Collections() {
         taka: takaDeck,
     };
 
+    const [state, dispatch] = useReducer(reducer, {});
     const [deckSelected, onDeckSelect] = useState(null);
-    const [suiteSelected, onSuiteSelect] = useState(null);
+    const [suiteSelected, onSuiteSelect] = useState([]);
     const [blockchainSelected, onBlockchainSelect] = useState(null);
     const [artistSelected, onArtistSelect] = useState([]);
     const [orderSelected, onOrderSelect] = useState(null);
