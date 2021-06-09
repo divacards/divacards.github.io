@@ -232,7 +232,6 @@ export default function Collections() {
     //         </>
     //     );
     // };
-
     const showDeckViewer = () => {
         return (
             <>
