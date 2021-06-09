@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 
 import "../styles/globals.css";
 import "../styles/icon.css";
+import "../styles/iconfix.css";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {

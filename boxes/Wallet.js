@@ -111,7 +111,7 @@ const Wallet = (props) => {
                           <BlockchainFilters
                             opts={props.blockchainOpts}
                             onChange={props.onBlockchainSelect}
-                            state={props.state}
+                            state={props.blockchain}
                           />
                         </div>
                       </Menu.Item>

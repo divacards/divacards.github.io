@@ -1,14 +1,15 @@
 import React from 'react';
 import { CustomRadioGroup } from "../../components/Custom";
+import { withCheck } from "../../util";
 
 const SuiteItem = ({value, label, state = [], onChange}) => {
-    const selected = value in state;
+    const checked = value in state;
     switch (value) {
-    case "s": return <span className="icon-spades w-4 m-auto"/>;
-    case "h": return <span className="icon-hearts w-4 m-auto"/>;
-    case "c": return <span className="icon-clubs w-4 m-auto"/>;
-    case "d": return <span className="icon-diamonds w-4 m-auto"/>;
-    case "j": return <span className="icon-joker w-4 m-auto"/>;
+    case "s": return <span className={withCheck("icon-spades w-4 m-auto", checked)} onClick={e => onChange(value)}/>;
+    case "h": return <span className={withCheck("icon-hearts w-4 m-auto", checked)} onClick={e => onChange(value)}/>;
+    case "c": return <span className={withCheck("icon-clubs w-4 m-auto", checked)} onClick={e => onChange(value)}/>;
+    case "d": return <span className={withCheck("icon-diamonds w-4 m-auto", checked)} onClick={e => onChange(value)}/>;
+    case "j": return <span className={withCheck("icon-joker w-4 m-auto", checked)} onClick={e => onChange(value)}/>;
     default: return null;
     }
 };

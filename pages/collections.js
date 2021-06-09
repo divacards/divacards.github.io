@@ -90,8 +90,9 @@ export default function Collections() {
     ];
 
     const blockchainOpts = [
-        { value: "0", label: "Ethereum" },
-        { value: "1", label: "BSC" },
+        { value: "0", label: "BSC" },
+        { value: "1", label: "Ethereum" },
+        { value: "2", label: "Matic"}
     ];
 
 
@@ -156,7 +157,7 @@ export default function Collections() {
     });
     const [deckSelected, onDeckSelect] = useState(null);
     const [suiteSelected, onSuiteSelect] = useState([]);
-    const [blockchainSelected, onBlockchainSelect] = useState(null);
+    const [blockchainSelected, onBlockchainSelect] = useState(0);
     const [artistSelected, onArtistSelect] = useState([]);
     const [orderSelected, onOrderSelect] = useState(null);
 
