@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { CustomSelect, CustomRadioGroup } from "../components/Custom";
+import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters } from "../boxes/Filter";
 
 //Data from JSON
@@ -11,6 +12,12 @@ import cards from "../public/data/cards.json";
 import decks from "../public/data/decks.json";
 
 function reducer(state, action) {
+    const reg = /change:(.*)/;
+    const key = action.type.match(reg) || [undefined, undefined];
+    switch (key[1]) {
+    case "col": return state;
+    default: return state;
+    }
     return state;
 }
 const CardFilters = (props) => {
@@ -24,7 +31,6 @@ const CardFilters = (props) => {
             onChange={props.onSuiteSelect}
           />
 
-          
           <CustomSelect
             id="order-select"
             instanceId="order-select"
@@ -59,31 +65,6 @@ const DeckFilters = (props) => {
             onChange={props.onArtistSelect}
           ></CustomSelect>
 
-        </section>
-    );
-};
-
-const DeckViewer = (props) => {
-    const deck = props.deck;
-
-    const cards = deck.cards;
-    if (props.reversed) {
-        cards.reverse();
-    }
-
-    return (
-        <section className="flex flex-col lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-          <div className="min-w-full px-auto text-center border-b-4 border-black text-gray-800 py-4 text-3xl font-semibold mb-10 font-cursive">
-            {deck.title}
-          </div>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
-            {cards.map((card) => (
-                <div key={card.name} className="flex flex-col gap-2">
-                  <img className="mx-auto w-1/2 lg:w-10/12 rounded" src={card.img}></img>
-                  <span className="mx-auto font-cursive">{card.name}</span>
-                </div>
-            ))}
-          </div>
         </section>
     );
 };
@@ -166,7 +147,13 @@ export default function Collections() {
         taka: takaDeck,
     };
 
-    const [state, dispatch] = useReducer(reducer, {});
+    const [state, dispatch] = useReducer(reducer, {
+        blockchain: "Ether",
+        deck: "",
+        artist: [],
+        suite: [],
+        order: 0,
+    });
     const [deckSelected, onDeckSelect] = useState(null);
     const [suiteSelected, onSuiteSelect] = useState([]);
     const [blockchainSelected, onBlockchainSelect] = useState(null);
@@ -188,6 +175,13 @@ export default function Collections() {
         return <span className="mx-4">{text}</span>;
     };
 
+    const artistsFilter = (card) => {
+        return true;
+    };
+    const withFilters = (filters) => {
+        return (cards) => cards;
+    };
+    const useFilter = withFilters([]);
     const showDeckViewer = (artistsSelected, decksMap, order) => {
         const artists = artistsSelected.map((item) => item.value);
         const decks = [];
@@ -208,7 +202,8 @@ export default function Collections() {
               {decks.map(([key, deck], index) => (
                   <DeckViewer
                     key={key + "-" + index}
-                    deck={deck}
+                    title={deck.title}
+                    cards={deck.cards}
                     reversed={order && order.value === "desc" ? true : false}
                   />
               ))}
