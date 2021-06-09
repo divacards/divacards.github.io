@@ -13,7 +13,7 @@ const PageLinker = () => {
     return (
         <div>
             <div className="hidden lg:flex">
-                {pageLinks.map(({text, href}) => (<PageLink text={text} href={href} selected={router.pathname === href}/>))}
+              {pageLinks.map(({text, href}) => (<PageLink key={text} text={text} href={href} selected={router.pathname === href}/>))}
             </div>
             <div className="block lg:hidden">
                 here's mobile menu type
@@ -22,4 +22,4 @@ const PageLinker = () => {
     );
 };
 
-export default PageLinker
+export default PageLinker;

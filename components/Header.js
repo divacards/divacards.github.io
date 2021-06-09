@@ -48,7 +48,7 @@ const BigButton = () => {
   );
 };
 
-const NavBar = () => {
+const AccountMenu = (props) => {
   const { active } = useWeb3React();
   const router = useRouter();
 
@@ -57,7 +57,7 @@ const NavBar = () => {
 
   return (
     <nav className="flex flex-col lg:flex-row p-4 lg:p-0">
-      {!active ? <BigButton /> : <Wallet />}
+      {!active ? <BigButton /> : <Wallet {...props}/>}
     </nav>
   );
 };
@@ -69,10 +69,10 @@ const LeftBar = () => {
         </div>
     );
 };
-const RightBar = () => {
-    return <NavBar className="justify-start"/>;
+const RightBar = (props) => {
+    return <AccountMenu className="justify-start" {...props}/>;
 };
-const Header = () => {
+const Header = (props) => {
   const { library, chainId, account, error } = useWeb3React();
   const [balance, setBalance] = React.useState();
   const [blockNumber, setBlockNumber] = useState();
@@ -135,7 +135,7 @@ const Header = () => {
     <>
       <header className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
         <LeftBar/>
-        <RightBar/>
+        <RightBar {...props}/>
       </header>
       <div className="mx-auto text-center">
         <p>Account: {account === null ? "no account" : account}</p>
