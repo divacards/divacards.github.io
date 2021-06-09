@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { CustomSelect, CustomRadioGroup } from "../components/Custom";
 import DeckViewer from "../boxes/DeckViewer";
-import { SuiteFilters } from "../boxes/Filter";
+import { SuiteFilters, OrderFilters } from "../boxes/Filter";
 
 //Data from JSON
 import cards from "../public/data/cards.json";
@@ -15,8 +15,19 @@ function reducer(state, action) {
     const reg = /change:(.*)/;
     const key = action.type.match(reg) || [undefined, undefined];
     switch (key[1]) {
-    case "col": return state;
-    default: return state;
+    case "blockchain": return {...state, blockchain: action.data};
+    case "suite":
+        let suite = state.suite;
+        let index = suite.indexOf(action.data);
+        if (index > -1) {
+            suite.splice(index);
+        } else {
+            suite = [...suite, action.data];
+        }
+        return {...state, suite };
+    case "order":
+        return {...state, order: action.data};
+    default:;
     }
     return state;
 }
@@ -31,13 +42,12 @@ const CardFilters = (props) => {
             onChange={props.onSuiteSelect}
           />
 
-          <CustomSelect
+          <OrderFilters
             id="order-select"
             instanceId="order-select"
-            placeholder="Select an order"
-            options={props.orderOpts}
+            state={props.order}
             onChange={props.onOrderSelect}
-          ></CustomSelect>
+          />
         </section>
     );
 };
@@ -53,9 +63,6 @@ const DeckFilters = (props) => {
             options={props.deckOpts}
             onChange={props.onDeckSelect}
           ></CustomSelect>
-
-
-
           <CustomSelect
             id="artist-select"
             instanceId="artist-select"
@@ -93,12 +100,6 @@ export default function Collections() {
         { value: "0", label: "BSC" },
         { value: "1", label: "Ethereum" },
         { value: "2", label: "Matic"}
-    ];
-
-
-    const orderOpts = [
-        { value: "asc_rarity", label: "Low to high by Rarity" },
-        { value: "desc_rarity", label: "High to low by Rarity" },
     ];
 
     const kuronDeck = {
@@ -155,11 +156,13 @@ export default function Collections() {
         suite: [],
         order: 0,
     });
+    const {blockchain, suite, order} = state;
+    const onBlockchainSelect = data => dispatch({type: "change:blockchain", data});
+    const onSuiteSelect = data => dispatch({type: "change:suite", data});
+    const onOrderSelect = data => dispatch({type: "change:order", data});
+
     const [deckSelected, onDeckSelect] = useState(null);
-    const [suiteSelected, onSuiteSelect] = useState([]);
-    const [blockchainSelected, onBlockchainSelect] = useState(0);
     const [artistSelected, onArtistSelect] = useState([]);
-    const [orderSelected, onOrderSelect] = useState(null);
 
     const showSelected = (selected) => {
         let text = "[DEBUG] You selected ";
@@ -176,13 +179,15 @@ export default function Collections() {
         return <span className="mx-4">{text}</span>;
     };
 
+    const suiteFilter = (card) => {
+        return suite.includes(card.poker_suite);
+    };
     const artistsFilter = (card) => {
         return true;
     };
-    const withFilters = (filters) => {
-        return (cards) => cards;
-    };
-    const useFilter = withFilters([]);
+    const withFilters = filters => cards => [cards, ...filters].reduce((result, y) => result.filter(y));
+    // TODO move to utils part useFilter(args)
+    const useFilter = withFilters([suiteFilter]);
     const showDeckViewer = (artistsSelected, decksMap, order) => {
         const artists = artistsSelected.map((item) => item.value);
         const decks = [];
@@ -205,16 +210,24 @@ export default function Collections() {
                     key={key + "-" + index}
                     title={deck.title}
                     cards={deck.cards}
-                    reversed={order && order.value === "desc" ? true : false}
+                    reversed={order == 1}
+                    useFilter={useFilter}
                   />
               ))}
             </>
         );
     };
+    // const showDeckViewer = (cards, decks, artists) => {
+    //     return (
+    //         <>
+    //           {}
+    //         </>
+    //     )
+    // };
 
     return (
         <Layout pageTitle="diva cards">
-          <Header blockchainOpts={blockchainOpts} onBlockchainSelect={onBlockchainSelect} blockchain={blockchainSelected}/>
+          <Header blockchainOpts={blockchainOpts} onBlockchainSelect={onBlockchainSelect} blockchain={blockchain}/>
           <main>
             <DeckFilters
               deckOpts={deckOpts}
@@ -223,9 +236,10 @@ export default function Collections() {
               onArtistSelect={onArtistSelect}
             ></DeckFilters>
             <CardFilters
+              suite={suite}
+              order={order}
               suiteOpts={suiteOpts}
               onSuiteSelect={onSuiteSelect}
-              orderOpts={orderOpts}
               onOrderSelect={onOrderSelect}
             ></CardFilters>
             {/* <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
@@ -235,7 +249,7 @@ export default function Collections() {
                {showSelected(artistSelected)}
                {showSelected(orderSelected)}
                </div> */}
-            {showDeckViewer(artistSelected, decksMap, orderSelected)}
+            {showDeckViewer(artistSelected, decksMap, order)}
           </main>
           <Footer />
         </Layout>

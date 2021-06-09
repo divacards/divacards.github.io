@@ -1,10 +1,11 @@
 import React from 'react';
+import { SortDescendingIcon, SortAscendingIcon } from '@heroicons/react/solid'
 
-const OrderFilters = ({label, state, onChange}) => {
+const OrderFilters = ({state, onChange}) => {
     switch (state) {
-    case 1: return <label>asc</label>;
-    case 2: return <label>desc</label>;
-    default: return <label>none</label>;
+    case 0: return <div className="flex flex-row"><span>Rarity</span><SortAscendingIcon className="w-8 m-auto" onClick={e => onChange(1)}/></div>;
+    case 1: return <div className="flex flex-row"><span>Rarity</span><SortDescendingIcon className="w-8 m-auto" onClick={e => onChange(0)}/></div>;
+    default: return null;
     }
 };
 

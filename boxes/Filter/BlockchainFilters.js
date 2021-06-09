@@ -7,8 +7,8 @@ const ChainIcon = ({value, label, state, onChange}) => {
     switch (value) {
     case "0": return <span className={withCheck("icon-binance-coin-bnb-logo w-8 m-auto", checked)} onClick={e => onChange(value)}/>;
     case "1": return <span className={withCheck("icon-ethereum-eth-logo w-8 m-auto", checked)} onClick={e => onChange(value)}>
-                       <span className="path1"/><span className="path2"/><span className="path3"/>
-                       <span className="path4"/><span className="path5"/><span className="path6"/>
+                       <span className={withCheck("path1", checked)}/><span className={withCheck("path2", checked)}/><span className={withCheck("path3", checked)}/>
+                       <span className={withCheck("path4", checked)}/><span className={withCheck("path5", checked)}/><span className={withCheck("path6", checked)}/>
                      </span>;
     case "2": return <span className={withCheck("icon-polygon-matic-logo w-8 m-auto", checked)} onClick={e => onChange(value)}/>;
     default: return null;
