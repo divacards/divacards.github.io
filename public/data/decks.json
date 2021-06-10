@@ -1,28 +1,28 @@
 {
-    "data": [
-        {
-            "id": 0,
-            "artists": 0,
-            "name": "kuron0",
-            "title": "Kuron's deck",
-            "featured": 0,
-            "cards": []
-        },
-        {
-            "id": 1,
-            "artists": 1,
-            "name": "taka0",
-            "title": "Taka's deck",
-            "featured": 1,
-            "cards": []
-        },
-        {
-            "id": 2,
-            "artists": 2,
-            "name": "ackey0",
-            "title": "Ackey's deck",
-            "featured": 0,
-            "cards": []
-        }
-    ]
+  "data": [
+    {
+      "id": 0,
+      "artists": 0,
+      "name": "kuron0",
+      "title": "Kuron's deck",
+      "featured": 0,
+      "cards": []
+    },
+    {
+      "id": 1,
+      "artists": 1,
+      "name": "taka0",
+      "title": "Taka's deck",
+      "featured": 1,
+      "cards": []
+    },
+    {
+      "id": 2,
+      "artists": 2,
+      "name": "ackey0",
+      "title": "Ackey's deck",
+      "featured": 0,
+      "cards": []
+    }
+  ]
 }

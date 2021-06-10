@@ -5,7 +5,9 @@ import {
 } from "@web3-react/injected-connector";
 import { UnsupportedChainIdError } from "@web3-react/core";
 
-export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] });
+export const injected = new InjectedConnector({
+  supportedChainIds: [1, 3, 4, 5, 42],
+});
 
 export function getErrorMessage(error) {
   if (error instanceof NoEthereumProviderError) {

@@ -1,22 +1,22 @@
 {
-    "data": [
-        {
-            "id": 0,
-            "name": "kuron",
-            "img": "",
-            "decks": []
-        },
-        {
-            "id": 1,
-            "name": "katou.taka",
-            "img": "Taka's deck",
-            "decks": []
-        },
-        {
-            "id": 2,
-            "name": "yoshizawa.akiho",
-            "img": "Ackey's deck",
-            "decks": []
-        }
-    ]
+  "data": [
+    {
+      "id": 0,
+      "name": "kuron",
+      "img": "",
+      "decks": []
+    },
+    {
+      "id": 1,
+      "name": "katou.taka",
+      "img": "Taka's deck",
+      "decks": []
+    },
+    {
+      "id": 2,
+      "name": "yoshizawa.akiho",
+      "img": "Ackey's deck",
+      "decks": []
+    }
+  ]
 }
