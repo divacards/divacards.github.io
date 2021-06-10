@@ -8,10 +8,10 @@ import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
 
 //Data from JSON
-// import artists from "../public/data/artists.json";
-// import decks from "../public/data/decks.json";
+import artists from "../public/data/artists.json";
+import decks from "../public/data/decks.json";
 // import cards from "../public/data/cards.json";
-import { consistDecksArr } from "../util";
+import { consistDecksArr, fetchArtists, fetchDecks } from "../util";
 
 const arr_data = consistDecksArr();
 
@@ -29,6 +29,11 @@ function reducer(state, action) {
             suite = [...suite, action.data];
         }
         return {...state, suite };
+    case "deck":
+        let deck = action.data || { value: null };
+        return {...state, deck: deck.value};
+    case "artist":
+        return {...state, artist: action.data};
     case "order":
         return {...state, order: action.data};
     default:;
@@ -66,6 +71,7 @@ const DeckFilters = (props) => {
             placeholder="Select a deck"
             options={props.deckOpts}
             onChange={props.onDeckSelect}
+            isClearable
           ></CustomSelect>
           <CustomSelect
             id="artist-select"
@@ -81,16 +87,8 @@ const DeckFilters = (props) => {
 };
 
 export default function Collections() {
-    const deckOpts = [
-        { value: "standard", label: "Standard decks" },
-        { value: "curated", label: "Curated decks" },
-        { value: "all", label: "All decks" },
-    ];
-
-    const artistOpts = [
-        { value: "taka", label: "Taka" },
-        { value: "akiho", label: "Akiho" },
-    ];
+    const deckOpts = decks.data.map(({id, name, title}) => ({value: id, label: title}));
+    const artistOpts = artists.data.map(({id, name}) => ({value: id, label: name}));
 
     const suiteOpts = [
         { value: "s", label: "Spades" },
@@ -155,18 +153,17 @@ export default function Collections() {
 
     const [state, dispatch] = useReducer(reducer, {
         blockchain: "Ether",
-        deck: "",
+        deck: null,
         artist: [],
         suite: [],
         order: 0,
     });
-    const {blockchain, suite, order} = state;
+    const {blockchain, suite, deck, artist, order} = state;
     const onBlockchainSelect = data => dispatch({type: "change:blockchain", data});
     const onSuiteSelect = data => dispatch({type: "change:suite", data});
+    const onDeckSelect = data => dispatch({type: "change:deck", data});
+    const onArtistSelect = data => dispatch({type: "change:artist", data});
     const onOrderSelect = data => dispatch({type: "change:order", data});
-
-    const [deckSelected, onDeckSelect] = useState(null);
-    const [artistSelected, onArtistSelect] = useState([]);
 
     const showSelected = (selected) => {
         let text = "[DEBUG] You selected ";
@@ -189,12 +186,22 @@ export default function Collections() {
         }
         return suite.includes(card.poker_suite);
     };
-    const artistsFilter = (card) => {
-        return true;
+    const deckFilter = (card) => {
+        if (deck == null) {
+            return true;
+        }
+        return deck == card.deck;
+    };
+
+    const artistsFilter = (deck) => {
+        if (artist.length == 0) {
+            return true;
+        }
+        return artist.map(({value}) => value).includes(deck.id);
     };
     const withFilters = filters => cards => [cards, ...filters].reduce((result, y) => result.filter(y));
     // TODO move to utils part useFilter(args)
-    const useFilter = withFilters([suiteFilter]);
+    const useFilter = withFilters([suiteFilter, deckFilter]);
     // const showDeckViewer = (artistsSelected, decksMap, order) => {
     //     const artists = artistsSelected.map((item) => item.value);
     //     const decks = [];
@@ -227,10 +234,12 @@ export default function Collections() {
     const showDeckViewer = () => {
         return (
             <>
-              {arr_data.map((deck, index) => (
+              {arr_data.
+               filter(artistsFilter).
+               map((deck, index) => (
                   <DeckViewer
                     key={`${deck.artistsDetail.name}-${deck.id}`}
-                    artist={deck.artistsDetail}
+                    deck={deck}
                     title={deck.title}
                     cards={deck.cards}
                     reversed={order == 1}
