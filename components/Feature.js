@@ -17,7 +17,10 @@ const FeatureText = (props) => {
 };
 const FeatureImage = (props) => {
   return (
-    <div className="w-full md:w-1/2 aos-init aos-animate" data-aos={props.dataAos}>
+    <div
+      className="w-full md:w-1/2 aos-init aos-animate"
+      data-aos={props.dataAos}
+    >
       <img
         className="mx-auto pt-8 sm:pt-0 object-contain px-4 w-5/6 md:w-9/12"
         src={props.img}

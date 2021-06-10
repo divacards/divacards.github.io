@@ -19,6 +19,12 @@ import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
 import Wallet from "../boxes/Wallet";
 
+const BLOCKCHAIN_OPTS = [
+  { value: "0", label: "BSC" },
+  { value: "1", label: "Ethereum" },
+  { value: "2", label: "Matic" },
+];
+
 const Logo = (props) => {
   return (
     <button className="focus:outline-none p-4 lg:p-0">
@@ -57,20 +63,20 @@ const AccountMenu = (props) => {
 
   return (
     <nav className="flex flex-col lg:flex-row p-4 lg:p-0">
-      {!active ? <BigButton /> : <Wallet {...props}/>}
+      {!active ? <BigButton /> : <Wallet {...props} />}
     </nav>
   );
 };
 const LeftBar = () => {
-    return (
-        <div className="flex flex-col lg:flex-row">
-          <Logo className="justify-start" name="diva.cards"/>
-          <PageLinker />
-        </div>
-    );
+  return (
+    <div className="flex flex-col lg:flex-row">
+      <Logo className="justify-start" name="diva.cards" />
+      <PageLinker />
+    </div>
+  );
 };
 const RightBar = (props) => {
-    return <AccountMenu className="justify-start" {...props}/>;
+  return <AccountMenu className="justify-start" {...props} />;
 };
 const Header = (props) => {
   const { library, chainId, account, error } = useWeb3React();
@@ -134,16 +140,22 @@ const Header = (props) => {
   return (
     <>
       <header className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-        <LeftBar/>
-        <RightBar {...props}/>
+        <LeftBar />
+        <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
       </header>
       <div className="mx-auto text-center">
         <p>Account: {account === null ? "no account" : account}</p>
         <p>
           Balance:{" "}
-          {balance === null ? "Not connected" : balance ? formatEther(balance) : ""}
+          {balance === null
+            ? "Not connected"
+            : balance
+            ? formatEther(balance)
+            : ""}
         </p>
-        <p>Block number: {blockNumber === null ? "Error" : blockNumber ?? ""}</p>
+        <p>
+          Block number: {blockNumber === null ? "Error" : blockNumber ?? ""}
+        </p>
         <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
       </div>
     </>

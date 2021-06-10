@@ -9,7 +9,9 @@ import {
 const ServiceHeader = (props) => {
   return (
     <div className="lg:text-center">
-      <p className="uppercase font-semibold text-pink-400">{props.sectionName}</p>
+      <p className="uppercase font-semibold text-pink-400">
+        {props.sectionName}
+      </p>
       <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
         {props.title}
       </h2>
@@ -63,7 +65,13 @@ const Service = () => {
         ></ServiceHeader>
         <div className="mt-10 relative mx-auto grid lg:grid-cols-2 gap-10 content-center">
           <ServiceItem
-            icon={<GlobeIcon height={height} width={width} className="text-pink-500" />}
+            icon={
+              <GlobeIcon
+                height={height}
+                width={width}
+                className="text-pink-500"
+              />
+            }
             title="Service #1"
             desc={services[0].desc}
           ></ServiceItem>
@@ -80,13 +88,23 @@ const Service = () => {
           ></ServiceItem>
           <ServiceItem
             icon={
-              <LibraryIcon height={height} width={width} className="text-pink-500" />
+              <LibraryIcon
+                height={height}
+                width={width}
+                className="text-pink-500"
+              />
             }
             title="Service #3"
             desc={services[2].desc}
           ></ServiceItem>
           <ServiceItem
-            icon={<ChatIcon height={height} width={width} className="text-pink-500" />}
+            icon={
+              <ChatIcon
+                height={height}
+                width={width}
+                className="text-pink-500"
+              />
+            }
             title="Service #4"
             desc={services[3].desc}
           ></ServiceItem>
