@@ -200,6 +200,7 @@ export default function Collections() {
         return artist.map(({value}) => value).includes(deck.id);
     };
     const withFilters = filters => cards => [cards, ...filters].reduce((result, y) => result.filter(y));
+
     // TODO move to utils part useFilter(args)
     const useFilter = withFilters([suiteFilter, deckFilter]);
     // const showDeckViewer = (artistsSelected, decksMap, order) => {
@@ -231,6 +232,7 @@ export default function Collections() {
     //         </>
     //     );
     // };
+
     const showDeckViewer = () => {
         return (
             <>
