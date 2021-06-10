@@ -8,8 +8,12 @@ import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
 
 //Data from JSON
-import cards from "../public/data/cards.json";
-import decks from "../public/data/decks.json";
+// import artists from "../public/data/artists.json";
+// import decks from "../public/data/decks.json";
+// import cards from "../public/data/cards.json";
+import { consistDecksArr } from "../util";
+
+const arr_data = consistDecksArr();
 
 function reducer(state, action) {
     const reg = /change:(.*)/;
@@ -180,6 +184,9 @@ export default function Collections() {
     };
 
     const suiteFilter = (card) => {
+        if (suite.length == 0) {
+            return true;
+        }
         return suite.includes(card.poker_suite);
     };
     const artistsFilter = (card) => {
@@ -188,26 +195,42 @@ export default function Collections() {
     const withFilters = filters => cards => [cards, ...filters].reduce((result, y) => result.filter(y));
     // TODO move to utils part useFilter(args)
     const useFilter = withFilters([suiteFilter]);
-    const showDeckViewer = (artistsSelected, decksMap, order) => {
-        const artists = artistsSelected.map((item) => item.value);
-        const decks = [];
-        if (artists.length === 0) {
-            // show all
-            decks.push(...Object.entries(decksMap));
-        } else {
-            // show selected
-            for (const [key, deck] of Object.entries(decksMap)) {
-                if (artists.includes(key)) {
-                    decks.push([key, deck]);
-                }
-            }
-        }
+    // const showDeckViewer = (artistsSelected, decksMap, order) => {
+    //     const artists = artistsSelected.map((item) => item.value);
+    //     const decks = [];
+    //     if (artists.length === 0) {
+    //         // show all
+    //         decks.push(...Object.entries(decksMap));
+    //     } else {
+    //         // show selected
+    //         for (const [key, deck] of Object.entries(decksMap)) {
+    //             if (artists.includes(key)) {
+    //                 decks.push([key, deck]);
+    //             }
+    //         }
+    //     }
 
+    //     return (
+    //         <>
+    //           {decks.map(([key, deck], index) => (
+    //               <DeckViewer
+    //                 key={key + "-" + index}
+    //                 title={deck.title}
+    //                 cards={deck.cards}
+    //                 reversed={order == 1}
+    //                 useFilter={useFilter}
+    //               />
+    //           ))}
+    //         </>
+    //     );
+    // };
+    const showDeckViewer = () => {
         return (
             <>
-              {decks.map(([key, deck], index) => (
+              {arr_data.map((deck, index) => (
                   <DeckViewer
-                    key={key + "-" + index}
+                    key={`${deck.artistsDetail.name}-${deck.id}`}
+                    artist={deck.artistsDetail}
                     title={deck.title}
                     cards={deck.cards}
                     reversed={order == 1}
@@ -217,13 +240,6 @@ export default function Collections() {
             </>
         );
     };
-    // const showDeckViewer = (cards, decks, artists) => {
-    //     return (
-    //         <>
-    //           {}
-    //         </>
-    //     )
-    // };
 
     return (
         <Layout pageTitle="diva cards">
@@ -249,7 +265,7 @@ export default function Collections() {
                {showSelected(artistSelected)}
                {showSelected(orderSelected)}
                </div> */}
-            {showDeckViewer(artistSelected, decksMap, order)}
+            {showDeckViewer()}
           </main>
           <Footer />
         </Layout>

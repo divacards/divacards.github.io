@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DeckViewer = ({title, cards = [], useFilter = x => x, reversed}) => {
+const DeckViewer = ({title, cards = [], artist, useFilter = x => x, reversed}) => {
     if (reversed) {
         cards.reverse();
     }
@@ -11,8 +11,8 @@ const DeckViewer = ({title, cards = [], useFilter = x => x, reversed}) => {
             </div>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
                 {useFilter(cards).map((card) => (
-                    <div key={card.name} className="flex flex-col gap-2">
-                        <img className="mx-auto w-1/2 lg:w-10/12 rounded" src={card.img}></img>
+                    <div key={card.id} className="flex flex-col gap-2">
+                        <img className="mx-auto w-1/2 lg:w-10/12 rounded" src="./images/back0.svg"></img>
                         <span className="mx-auto font-cursive">{card.name}</span>
                     </div>
                 ))}
