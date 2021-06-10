@@ -35,7 +35,7 @@ function reducer(state, action) {
       return { ...state, deck: deck.value };
     case "artist":
       return { ...state, artist: action.data };
-    case "order":
+  case "order":
       return { ...state, order: action.data };
     default:
   }
@@ -43,15 +43,16 @@ function reducer(state, action) {
 }
 const CardFilters = (props) => {
   return (
-    <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
-      <SuiteFilters
+      <section className="flex lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+        <div className="w-1/4 flex flex-row justify-around">
+          <SuiteFilters
         id="suite-select"
         instanceid="suite-select"
         opts={props.suiteOpts}
         state={props.suite}
         onChange={props.onSuiteSelect}
-      />
-
+          />
+        </div>
       <OrderFilters
         id="order-select"
         instanceId="order-select"
@@ -103,52 +104,52 @@ export default function Collections() {
     { value: "j", label: "Jokers" },
   ];
 
-  const kuronDeck = {
-    title: "kuron's deck",
-    cards: [
-      { name: "[kuron] placeholder A", img: "./images/H10.svg" },
-      { name: "[kuron] placeholder B", img: "./images/back0.svg" },
-      { name: "[kuron] placeholder C", img: "./images/H10.svg" },
-      { name: "[kuron] placeholder D", img: "./images/back0.svg" },
-      { name: "[kuron] placeholder E", img: "./images/H10.svg" },
-      { name: "[kuron] placeholder F", img: "./images/back0.svg" },
-      { name: "[kuron] placeholder G", img: "./images/H10.svg" },
-    ],
-  };
+  // const kuronDeck = {
+  //   title: "kuron's deck",
+  //   cards: [
+  //     { name: "[kuron] placeholder A", img: "./images/H10.svg" },
+  //     { name: "[kuron] placeholder B", img: "./images/back0.svg" },
+  //     { name: "[kuron] placeholder C", img: "./images/H10.svg" },
+  //     { name: "[kuron] placeholder D", img: "./images/back0.svg" },
+  //     { name: "[kuron] placeholder E", img: "./images/H10.svg" },
+  //     { name: "[kuron] placeholder F", img: "./images/back0.svg" },
+  //     { name: "[kuron] placeholder G", img: "./images/H10.svg" },
+  //   ],
+  // };
 
-  const takaDeck = {
-    title: "taka's deck",
-    cards: [
-      { name: "[taka] placeholder A", img: "./images/back0.svg" },
-      { name: "[taka] placeholder B", img: "./images/back3.svg" },
-      { name: "[taka] placeholder C", img: "./images/back0.svg" },
-      { name: "[taka] placeholder D", img: "./images/back3.svg" },
-      { name: "[taka] placeholder E", img: "./images/back0.svg" },
-      { name: "[taka] placeholder F", img: "./images/back3.svg" },
-      { name: "[taka] placeholder G", img: "./images/back0.svg" },
-      { name: "[taka] placeholder H", img: "./images/back3.svg" },
-    ],
-  };
+  // const takaDeck = {
+  //   title: "taka's deck",
+  //   cards: [
+  //     { name: "[taka] placeholder A", img: "./images/back0.svg" },
+  //     { name: "[taka] placeholder B", img: "./images/back3.svg" },
+  //     { name: "[taka] placeholder C", img: "./images/back0.svg" },
+  //     { name: "[taka] placeholder D", img: "./images/back3.svg" },
+  //     { name: "[taka] placeholder E", img: "./images/back0.svg" },
+  //     { name: "[taka] placeholder F", img: "./images/back3.svg" },
+  //     { name: "[taka] placeholder G", img: "./images/back0.svg" },
+  //     { name: "[taka] placeholder H", img: "./images/back3.svg" },
+  //   ],
+  // };
 
-  const akihoDeck = {
-    title: "akiho's deck",
-    cards: [
-      { name: "[akiho] placeholder A", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder B", img: "./images/back3.svg" },
-      { name: "[akiho] placeholder C", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder D", img: "./images/back3.svg" },
-      { name: "[akiho] placeholder E", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder F", img: "./images/back3.svg" },
-      { name: "[akiho] placeholder G", img: "./images/back0.svg" },
-      { name: "[akiho] placeholder H", img: "./images/back3.svg" },
-    ],
-  };
+  // const akihoDeck = {
+  //   title: "akiho's deck",
+  //   cards: [
+  //     { name: "[akiho] placeholder A", img: "./images/back0.svg" },
+  //     { name: "[akiho] placeholder B", img: "./images/back3.svg" },
+  //     { name: "[akiho] placeholder C", img: "./images/back0.svg" },
+  //     { name: "[akiho] placeholder D", img: "./images/back3.svg" },
+  //     { name: "[akiho] placeholder E", img: "./images/back0.svg" },
+  //     { name: "[akiho] placeholder F", img: "./images/back3.svg" },
+  //     { name: "[akiho] placeholder G", img: "./images/back0.svg" },
+    //     { name: "[akiho] <pla></pla>ceholder H", img: "./images/back3.svg" },
+  //   ],
+  // };
 
-  const decksMap = {
-    kuron: kuronDeck,
-    akiho: akihoDeck,
-    taka: takaDeck,
-  };
+  // const decksMap = {
+  //   kuron: kuronDeck,
+  //   akiho: akihoDeck,
+  //   taka: takaDeck,
+  // };
 
   const [state, dispatch] = useReducer(reducer, {
     blockchain: "Ether",
@@ -158,8 +159,7 @@ export default function Collections() {
     order: 0,
   });
   const { blockchain, suite, deck, artist, order } = state;
-  const onBlockchainSelect = (data) =>
-    dispatch({ type: "change:blockchain", data });
+  const onBlockchainSelect = (data) => dispatch({ type: "change:blockchain", data });
   const onSuiteSelect = (data) => dispatch({ type: "change:suite", data });
   const onDeckSelect = (data) => dispatch({ type: "change:deck", data });
   const onArtistSelect = (data) => dispatch({ type: "change:artist", data });
@@ -192,7 +192,6 @@ export default function Collections() {
     }
     return deck == card.deck;
   };
-
   const artistsFilter = (deck) => {
     if (artist.length == 0) {
       return true;
