@@ -43,7 +43,7 @@ const ChainIcon = ({ value, label, state, onChange }) => {
 
 const BlockchainFilters = ({ opts, onChange, state }) => {
   return (
-    <section className="flex flex-row justify-end w-auto">
+    <section className="flex flex-row justify-around">
       <CustomRadioGroup
         id="blockchain-select"
         items={opts}

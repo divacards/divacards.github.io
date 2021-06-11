@@ -20,9 +20,9 @@ import PageLinker from "../boxes/PageLinker";
 import Wallet from "../boxes/Wallet";
 
 const BLOCKCHAIN_OPTS = [
-  { value: "0", label: "BSC" },
-  { value: "1", label: "Ethereum" },
-  { value: "2", label: "Matic" },
+    { value: "0", label: "BSC", unit: "BNB" },
+    { value: "1", label: "Ethereum", unit: "ETH" },
+    { value: "2", label: "Matic", unit: "MATIC" },
 ];
 
 const Logo = (props) => {
@@ -69,7 +69,7 @@ const AccountMenu = (props) => {
 };
 const LeftBar = () => {
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-row">
       <Logo className="justify-start" name="diva.cards" />
       <PageLinker />
     </div>
@@ -139,7 +139,7 @@ const Header = (props) => {
 
   return (
     <>
-      <header className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+      <header className="flex flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
         <LeftBar />
         <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
       </header>

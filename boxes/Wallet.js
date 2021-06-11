@@ -67,14 +67,15 @@ const Wallet = (props) => {
       };
     }
   }, [account, library, chainId]);
-
+  const chain = props.blockchainOpts.find(chain => chain.value === props.blockchain) || {};
+  const unit = chain.unit || "UNKNOWN";
   return (
     <Menu as="div" className="relative mx-auto inline-block py-4 text-left">
       {({ open }) => (
         <>
           <Menu.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300 left-0">
             <span className="px-2 my-auto text-highlight">
-              {balance ? formatEther(balance) : ""} ETH
+              {balance ? formatEther(balance) : ""} {unit}
             </span>
             <Avatar value={account}></Avatar>
           </Menu.Button>
@@ -91,21 +92,23 @@ const Wallet = (props) => {
             <Menu.Items className="flex flex-col origin-top-right absolute right-0 mt-2 w-48 lg:w-auto rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300 z-10">
               <div className="py-1">
                 <Menu.Item>
-                  <div className="flex flex-row gap-1">
-                    <span className="text-black font-semibold opacity-75 m-auto">
-                      {account === null
-                        ? "no account"
-                        : shortenETHAddr(account)}
-                    </span>
+                  <div className="flex flex-row justify-around gap-10">
+                    <div className="flex flex-row gap-1 px-3">
+                      <span className="text-black font-semibold opacity-75 m-auto">
+                        {account === null
+                         ? "no account"
+                         : shortenETHAddr(account)}
+                      </span>
 
-                    <button className="inline my-auto w-4 h-4">
-                      <ClipboardCopyIcon
-                        className="text-gray-500 opacity-75"
-                        onClick={() => {
-                          navigator.clipboard.writeText(account);
-                        }}
-                      ></ClipboardCopyIcon>
-                    </button>
+                      <button className="inline my-auto w-4 h-4">
+                        <ClipboardCopyIcon
+                          className="text-gray-500 opacity-75"
+                          onClick={() => {
+                              navigator.clipboard.writeText(account);
+                          }}
+                        ></ClipboardCopyIcon>
+                      </button>
+                    </div>
                     <BlockchainFilters
                       opts={props.blockchainOpts}
                       onChange={props.onBlockchainSelect}
@@ -118,7 +121,7 @@ const Wallet = (props) => {
                 <Menu.Item>
                   <WalletItem
                     label="Balance:"
-                    value={`${balance ? formatEther(balance) : ""} ETH`}
+                    value={`${balance ? formatEther(balance) : ""} ${unit}`}
                   />
                 </Menu.Item>
                 <Menu.Item>

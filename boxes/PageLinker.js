@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import PageLink from "../components/PageLink";
+import { MenuIcon } from "@heroicons/react/solid";
 
 const PageLinker = () => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const PageLinker = () => {
   ];
   return (
     <div>
-      <div className="hidden lg:flex">
+      <div className="lg:flex hidden">
         {pageLinks.map(({ text, href }) => (
           <PageLink
             key={text}
@@ -22,7 +23,9 @@ const PageLinker = () => {
           />
         ))}
       </div>
-      <div className="block lg:hidden">here's mobile menu type</div>
+      <div>
+        <MenuIcon className="w-8 m-auto"/>
+      </div>
     </div>
   );
 };
