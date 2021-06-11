@@ -8,35 +8,35 @@ const SuiteItem = ({ value, label, state = [], onChange }) => {
     case "s":
       return (
         <span
-          className={withCheck("icon-spades w-2 m-auto", checked)}
+          className={withCheck("icon-spades w-2 px-2 m-auto", checked)}
           onClick={(e) => onChange(value)}
         />
       );
     case "h":
       return (
         <span
-          className={withCheck("icon-hearts w-2 m-auto", checked)}
+          className={withCheck("icon-hearts w-2 px-2 m-auto", checked)}
           onClick={(e) => onChange(value)}
         />
       );
     case "c":
       return (
         <span
-          className={withCheck("icon-clubs w-2 m-auto", checked)}
+          className={withCheck("icon-clubs w-2 px-2 m-auto", checked)}
           onClick={(e) => onChange(value)}
         />
       );
     case "d":
       return (
         <span
-          className={withCheck("icon-diamonds w-2 m-auto", checked)}
+          className={withCheck("icon-diamonds w-2 px-2 m-auto", checked)}
           onClick={(e) => onChange(value)}
         />
       );
     case "j":
       return (
         <span
-          className={withCheck("icon-joker w-2 m-auto", checked)}
+          className={withCheck("icon-joker w-2 px-2 m-auto", checked)}
           onClick={(e) => onChange(value)}
         />
       );

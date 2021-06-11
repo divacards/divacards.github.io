@@ -26,7 +26,7 @@ export const consistDecksArr = () => {
 
   const arr_data = Object.values(decks)
     .map((deck) => ({ ...deck, artistsDetail: artists[deck.artists] }))
-    .sort((x, y) => (x.value < y.value ? 1 : -1));
+    .sort((x, y) => (x.rarity < y.rarity ? 1 : -1));
   return arr_data;
 };
 
