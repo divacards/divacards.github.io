@@ -273,7 +273,7 @@ export default function Collections() {
                {showSelected(artistSelected)}
                {showSelected(orderSelected)}
                </div> */}
-            {showDeckViewer()}
+            {/*{showDeckViewer()}*/}
           </main>
           <Footer />
         </Layout>
