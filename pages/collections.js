@@ -43,7 +43,7 @@ function reducer(state, action) {
 }
 const CardFilters = (props) => {
     return (
-        <section className="flex lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+        <section className="card-filter-region">
           <div className="w-1/4 flex flex-row justify-around">
             <SuiteFilters
               id="suite-select"
@@ -65,7 +65,7 @@ const CardFilters = (props) => {
 
 const DeckFilters = (props) => {
     return (
-        <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+        <section className="flex justify-start lg-section">
           <CustomSelect
             id="deck-select"
             instanceId="deck-select"
@@ -253,19 +253,21 @@ export default function Collections() {
         <Layout pageTitle="diva cards">
           <Header onBlockchainSelect={onBlockchainSelect} blockchain={blockchain} />
           <main>
-            <DeckFilters
-              deckOpts={deckOpts}
-              onDeckSelect={onDeckSelect}
-              artistOpts={artistOpts}
-              onArtistSelect={onArtistSelect}
-            ></DeckFilters>
-            <CardFilters
-              suite={suite}
-              order={order}
-              suiteOpts={suiteOpts}
-              onSuiteSelect={onSuiteSelect}
-              onOrderSelect={onOrderSelect}
-            ></CardFilters>
+            <div className="lg-content desktop-filter-region">
+              <DeckFilters
+                deckOpts={deckOpts}
+                onDeckSelect={onDeckSelect}
+                artistOpts={artistOpts}
+                onArtistSelect={onArtistSelect}
+              ></DeckFilters>
+              <CardFilters
+                suite={suite}
+                order={order}
+                suiteOpts={suiteOpts}
+                onSuiteSelect={onSuiteSelect}
+                onOrderSelect={onOrderSelect}
+              ></CardFilters>
+            </div>
             {/* <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
                {showSelected(deckSelected)}
                {showSelected(suiteSelected)}

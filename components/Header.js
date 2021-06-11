@@ -220,7 +220,8 @@ const Header = (props) => {
     //   <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
     // </div>
   return (
-    // <>
+      // <>
+      // flex flex-row justify-between w-main mx-auto bg-white shadow-lg rounded-lg lg-header
     //   <header className="flex flex-row  justify-between max-w-screen-xl mx-auto px-6 bg-white shadow-lg rounded-lg h-1 lg:items-center lg:px-20 lg:py-8">
     //     <LeftBar />
     //     <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
