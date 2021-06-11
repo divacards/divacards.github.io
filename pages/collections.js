@@ -43,7 +43,7 @@ function reducer(state, action) {
 }
 const CardFilters = (props) => {
     return (
-        <section className="flex lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+        <section className="card-filter-region">
           <div className="w-1/4 flex flex-row justify-around">
             <SuiteFilters
               id="suite-select"
@@ -65,7 +65,7 @@ const CardFilters = (props) => {
 
 const DeckFilters = (props) => {
     return (
-        <section className="flex flex-col lg:flex-row lg:ms-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-2">
+        <section className="flex justify-start lg-section">
           <CustomSelect
             id="deck-select"
             instanceId="deck-select"
@@ -198,11 +198,10 @@ export default function Collections() {
         }
         return artist.map(({ value }) => value).includes(deck.id);
     };
-    const withFilters = (filters) => (cards) =>
-          [cards, ...filters].reduce((result, y) => result.filter(y));
+    const withFilters = (filters) => (cards) => [cards, ...filters].reduce((result, y) => result.filter(y));
 
     // TODO move to utils part useFilter(args)
-    const useFilter = withFilters([suiteFilter, deckFilter]);
+    const useFilter = withFilters([suiteFilter, deckFilter]) || ((x) => x);
     // const showDeckViewer = (artistsSelected, decksMap, order) => {
     //     const artists = artistsSelected.map((item) => item.value);
     //     const decks = [];
@@ -232,17 +231,26 @@ export default function Collections() {
     //         </>
     //     );
     // };
-    const showDeckViewer = () => {
+
+    let sum_cards = 0;
+    const arr_decks = arr_data.filter(artistsFilter).map((deck, index) => {
+        let f_cards = useFilter(deck.cards);
+        sum_cards += f_cards.length;
+        return {
+            ...deck, cards: f_cards,
+        };
+    });
+    const showDeckViewer = (decks) => {
         return (
             <>
-              {arr_data.filter(artistsFilter).map((deck, index) => (
+              {decks.map((deck, index) => (
                   <DeckViewer
                     key={`${deck.artistsDetail.name}-${deck.id}`}
                     deck={deck}
                     title={deck.title}
                     cards={deck.cards}
                     reversed={order == 1}
-                    useFilter={useFilter}
+                    /* useFilter={useFilter} */
                   />
               ))}
             </>
@@ -253,19 +261,24 @@ export default function Collections() {
         <Layout pageTitle="diva cards">
           <Header onBlockchainSelect={onBlockchainSelect} blockchain={blockchain} />
           <main>
-            <DeckFilters
-              deckOpts={deckOpts}
-              onDeckSelect={onDeckSelect}
-              artistOpts={artistOpts}
-              onArtistSelect={onArtistSelect}
-            ></DeckFilters>
-            <CardFilters
-              suite={suite}
-              order={order}
-              suiteOpts={suiteOpts}
-              onSuiteSelect={onSuiteSelect}
-              onOrderSelect={onOrderSelect}
-            ></CardFilters>
+            <div className="lg-content desktop-filter-region">
+              <DeckFilters
+                deckOpts={deckOpts}
+                onDeckSelect={onDeckSelect}
+                artistOpts={artistOpts}
+                onArtistSelect={onArtistSelect}
+              ></DeckFilters>
+              <CardFilters
+                suite={suite}
+                order={order}
+                suiteOpts={suiteOpts}
+                onSuiteSelect={onSuiteSelect}
+                onOrderSelect={onOrderSelect}
+              ></CardFilters>
+            </div>
+            <div className="hidden lg:block lg-content px-2 -mb-10">
+              {sum_cards} Cards found
+            </div>
             {/* <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
                {showSelected(deckSelected)}
                {showSelected(suiteSelected)}
@@ -273,7 +286,7 @@ export default function Collections() {
                {showSelected(artistSelected)}
                {showSelected(orderSelected)}
                </div> */}
-            {showDeckViewer()}
+            {showDeckViewer(arr_decks)}
           </main>
           <Footer />
         </Layout>

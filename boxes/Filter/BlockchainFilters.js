@@ -21,12 +21,12 @@ const ChainIcon = ({ value, label, state, onChange }) => {
           className={withCheck("icon-ethereum-eth-logo w-8 m-auto", checked)}
           onClick={(e) => onChange(value)}
         >
-          <span className={withCheck("path1", checked)} />
-          <span className={withCheck("path2", checked)} />
-          <span className={withCheck("path3", checked)} />
-          <span className={withCheck("path4", checked)} />
-          <span className={withCheck("path5", checked)} />
-          <span className={withCheck("path6", checked)} />
+          <span className={withCheck("path1 multi-icon", checked)} />
+          <span className={withCheck("path2 multi-icon", checked)} />
+          <span className={withCheck("path3 multi-icon", checked)} />
+          <span className={withCheck("path4 multi-icon", checked)} />
+          <span className={withCheck("path5 multi-icon", checked)} />
+          <span className={withCheck("path6 multi-icon", checked)} />
         </span>
       );
     case "2":

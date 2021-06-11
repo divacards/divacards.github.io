@@ -5,8 +5,8 @@ const OrderFilters = ({ state, onChange }) => {
   switch (state) {
     case 0:
       return (
-        <div className="flex flex-row">
-          <span>Rarity</span>
+          <div className="flex flex-row">
+          <span className="py-2">Rarity</span>
           <SortAscendingIcon
             className="w-8 m-auto"
             onClick={(e) => onChange(1)}
@@ -16,7 +16,7 @@ const OrderFilters = ({ state, onChange }) => {
     case 1:
       return (
         <div className="flex flex-row">
-          <span>Rarity</span>
+          <span className="py-2">Rarity</span>
           <SortDescendingIcon
             className="w-8 m-auto"
             onClick={(e) => onChange(0)}
