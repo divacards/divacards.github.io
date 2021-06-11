@@ -6,7 +6,7 @@ import { useWeb3React } from "@web3-react/core";
 import { formatEther } from "@ethersproject/units";
 
 import { Menu, Transition } from "@headlessui/react";
-import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { SwitchHorizontalIcon, ClipboardCopyIcon } from "@heroicons/react/outline";
 import { InlineIcon } from "@iconify/react";
 
 import classNames from "classnames";
@@ -39,18 +39,16 @@ const Logo = (props) => {
 
 const BigButton = () => {
   const { activate, active } = useWeb3React();
-
+    // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
-    <button
-      className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 btn-pink text-white focus:outline-none"
+    <SwitchHorizontalIcon
+      className="w-8 rounded-full bg-gray-300 text-indigo-500"
       onClick={() => {
         if (!active) {
           activate(injected);
         }
       }}
-    >
-      Connect Wallet
-    </button>
+    />
   );
 };
 
@@ -69,7 +67,7 @@ const AccountMenu = (props) => {
 };
 const LeftBar = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row gap-3">
       <Logo className="justify-start" name="diva.cards" />
       <PageLinker />
     </div>
