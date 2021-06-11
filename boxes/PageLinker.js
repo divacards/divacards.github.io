@@ -7,6 +7,7 @@ const PageLinker = () => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
+    { href: "/", text: "Home" },
     { href: "/collections", text: "Collections" },
     { href: "/artists", text: "Artists" },
     { href: "/forge", text: "Forge" },

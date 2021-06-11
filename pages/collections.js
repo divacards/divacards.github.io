@@ -25,7 +25,7 @@ function reducer(state, action) {
         let suite = state.suite;
         let index = suite.indexOf(action.data);
         if (index > -1) {
-            suite.splice(index);
+            suite.splice(index, 1);
         } else {
             suite = [...suite, action.data];
         }
@@ -65,7 +65,7 @@ const CardFilters = (props) => {
 
 const DeckFilters = (props) => {
     return (
-        <section className="flex justify-start lg-section">
+        <section className="flex justify-start lg-section gap-1">
           <CustomSelect
             id="deck-select"
             instanceId="deck-select"
