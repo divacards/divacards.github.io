@@ -25,7 +25,7 @@ function reducer(state, action) {
         let suite = state.suite;
         let index = suite.indexOf(action.data);
         if (index > -1) {
-            suite.splice(index);
+            suite.splice(index, 1);
         } else {
             suite = [...suite, action.data];
         }
