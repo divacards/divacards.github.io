@@ -151,7 +151,7 @@ const Header = (props) => {
     // </div>
   return (
     <>
-      <header className="flex flex-row justify-between w-main mx-auto bg-white shadow-lg rounded-lg lg-header">
+      <header className="headerbar flex flex-row justify-between bg-white shadow-lg rounded-lg lg-header">
         <LeftBar />
         <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
       </header>

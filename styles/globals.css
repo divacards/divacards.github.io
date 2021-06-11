@@ -41,4 +41,7 @@
   .page-selected {
       @apply bg-pink-500 font-bold text-white p-4 rounded-lg;
   }
+  .headerbar {
+      @apply lg:h-16 lg:mx-10 lg:w-auto;
+  }
 }
