@@ -18,4 +18,23 @@
   .text-highlight {
     @apply text-purple-500 font-semibold;
   }
+  .w-main {
+      @apply lg:w-11/12;
+  }
+  .lg-header {
+      @apply lg:items-center lg:px-5 lg:py-0;
+  }
+  .lg-content {
+      @apply lg:w-11/12 lg:mx-auto lg:py-2;
+  }
+  .lg-section {
+      @apply lg:flex-row lg-content;
+  }
+
+  .desktop-filter-region {
+      @apply lg:flex lg:flex-row lg:justify-between;
+  }
+  .card-filter-region {
+      @apply flex lg-section justify-between lg:justify-end lg:gap-9;
+  }
 }
