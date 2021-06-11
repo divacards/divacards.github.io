@@ -20,7 +20,7 @@ const CustomSelect = (props) => {
           neutral10: "lavender",
         },
       })}
-      className="p-1 w-12/12 lg:w-3/12"
+      className="w-12/12 lg:w-3/12"
     />
   );
 };

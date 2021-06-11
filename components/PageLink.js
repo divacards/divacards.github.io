@@ -7,7 +7,7 @@ const PageLink = ({ text, href, selected }) => {
   return (
     <Button key={text}>
       <Link href={href}>
-        <span className={selected ? "font-bold" : null}>{text}</span>
+        <span className={selected ? "page-selected" : null}>{text}</span>
       </Link>
     </Button>
   );
