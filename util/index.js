@@ -31,4 +31,4 @@ export const consistDecksArr = () => {
 };
 
 export const withCheck = (classname, checked) =>
-  `${classname} ${checked ? "" : "invalid"}`;
+  `${classname} ${checked ? "valid" : "invalid"}`;

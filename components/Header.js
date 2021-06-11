@@ -136,28 +136,27 @@ const Header = (props) => {
       };
     }
   }, [account, library, chainId]);
-
+    // <div className="mx-auto text-center">
+    //   <p>Account: {account === null ? "no account" : account}</p>
+    //   <p>
+    //     Balance:{" "}
+    //     {balance === null
+    //      ? "Not connected"
+    //      : balance
+    //      ? formatEther(balance)
+    //      : ""}
+    //   </p>
+    //   <p>
+    //     Block number: {blockNumber === null ? "Error" : blockNumber ?? ""}
+    //   </p>
+    //   <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
+    // </div>
   return (
     <>
-      <header className="flex flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
+      <header className="flex flex-row  justify-between max-w-screen-xl mx-auto px-6 bg-white shadow-lg rounded-lg h-1 lg:items-center lg:px-20 lg:py-8">
         <LeftBar />
         <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
       </header>
-      <div className="mx-auto text-center">
-        <p>Account: {account === null ? "no account" : account}</p>
-        <p>
-          Balance:{" "}
-          {balance === null
-            ? "Not connected"
-            : balance
-            ? formatEther(balance)
-            : ""}
-        </p>
-        <p>
-          Block number: {blockNumber === null ? "Error" : blockNumber ?? ""}
-        </p>
-        <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
-      </div>
     </>
   );
 };
