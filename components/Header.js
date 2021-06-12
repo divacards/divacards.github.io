@@ -252,7 +252,7 @@ const Header = (props) => {
             <Popover.Panel
               focus
               static
-              className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden"
+              className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden z-10"
             >
               <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5 h-screen">
