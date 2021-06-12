@@ -6,7 +6,10 @@ import { useWeb3React } from "@web3-react/core";
 import { formatEther } from "@ethersproject/units";
 
 import { Menu, Transition } from "@headlessui/react";
-import { SwitchHorizontalIcon, ClipboardCopyIcon } from "@heroicons/react/outline";
+import {
+  SwitchHorizontalIcon,
+  ClipboardCopyIcon,
+} from "@heroicons/react/outline";
 import { InlineIcon } from "@iconify/react";
 
 import classNames from "classnames";
@@ -19,48 +22,50 @@ import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
 import Wallet from "../boxes/Wallet";
 
-
 // JASON
-import { Popover } from '@headlessui/react'
+import { Popover } from "@headlessui/react";
 import {
   CursorClickIcon,
   MenuIcon,
   RefreshIcon,
   ViewGridIcon,
   XIcon,
-} from '@heroicons/react/outline'
+} from "@heroicons/react/outline";
 import { ChevronDownIcon, InformationCircleIcon } from "@heroicons/react/solid";
 
 const solutions = [
   {
-    name: 'about',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    name: "about",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
     icon: InformationCircleIcon,
   },
   {
-    name: 'collections',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    name: "collections",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
     icon: CursorClickIcon,
   },
   {
-    name: 'artists',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    name: "artists",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
     icon: ViewGridIcon,
   },
   {
-    name: 'forge',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    name: "forge",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
     icon: RefreshIcon,
   },
-]
+];
 const resources = [
   // { name: 'Guides', description: 'Learn how to maximize our platform to get the most out of it.', href: '#' },
-]
-
+];
 
 const BLOCKCHAIN_OPTS = [
   { value: "0", label: "BSC", unit: "BNB" },
@@ -126,81 +131,34 @@ const MobileLeftBar = () => {
     { href: "/artists", name: "artists" },
     { href: "/forge", name: "forge" },
   ];
-  return <div className="mt-6">
-    <nav className="grid gap-2">
-      {pageLinks.map((item) => (
-        <Link
-          key={item.name}
-          href={item.href}
-          className={`-m-3 flex items-center hover:bg-gray-50`}
-        >
-          <span className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name ? 'text-white bg-pink-500' : 'text-pink-500'} capitalize`}>{item.name}</span>
-        </Link>
-      ))}
-    </nav>
-  </div>
+  return (
+    <div className="mt-6">
+      <nav className="grid gap-2">
+        {pageLinks.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            className={`-m-3 flex items-center hover:bg-gray-50`}
+          >
+            <span
+              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${
+                router.pathname.slice(1) === item.name
+                  ? "text-white bg-pink-500"
+                  : "text-pink-500"
+              } capitalize`}
+            >
+              {item.name}
+            </span>
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
 };
 const RightBar = (props) => {
   return <AccountMenu className="justify-start" {...props} />;
 };
 const Header = (props) => {
-  const { library, chainId, account, error } = useWeb3React();
-  const [balance, setBalance] = React.useState();
-  const [blockNumber, setBlockNumber] = useState();
-
-  React.useEffect(() => {
-    if (!!library) {
-      let stale = false;
-
-      library
-        .getBlockNumber()
-        .then((blockNumber) => {
-          if (!stale) {
-            setBlockNumber(blockNumber);
-          }
-        })
-        .catch(() => {
-          if (!stale) {
-            setBlockNumber(null);
-          }
-        });
-
-      const updateBlockNumber = (blockNumber) => {
-        setBlockNumber(blockNumber);
-      };
-      library.on("block", updateBlockNumber);
-
-      return () => {
-        stale = true;
-        library.removeListener("block", updateBlockNumber);
-        setBlockNumber(undefined);
-      };
-    }
-  }, [library, chainId]); // ensures refresh if referential identity of library doesn't change across chainIds
-
-  React.useEffect(() => {
-    if (!!account && !!library) {
-      let stale = false;
-
-      library
-        .getBalance(account)
-        .then((balance) => {
-          if (!stale) {
-            setBalance(balance);
-          }
-        })
-        .catch(() => {
-          if (!stale) {
-            setBalance(null);
-          }
-        });
-
-      return () => {
-        stale = true;
-        setBalance(undefined);
-      };
-    }
-  }, [account, library, chainId]);
   return (
     <Popover className="relative">
       {({ open }) => (
@@ -213,17 +171,21 @@ const Header = (props) => {
               </a>
             </div>
             <div className="-mr-2 pt-3 space-x-3 md:hidden">
-              <Popover.Button className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+              <Popover.Button
+                className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
                       items-center justify-center text-pink-400 hover:text-gray-500
                       hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500">
+                      focus:ring-inset focus:ring-indigo-500"
+              >
                 <span className="sr-only">Open menu</span>
                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
-              <Popover.Button className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-3 inline-flex
+              <Popover.Button
+                className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-3 inline-flex
                       items-center justify-center text-pink-400 hover:text-gray-500
                       hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500">
+                      focus:ring-inset focus:ring-indigo-500"
+              >
                 <span className="sr-only">Open wallet</span>
                 <Avatar className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
@@ -255,26 +217,32 @@ const Header = (props) => {
               className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden z-10"
             >
               <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5 h-screen">
-                </div>
+                <div className="pt-5 pb-6 px-5 h-screen"></div>
               </div>
               <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
                     <div>
-                      <Popover.Button className="bg-white rounded-full py-5 px-8 p-2 inline-flex
+                      <Popover.Button
+                        className="bg-white rounded-full py-5 px-8 p-2 inline-flex
                       items-center justify-center text-pink-400 hover:text-gray-500
                       hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500 ">
+                      focus:ring-inset focus:ring-indigo-500 "
+                      >
                         <span>Language</span>
-                        <ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
+                        <ChevronDownIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
                       </Popover.Button>
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-full h-16 w-16 p-2 inline-flex
+                      <Popover.Button
+                        className="bg-white rounded-full h-16 w-16 p-2 inline-flex
                       items-center justify-center text-pink-400 hover:text-gray-500
                       hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500">
+                      focus:ring-inset focus:ring-indigo-500"
+                      >
                         <span className="sr-only">Close menu</span>
                         <XIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
