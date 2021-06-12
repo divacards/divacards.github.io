@@ -121,7 +121,7 @@ const MobileLeftBar = () => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
-    { href: "/about", name: "about" },
+    { href: "/about", name: "home" },
     { href: "/collections", name: "collections" },
     { href: "/artists", name: "artists" },
     { href: "/forge", name: "forge" },
@@ -241,8 +241,7 @@ const Header = (props) => {
           {/*    </Popover.Button>*/}
           {/*  </div>*/}
           {/*</div>*/}
-          <div className="flex flex-row justify-between max-w-screen-xl mx-auto px-6 bg-white lg:shadow-lg lg:rounded-lg
-                          lg:items-center lg:px-20 lg:py-8 lg:h-1 sm:px-6 md:justify-start md:space-x-10">
+          <div className="flex flex-row justify-between lg-headerbar px-6 bg-white sm:px-6 md:justify-start md:space-x-10">
             <div>
               <a href="#" className="flex">
                 <span className="sr-only">Workflow</span>
