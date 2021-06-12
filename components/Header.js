@@ -159,40 +159,6 @@ const RightBar = (props) => {
   return <AccountMenu className="justify-start" {...props} />;
 };
 const Header = (props) => {
-  const { library, chainId, account, error } = useWeb3React();
-  const [balance, setBalance] = React.useState();
-  const [blockNumber, setBlockNumber] = useState();
-
-  React.useEffect(() => {
-    if (!!library) {
-      let stale = false;
-
-      library
-        .getBlockNumber()
-        .then((blockNumber) => {
-          if (!stale) {
-            setBlockNumber(blockNumber);
-          }
-        })
-        .catch(() => {
-          if (!stale) {
-            setBlockNumber(null);
-          }
-        });
-
-      const updateBlockNumber = (blockNumber) => {
-        setBlockNumber(blockNumber);
-      };
-      library.on("block", updateBlockNumber);
-
-      return () => {
-        stale = true;
-        library.removeListener("block", updateBlockNumber);
-        setBlockNumber(undefined);
-      };
-    }
-  }, [library, chainId]); // ensures refresh if referential identity of library doesn't change across chainIds
-
   return (
     <Popover className="relative">
       {({ open }) => (

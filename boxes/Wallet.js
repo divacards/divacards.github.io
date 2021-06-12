@@ -53,6 +53,26 @@ const Wallet = (props) => {
     fetcher: fetcher(library),
   });
 
+  const { data: blockNumber, mutate } = useSWR(
+    [chainId, "getBlockNumber", "latest"],
+    {
+      fetcher: fetcher(library),
+    }
+  );
+
+  useEffect(() => {
+    console.log("subcribing for blocks...");
+    library.on("block", () => {
+      console.log("update block number...");
+      mutate(undefined, true);
+    });
+
+    return () => {
+      console.log("unsubscribing for blocks..");
+      library.removeAllListeners("block");
+    };
+  }, []);
+
   const chain =
     props.blockchainOpts.find((chain) => chain.value === props.blockchain) ||
     {};
@@ -66,6 +86,7 @@ const Wallet = (props) => {
             <span className="px-2 my-auto text-highlight">
               {balance ? formatEther(balance) : ""} {unit}
             </span>
+            <span>{blockNumber}</span>
             <Avatar value={account}></Avatar>
           </Menu.Button>
           <Transition
