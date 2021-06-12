@@ -121,7 +121,7 @@ const MobileLeftBar = () => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
-    { href: "/about", name: "home" },
+    { href: "/", name: "home" },
     { href: "/collections", name: "collections" },
     { href: "/artists", name: "artists" },
     { href: "/forge", name: "forge" },
