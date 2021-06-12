@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['"Quattrocento Sans"', "sans-serif"],
-      cursive: ['"Pirata One"', "cursive"],
+      cursive: ['"Germania One"', "cursive"],
     },
     extend: {
       boxShadow: {
