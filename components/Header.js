@@ -70,9 +70,9 @@ const BLOCKCHAIN_OPTS = [
 
 const Logo = (props) => {
   return (
-    <button className="focus:outline-none p-4 lg:p-0">
+    <button className="focus:outline-none p-4 lg:p-10">
       <h1 className="flex items-center no-underline">
-        <span className="text-4xl text-lightpink tracking-tight font-cursive">
+        <span className="text-4xl text-lightpink tracking-normal font-cursive font-light">
           <Link href="/">{props.name}</Link>
         </span>
       </h1>
@@ -85,7 +85,7 @@ const BigButton = () => {
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
     <SwitchHorizontalIcon
-      className="w-8 rounded-full bg-gray-300 text-indigo-500"
+      className="w-8 rounded-full bg-gray-300 text-indigo-500 p-1"
       onClick={() => {
         if (!active) {
           activate(injected);
@@ -205,7 +205,7 @@ const Header = (props) => {
     <Popover className="relative">
       {({ open }) => (
         <>
-          <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10">
+          <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
             <div>
               <a href="#" className="flex">
                 <span className="sr-only">Workflow</span>
