@@ -43,7 +43,7 @@ function reducer(state, action) {
 }
 const CardFilters = (props) => {
     return (
-        <section className="card-filter-region">
+        <section className="card-filter-region ml-10 mr-2 mt-2 lg:ml-0 lg:mt-0 lg:mr-0">
           <div className="w-1/4 flex flex-row justify-around">
             <SuiteFilters
               id="suite-select"
@@ -65,7 +65,7 @@ const CardFilters = (props) => {
 
 const DeckFilters = (props) => {
     return (
-        <section className="flex justify-start lg-section gap-1">
+        <section className="flex justify-around lg:justify-start lg-section gap-1">
           <CustomSelect
             id="deck-select"
             instanceId="deck-select"

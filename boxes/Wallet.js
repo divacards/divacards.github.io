@@ -135,9 +135,6 @@ const Wallet = (props) => {
                     >
                       Disconnect
                     </button>
-                    <button className="px-4 py-2 bg-pink-500 text-white">
-                      View Items
-                    </button>
                   </div>
                 </Menu.Item>
               </div>

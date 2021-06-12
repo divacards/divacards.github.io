@@ -218,29 +218,9 @@ const Header = (props) => {
     //   <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
     // </div>
   return (
-      // <>
-      // flex flex-row justify-between w-main mx-auto bg-white shadow-lg rounded-lg lg-header
-    //   <header className="flex flex-row  justify-between max-w-screen-xl mx-auto px-6 bg-white shadow-lg rounded-lg h-1 lg:items-center lg:px-20 lg:py-8">
-    //     <LeftBar />
-    //     <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
-    //   </header>
-    // </>
     <Popover className="relative">
       {({ open }) => (
         <>
-          {/*<div className="flex flex-row justify-between max-w-screen-xl mx-auto px-6 bg-white shadow-lg rounded-lg h-1 lg:items-center lg:px-20 lg:py-8">*/}
-          {/*  <div className="-mr-2 -my-2">*/}
-          {/*    <LeftBar />*/}
-          {/*    <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">*/}
-          {/*      <span className="sr-only">Open menu</span>*/}
-          {/*      <MenuIcon className="h-6 w-6" aria-hidden="true" />*/}
-          {/*    </Popover.Button>*/}
-          {/*    <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">*/}
-          {/*      <span className="sr-only">Open wallet</span>*/}
-          {/*      <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />*/}
-          {/*    </Popover.Button>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
           <div className="flex flex-row justify-between lg-headerbar px-6 bg-white sm:px-6 md:justify-start md:space-x-10">
             <div>
               <a href="#" className="flex">
@@ -288,7 +268,7 @@ const Header = (props) => {
             <Popover.Panel
               focus
               static
-              className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden"
+              className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden z-10"
             >
               <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5 h-screen">
