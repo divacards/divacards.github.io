@@ -1,20 +1,24 @@
 import React, { Fragment, useEffect } from "react";
 import classNames from "classnames";
+import { useWeb3React } from "@web3-react/core";
+import useSWR from "swr";
+import { formatEther } from "@ethersproject/units";
 
 import { InlineIcon } from "@iconify/react";
 import { ClipboardCopyIcon } from "@heroicons/react/outline";
 import { Menu, Transition } from "@headlessui/react";
+
+import { fetcher } from "../fetcher";
+
 import { ETH_ICON } from "../components/Icon";
 import Avatar from "../components/Avatar";
 import { BlockchainFilters } from "./Filter";
-
-import { useWeb3React } from "@web3-react/core";
-import { formatEther } from "@ethersproject/units";
 
 function shortenETHAddr(addr) {
   const len = addr.length;
   return addr.substring(0, 8) + ".." + addr.substring(len - 6, len);
 }
+
 const MenuItem = (props) => (
   <Menu.Item onClick={props.onClick}>
     {({ active }) => (
@@ -30,6 +34,7 @@ const MenuItem = (props) => (
     )}
   </Menu.Item>
 );
+
 const WalletItem = ({ label, value }) => {
   return (
     <div className="flex px-3 py-1 text-md">
@@ -39,36 +44,20 @@ const WalletItem = ({ label, value }) => {
     </div>
   );
 };
+
 const Wallet = (props) => {
   const { deactivate, active } = useWeb3React();
   const { library, chainId, account } = useWeb3React();
-  const [balance, setBalance] = React.useState();
 
-  useEffect(() => {
-    if (!!account && !!library) {
-      let stale = false;
+  const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
+    fetcher: fetcher(library),
+  });
 
-      library
-        .getBalance(account)
-        .then((balance) => {
-          if (!stale) {
-            setBalance(balance);
-          }
-        })
-        .catch(() => {
-          if (!stale) {
-            setBalance(null);
-          }
-        });
-
-      return () => {
-        stale = true;
-        setBalance(undefined);
-      };
-    }
-  }, [account, library, chainId]);
-  const chain = props.blockchainOpts.find(chain => chain.value === props.blockchain) || {};
+  const chain =
+    props.blockchainOpts.find((chain) => chain.value === props.blockchain) ||
+    {};
   const unit = chain.unit || "UNKNOWN";
+
   return (
     <Menu as="div" className="relative mx-auto inline-block py-4 text-left">
       {({ open }) => (
@@ -96,15 +85,15 @@ const Wallet = (props) => {
                     <div className="flex flex-row gap-1 px-3">
                       <span className="text-black font-semibold opacity-75 m-auto">
                         {account === null
-                         ? "no account"
-                         : shortenETHAddr(account)}
+                          ? "no account"
+                          : shortenETHAddr(account)}
                       </span>
 
                       <button className="inline my-auto w-4 h-4">
                         <ClipboardCopyIcon
                           className="text-gray-500 opacity-75"
                           onClick={() => {
-                              navigator.clipboard.writeText(account);
+                            navigator.clipboard.writeText(account);
                           }}
                         ></ClipboardCopyIcon>
                       </button>
