@@ -63,16 +63,16 @@ const resources = [
 
 
 const BLOCKCHAIN_OPTS = [
-    { value: "0", label: "BSC", unit: "BNB" },
-    { value: "1", label: "Ethereum", unit: "ETH" },
-    { value: "2", label: "Matic", unit: "MATIC" },
+  { value: "0", label: "BSC", unit: "BNB" },
+  { value: "1", label: "Ethereum", unit: "ETH" },
+  { value: "2", label: "Matic", unit: "MATIC" },
 ];
 
 const Logo = (props) => {
   return (
     <button className="focus:outline-none p-4 lg:p-0">
       <h1 className="flex items-center no-underline">
-        <span className="text-4xl text-lightpink font-bold tracking-tight font-cursive">
+        <span className="text-4xl text-lightpink tracking-tight font-cursive">
           <Link href="/">{props.name}</Link>
         </span>
       </h1>
@@ -82,7 +82,7 @@ const Logo = (props) => {
 
 const BigButton = () => {
   const { activate, active } = useWeb3React();
-    // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
+  // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
     <SwitchHorizontalIcon
       className="w-8 rounded-full bg-gray-300 text-indigo-500"
@@ -110,7 +110,7 @@ const AccountMenu = (props) => {
 };
 const LeftBar = () => {
   return (
-    <div className="flex flex-row gap-3">
+    <div className="flex flex-row">
       <Logo className="justify-start" name="diva.cards" />
       <PageLinker />
     </div>
@@ -132,10 +132,9 @@ const MobileLeftBar = () => {
         <Link
           key={item.name}
           href={item.href}
-          // className={`-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50 ${router.pathname.slice(1) === item.name? 'bg-pink-500':''}`}
           className={`-m-3 flex items-center hover:bg-gray-50`}
         >
-          <span className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name? 'text-white bg-pink-500':'text-pink-500'} capitalize`}>{item.name}</span>
+          <span className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name ? 'text-white bg-pink-500' : 'text-pink-500'} capitalize`}>{item.name}</span>
         </Link>
       ))}
     </nav>
@@ -202,26 +201,11 @@ const Header = (props) => {
       };
     }
   }, [account, library, chainId]);
-    // <div className="mx-auto text-center">
-    //   <p>Account: {account === null ? "no account" : account}</p>
-    //   <p>
-    //     Balance:{" "}
-    //     {balance === null
-    //      ? "Not connected"
-    //      : balance
-    //      ? formatEther(balance)
-    //      : ""}
-    //   </p>
-    //   <p>
-    //     Block number: {blockNumber === null ? "Error" : blockNumber ?? ""}
-    //   </p>
-    //   <p>Error: {!error ? "No error" : getErrorMessage(error)}</p>
-    // </div>
   return (
     <Popover className="relative">
       {({ open }) => (
         <>
-          <div className="flex flex-row justify-between lg-headerbar px-6 bg-white sm:px-6 md:justify-start md:space-x-10">
+          <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10">
             <div>
               <a href="#" className="flex">
                 <span className="sr-only">Workflow</span>
@@ -298,12 +282,9 @@ const Header = (props) => {
                   </div>
                 </div>
               </div>
-              {/*<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-transparent divide-y-2 divide-gray-50">*/}
-              {/*  */}
-              {/*</div>*/}
               <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
-                  <MobileLeftBar/>
+                  <MobileLeftBar />
                 </div>
               </div>
             </Popover.Panel>
