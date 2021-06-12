@@ -23,14 +23,6 @@ const PageLinker = () => {
         />
       ))}
     </Fragment>
-    // <div>
-    //   <div className="lg:flex hidden">
-    //
-    //   </div>
-    //   <div className="lg:hidden block round-full">
-    //     <MenuIcon className="w-8 m-auto"/>
-    //   </div>
-    // </div>
   );
 };
 
