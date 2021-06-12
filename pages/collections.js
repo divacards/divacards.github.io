@@ -86,7 +86,7 @@ const DeckFilters = (props) => {
     );
 };
 
-export default function Collections() {
+export default function Collections({blockchain, setBlockchain}) {
     const deckOpts = decks.data.map(({ id, name, title }) => ({
         value: id,
         label: title,
@@ -158,8 +158,7 @@ export default function Collections() {
         suite: [],
         order: 0,
     });
-    const { blockchain, suite, deck, artist, order } = state;
-    const onBlockchainSelect = (data) => dispatch({ type: "change:blockchain", data });
+    const { suite, deck, artist, order } = state;
     const onSuiteSelect = (data) => dispatch({ type: "change:suite", data });
     const onDeckSelect = (data) => dispatch({ type: "change:deck", data });
     const onArtistSelect = (data) => dispatch({ type: "change:artist", data });
@@ -259,7 +258,7 @@ export default function Collections() {
 
     return (
         <Layout pageTitle="diva cards">
-          <Header onBlockchainSelect={onBlockchainSelect} blockchain={blockchain} />
+          <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />
           <main>
             <div className="lg-content desktop-filter-region">
               <DeckFilters

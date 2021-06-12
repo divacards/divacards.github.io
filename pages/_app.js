@@ -1,5 +1,5 @@
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import "aos/dist/aos.css";
@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }) {
       duration: 600,
     });
   }, []);
+  const [blockchain, setBlockchain] = useState("0");
 
+  pageProps = {...pageProps, blockchain, setBlockchain};
   return (
     <>
       <Head>
@@ -31,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <Component {...pageProps} />
+      <Component {...pageProps } />
     </>
   );
 }
