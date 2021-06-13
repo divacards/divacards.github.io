@@ -101,7 +101,9 @@ const Wallet = () => {
             <span className="px-2 my-auto text-highlight">
               {balance ? formatEther(balance) : ""} {currencyConf.main}
             </span>
-            <span>{wethBalance ? formatEther(wethBalance) : ""}</span>
+            <span className="px-2 my-auto text-highlight">
+              {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
+            </span>
             <Avatar value={account}></Avatar>
           </Menu.Button>
           <Transition
@@ -144,6 +146,14 @@ const Wallet = () => {
                     label="Balance:"
                     value={`${balance ? formatEther(balance) : ""} ${
                       currencyConf.main
+                    }`}
+                  />
+                </Menu.Item>
+                <Menu.Item>
+                  <WalletItem
+                    label="Wrapped Balance:"
+                    value={`${wethBalance ? formatEther(wethBalance) : ""} ${
+                      paymentConf.symbol
                     }`}
                   />
                 </Menu.Item>
