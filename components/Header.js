@@ -12,8 +12,7 @@ import {
 } from "@heroicons/react/outline";
 import { InlineIcon } from "@iconify/react";
 
-import classNames from "classnames";
-
+import { BSC_CHAINID, ETH_MAINNET_CHAINID, MATIC_CHAINID } from "../consts";
 import { useEagerConnect, useInactiveListener } from "../hooks";
 import { getErrorMessage, injected } from "../connectors";
 
@@ -63,14 +62,9 @@ const solutions = [
     icon: RefreshIcon,
   },
 ];
+
 const resources = [
   // { name: 'Guides', description: 'Learn how to maximize our platform to get the most out of it.', href: '#' },
-];
-
-const BLOCKCHAIN_OPTS = [
-  { value: "0", label: "BSC", unit: "BNB" },
-  { value: "1", label: "Ethereum", unit: "ETH" },
-  { value: "2", label: "Matic", unit: "MATIC" },
 ];
 
 const Logo = (props) => {
@@ -98,14 +92,14 @@ const BigButton = () => {
   );
 };
 
-const AccountMenu = (props) => {
+const AccountMenu = () => {
   const { active } = useWeb3React();
   const triedEager = useEagerConnect();
   useInactiveListener(!triedEager);
 
   return (
     <nav className="flex flex-col lg:flex-row p-4 lg:p-0">
-      {!active ? <BigButton /> : <Wallet {...props} />}
+      {!active ? <BigButton /> : <Wallet />}
     </nav>
   );
 };
@@ -152,9 +146,11 @@ const MobileLeftBar = () => {
     </div>
   );
 };
-const RightBar = (props) => {
-  return <AccountMenu className="justify-start" {...props} />;
+
+const RightBar = () => {
+  return <AccountMenu className="justify-start" />;
 };
+
 const Header = (props) => {
   return (
     <Popover as="header" className="relative">
@@ -191,7 +187,7 @@ const Header = (props) => {
               </header>
               <div className="flex items-center md:ml-12">
                 <span className="sr-only">Open wallet</span>
-                <RightBar blockchainOpts={BLOCKCHAIN_OPTS} {...props} />
+                <RightBar />
               </div>
             </div>
           </div>

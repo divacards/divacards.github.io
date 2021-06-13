@@ -16,9 +16,7 @@ function MyApp({ Component, pageProps }) {
       duration: 600,
     });
   }, []);
-  const [blockchain, setBlockchain] = useState("0");
 
-  pageProps = { ...pageProps, blockchain, setBlockchain };
   return (
     <>
       <Head>
