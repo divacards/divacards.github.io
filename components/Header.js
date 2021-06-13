@@ -75,13 +75,11 @@ const BLOCKCHAIN_OPTS = [
 
 const Logo = (props) => {
   return (
-    <button className="focus:outline-none p-4 lg:p-10">
-      <h1 className="flex items-center no-underline">
-        <span className="text-4xl text-lightpink tracking-normal font-cursive font-light">
-          <Link href="/">{props.name}</Link>
-        </span>
-      </h1>
-    </button>
+    <h1 className="flex items-center no-underline">
+      <span className="text-4xl text-lightpink tracking-normal font-cursive font-light">
+        <Link href="/">{props.name}</Link>
+      </span>
+    </h1>
   );
 };
 
@@ -141,11 +139,10 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${
-                router.pathname.slice(1) === item.name
+              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name
                   ? "text-white bg-pink-500"
                   : "text-pink-500"
-              } capitalize`}
+                } capitalize`}
             >
               {item.name}
             </span>
