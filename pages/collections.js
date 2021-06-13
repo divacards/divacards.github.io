@@ -19,46 +19,46 @@ function reducer(state, action) {
     const reg = /change:(.*)/;
     const key = action.type.match(reg) || [undefined, undefined];
     switch (key[1]) {
-    case "blockchain":
-        return { ...state, blockchain: action.data };
-    case "suite":
-        let suite = state.suite;
-        let index = suite.indexOf(action.data);
-        if (index > -1) {
-            suite.splice(index, 1);
-        } else {
-            suite = [...suite, action.data];
-        }
-        return { ...state, suite };
-    case "deck":
-        let deck = action.data || { value: null };
-        return { ...state, deck: deck.value };
-    case "artist":
-        return { ...state, artist: action.data };
-    case "order":
-        return { ...state, order: action.data };
-    default:
+        case "blockchain":
+            return { ...state, blockchain: action.data };
+        case "suite":
+            let suite = state.suite;
+            let index = suite.indexOf(action.data);
+            if (index > -1) {
+                suite.splice(index, 1);
+            } else {
+                suite = [...suite, action.data];
+            }
+            return { ...state, suite };
+        case "deck":
+            let deck = action.data || { value: null };
+            return { ...state, deck: deck.value };
+        case "artist":
+            return { ...state, artist: action.data };
+        case "order":
+            return { ...state, order: action.data };
+        default:
     }
     return state;
 }
 const CardFilters = (props) => {
     return (
         <section className="card-filter-region ml-10 mr-2 mt-2 lg:ml-0 lg:mt-0 lg:mr-0">
-          <div className="w-1/4 flex flex-row justify-around">
-            <SuiteFilters
-              id="suite-select"
-              instanceid="suite-select"
-              opts={props.suiteOpts}
-              state={props.suite}
-              onChange={props.onSuiteSelect}
+            <div className="w-1/4 flex flex-row justify-around">
+                <SuiteFilters
+                    id="suite-select"
+                    instanceid="suite-select"
+                    opts={props.suiteOpts}
+                    state={props.suite}
+                    onChange={props.onSuiteSelect}
+                />
+            </div>
+            <OrderFilters
+                id="order-select"
+                instanceId="order-select"
+                state={props.order}
+                onChange={props.onOrderSelect}
             />
-          </div>
-          <OrderFilters
-            id="order-select"
-            instanceId="order-select"
-            state={props.order}
-            onChange={props.onOrderSelect}
-          />
         </section>
     );
 };
@@ -66,27 +66,27 @@ const CardFilters = (props) => {
 const DeckFilters = (props) => {
     return (
         <section className="flex justify-around lg:justify-start lg-section gap-1">
-          <CustomSelect
-            id="deck-select"
-            instanceId="deck-select"
-            placeholder="Select a deck"
-            options={props.deckOpts}
-            onChange={props.onDeckSelect}
-            isClearable
-          ></CustomSelect>
-          <CustomSelect
-            id="artist-select"
-            instanceId="artist-select"
-            isMulti={true}
-            placeholder="Select artists"
-            options={props.artistOpts}
-            onChange={props.onArtistSelect}
-          ></CustomSelect>
+            <CustomSelect
+                id="deck-select"
+                instanceId="deck-select"
+                placeholder="Select a deck"
+                options={props.deckOpts}
+                onChange={props.onDeckSelect}
+                isClearable
+            ></CustomSelect>
+            <CustomSelect
+                id="artist-select"
+                instanceId="artist-select"
+                isMulti={true}
+                placeholder="Select artists"
+                options={props.artistOpts}
+                onChange={props.onArtistSelect}
+            ></CustomSelect>
         </section>
     );
 };
 
-export default function Collections({blockchain, setBlockchain}) {
+export default function Collections({ blockchain, setBlockchain }) {
     const deckOpts = decks.data.map(({ id, name, title }) => ({
         value: id,
         label: title,
@@ -103,53 +103,6 @@ export default function Collections({blockchain, setBlockchain}) {
         { value: "d", label: "Diamonds" },
         { value: "j", label: "Jokers" },
     ];
-
-    // const kuronDeck = {
-    //   title: "kuron's deck",
-    //   cards: [
-    //     { name: "[kuron] placeholder A", img: "./images/H10.svg" },
-    //     { name: "[kuron] placeholder B", img: "./images/back0.svg" },
-    //     { name: "[kuron] placeholder C", img: "./images/H10.svg" },
-    //     { name: "[kuron] placeholder D", img: "./images/back0.svg" },
-    //     { name: "[kuron] placeholder E", img: "./images/H10.svg" },
-    //     { name: "[kuron] placeholder F", img: "./images/back0.svg" },
-    //     { name: "[kuron] placeholder G", img: "./images/H10.svg" },
-    //   ],
-    // };
-
-    // const takaDeck = {
-    //   title: "taka's deck",
-    //   cards: [
-    //     { name: "[taka] placeholder A", img: "./images/back0.svg" },
-    //     { name: "[taka] placeholder B", img: "./images/back3.svg" },
-    //     { name: "[taka] placeholder C", img: "./images/back0.svg" },
-    //     { name: "[taka] placeholder D", img: "./images/back3.svg" },
-    //     { name: "[taka] placeholder E", img: "./images/back0.svg" },
-    //     { name: "[taka] placeholder F", img: "./images/back3.svg" },
-    //     { name: "[taka] placeholder G", img: "./images/back0.svg" },
-    //     { name: "[taka] placeholder H", img: "./images/back3.svg" },
-    //   ],
-    // };
-
-    // const akihoDeck = {
-    //   title: "akiho's deck",
-    //   cards: [
-    //     { name: "[akiho] placeholder A", img: "./images/back0.svg" },
-    //     { name: "[akiho] placeholder B", img: "./images/back3.svg" },
-    //     { name: "[akiho] placeholder C", img: "./images/back0.svg" },
-    //     { name: "[akiho] placeholder D", img: "./images/back3.svg" },
-    //     { name: "[akiho] placeholder E", img: "./images/back0.svg" },
-    //     { name: "[akiho] placeholder F", img: "./images/back3.svg" },
-    //     { name: "[akiho] placeholder G", img: "./images/back0.svg" },
-    //     { name: "[akiho] <pla></pla>ceholder H", img: "./images/back3.svg" },
-    //   ],
-    // };
-
-    // const decksMap = {
-    //   kuron: kuronDeck,
-    //   akiho: akihoDeck,
-    //   taka: takaDeck,
-    // };
 
     const [state, dispatch] = useReducer(reducer, {
         blockchain: "0",
@@ -242,52 +195,45 @@ export default function Collections({blockchain, setBlockchain}) {
     const showDeckViewer = (decks) => {
         return (
             <>
-              {decks.map((deck, index) => (
-                  <DeckViewer
-                    key={`${deck.artistsDetail.name}-${deck.id}`}
-                    deck={deck}
-                    title={deck.title}
-                    cards={deck.cards}
-                    reversed={order == 1}
+                {decks.map((deck, index) => (
+                    <DeckViewer
+                        key={`${deck.artistsDetail.name}-${deck.id}`}
+                        deck={deck}
+                        title={deck.title}
+                        cards={deck.cards}
+                        reversed={order == 1}
                     /* useFilter={useFilter} */
-                  />
-              ))}
+                    />
+                ))}
             </>
         );
     };
 
     return (
         <Layout pageTitle="diva cards">
-          <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />
-          <main>
-            <div className="lg-content desktop-filter-region">
-              <DeckFilters
-                deckOpts={deckOpts}
-                onDeckSelect={onDeckSelect}
-                artistOpts={artistOpts}
-                onArtistSelect={onArtistSelect}
-              ></DeckFilters>
-              <CardFilters
-                suite={suite}
-                order={order}
-                suiteOpts={suiteOpts}
-                onSuiteSelect={onSuiteSelect}
-                onOrderSelect={onOrderSelect}
-              ></CardFilters>
-            </div>
-            <div className="hidden lg:block lg-content px-2 -mb-10">
-              {sum_cards} Cards found
-            </div>
-            {/* <div className="flex flex-col lg:flex-row lg:items-center justify-between max-w-screen-xl mx-auto px-6 lg:px-20 lg:py-8">
-               {showSelected(deckSelected)}
-               {showSelected(suiteSelected)}
-               {showSelected(blockchainSelected)}
-               {showSelected(artistSelected)}
-               {showSelected(orderSelected)}
-               </div> */}
-            {showDeckViewer(arr_decks)}
-          </main>
-          <Footer />
+            <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />
+            <main>
+                <section class="flex flex-row my-5 bg-white md:space-x-10 justify-between lg:max-w-screen-2xl mx-auto lg:items-center">
+                    <DeckFilters
+                        deckOpts={deckOpts}
+                        onDeckSelect={onDeckSelect}
+                        artistOpts={artistOpts}
+                        onArtistSelect={onArtistSelect}
+                    ></DeckFilters>
+                    <CardFilters
+                        suite={suite}
+                        order={order}
+                        suiteOpts={suiteOpts}
+                        onSuiteSelect={onSuiteSelect}
+                        onOrderSelect={onOrderSelect}
+                    ></CardFilters>
+                </section>
+                <div className="flex flex-row my-5 bg-white md:space-x-10 justify-between lg:max-w-screen-2xl mx-auto lg:items-center font-cursive">
+                    {sum_cards} Cards found
+                </div>
+                {showDeckViewer(arr_decks)}
+            </main>
+            <Footer />
         </Layout>
     );
 }
