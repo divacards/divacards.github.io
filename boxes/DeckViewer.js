@@ -11,24 +11,28 @@ const DeckViewer = ({
   if (reversed) {
     cards.reverse();
   }
+
   // let data = useFilter(cards);
   if (cards.length == 0) return null;
+
   return (
     <main>
-      <section className="
+      <section
+        className="
         flex flex-row border-b border-t py-5
-        2xl:max-w-screen-2xl 
+        2xl:max-w-screen-2xl
         2xl:mx-auto
-        xl:max-w-screen-xl  
+        xl:max-w-screen-xl
         xl:mx-auto
-        lg:items-center 
-        lg:mx-5
-        "
+        lg:items-center
+        lg:mx-5"
       >
         <div className="flex flex-row mx-auto">
           <FireIcon className="w-8 m-auto" />
         </div>
-        <div className="flex flex-row mx-auto font-cursive text-2xl"> {title} </div>
+        <div className="flex flex-row mx-auto font-cursive text-2xl">
+          {title}
+        </div>
         <div className="flex flex-row mx-auto">
           <FireIcon className="w-8 m-auto" />
         </div>

@@ -100,8 +100,6 @@ const BigButton = () => {
 
 const AccountMenu = (props) => {
   const { active } = useWeb3React();
-  const router = useRouter();
-
   const triedEager = useEagerConnect();
   useInactiveListener(!triedEager);
 
@@ -111,6 +109,7 @@ const AccountMenu = (props) => {
     </nav>
   );
 };
+
 const LeftBar = () => {
   return (
     <div className="flex flex-row">
@@ -139,10 +138,11 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name
-                ? "text-white bg-pink-500"
-                : "text-pink-500"
-                } capitalize`}
+              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${
+                router.pathname.slice(1) === item.name
+                  ? "text-white bg-pink-500"
+                  : "text-pink-500"
+              } capitalize`}
             >
               {item.name}
             </span>
@@ -157,15 +157,13 @@ const RightBar = (props) => {
 };
 const Header = (props) => {
   return (
-    <Popover className="relative">
+    <Popover as="header" className="relative">
       {({ open }) => (
         <>
           <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
-            <div>
-              <a href="#" className="flex">
-                <span className="sr-only">Workflow</span>
-                <Logo className="justify-start" name="diva.cards" />
-              </a>
+            <div className="flex">
+              <span className="sr-only">Workflow</span>
+              <Logo className="justify-start" name="diva.cards" />
             </div>
             <div className="-mr-2 pt-3 space-x-3 md:hidden">
               <Popover.Button
