@@ -213,7 +213,18 @@ export default function Collections({ blockchain, setBlockchain }) {
         <Layout pageTitle="diva cards">
             <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />
             <main>
-                <section class="flex flex-row my-5 bg-white md:space-x-10 justify-between lg:max-w-screen-2xl mx-auto lg:items-center">
+                <section
+                    className="
+                        flex flex-row my-5 bg-white mx-auto justify-between 
+                        2xl:max-w-screen-2xl 
+                        2xl:px-0
+                        xl:max-w-screen-xl 
+                        xl:px-0
+                        lg:items-center 
+                        lg:px-5
+                        md:space-x-10
+                    "
+                >
                     <DeckFilters
                         deckOpts={deckOpts}
                         onDeckSelect={onDeckSelect}
@@ -228,7 +239,19 @@ export default function Collections({ blockchain, setBlockchain }) {
                         onOrderSelect={onOrderSelect}
                     ></CardFilters>
                 </section>
-                <div className="flex flex-row my-5 bg-white md:space-x-10 justify-between lg:max-w-screen-2xl mx-auto lg:items-center font-cursive">
+                <div
+                    className="
+                        flex flex-row my-5 bg-white mx-auto justify-between 
+                        2xl:max-w-screen-2xl 
+                        2xl:px-0
+                        xl:max-w-screen-xl 
+                        xl:px-0
+                        lg:items-center 
+                        lg:px-5
+                        md:space-x-10
+                        font-cursive
+                    "
+                >
                     {sum_cards} Cards found
                 </div>
                 {showDeckViewer(arr_decks)}
