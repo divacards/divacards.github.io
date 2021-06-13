@@ -4,9 +4,22 @@ import {
   UserRejectedRequestError,
 } from "@web3-react/injected-connector";
 import { UnsupportedChainIdError } from "@web3-react/core";
-
+import {
+  ETH_MAINNET_CHAINID,
+  ETH_RINKEBY_CHAINID,
+  BSC_CHAINID,
+  MATIC_CHAINID,
+} from "./consts";
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42],
+  supportedChainIds: [
+    ETH_MAINNET_CHAINID,
+    ETH_RINKEBY_CHAINID,
+    BSC_CHAINID,
+    MATIC_CHAINID,
+    3,
+    5,
+    42,
+  ],
 });
 
 export function getErrorMessage(error) {

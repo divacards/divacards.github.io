@@ -8,7 +8,14 @@ import { InlineIcon } from "@iconify/react";
 import { ClipboardCopyIcon } from "@heroicons/react/outline";
 import { Menu, Transition } from "@headlessui/react";
 
-import { fetcher } from "../fetcher";
+import { fetcher, contractFetcher } from "../fetcher";
+import {
+  CHAIN_CONFIG,
+  BSC_CHAINID,
+  ETH_MAINNET_CHAINID,
+  MATIC_CHAINID,
+} from "../consts";
+import WETH_ABI from "../abis/WETH.json";
 
 import { ETH_ICON } from "../components/Icon";
 import Avatar from "../components/Avatar";
@@ -45,7 +52,13 @@ const WalletItem = ({ label, value }) => {
   );
 };
 
-const Wallet = (props) => {
+const BLOCKCHAIN_OPTS = [
+  { value: BSC_CHAINID, label: "BSC" },
+  { value: ETH_MAINNET_CHAINID, label: "Ethereum" },
+  { value: MATIC_CHAINID, label: "Matic" },
+];
+
+const Wallet = () => {
   const { deactivate, active } = useWeb3React();
   const { library, chainId, account } = useWeb3React();
 
@@ -73,10 +86,12 @@ const Wallet = (props) => {
     };
   }, []);
 
-  const chain =
-    props.blockchainOpts.find((chain) => chain.value === props.blockchain) ||
-    {};
-  const unit = chain.unit || "UNKNOWN";
+  const currencyConf = CHAIN_CONFIG[chainId].currency;
+  const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
+  const addr = paymentConf.contract;
+  const { data: wethBalance } = useSWR([chainId, addr, "balanceOf", account], {
+    fetcher: contractFetcher(library, WETH_ABI),
+  });
 
   return (
     <Menu as="div" className="relative mx-auto inline-block py-4 text-left">
@@ -84,9 +99,9 @@ const Wallet = (props) => {
         <>
           <Menu.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300 left-0">
             <span className="px-2 my-auto text-highlight">
-              {balance ? formatEther(balance) : ""} {unit}
+              {balance ? formatEther(balance) : ""} {currencyConf.main}
             </span>
-            <span>{blockNumber}</span>
+            <span>{wethBalance ? formatEther(wethBalance) : ""}</span>
             <Avatar value={account}></Avatar>
           </Menu.Button>
           <Transition
@@ -119,11 +134,7 @@ const Wallet = (props) => {
                         ></ClipboardCopyIcon>
                       </button>
                     </div>
-                    <BlockchainFilters
-                      opts={props.blockchainOpts}
-                      onChange={props.onBlockchainSelect}
-                      state={props.blockchain}
-                    />
+                    <BlockchainFilters opts={BLOCKCHAIN_OPTS} />
                   </div>
                 </Menu.Item>
               </div>
@@ -131,7 +142,9 @@ const Wallet = (props) => {
                 <Menu.Item>
                   <WalletItem
                     label="Balance:"
-                    value={`${balance ? formatEther(balance) : ""} ${unit}`}
+                    value={`${balance ? formatEther(balance) : ""} ${
+                      currencyConf.main
+                    }`}
                   />
                 </Menu.Item>
                 <Menu.Item>

@@ -19,8 +19,6 @@ function reducer(state, action) {
   const reg = /change:(.*)/;
   const key = action.type.match(reg) || [undefined, undefined];
   switch (key[1]) {
-    case "blockchain":
-      return { ...state, blockchain: action.data };
     case "suite":
       let suite = state.suite;
       let index = suite.indexOf(action.data);
@@ -86,7 +84,7 @@ const DeckFilters = (props) => {
   );
 };
 
-export default function Collections({ blockchain, setBlockchain }) {
+export default function Collections() {
   const deckOpts = decks.data.map(({ id, name, title }) => ({
     value: id,
     label: title,
@@ -105,7 +103,6 @@ export default function Collections({ blockchain, setBlockchain }) {
   ];
 
   const [state, dispatch] = useReducer(reducer, {
-    blockchain: "0",
     deck: null,
     artist: [],
     suite: [],
@@ -213,7 +210,7 @@ export default function Collections({ blockchain, setBlockchain }) {
 
   return (
     <Layout pageTitle="diva cards">
-      <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />
+      <Header />
       <main>
         <section
           className="flex flex-col my-4 gap-2 bg-white mx-auto justify-between
