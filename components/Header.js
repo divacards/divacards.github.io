@@ -76,7 +76,7 @@ const BLOCKCHAIN_OPTS = [
 const Logo = (props) => {
   return (
     <h1 className="flex items-center no-underline">
-      <span className="text-4xl text-lightpink tracking-normal font-cursive font-light">
+      <span className="text-4xl text-lightpink tracking-normal font-cursive font-light md:my-5 sm:my-5 my-5">
         <Link href="/">{props.name}</Link>
       </span>
     </h1>
@@ -140,8 +140,8 @@ const MobileLeftBar = () => {
           >
             <span
               className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name
-                  ? "text-white bg-pink-500"
-                  : "text-pink-500"
+                ? "text-white bg-pink-500"
+                : "text-pink-500"
                 } capitalize`}
             >
               {item.name}

@@ -15,7 +15,16 @@ const DeckViewer = ({
   if (cards.length == 0) return null;
   return (
     <main>
-      <section className="flex flex-row lg:max-w-screen-2xl mx-auto lg:items-center border-b border-t py-5">
+      <section className="
+        flex flex-row border-b border-t py-5
+        2xl:max-w-screen-2xl 
+        2xl:mx-auto
+        xl:max-w-screen-xl  
+        xl:mx-auto
+        lg:items-center 
+        lg:mx-5
+        "
+      >
         <div className="flex flex-row mx-auto">
           <FireIcon className="w-8 m-auto" />
         </div>
@@ -24,7 +33,7 @@ const DeckViewer = ({
           <FireIcon className="w-8 m-auto" />
         </div>
       </section>
-      <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between lg:max-w-screen-2xl mx-auto lg:items-center font-cursive">
+      <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto lg:items-center font-cursive">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
           {cards.map((card) => (
             <div

@@ -20,7 +20,13 @@ const CustomSelect = (props) => {
           neutral10: "lavender",
         },
       })}
-      className="w-36 mt-5 lg:mt-0 lg:w-3/12"
+      className="
+        w-36 mt-5 
+        lg:mt-0 lg:w-4/12
+        xl:mt-0
+        xl:w-3/12
+        2xl:mt-0
+      "
     />
   );
 };
