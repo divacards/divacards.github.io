@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import Service from "../components/Service";
 import Footer from "../components/Footer";
 
-export default function Index({blockchain, setBlockchain}) {
+export default function Index({ blockchain, setBlockchain }) {
   return (
     <Layout pageTitle="diva cards">
       <Header onBlockchainSelect={setBlockchain} blockchain={blockchain} />

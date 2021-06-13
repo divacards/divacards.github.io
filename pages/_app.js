@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   const [blockchain, setBlockchain] = useState("0");
 
-  pageProps = {...pageProps, blockchain, setBlockchain};
+  pageProps = { ...pageProps, blockchain, setBlockchain };
   return (
     <>
       <Head>
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <Component {...pageProps } />
+      <Component {...pageProps} />
     </>
   );
 }
