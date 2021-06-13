@@ -52,12 +52,6 @@ const WalletItem = ({ label, value }) => {
   );
 };
 
-const BLOCKCHAIN_OPTS = [
-  { value: BSC_CHAINID, label: "BSC" },
-  { value: ETH_MAINNET_CHAINID, label: "Ethereum" },
-  { value: MATIC_CHAINID, label: "Matic" },
-];
-
 const Wallet = () => {
   const { deactivate, active } = useWeb3React();
   const { library, chainId, account } = useWeb3React();
@@ -136,7 +130,7 @@ const Wallet = () => {
                         ></ClipboardCopyIcon>
                       </button>
                     </div>
-                    <BlockchainFilters opts={BLOCKCHAIN_OPTS} />
+                    <BlockchainFilters />
                   </div>
                 </Menu.Item>
               </div>

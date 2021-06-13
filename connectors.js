@@ -10,15 +10,13 @@ import {
   BSC_CHAINID,
   MATIC_CHAINID,
 } from "./consts";
+
 export const injected = new InjectedConnector({
   supportedChainIds: [
     ETH_MAINNET_CHAINID,
     ETH_RINKEBY_CHAINID,
     BSC_CHAINID,
     MATIC_CHAINID,
-    3,
-    5,
-    42,
   ],
 });
 

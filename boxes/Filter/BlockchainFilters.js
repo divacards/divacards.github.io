@@ -1,7 +1,6 @@
+import React from "react";
 import { useWeb3React } from "@web3-react/core";
 
-import React from "react";
-import { CustomRadioGroup } from "../../components/Custom";
 import { withCheck } from "../../util";
 import {
   BSC_CHAINID,
@@ -10,57 +9,40 @@ import {
   MATIC_CHAINID,
 } from "../../consts";
 
-const ChainIcon = ({ value, onChange }) => {
+const BSCIcon = ({ checked }) => (
+  <span
+    className={withCheck("icon-binance-coin-bnb-logo w-8 m-auto", checked)}
+  />
+);
+
+const ETHIcon = ({ checked }) => (
+  <span className={withCheck("icon-ethereum-eth-logo w-8 m-auto", checked)}>
+    <span className={withCheck("path1 multi-icon", checked)} />
+    <span className={withCheck("path2 multi-icon", checked)} />
+    <span className={withCheck("path3 multi-icon", checked)} />
+    <span className={withCheck("path4 multi-icon", checked)} />
+    <span className={withCheck("path5 multi-icon", checked)} />
+    <span className={withCheck("path6 multi-icon", checked)} />
+  </span>
+);
+
+const MaticIcon = ({ checked }) => (
+  <span className={withCheck("icon-polygon-matic-logo w-8 m-auto", checked)} />
+);
+
+const BlockchainFilters = () => {
   const { chainId } = useWeb3React();
-  console.log(value, chainId);
 
-  const checked = chainId === value;
-  if (value === BSC_CHAINID) {
-    return (
-      <span
-        className={withCheck("icon-binance-coin-bnb-logo w-8 m-auto", checked)}
-        // onClick={(e) => onChange(value)}
-      />
-    );
-  } else if (value === ETH_MAINNET_CHAINID) {
-    return (
-      <span
-        className={withCheck(
-          "icon-ethereum-eth-logo w-8 m-auto",
-          checked || chainId == ETH_RINKEBY_CHAINID
-        )}
-        // onClick={(e) => onChange(value)}
-      >
-        <span className={withCheck("path1 multi-icon", checked)} />
-        <span className={withCheck("path2 multi-icon", checked)} />
-        <span className={withCheck("path3 multi-icon", checked)} />
-        <span className={withCheck("path4 multi-icon", checked)} />
-        <span className={withCheck("path5 multi-icon", checked)} />
-        <span className={withCheck("path6 multi-icon", checked)} />
-      </span>
-    );
-  } else if (value === MATIC_CHAINID) {
-    return (
-      <span
-        className={withCheck("icon-polygon-matic-logo w-8 m-auto", checked)}
-        // onClick={(e) => onChange(value)}
-      />
-    );
-  }
+  console.log("you are on", chainId);
 
-  return null;
-};
+  const ethChecked =
+    (chainId === ETH_MAINNET_CHAINID) | (chainId === ETH_RINKEBY_CHAINID);
 
-const BlockchainFilters = ({ opts, onChange, state }) => {
   return (
     <section className="flex flex-row justify-around">
-      <CustomRadioGroup
-        id="blockchain-select"
-        items={opts}
-        onChange={onChange}
-        state={state}
-        Child={ChainIcon}
-      />
+      <ETHIcon checked={ethChecked}></ETHIcon>
+      <BSCIcon checked={chainId === BSC_CHAINID}></BSCIcon>
+      <MaticIcon checked={chainId === MATIC_CHAINID}></MaticIcon>
     </section>
   );
 };
