@@ -19,7 +19,7 @@ import { getErrorMessage, injected } from "../connectors";
 import Button from "./Button";
 import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
-import Wallet from "../boxes/Wallet";
+import {default as Wallet, MobileWallet} from "../boxes/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
@@ -80,17 +80,20 @@ const Logo = (props) => {
 const BigButton = () => {
   const { activate, active } = useWeb3React();
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
-  return (
-    <SwitchHorizontalIcon
-      className="w-8 rounded-full bg-gray-300 text-indigo-500 p-1 h-8"
-      onClick={() => {
-        if (!active) {
-          activate(injected);
-        }
-      }}
-    />
-  );
-};
+  return <Button
+    className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+              items-center justify-center text-pink-400 hover:text-gray-500
+              hover:bg-gray-100 focus:outline-none focus:ring-2
+              focus:ring-inset focus:ring-indigo-500"
+    onTouchStart={()=>{
+      if (!active)
+        activate(injected);
+    }}
+  >
+    <span className="sr-only">Close menu when ready</span>
+    <SwitchHorizontalIcon className="h-6 w-6" aria-hidden="true" />
+  </Button>
+}
 
 const AccountMenu = () => {
   const { active } = useWeb3React();
@@ -102,6 +105,24 @@ const AccountMenu = () => {
       {!active ? <BigButton /> : <Wallet />}
     </nav>
   );
+};
+
+const MobileAccountMenu = () => {
+  const { active } = useWeb3React();
+  const triedEager = useEagerConnect();
+  useInactiveListener(!triedEager);
+
+  return !active ?
+    <BigButton />
+    : <Popover.Button
+        className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+                  items-center justify-center text-pink-400 hover:text-gray-500
+                  hover:bg-gray-100 focus:outline-none focus:ring-2
+                  focus:ring-inset focus:ring-indigo-500"
+      >
+        <span className="sr-only">Open wallet</span>
+        <Avatar className="h-6 w-6" aria-hidden="true" />
+      </Popover.Button>
 };
 
 const LeftBar = () => {
@@ -152,110 +173,151 @@ const RightBar = () => {
 
 const Header = (props) => {
   return (
-    <Popover as="header" className="relative">
-      {({ open }) => (
-        <>
-          <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
-            <div className="flex">
-              <span className="sr-only">Workflow</span>
-              <Logo className="justify-start" name="diva.cards" />
-            </div>
-            <div className="
-              -mr-2 
-              pt-2
-              space-x-3 
-              lg:hidden 
-              "
-            >
-              <Popover.Button
-                className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
-                      items-center justify-center text-pink-400 hover:text-gray-500
-                      hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500"
-              >
-                <span className="sr-only">Open menu</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
-              </Popover.Button>
-              <Popover.Button
-                className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-3 inline-flex
-                      items-center justify-center text-pink-400 hover:text-gray-500
-                      hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500"
-              >
-                <span className="sr-only">Open wallet</span>
-                <Avatar className="h-6 w-6" aria-hidden="true" />
-              </Popover.Button>
-            </div>
-            <div className="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
-              <header className="flex space-x-10">
-                <PageLinker />
-              </header>
-              <div className="flex items-center lg:ml-12">
-                <span className="sr-only">Open wallet</span>
-                <RightBar />
-              </div>
-            </div>
-          </div>
-
-          <Transition
-            show={open}
-            as={Fragment}
-            enter="duration-200 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-100 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <Popover.Panel
-              focus
-              static
-              className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
-            >
-              <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5 h-screen"></div>
-              </div>
-              <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Popover.Button
-                        className="bg-white rounded-full py-5 px-8 p-2 inline-flex
-                      items-center justify-center text-pink-400 hover:text-gray-500
-                      hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500 "
-                      >
-                        <span>Language</span>
-                        <ChevronDownIcon
-                          className="h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      </Popover.Button>
-                    </div>
-                    <div className="-mr-2">
-                      <Popover.Button
-                        className="bg-white rounded-full h-16 w-16 p-2 inline-flex
-                      items-center justify-center text-pink-400 hover:text-gray-500
-                      hover:bg-gray-100 focus:outline-none focus:ring-2
-                      focus:ring-inset focus:ring-indigo-500"
-                      >
-                        <span className="sr-only">Close menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
+    <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
+      <div className="flex">
+        <span className="sr-only">Workflow</span>
+        <Logo className="justify-start" name="diva.cards" />
+      </div>
+      <Popover.Group as="header" className="relative">
+        <div className="-mr-2 pt-2 space-x-3 lg:hidden">
+          {/*menu*/}
+          <Popover className="inline-flex">
+            {({ open }) => (
+              <Fragment>
+                <Popover.Button
+                  className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+                          items-center justify-center text-pink-400 hover:text-gray-500
+                          hover:bg-gray-100 focus:outline-none focus:ring-2
+                          focus:ring-inset focus:ring-indigo-500"
+                >
+                  <span className="sr-only">Open menu</span>
+                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                </Popover.Button>
+                <Transition
+                  show={open}
+                  as={Popover.Panel}
+                  enter="duration-200 ease-out"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="duration-100 ease-in"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                  focus
+                  static
+                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
+                >
+                  <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
+                    <div className="pt-5 pb-6 px-5 h-screen"></div>
+                  </div>
+                  <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
+                    <div className="pt-5 pb-6 px-5">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <Popover.Button
+                            className="bg-white rounded-full py-5 px-8 p-2 inline-flex
+                          items-center justify-center text-pink-400 hover:text-gray-500
+                          hover:bg-gray-100 focus:outline-none focus:ring-2
+                          focus:ring-inset focus:ring-indigo-500 "
+                          >
+                            <span>Language</span>
+                            <ChevronDownIcon
+                              className="h-6 w-6"
+                              aria-hidden="true"
+                            />
+                          </Popover.Button>
+                        </div>
+                        <div className="-mr-2">
+                          <Popover.Button
+                            className="bg-white rounded-full h-16 w-16 p-2 inline-flex
+                          items-center justify-center text-pink-400 hover:text-gray-500
+                          hover:bg-gray-100 focus:outline-none focus:ring-2
+                          focus:ring-inset focus:ring-indigo-500"
+                          >
+                            <span className="sr-only">Close menu</span>
+                            <XIcon className="h-6 w-6" aria-hidden="true" />
+                          </Popover.Button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5">
-                  <MobileLeftBar />
-                </div>
-              </div>
-            </Popover.Panel>
-          </Transition>
-        </>
-      )}
-    </Popover>
+                  <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                    <div className="pt-5 pb-6 px-5">
+                      <MobileLeftBar />
+                    </div>
+                  </div>
+                </Transition>
+              </Fragment>
+            )}
+          </Popover>
+          {/*end menu*/}
+          {/*wallet*/}
+          <Popover className="inline-flex">
+            {({ open }) => (
+              <Fragment>
+                <MobileAccountMenu />
+                <Transition
+                  show={open}
+                  as={Popover.Panel}
+                  enter="duration-200 ease-out"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="duration-100 ease-in"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                  focus
+                  static
+                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
+                >
+                  <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
+                    <div className="pt-5 pb-6 px-5 h-screen"></div>
+                  </div>
+                  <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
+                    <div className="pt-5 pb-6 px-5">
+                      <div className="flex items-center justify-between">
+                        <div />
+                        <div className="-mr-2">
+                          <Popover.Button
+                            className="bg-white rounded-full h-16 w-16 p-2 inline-flex
+                          items-center justify-center text-pink-400 hover:text-gray-500
+                          hover:bg-gray-100 focus:outline-none focus:ring-2
+                          focus:ring-inset focus:ring-indigo-500"
+                          >
+                            <span className="sr-only">Close menu</span>
+                            <XIcon className="h-6 w-6" aria-hidden="true" />
+                          </Popover.Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                    <div className="py-7 px-5">
+                        <Menu as="div" className="relative mx-auto w-full inline-block py-4 text-left">
+                        <Transition
+                          show={true}
+                          as={Fragment}>
+                          <Menu.Items className="flex flex-col focus:outline-none">
+                            <MobileWallet />
+                          </Menu.Items>
+                        </Transition>
+                        </Menu>
+                    </div>
+                  </div>
+                </Transition>
+              </Fragment>
+            )}
+          </Popover>
+        </div>
+      </Popover.Group>
+      <div className="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
+        <header className="flex space-x-10">
+          <PageLinker />
+        </header>
+        <div className="flex items-center lg:ml-12">
+          <span className="sr-only">Open wallet</span>
+          <RightBar />
+        </div>
+      </div>
+    </div>
   );
 };
 

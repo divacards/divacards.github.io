@@ -1,3 +1,4 @@
+import { StatusOfflineIcon } from "@heroicons/react/solid";
 import React, { Fragment, useEffect } from "react";
 import classNames from "classnames";
 import { useWeb3React } from "@web3-react/core";
@@ -44,7 +45,7 @@ const MenuItem = (props) => (
 
 const WalletItem = ({ label, value }) => {
   return (
-    <div className="flex px-3 py-1 text-md">
+    <div className="flex py-1 text-md">
       <label>{label}</label>
       <span className="flex-grow" />
       <span className="text-highlight">{value}</span>
@@ -172,5 +173,102 @@ const Wallet = () => {
     </Menu>
   );
 };
+
+export const MobileWallet = () => {
+
+  const { deactivate, active } = useWeb3React();
+  const { library, chainId, account } = useWeb3React();
+
+  const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
+    fetcher: fetcher(library),
+  });
+
+  const { data: blockNumber, mutate } = useSWR(
+    [chainId, "getBlockNumber", "latest"],
+    {
+      fetcher: fetcher(library),
+    }
+  );
+
+  useEffect(() => {
+    console.log("subcribing for blocks...");
+    library.on("block", () => {
+      console.log("update block number...");
+      mutate(undefined, true);
+    });
+
+    return () => {
+      console.log("unsubscribing for blocks..");
+      library.removeAllListeners("block");
+    };
+  }, []);
+
+  const currencyConf = CHAIN_CONFIG[chainId].currency;
+  const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
+  const addr = paymentConf.contract;
+  const { data: wethBalance } = useSWR([chainId, addr, "balanceOf", account], {
+    fetcher: contractFetcher(library, WETH_ABI),
+  });
+
+  // return <Menu.Items className="flex flex-col right-0 mt-2 w-48 lg:w-auto rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300 z-10">
+  //
+  // </Menu.Items>
+
+  return <Fragment>
+      <Menu.Item>
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-row gap-2">
+            <span className="text-black font-semibold opacity-75 m-auto">
+              {account === null
+                ? "no account"
+                : shortenETHAddr(account)}
+            </span>
+
+            <button className="inline my-auto w-4 h-4">
+              <ClipboardCopyIcon
+                className="text-gray-500 opacity-75"
+                onClick={() => {
+                  navigator.clipboard.writeText(account);
+                }}
+              />
+            </button>
+          </div>
+          <BlockchainFilters />
+        </div>
+      </Menu.Item>
+      <Menu.Item>
+        <div className="border-2 border-b border-pink-300 mx-6 my-7" />
+      </Menu.Item>
+      <Menu.Item>
+        <WalletItem
+          label="Balance:"
+          value={`${balance ? formatEther(balance) : ""} ${
+            currencyConf.main
+          }`}
+        />
+      </Menu.Item>
+      <Menu.Item>
+        <WalletItem
+          label="Wrapped Balance:"
+          value={`${wethBalance ? formatEther(wethBalance) : ""} ${
+            paymentConf.symbol
+          }`}
+        />
+      </Menu.Item>
+      <Menu.Item>
+        <WalletItem label="Items Count:" value={3} />
+      </Menu.Item>
+      <Menu.Item>
+        <div className="flex flex-row mt-5">
+          <button
+            className="px-4 py-2 text-sm bg-black text-white rounded-md inline-flex"
+            onClick={() => (active ? deactivate() : null)}
+          >
+            Disconnect Wallet <StatusOfflineIcon className="ml-2 h-5 w-5" aria-hidden="true" />
+          </button>
+        </div>
+      </Menu.Item>
+  </Fragment>
+}
 
 export default Wallet;
