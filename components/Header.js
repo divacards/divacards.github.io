@@ -82,7 +82,7 @@ const BigButton = () => {
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
     <SwitchHorizontalIcon
-      className="w-8 rounded-full bg-gray-300 text-indigo-500 p-1"
+      className="w-8 rounded-full bg-gray-300 text-indigo-500 p-1 h-8"
       onClick={() => {
         if (!active) {
           activate(injected);
