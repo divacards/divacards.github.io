@@ -164,7 +164,7 @@ const Header = (props) => {
               -mr-2 
               pt-2
               space-x-3 
-              md:hidden 
+              lg:hidden 
               "
             >
               <Popover.Button
@@ -186,11 +186,11 @@ const Header = (props) => {
                 <Avatar className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
+            <div className="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
               <header className="flex space-x-10">
                 <PageLinker />
               </header>
-              <div className="flex items-center md:ml-12">
+              <div className="flex items-center lg:ml-12">
                 <span className="sr-only">Open wallet</span>
                 <RightBar />
               </div>
@@ -210,7 +210,7 @@ const Header = (props) => {
             <Popover.Panel
               focus
               static
-              className="fixed bottom-0 inset-x-0 transition transform origin-bottom md:hidden z-10"
+              className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
             >
               <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5 h-screen"></div>
