@@ -45,6 +45,8 @@ const CardFilters = (props) => {
       lg:pr-0
       sm:w-full
       sm:px-6
+      nn:w-full
+      nn:px-6
     ">
       <div className="flex flex-row gap-1">
         <SuiteFilters
@@ -72,6 +74,8 @@ const DeckFilters = (props) => {
       lg:pl-0
       sm:w-full 
       sm:px-6
+      nn:w-full
+      nn:px-6
       lg:gap-4 lg:justify-start lg-section gap-1
     ">
       <CustomSelect
@@ -258,6 +262,8 @@ export default function Collections() {
                         md:space-x-10
                         sm:w-full 
                         sm:px-6 
+                        nn:w-full
+                        nn:px-6
                         font-cursive
                     "
         >
