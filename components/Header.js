@@ -19,7 +19,7 @@ import { getErrorMessage, injected } from "../connectors";
 import Button from "./Button";
 import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
-import Wallet from "../boxes/Wallet";
+import {default as Wallet, MobileWallet} from "../boxes/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
@@ -290,8 +290,16 @@ const Header = (props) => {
                     </div>
                   </div>
                   <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                    <div className="pt-5 pb-6 px-5">
-                      Nothing, is wallet
+                    <div className="py-7 px-5">
+                        <Menu as="div" className="relative mx-auto w-full inline-block py-4 text-left">
+                        <Transition
+                          show={true}
+                          as={Fragment}>
+                          <Menu.Items className="flex flex-col focus:outline-none">
+                            <MobileWallet />
+                          </Menu.Items>
+                        </Transition>
+                        </Menu>
                     </div>
                   </div>
                 </Transition>

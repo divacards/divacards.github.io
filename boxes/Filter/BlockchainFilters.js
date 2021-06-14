@@ -39,7 +39,7 @@ const BlockchainFilters = () => {
     (chainId === ETH_MAINNET_CHAINID) | (chainId === ETH_RINKEBY_CHAINID);
 
   return (
-    <section className="flex flex-row justify-around">
+    <section className="flex flex-row justify-between text-right gap-1">
       <ETHIcon checked={ethChecked}></ETHIcon>
       <BSCIcon checked={chainId === BSC_CHAINID}></BSCIcon>
       <MaticIcon checked={chainId === MATIC_CHAINID}></MaticIcon>
