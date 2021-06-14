@@ -19,7 +19,7 @@ import { getErrorMessage, injected } from "../connectors";
 import Button from "./Button";
 import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
-import {default as Wallet, MobileWallet} from "../boxes/Wallet";
+import { default as Wallet, MobileWallet } from "../boxes/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
@@ -85,7 +85,7 @@ const BigButton = () => {
               items-center justify-center text-pink-400 hover:text-gray-500
               hover:bg-gray-100 focus:outline-none focus:ring-2
               focus:ring-inset focus:ring-indigo-500"
-    onTouchStart={()=>{
+    onTouchStart={() => {
       if (!active)
         activate(injected);
     }}
@@ -115,14 +115,14 @@ const MobileAccountMenu = () => {
   return !active ?
     <BigButton />
     : <Popover.Button
-        className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+      className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
                   items-center justify-center text-pink-400 hover:text-gray-500
                   hover:bg-gray-100 focus:outline-none focus:ring-2
                   focus:ring-inset focus:ring-indigo-500"
-      >
-        <span className="sr-only">Open wallet</span>
-        <Avatar className="h-6 w-6" aria-hidden="true" />
-      </Popover.Button>
+    >
+      <span className="sr-only">Open wallet</span>
+      <Avatar className="h-6 w-6" aria-hidden="true" />
+    </Popover.Button>
 };
 
 const LeftBar = () => {
@@ -179,7 +179,7 @@ const Header = (props) => {
         <Logo className="justify-start" name="diva.cards" />
       </div>
       <Popover.Group as="header" className="relative">
-        <div className="-mr-2 pt-2 space-x-3 lg:hidden">
+        <div className="flex -mr-2 pt-2 space-x-3 lg:hidden">
           {/*menu*/}
           <Popover className="inline-flex">
             {({ open }) => (
@@ -291,7 +291,7 @@ const Header = (props) => {
                   </div>
                   <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                     <div className="py-7 px-5">
-                        <Menu as="div" className="relative mx-auto w-full inline-block py-4 text-left">
+                      <Menu as="div" className="relative mx-auto w-full inline-block py-4 text-left">
                         <Transition
                           show={true}
                           as={Fragment}>
@@ -299,7 +299,7 @@ const Header = (props) => {
                             <MobileWallet />
                           </Menu.Items>
                         </Transition>
-                        </Menu>
+                      </Menu>
                     </div>
                   </div>
                 </Transition>
