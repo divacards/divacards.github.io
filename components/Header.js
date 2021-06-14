@@ -132,11 +132,10 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${
-                router.pathname.slice(1) === item.name
-                  ? "text-white bg-pink-500"
-                  : "text-pink-500"
-              } capitalize`}
+              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name
+                ? "text-white bg-pink-500"
+                : "text-pink-500"
+                } capitalize`}
             >
               {item.name}
             </span>
@@ -161,7 +160,13 @@ const Header = (props) => {
               <span className="sr-only">Workflow</span>
               <Logo className="justify-start" name="diva.cards" />
             </div>
-            <div className="-mr-2 pt-3 space-x-3 md:hidden">
+            <div className="
+              -mr-2 
+              pt-2
+              space-x-3 
+              md:hidden 
+              "
+            >
               <Popover.Button
                 className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
                       items-center justify-center text-pink-400 hover:text-gray-500
