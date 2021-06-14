@@ -19,6 +19,7 @@ const DeckViewer = ({
     <main>
       <section
         className="
+        h-20
         flex flex-row border-b border-t py-5
         2xl:max-w-screen-2xl
         2xl:mx-auto
@@ -28,13 +29,13 @@ const DeckViewer = ({
         lg:mx-5"
       >
         <div className="flex flex-row mx-auto">
-          <FireIcon className="w-8 m-auto" />
+          <FireIcon className="w-8" />
         </div>
         <div className="flex flex-row mx-auto font-cursive text-2xl">
           {title}
         </div>
         <div className="flex flex-row mx-auto">
-          <FireIcon className="w-8 m-auto" />
+          <FireIcon className="w-8" />
         </div>
       </section>
       <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto lg:items-center font-cursive">
