@@ -80,17 +80,20 @@ const Logo = (props) => {
 const BigButton = () => {
   const { activate, active } = useWeb3React();
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
-  return (
-    <SwitchHorizontalIcon
-      className="w-8 rounded-full bg-gray-300 text-indigo-500 p-1 h-8"
-      onClick={() => {
-        if (!active) {
-          activate(injected);
-        }
-      }}
-    />
-  );
-};
+  return <Button
+    className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+              items-center justify-center text-pink-400 hover:text-gray-500
+              hover:bg-gray-100 focus:outline-none focus:ring-2
+              focus:ring-inset focus:ring-indigo-500"
+    onTouchStart={()=>{
+      if (!active)
+        activate(injected);
+    }}
+  >
+    <span className="sr-only">Close menu when ready</span>
+    <SwitchHorizontalIcon className="h-6 w-6" aria-hidden="true" />
+  </Button>
+}
 
 const AccountMenu = () => {
   const { active } = useWeb3React();
@@ -102,6 +105,24 @@ const AccountMenu = () => {
       {!active ? <BigButton /> : <Wallet />}
     </nav>
   );
+};
+
+const MobileAccountMenu = () => {
+  const { active } = useWeb3React();
+  const triedEager = useEagerConnect();
+  useInactiveListener(!triedEager);
+
+  return !active ?
+    <BigButton />
+    : <Popover.Button
+        className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+                  items-center justify-center text-pink-400 hover:text-gray-500
+                  hover:bg-gray-100 focus:outline-none focus:ring-2
+                  focus:ring-inset focus:ring-indigo-500"
+      >
+        <span className="sr-only">Open wallet</span>
+        <Avatar className="h-6 w-6" aria-hidden="true" />
+      </Popover.Button>
 };
 
 const LeftBar = () => {
@@ -233,15 +254,7 @@ const Header = (props) => {
           <Popover className="inline-flex">
             {({ open }) => (
               <Fragment>
-                <Popover.Button
-                  className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-3 inline-flex
-                          items-center justify-center text-pink-400 hover:text-gray-500
-                          hover:bg-gray-100 focus:outline-none focus:ring-2
-                          focus:ring-inset focus:ring-indigo-500"
-                >
-                  <span className="sr-only">Open wallet</span>
-                  <Avatar className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
+                <MobileAccountMenu />
                 <Transition
                   show={open}
                   as={Popover.Panel}
@@ -261,20 +274,7 @@ const Header = (props) => {
                   <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                     <div className="pt-5 pb-6 px-5">
                       <div className="flex items-center justify-between">
-                        <div>
-                          <Popover.Button
-                            className="bg-white rounded-full py-5 px-8 p-2 inline-flex
-                          items-center justify-center text-pink-400 hover:text-gray-500
-                          hover:bg-gray-100 focus:outline-none focus:ring-2
-                          focus:ring-inset focus:ring-indigo-500 "
-                          >
-                            <span>???</span>
-                            <ChevronDownIcon
-                              className="h-6 w-6"
-                              aria-hidden="true"
-                            />
-                          </Popover.Button>
-                        </div>
+                        <div />
                         <div className="-mr-2">
                           <Popover.Button
                             className="bg-white rounded-full h-16 w-16 p-2 inline-flex
