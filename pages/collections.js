@@ -41,13 +41,15 @@ function reducer(state, action) {
 }
 const CardFilters = (props) => {
   return (
-    <section className="card-filter-region mx-auto w-10/12
+    <section
+      className="card-filter-region mx-auto w-10/12
       lg:pr-0
       sm:w-full
       sm:px-6
       nn:w-full
       nn:px-6
-    ">
+    "
+    >
       <div className="flex flex-row gap-1">
         <SuiteFilters
           id="suite-select"
@@ -70,7 +72,8 @@ const CardFilters = (props) => {
 const DeckFilters = (props) => {
   return (
     // <section className="flex flex-row justify-between mx-auto w-10/12 lg:gap-4 lg:justify-start lg-section gap-1">
-    <section className="flex flex-row justify-between mx-auto w-10/12 
+    <section
+      className="flex flex-row justify-between mx-auto w-10/12 
       lg:pl-0
       nn:mb-2
       sm:mb-2
@@ -80,7 +83,8 @@ const DeckFilters = (props) => {
       nn:w-full
       nn:px-6
       lg:gap-4 lg:justify-start lg-section gap-1
-    ">
+    "
+    >
       <CustomSelect
         id="deck-select"
         instanceId="deck-select"
@@ -218,7 +222,7 @@ export default function Collections() {
             title={deck.title}
             cards={deck.cards}
             reversed={order == 1}
-          /* useFilter={useFilter} */
+            /* useFilter={useFilter} */
           />
         ))}
       </>
@@ -238,7 +242,8 @@ export default function Collections() {
             xl:px-0
             lg:items-center
             lg:px-5
-          ">
+          "
+        >
           <DeckFilters
             deckOpts={deckOpts}
             onDeckSelect={onDeckSelect}

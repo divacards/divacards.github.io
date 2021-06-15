@@ -22,8 +22,8 @@ module.exports = {
         gray: "0 4px 8px 0 rgba(0, 0, 0, 0.39)",
       },
       screens: {
-        'nn': { 'max': '639px' },
-      }
+        nn: { max: "639px" },
+      },
     },
   },
   variants: {
