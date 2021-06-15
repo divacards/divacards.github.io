@@ -1,7 +1,12 @@
-const Button = (props) => {
+const Button = ({ children, onClick, onTouchStart }) => {
   return (
-    <button className="block py-4 no-underline mx-auto md:mt-0 font-medium p-4 text-pink-400 hover:text-pink-500 transition duration-150 ease-in-out focus:outline-none">
-      {props.children}
+    <button
+      className="btn block py-4 no-underline mx-auto md:mt-0
+                 font-medium text-pink-400 hover:text-pink-500 focus:outline-none"
+      onClick={onClick}
+      onTouchStart={onTouchStart}
+    >
+      {children}
     </button>
   );
 };

@@ -6,11 +6,14 @@
   .bg-body {
     color: "#F0F0F0";
   }
+  .btn {
+    @apply transition duration-150 ease-in-out;
+  }
   .btn-pink {
-    @apply bg-pink-500 hover:bg-pink-600 transition duration-150 ease-in-out rounded;
+    @apply bg-pink-500 hover:bg-pink-600 btn rounded;
   }
   .btn-white {
-    @apply bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in-out rounded;
+    @apply bg-gray-100 hover:bg-gray-200 btn rounded;
   }
   .text-lightgray {
     @apply text-gray-500 text-opacity-75;

@@ -4,10 +4,10 @@ import classNames from "classnames";
 import { useWeb3React } from "@web3-react/core";
 import useSWR from "swr";
 import { formatEther } from "@ethersproject/units";
-
 import { InlineIcon } from "@iconify/react";
+
 import { ClipboardCopyIcon } from "@heroicons/react/outline";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu, Transition, Popover } from "@headlessui/react";
 
 import { fetcher, contractFetcher } from "../fetcher";
 import {
@@ -26,22 +26,6 @@ function shortenETHAddr(addr) {
   const len = addr.length;
   return addr.substring(0, 8) + ".." + addr.substring(len - 6, len);
 }
-
-const MenuItem = (props) => (
-  <Menu.Item onClick={props.onClick}>
-    {({ active }) => (
-      <a
-        href="#"
-        className={classNames(
-          active ? "bg-pink-700 opacity-75 text-gray-100" : "text-gray-700",
-          "block px-4 py-2 text-sm"
-        )}
-      >
-        {props.children}
-      </a>
-    )}
-  </Menu.Item>
-);
 
 const WalletItem = ({ label, value }) => {
   return (
@@ -175,9 +159,12 @@ const Wallet = () => {
 };
 
 export const MobileWallet = () => {
-
   const { deactivate, active } = useWeb3React();
   const { library, chainId, account } = useWeb3React();
+
+  if (!chainId) {
+    return null;
+  }
 
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
     fetcher: fetcher(library),
@@ -210,65 +197,55 @@ export const MobileWallet = () => {
     fetcher: contractFetcher(library, WETH_ABI),
   });
 
-  // return <Menu.Items className="flex flex-col right-0 mt-2 w-48 lg:w-auto rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300 z-10">
-  //
-  // </Menu.Items>
+  return (
+    <Fragment>
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-row gap-2">
+          <span className="text-black font-semibold opacity-75 m-auto">
+            {account === null ? "no account" : shortenETHAddr(account)}
+          </span>
 
-  return <Fragment>
-      <Menu.Item>
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row gap-2">
-            <span className="text-black font-semibold opacity-75 m-auto">
-              {account === null
-                ? "no account"
-                : shortenETHAddr(account)}
-            </span>
-
-            <button className="inline my-auto w-4 h-4">
-              <ClipboardCopyIcon
-                className="text-gray-500 opacity-75"
-                onClick={() => {
-                  navigator.clipboard.writeText(account);
-                }}
-              />
-            </button>
-          </div>
-          <BlockchainFilters />
-        </div>
-      </Menu.Item>
-      <Menu.Item>
-        <div className="border-2 border-b border-pink-300 mx-6 my-7" />
-      </Menu.Item>
-      <Menu.Item>
-        <WalletItem
-          label="Balance:"
-          value={`${balance ? formatEther(balance) : ""} ${
-            currencyConf.main
-          }`}
-        />
-      </Menu.Item>
-      <Menu.Item>
-        <WalletItem
-          label="Wrapped Balance:"
-          value={`${wethBalance ? formatEther(wethBalance) : ""} ${
-            paymentConf.symbol
-          }`}
-        />
-      </Menu.Item>
-      <Menu.Item>
-        <WalletItem label="Items Count:" value={3} />
-      </Menu.Item>
-      <Menu.Item>
-        <div className="flex flex-row mt-5">
-          <button
-            className="px-4 py-2 text-sm bg-black text-white rounded-md inline-flex"
-            onClick={() => (active ? deactivate() : null)}
-          >
-            Disconnect Wallet <StatusOfflineIcon className="ml-2 h-5 w-5" aria-hidden="true" />
+          <button className="inline my-auto w-4 h-4">
+            <ClipboardCopyIcon
+              className="text-gray-500 opacity-75"
+              onClick={() => {
+                navigator.clipboard.writeText(account);
+              }}
+            />
           </button>
         </div>
-      </Menu.Item>
-  </Fragment>
-}
+        <BlockchainFilters />
+      </div>
+      <div className="border-2 border-b border-pink-300 mx-6 my-7" />
+      <WalletItem
+        label="Balance:"
+        value={`${balance ? formatEther(balance) : ""} ${currencyConf.main}`}
+      />
+      <WalletItem
+        label="Wrapped Balance:"
+        value={`${wethBalance ? formatEther(wethBalance) : ""} ${
+          paymentConf.symbol
+        }`}
+      />
+      <WalletItem label="Items Count:" value={3} />
+      <div className="flex flex-row mt-5">
+        <Popover.Button className="px-4 py-2 text-sm bg-black text-white rounded-md inline-flex">
+          <div
+            onClick={() => {
+              console.log("disconnect");
+              active ? deactivate() : null;
+            }}
+          >
+            Disconnect Wallet{" "}
+            <StatusOfflineIcon
+              className="inline ml-2 h-5 w-5"
+              aria-hidden="true"
+            />
+          </div>
+        </Popover.Button>
+      </div>
+    </Fragment>
+  );
+};
 
 export default Wallet;

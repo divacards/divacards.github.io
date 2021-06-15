@@ -80,20 +80,26 @@ const Logo = (props) => {
 const BigButton = () => {
   const { activate, active } = useWeb3React();
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
-  return <Button
-    className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
+  return (
+    <Button
+      className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
               items-center justify-center text-pink-400 hover:text-gray-500
               hover:bg-gray-100 focus:outline-none focus:ring-2
               focus:ring-inset focus:ring-indigo-500"
-    onTouchStart={() => {
-      if (!active)
-        activate(injected);
-    }}
-  >
-    <span className="sr-only">Close menu when ready</span>
-    <SwitchHorizontalIcon className="h-6 w-6" aria-hidden="true" />
-  </Button>
-}
+      onTouchStart={() => {
+        console.log("touch");
+        if (!active) activate(injected);
+      }}
+      onClick={() => {
+        console.log("click");
+        if (!active) activate(injected);
+      }}
+    >
+      <span className="sr-only">Close menu when ready</span>
+      <SwitchHorizontalIcon className="h-6 w-6" aria-hidden="true" />
+    </Button>
+  );
+};
 
 const AccountMenu = () => {
   const { active } = useWeb3React();
@@ -112,9 +118,10 @@ const MobileAccountMenu = () => {
   const triedEager = useEagerConnect();
   useInactiveListener(!triedEager);
 
-  return !active ?
+  return !active ? (
     <BigButton />
-    : <Popover.Button
+  ) : (
+    <Popover.Button
       className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
                   items-center justify-center text-pink-400 hover:text-gray-500
                   hover:bg-gray-100 focus:outline-none focus:ring-2
@@ -123,6 +130,7 @@ const MobileAccountMenu = () => {
       <span className="sr-only">Open wallet</span>
       <Avatar className="h-6 w-6" aria-hidden="true" />
     </Popover.Button>
+  );
 };
 
 const LeftBar = () => {
@@ -153,10 +161,11 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.href.slice(1)
-                ? "text-white bg-pink-500"
-                : "text-pink-500"
-                } capitalize`}
+              className={`px-3 py-2 text-base font-medium rounded-lg ${
+                router.pathname.slice(1) === item.href.slice(1)
+                  ? "text-white bg-pink-500"
+                  : "text-pink-500"
+              } capitalize`}
             >
               {item.name}
             </span>
@@ -165,10 +174,6 @@ const MobileLeftBar = () => {
       </nav>
     </div>
   );
-};
-
-const RightBar = () => {
-  return <AccountMenu className="justify-start" />;
 };
 
 const Header = (props) => {
@@ -291,15 +296,11 @@ const Header = (props) => {
                   </div>
                   <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                     <div className="py-7 px-5">
-                      <Menu as="div" className="relative mx-auto w-full inline-block py-4 text-left">
-                        <Transition
-                          show={true}
-                          as={Fragment}>
-                          <Menu.Items className="flex flex-col focus:outline-none">
-                            <MobileWallet />
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
+                      <div className="relative mx-auto w-full inline-block py-4 text-left">
+                        <div className="flex flex-col focus:outline-none">
+                          <MobileWallet />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Transition>
@@ -314,7 +315,7 @@ const Header = (props) => {
         </header>
         <div className="flex items-center lg:ml-12">
           <span className="sr-only">Open wallet</span>
-          <RightBar />
+          <AccountMenu className="justify-start" />
         </div>
       </div>
     </div>
