@@ -15,6 +15,9 @@
   .btn-white {
     @apply bg-gray-100 hover:bg-gray-200 btn rounded;
   }
+  .btn-black {
+    @apply px-4 py-2 text-sm bg-black text-white;
+  }
   .text-lightgray {
     @apply text-gray-500 text-opacity-75;
   }

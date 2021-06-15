@@ -37,8 +37,26 @@ const WalletItem = ({ label, value }) => {
   );
 };
 
-const Wallet = () => {
+const DisconnectButton = () => {
   const { deactivate, active } = useWeb3React();
+
+  return (
+    <Popover.Button className="btn-black rounded-md inline-flex">
+      <div
+        className="flex flex-row gap-1"
+        onClick={() => {
+          console.log("disconnect");
+          active ? deactivate() : null;
+        }}
+      >
+        <span>Disconnect</span>
+        <StatusOfflineIcon className="inline h-5 w-5" aria-hidden="true" />
+      </div>
+    </Popover.Button>
+  );
+};
+
+export const Wallet = () => {
   const { library, chainId, account } = useWeb3React();
 
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
@@ -53,103 +71,74 @@ const Wallet = () => {
   });
 
   return (
-    <Menu as="div" className="relative mx-auto inline-block py-4 text-left">
-      {({ open }) => (
-        <>
-          <Menu.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300 left-0">
-            <span className="px-2 my-auto text-highlight">
-              {balance ? formatEther(balance) : ""} {currencyConf.main}
-            </span>
-            <span className="px-2 my-auto text-highlight">
-              {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
-            </span>
-            <Avatar value={account}></Avatar>
-          </Menu.Button>
-          <Transition
-            show={open}
-            as={Fragment}
-            enter="transition ease-out duration-100"
-            enterFrom="transform opacity-0 scale-95"
-            enterTo="transform opacity-100 scale-100"
-            leave="transition ease-in duration-75"
-            leaveFrom="transform opacity-100 scale-100"
-            leaveTo="transform opacity-0 scale-95"
-          >
-            <Menu.Items className="flex flex-col origin-top-right absolute right-0 mt-2 w-48 lg:w-auto rounded shadow-lg bg-white focus:outline-none divide-y divide-pink-300 z-10">
-              <div className="py-1">
-                <Menu.Item>
-                  <div className="flex flex-row justify-around gap-10">
-                    <div className="flex flex-row gap-1 px-3">
-                      <span className="text-black font-semibold opacity-75 m-auto">
-                        {account === null
-                          ? "no account"
-                          : shortenETHAddr(account)}
-                      </span>
+    <Popover className="relative">
+      <Popover.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300">
+        <span className="px-2 my-auto text-highlight">
+          {balance ? formatEther(balance) : ""} {currencyConf.main}
+        </span>
+        <span className="px-2 my-auto text-highlight">
+          {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
+        </span>
+        <Avatar value={account}></Avatar>
+      </Popover.Button>
 
-                      <button className="inline my-auto w-4 h-4">
-                        <ClipboardCopyIcon
-                          className="text-gray-500 opacity-75"
-                          onClick={() => {
-                            navigator.clipboard.writeText(account);
-                          }}
-                        ></ClipboardCopyIcon>
-                      </button>
-                    </div>
-                    <BlockchainFilters chainId={chainId} />
-                  </div>
-                </Menu.Item>
-              </div>
-              <div className="py-1">
-                <Menu.Item>
-                  <WalletItem
-                    label="Balance:"
-                    value={`${balance ? formatEther(balance) : ""} ${
-                      currencyConf.main
-                    }`}
-                  />
-                </Menu.Item>
-                <Menu.Item>
-                  <WalletItem
-                    label="Wrapped Balance:"
-                    value={`${wethBalance ? formatEther(wethBalance) : ""} ${
-                      paymentConf.symbol
-                    }`}
-                  />
-                </Menu.Item>
-                <Menu.Item>
-                  <WalletItem label="Items Count:" value={3} />
-                </Menu.Item>
-                <Menu.Item>
-                  <div className="flex flex-row">
-                    <button
-                      className="px-4 py-2 text-sm bg-black text-white"
-                      onClick={() => (active ? deactivate() : null)}
-                    >
-                      Disconnect
-                    </button>
-                  </div>
-                </Menu.Item>
-              </div>
-            </Menu.Items>
-          </Transition>
-        </>
-      )}
-    </Menu>
+      <Popover.Panel
+        className="flex flex-col origin-top-right absolute rounded
+          divide-y-2 divide-pink-300 px-2 right-0 mt-2
+          shadow-lg bg-white z-10"
+      >
+        <div className="flex flex-row py-2 space-x-20 justify-between">
+          <div className="flex flex-row gap-1">
+            <span className="text-black font-semibold opacity-75 m-auto">
+              {account === null ? "no account" : shortenETHAddr(account)}
+            </span>
+
+            <button className="inline my-auto w-4 h-4">
+              <ClipboardCopyIcon
+                className="text-gray-500 opacity-75"
+                onClick={() => {
+                  navigator.clipboard.writeText(account);
+                }}
+              ></ClipboardCopyIcon>
+            </button>
+          </div>
+          <BlockchainFilters chainId={chainId} />
+        </div>
+
+        <div className="py-2">
+          <WalletItem
+            label="Balance:"
+            value={`${balance ? formatEther(balance) : ""} ${
+              currencyConf.main
+            }`}
+          />
+          <WalletItem
+            label="Wrapped Balance:"
+            value={`${wethBalance ? formatEther(wethBalance) : ""} ${
+              paymentConf.symbol
+            }`}
+          />
+          <WalletItem label="Items Count:" value={3} />
+          <div className="flex flex-row mt-2">
+            <DisconnectButton />
+          </div>
+        </div>
+      </Popover.Panel>
+    </Popover>
   );
 };
 
 export const MobileWallet = () => {
-  const { deactivate, active } = useWeb3React();
   const { library, chainId, account } = useWeb3React();
-
-  const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
-    fetcher: fetcher(library),
-  });
 
   if (!chainId) {
     return null;
   }
 
+  const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
+    fetcher: fetcher(library),
+  });
+
   const currencyConf = CHAIN_CONFIG[chainId].currency;
   const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
   const addr = paymentConf.contract;
@@ -158,8 +147,8 @@ export const MobileWallet = () => {
   });
 
   return (
-    <Fragment>
-      <div className="flex flex-row justify-between">
+    <div className="my-auto divide-y-2 divide-pink-300">
+      <div className="flex flex-row justify-between py-2">
         <div className="flex flex-row gap-2">
           <span className="text-black font-semibold opacity-75 m-auto">
             {account === null ? "no account" : shortenETHAddr(account)}
@@ -176,36 +165,23 @@ export const MobileWallet = () => {
         </div>
         <BlockchainFilters chainId={chainId} />
       </div>
-      <div className="border-2 border-b border-pink-300 mx-6 my-7" />
-      <WalletItem
-        label="Balance:"
-        value={`${balance ? formatEther(balance) : ""} ${currencyConf.main}`}
-      />
-      <WalletItem
-        label="Wrapped Balance:"
-        value={`${wethBalance ? formatEther(wethBalance) : ""} ${
-          paymentConf.symbol
-        }`}
-      />
-      <WalletItem label="Items Count:" value={3} />
-      <div className="flex flex-row mt-5">
-        <Popover.Button className="px-4 py-2 text-sm bg-black text-white rounded-md inline-flex">
-          <div
-            onClick={() => {
-              console.log("disconnect");
-              active ? deactivate() : null;
-            }}
-          >
-            Disconnect Wallet{" "}
-            <StatusOfflineIcon
-              className="inline ml-2 h-5 w-5"
-              aria-hidden="true"
-            />
-          </div>
-        </Popover.Button>
+
+      <div className="py-2">
+        <WalletItem
+          label="Balance:"
+          value={`${balance ? formatEther(balance) : ""} ${currencyConf.main}`}
+        />
+        <WalletItem
+          label="Wrapped Balance:"
+          value={`${wethBalance ? formatEther(wethBalance) : ""} ${
+            paymentConf.symbol
+          }`}
+        />
+        <WalletItem label="Items Count:" value={3} />
+        <div className="flex flex-row mt-4">
+          <DisconnectButton />
+        </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
-
-export default Wallet;
