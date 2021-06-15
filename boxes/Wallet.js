@@ -63,26 +63,6 @@ export const Wallet = () => {
     fetcher: fetcher(library),
   });
 
-  const { data: blockNumber, mutate } = useSWR(
-    [chainId, "getBlockNumber", "latest"],
-    {
-      fetcher: fetcher(library),
-    }
-  );
-
-  useEffect(() => {
-    console.log("subcribing for blocks...");
-    library.on("block", () => {
-      console.log("update block number...");
-      mutate(undefined, true);
-    });
-
-    return () => {
-      console.log("unsubscribing for blocks..");
-      library.removeAllListeners("block");
-    };
-  }, []);
-
   const currencyConf = CHAIN_CONFIG[chainId].currency;
   const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
   const addr = paymentConf.contract;
@@ -151,10 +131,6 @@ export const Wallet = () => {
 export const MobileWallet = () => {
   const { library, chainId, account } = useWeb3React();
 
-  if (!chainId) {
-    return null;
-  }
-
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
     fetcher: fetcher(library),
   });
@@ -183,7 +159,7 @@ export const MobileWallet = () => {
             />
           </button>
         </div>
-        <BlockchainFilters />
+        <BlockchainFilters chainId={chainId} />
       </div>
 
       <div className="py-2">

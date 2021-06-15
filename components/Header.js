@@ -80,7 +80,7 @@ const BigButton = () => {
   const { activate, active } = useWeb3React();
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
-    <div
+    <button
       className="
         bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
         items-center justify-center text-pink-400 hover:text-gray-500
@@ -97,7 +97,7 @@ const BigButton = () => {
     >
       <span className="sr-only">Close menu when ready</span>
       <SwitchHorizontalIcon className="h-6 w-6" aria-hidden="true" />
-    </div>
+    </button>
   );
 };
 
