@@ -121,49 +121,6 @@ const MobileAccountMenu = ({ active }) => {
   );
 };
 
-const LeftBar = () => {
-  return (
-    <div className="flex flex-row">
-      <Logo className="justify-start" name="diva.cards" />
-      <PageLinker />
-    </div>
-  );
-};
-
-const MobileLeftBar = () => {
-  const router = useRouter();
-  const pageLinks = [
-    // TODO: text translation
-    { href: "/", name: "home" },
-    { href: "/collections", name: "collections" },
-    { href: "/artists", name: "artists" },
-    { href: "/forge", name: "forge" },
-  ];
-  return (
-    <div className="mt-6">
-      <nav className="grid gap-2">
-        {pageLinks.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className={`-m-3 flex items-center hover:bg-gray-50`}
-          >
-            <span
-              className={`px-3 py-2 text-base font-medium rounded-lg ${
-                router.pathname.slice(1) === item.href.slice(1)
-                  ? "text-white bg-pink-500"
-                  : "text-pink-500"
-              } capitalize`}
-            >
-              {item.name}
-            </span>
-          </Link>
-        ))}
-      </nav>
-    </div>
-  );
-};
-
 const Header = () => {
   const { active } = useWeb3React();
   const triedEager = useEagerConnect();
@@ -240,7 +197,9 @@ const Header = () => {
                   </div>
                   <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                     <div className="pt-5 pb-6 px-5">
-                      <MobileLeftBar />
+                      <nav className="flex flex-col mt-6 gap-2">
+                        <PageLinker mobile />
+                      </nav>
                     </div>
                   </div>
                 </Transition>
@@ -300,9 +259,9 @@ const Header = () => {
       </section>
 
       <section className="hidden lg:w-5/6 lg:flex lg:items-center lg:justify-between">
-        <div className="flex space-x-10">
+        <nav className="flex space-x-10">
           <PageLinker />
-        </div>
+        </nav>
         <div className="flex justify-end items-center w-10/12">
           <span className="sr-only">Open wallet</span>
           <AccountMenu active={active} />

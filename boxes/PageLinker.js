@@ -1,8 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
-import PageLink from "../components/PageLink";
 
-const PageLinker = () => {
+import { PageLink, MobilePageLink } from "../components/PageLink";
+
+const PageLinker = ({ mobile }) => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
@@ -11,10 +12,13 @@ const PageLinker = () => {
     { href: "/artists", text: "Artists" },
     { href: "/forge", text: "Forge" },
   ];
+
+  const Child = mobile ? MobilePageLink : PageLink;
+
   return (
     <>
       {pageLinks.map(({ text, href }) => (
-        <PageLink
+        <Child
           key={text}
           text={text}
           href={href}
