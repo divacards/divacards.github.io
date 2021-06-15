@@ -102,7 +102,7 @@ export const Wallet = () => {
               ></ClipboardCopyIcon>
             </button>
           </div>
-          <BlockchainFilters />
+          <BlockchainFilters chainId={chainId} />
         </div>
 
         <div className="py-2">
@@ -130,6 +130,10 @@ export const Wallet = () => {
 
 export const MobileWallet = () => {
   const { library, chainId, account } = useWeb3React();
+
+  if (!chainId) {
+    return null;
+  }
 
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
     fetcher: fetcher(library),
