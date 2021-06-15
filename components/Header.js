@@ -16,10 +16,9 @@ import { BSC_CHAINID, ETH_MAINNET_CHAINID, MATIC_CHAINID } from "../consts";
 import { useEagerConnect, useInactiveListener } from "../hooks";
 import { getErrorMessage, injected } from "../connectors";
 
-import Button from "./Button";
 import Avatar from "./Avatar";
 import PageLinker from "../boxes/PageLinker";
-import { default as Wallet, MobileWallet } from "../boxes/Wallet";
+import { Wallet, MobileWallet } from "../boxes/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
@@ -102,23 +101,11 @@ const BigButton = () => {
   );
 };
 
-const AccountMenu = () => {
-  const { active } = useWeb3React();
-  const triedEager = useEagerConnect();
-  useInactiveListener(!triedEager);
-
-  return (
-    <nav className="flex flex-col lg:flex-row p-4 lg:p-0">
-      {!active ? <BigButton /> : <Wallet />}
-    </nav>
-  );
+const AccountMenu = ({ active }) => {
+  return !active ? <BigButton /> : <Wallet />;
 };
 
-const MobileAccountMenu = () => {
-  const { active } = useWeb3React();
-  const triedEager = useEagerConnect();
-  useInactiveListener(!triedEager);
-
+const MobileAccountMenu = ({ active }) => {
   return !active ? (
     <BigButton />
   ) : (
@@ -162,10 +149,11 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.href.slice(1)
-                ? "text-white bg-pink-500"
-                : "text-pink-500"
-                } capitalize`}
+              className={`px-3 py-2 text-base font-medium rounded-lg ${
+                router.pathname.slice(1) === item.href.slice(1)
+                  ? "text-white bg-pink-500"
+                  : "text-pink-500"
+              } capitalize`}
             >
               {item.name}
             </span>
@@ -176,14 +164,19 @@ const MobileLeftBar = () => {
   );
 };
 
-const Header = (props) => {
+const Header = () => {
+  const { active } = useWeb3React();
+  const triedEager = useEagerConnect();
+  useInactiveListener(!triedEager);
+
   return (
-    <div className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
-      <div className="flex">
-        <span className="sr-only">Workflow</span>
+    <header className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
+      <div className="w-1/6">
+        <span className="sr-only">Logo</span>
         <Logo className="justify-start" name="diva.cards" />
       </div>
-      <Popover.Group as="header" className="relative">
+
+      <section className="relative">
         <div className="flex -mr-2 pt-2 space-x-3 lg:hidden">
           {/*menu*/}
           <Popover className="inline-flex">
@@ -259,7 +252,7 @@ const Header = (props) => {
           <Popover className="inline-flex">
             {({ open }) => (
               <Fragment>
-                <MobileAccountMenu />
+                <MobileAccountMenu active={active} />
                 <Transition
                   show={open}
                   as={Popover.Panel}
@@ -295,12 +288,8 @@ const Header = (props) => {
                     </div>
                   </div>
                   <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                    <div className="py-7 px-5">
-                      <div className="relative mx-auto w-full inline-block py-4 text-left">
-                        <div className="flex flex-col focus:outline-none">
-                          <MobileWallet />
-                        </div>
-                      </div>
+                    <div className="relative px-4 mx-auto w-full inline-block py-2 text-left">
+                      <MobileWallet />
                     </div>
                   </div>
                 </Transition>
@@ -308,17 +297,18 @@ const Header = (props) => {
             )}
           </Popover>
         </div>
-      </Popover.Group>
-      <div className="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
-        <header className="flex space-x-10">
+      </section>
+
+      <section className="hidden lg:w-5/6 lg:flex lg:items-center lg:justify-between">
+        <div className="flex space-x-10">
           <PageLinker />
-        </header>
-        <div className="flex items-center lg:ml-12">
-          <span className="sr-only">Open wallet</span>
-          <AccountMenu className="justify-start" />
         </div>
-      </div>
-    </div>
+        <div className="flex justify-end items-center w-10/12">
+          <span className="sr-only">Open wallet</span>
+          <AccountMenu active={active} />
+        </div>
+      </section>
+    </header>
   );
 };
 

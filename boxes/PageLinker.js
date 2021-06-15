@@ -1,7 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import PageLink from "../components/PageLink";
-import { MenuIcon } from "@heroicons/react/solid";
 
 const PageLinker = () => {
   const router = useRouter();
@@ -13,7 +12,7 @@ const PageLinker = () => {
     { href: "/forge", text: "Forge" },
   ];
   return (
-    <Fragment>
+    <>
       {pageLinks.map(({ text, href }) => (
         <PageLink
           key={text}
@@ -22,7 +21,7 @@ const PageLinker = () => {
           selected={router.pathname === href}
         />
       ))}
-    </Fragment>
+    </>
   );
 };
 
