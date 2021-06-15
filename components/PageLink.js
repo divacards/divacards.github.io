@@ -24,8 +24,8 @@ const Button = React.forwardRef(
 const MobileButton = React.forwardRef(
   ({ onClick, href, children, selected }, ref) => {
     return (
-      <span
-        className={`px-3 py-2 text-base font-medium rounded-lg capitalize ${
+      <button
+        className={`px-3 py-2 text-base text-left font-medium rounded-lg capitalize ${
           selected
             ? "bg-pink-500 text-white"
             : "text-pink-500 hover:text-pink-900"
@@ -35,7 +35,7 @@ const MobileButton = React.forwardRef(
         ref={ref}
       >
         {children}
-      </span>
+      </button>
     );
   }
 );
