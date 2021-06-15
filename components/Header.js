@@ -153,7 +153,7 @@ const MobileLeftBar = () => {
             className={`-m-3 flex items-center hover:bg-gray-50`}
           >
             <span
-              className={`ml-4 px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.name
+              className={`px-3 py-2 text-base font-medium rounded-lg ${router.pathname.slice(1) === item.href.slice(1)
                 ? "text-white bg-pink-500"
                 : "text-pink-500"
                 } capitalize`}
