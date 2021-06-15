@@ -30,9 +30,7 @@ const MaticIcon = ({ checked }) => (
   <span className={withCheck("icon-polygon-matic-logo w-8 m-auto", checked)} />
 );
 
-const BlockchainFilters = () => {
-  const { chainId } = useWeb3React();
-
+const BlockchainFilters = ({ chainId }) => {
   console.log("you are on", chainId);
 
   const ethChecked =
