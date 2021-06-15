@@ -72,6 +72,9 @@ const DeckFilters = (props) => {
     // <section className="flex flex-row justify-between mx-auto w-10/12 lg:gap-4 lg:justify-start lg-section gap-1">
     <section className="flex flex-row justify-between mx-auto w-10/12 
       lg:pl-0
+      nn:mb-2
+      sm:mb-2
+      lg:mb-0
       sm:w-full 
       sm:px-6
       nn:w-full

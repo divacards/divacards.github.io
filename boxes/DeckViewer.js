@@ -39,7 +39,7 @@ const DeckViewer = ({
         </div>
       </section>
       <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto lg:items-center font-cursive">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
+        <div className="grid nn:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
           {cards.map((card) => (
             <div
               key={`${deck.artistsDetail.name}-${deck.name}-${card.id}`}
