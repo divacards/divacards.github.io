@@ -7,7 +7,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 1,
@@ -16,7 +20,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -25,7 +33,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 3,
@@ -34,7 +46,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 4,
@@ -43,7 +59,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 5,
@@ -52,7 +72,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 6,
@@ -61,7 +85,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 7,
@@ -70,7 +98,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 8,
@@ -79,7 +111,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 9,
@@ -88,7 +124,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 10,
@@ -97,7 +137,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 11,
@@ -106,7 +150,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 12,
@@ -115,7 +163,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 13,
@@ -124,7 +176,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 14,
@@ -133,7 +189,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 15,
@@ -142,7 +202,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 16,
@@ -151,7 +215,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 17,
@@ -160,7 +228,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 18,
@@ -169,7 +241,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 19,
@@ -178,7 +254,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 20,
@@ -187,7 +267,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 21,
@@ -196,7 +280,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 22,
@@ -205,7 +293,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 23,
@@ -214,7 +306,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 24,
@@ -223,7 +319,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 25,
@@ -232,7 +332,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 26,
@@ -241,7 +345,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 27,
@@ -250,7 +358,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 28,
@@ -259,7 +371,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 29,
@@ -268,7 +384,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 30,
@@ -277,7 +397,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 31,
@@ -286,7 +410,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 32,
@@ -295,7 +423,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 33,
@@ -304,7 +436,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 34,
@@ -313,7 +449,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 35,
@@ -322,7 +462,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 36,
@@ -331,7 +475,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 37,
@@ -340,7 +488,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 38,
@@ -349,7 +501,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 39,
@@ -358,7 +514,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 40,
@@ -367,7 +527,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 41,
@@ -376,7 +540,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 42,
@@ -385,7 +553,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 43,
@@ -394,7 +566,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 44,
@@ -403,7 +579,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 45,
@@ -412,7 +592,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 46,
@@ -421,7 +605,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 47,
@@ -430,7 +618,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 48,
@@ -439,7 +631,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 49,
@@ -448,7 +644,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 50,
@@ -457,7 +657,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 51,
@@ -466,7 +670,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 52,
@@ -475,7 +683,11 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 53,
@@ -484,9 +696,12 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
-
     {
       "id": 54,
       "deck": 1,
@@ -494,7 +709,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 55,
@@ -503,7 +722,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 56,
@@ -512,7 +735,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 57,
@@ -521,7 +748,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 58,
@@ -530,7 +761,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 59,
@@ -539,7 +774,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 60,
@@ -548,7 +787,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 61,
@@ -557,7 +800,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 62,
@@ -566,7 +813,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 63,
@@ -575,7 +826,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 64,
@@ -584,7 +839,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 65,
@@ -593,7 +852,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 66,
@@ -602,7 +865,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 67,
@@ -611,7 +878,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 68,
@@ -620,7 +891,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 69,
@@ -629,7 +904,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 70,
@@ -638,7 +917,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 71,
@@ -647,7 +930,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 72,
@@ -656,7 +943,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 73,
@@ -665,7 +956,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 74,
@@ -674,7 +969,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 75,
@@ -683,7 +982,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 76,
@@ -692,7 +995,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 77,
@@ -701,7 +1008,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 78,
@@ -710,7 +1021,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 79,
@@ -719,7 +1034,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 80,
@@ -728,7 +1047,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 81,
@@ -737,7 +1060,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 82,
@@ -746,7 +1073,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 83,
@@ -755,7 +1086,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 84,
@@ -764,7 +1099,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 85,
@@ -773,7 +1112,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 86,
@@ -782,7 +1125,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 87,
@@ -791,7 +1138,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 88,
@@ -800,7 +1151,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 89,
@@ -809,7 +1164,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 90,
@@ -818,7 +1177,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 91,
@@ -827,7 +1190,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 92,
@@ -836,7 +1203,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 93,
@@ -845,7 +1216,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 94,
@@ -854,7 +1229,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 95,
@@ -863,7 +1242,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 96,
@@ -872,7 +1255,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 97,
@@ -881,7 +1268,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 98,
@@ -890,7 +1281,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 99,
@@ -899,7 +1294,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 100,
@@ -908,7 +1307,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 101,
@@ -917,7 +1320,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 102,
@@ -926,7 +1333,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 103,
@@ -935,7 +1346,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 104,
@@ -944,7 +1359,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 105,
@@ -953,7 +1372,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 106,
@@ -962,7 +1385,11 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 107,
@@ -971,9 +1398,12 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
-
     {
       "id": 108,
       "deck": 2,
@@ -981,7 +1411,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 109,
@@ -990,7 +1424,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 110,
@@ -999,7 +1437,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 111,
@@ -1008,7 +1450,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 112,
@@ -1017,7 +1463,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 113,
@@ -1026,7 +1476,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 114,
@@ -1035,7 +1489,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 115,
@@ -1044,7 +1502,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 116,
@@ -1053,7 +1515,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 117,
@@ -1062,7 +1528,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 118,
@@ -1071,7 +1541,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 119,
@@ -1080,7 +1554,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 120,
@@ -1089,7 +1567,11 @@
       "poker_suite": "s",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 121,
@@ -1098,7 +1580,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 122,
@@ -1107,7 +1593,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 123,
@@ -1116,7 +1606,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 124,
@@ -1125,7 +1619,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 125,
@@ -1134,7 +1632,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 126,
@@ -1143,7 +1645,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 127,
@@ -1152,7 +1658,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 128,
@@ -1161,7 +1671,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 129,
@@ -1170,7 +1684,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 130,
@@ -1179,7 +1697,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 131,
@@ -1188,7 +1710,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 132,
@@ -1197,7 +1723,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 133,
@@ -1206,7 +1736,11 @@
       "poker_suite": "h",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 134,
@@ -1215,7 +1749,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 135,
@@ -1224,7 +1762,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 136,
@@ -1233,7 +1775,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 137,
@@ -1242,7 +1788,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 138,
@@ -1251,7 +1801,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 139,
@@ -1260,7 +1814,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 140,
@@ -1269,7 +1827,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 141,
@@ -1278,7 +1840,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 142,
@@ -1287,7 +1853,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 143,
@@ -1296,7 +1866,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 144,
@@ -1305,7 +1879,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 145,
@@ -1314,7 +1892,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 146,
@@ -1323,7 +1905,11 @@
       "poker_suite": "c",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 147,
@@ -1332,7 +1918,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 148,
@@ -1341,7 +1931,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 149,
@@ -1350,7 +1944,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 150,
@@ -1359,7 +1957,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 151,
@@ -1368,7 +1970,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 152,
@@ -1377,7 +1983,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 153,
@@ -1386,7 +1996,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 154,
@@ -1395,7 +2009,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 155,
@@ -1404,7 +2022,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 156,
@@ -1413,7 +2035,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 157,
@@ -1422,7 +2048,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 158,
@@ -1431,7 +2061,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 159,
@@ -1440,7 +2074,11 @@
       "poker_suite": "d",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 160,
@@ -1449,7 +2087,11 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": 161,
@@ -1458,7 +2100,11 @@
       "poker_suite": "j",
       "name": "",
       "rarity": 0,
-      "chain": [0, 1, 2]
+      "chain": [
+        0,
+        1,
+        2
+      ]
     }
   ]
 }
