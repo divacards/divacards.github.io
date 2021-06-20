@@ -47,7 +47,7 @@ const DeckViewer = ({
             >
               <img
                 className="mx-auto w-1/2 lg:w-10/12 rounded"
-                src={`./images/card_set/${deck.artistsDetail.name}/${deck.id}/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
+                src={`./images/card_set/${deck.artistsDetail.name.toLowerCase()}/${deck.id}/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
               ></img>
               <span className="mx-auto font-cursive">{card.name}</span>
             </div>
