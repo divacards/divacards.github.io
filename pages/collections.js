@@ -222,7 +222,7 @@ export default function Collections() {
             title={deck.title}
             cards={deck.cards}
             reversed={order == 1}
-            /* useFilter={useFilter} */
+          /* useFilter={useFilter} */
           />
         ))}
       </>
