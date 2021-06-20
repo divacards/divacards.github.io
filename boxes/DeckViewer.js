@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { FireIcon } from "@heroicons/react/solid";
 
 const DeckViewer = ({
@@ -14,6 +15,8 @@ const DeckViewer = ({
 
   // let data = useFilter(cards);
   if (cards.length == 0) return null;
+
+  const artist = deck.artistsDetail;
 
   return (
     <main>
@@ -42,13 +45,17 @@ const DeckViewer = ({
         <div className="grid nn:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
           {cards.map((card) => (
             <div
-              key={`${deck.artistsDetail.name}-${deck.name}-${card.id}`}
+              key={`${artist.name}-${deck.name}-${card.id}`}
               className="flex flex-col gap-2"
             >
-              <img
+              <Image
+                height="1000"
+                width="1000"
                 className="mx-auto w-1/2 lg:w-10/12 rounded"
-                src={`./images/card_set/${deck.artistsDetail.name.toLowerCase()}/${deck.id}/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
-              ></img>
+                src={`/images/card_set/${artist.name.toLowerCase()}/${
+                  deck.id
+                }/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
+              ></Image>
               <span className="mx-auto font-cursive">{card.name}</span>
             </div>
           ))}
