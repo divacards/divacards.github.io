@@ -48,14 +48,12 @@ const DeckViewer = ({
               key={`${artist.name}-${deck.name}-${card.id}`}
               className="flex flex-col gap-2"
             >
-              <Image
-                height="1000"
-                width="1000"
+              <img
                 className="mx-auto w-1/2 lg:w-10/12 rounded"
                 src={`/images/card_set/${artist.name.toLowerCase()}/${
                   deck.id
                 }/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
-              ></Image>
+              ></img>
               <span className="mx-auto font-cursive">{card.name}</span>
             </div>
           ))}
