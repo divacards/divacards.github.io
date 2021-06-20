@@ -2,20 +2,8 @@
   "data": [
     {
       "id": 0,
-      "name": "kuron",
+      "name": "Anderson",
       "img": "Kuron's deck",
-      "decks": []
-    },
-    {
-      "id": 1,
-      "name": "katou.taka",
-      "img": "Taka's deck",
-      "decks": []
-    },
-    {
-      "id": 2,
-      "name": "yoshizawa.akiho",
-      "img": "Ackey's deck",
       "decks": []
     }
   ]
