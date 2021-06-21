@@ -1,1 +1,42 @@
-{"attributes": [{"trait_type": "Deck", "value": 0}, {"display_type": "number", "trait_type": "Deck", "value": 0}, {"display_type": "string", "trait_type": "DeckName", "value": "MNEMONICS at A Bar"}, {"trait_type": "Sign", "value": "q"}, {"trait_type": "Suite", "value": "heart"}, {"trait_type": "Kana", "value": "\u3087"}, {"trait_type": "Mnemonic", "value": "allow"}, {"trait_type": "Rarity", "value": "Rare"}], "description": "Trading Poker Cards from Diva.Cards", "external_url": "", "image": "", "name": "allow.h.q"}
+{
+    "attributes": [
+        {
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "string",
+            "trait_type": "DeckName",
+            "value": "MNEMONICS at A Bar"
+        },
+        {
+            "trait_type": "Sign",
+            "value": "Queen"
+        },
+        {
+            "trait_type": "Suite",
+            "value": "Heart"
+        },
+        {
+            "trait_type": "Kana",
+            "value": "ょ"
+        },
+        {
+            "trait_type": "Mnemonic",
+            "value": "allow"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Rare"
+        }
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "",
+    "image": "https://diva.cards/images/card_set/anderson/0/hq.png",
+    "name": "allow.heart.queen"
+}
