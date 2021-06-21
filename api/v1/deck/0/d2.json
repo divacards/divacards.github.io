@@ -1,1 +1,42 @@
-{"attributes": [{"trait_type": "Deck", "value": 0}, {"display_type": "number", "trait_type": "Deck", "value": 0}, {"display_type": "string", "trait_type": "DeckName", "value": "MNEMONICS at A Bar"}, {"trait_type": "Sign", "value": "2"}, {"trait_type": "Suite", "value": "diamond"}, {"trait_type": "Kana", "value": "\u3047"}, {"trait_type": "Mnemonic", "value": "alien"}, {"trait_type": "Rarity", "value": "Common"}], "description": "Trading Poker Cards from Diva.Cards", "external_url": "", "image": "", "name": "alien.d.2"}
+{
+    "attributes": [
+        {
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "string",
+            "trait_type": "DeckName",
+            "value": "MNEMONICS at A Bar"
+        },
+        {
+            "trait_type": "Sign",
+            "value": "2"
+        },
+        {
+            "trait_type": "Suite",
+            "value": "Diamond"
+        },
+        {
+            "trait_type": "Kana",
+            "value": "ぇ"
+        },
+        {
+            "trait_type": "Mnemonic",
+            "value": "alien"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Common"
+        }
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "",
+    "image": "https://diva.cards/images/card_set/anderson/0/d2.png",
+    "name": "alien.diamond.2"
+}
