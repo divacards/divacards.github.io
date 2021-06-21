@@ -1,1 +1,42 @@
-{"attributes": [{"trait_type": "Deck", "value": 0}, {"display_type": "number", "trait_type": "Deck", "value": 0}, {"display_type": "string", "trait_type": "DeckName", "value": "MNEMONICS at A Bar"}, {"trait_type": "Sign", "value": "j"}, {"trait_type": "Suite", "value": "club"}, {"trait_type": "Kana", "value": "\u3059"}, {"trait_type": "Mnemonic", "value": "account"}, {"trait_type": "Rarity", "value": "Rare"}], "description": "Trading Poker Cards from Diva.Cards", "external_url": "", "image": "", "name": "account.c.j"}
+{
+    "attributes": [
+        {
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Deck",
+            "value": 0
+        },
+        {
+            "display_type": "string",
+            "trait_type": "DeckName",
+            "value": "MNEMONICS at A Bar"
+        },
+        {
+            "trait_type": "Sign",
+            "value": "Jack"
+        },
+        {
+            "trait_type": "Suite",
+            "value": "Club"
+        },
+        {
+            "trait_type": "Kana",
+            "value": "す"
+        },
+        {
+            "trait_type": "Mnemonic",
+            "value": "account"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Rare"
+        }
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "",
+    "image": "https://diva.cards/images/card_set/anderson/0/cj.png",
+    "name": "account.club.jack"
+}
