@@ -63,8 +63,8 @@ const SuiteItem = ({ value, label, state = [], onChange }) => {
 const SuiteFilters = ({ opts, state, onChange }) => {
   return (
     <CustomRadioGroup
-      id="suite-select"
-      instanceid="suite-select"
+      // id="suite-select"
+      // instanceid="suite-select"
       items={opts}
       state={state}
       onChange={onChange}

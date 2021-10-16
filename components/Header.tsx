@@ -157,6 +157,7 @@ const Header = () => {
                   leave="duration-100 ease-in"
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
+                  //@ts-expect-error
                   focus
                   static
                   className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
@@ -221,6 +222,7 @@ const Header = () => {
                   leave="duration-100 ease-in"
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
+                  //@ts-expect-error
                   focus
                   static
                   className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
