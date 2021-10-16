@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { PageLink, MobilePageLink } from "../components/PageLink";
 
-const PageLinker = ({ mobile }) => {
+const PageLinker = ({ mobile }: any) => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation

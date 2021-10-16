@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 const Button = React.forwardRef(
+  // @ts-expect-error
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
@@ -13,6 +14,7 @@ const Button = React.forwardRef(
         }`}
         href={href}
         onClick={onClick}
+        // @ts-expect-error
         ref={ref}
       >
         {children}
@@ -22,6 +24,7 @@ const Button = React.forwardRef(
 );
 
 const MobileButton = React.forwardRef(
+  // @ts-expect-error
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
@@ -32,6 +35,7 @@ const MobileButton = React.forwardRef(
         }`}
         href={href}
         onClick={onClick}
+        // @ts-expect-error
         ref={ref}
       >
         {children}
@@ -43,6 +47,7 @@ const MobileButton = React.forwardRef(
 export const PageLink = ({ text, href, selected }) => {
   return (
     <Link href={href} passHref>
+      {/* @ts-expect-error */}
       <Button selected={selected}>{text}</Button>
     </Link>
   );
@@ -51,6 +56,7 @@ export const PageLink = ({ text, href, selected }) => {
 export const MobilePageLink = ({ text, href, selected }) => {
   return (
     <Link href={href} passHref>
+      {/* @ts-expect-error */}
       <MobileButton selected={selected}>{text}</MobileButton>
     </Link>
   );

@@ -34,7 +34,7 @@ const BlockchainFilters = ({ chainId }) => {
   console.log("you are on", chainId);
 
   const ethChecked =
-    (chainId === ETH_MAINNET_CHAINID) | (chainId === ETH_RINKEBY_CHAINID);
+    chainId === ETH_MAINNET_CHAINID || chainId === ETH_RINKEBY_CHAINID;
 
   return (
     <section className="flex flex-row justify-between text-right gap-1">

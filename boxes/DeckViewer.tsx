@@ -5,7 +5,7 @@ const DeckViewer = ({
   title,
   cards = [],
   deck,
-  useFilter = (x) => x,
+  useFilter = (x: any) => x,
   reversed,
 }) => {
   if (reversed) {
