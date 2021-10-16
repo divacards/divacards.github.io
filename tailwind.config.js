@@ -9,7 +9,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   colors: {
     gray: colors.coolGray,
-    blue: colors.lightBlue,
+    blue: colors.sky,
     red: colors.rose,
   },
   theme: {
