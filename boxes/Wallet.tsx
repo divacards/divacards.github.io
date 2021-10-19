@@ -18,8 +18,8 @@ import {
 } from "../consts";
 import WETH_ABI from "../abis/WETH.json";
 
-import { ETH_ICON } from "../components/Icon";
-import Avatar from "../components/Avatar";
+import { ETH_ICON } from "../components/Widget/Icon";
+import Avatar from "../components/Widget/Avatar";
 import { BlockchainFilters } from "./Filter";
 
 function shortenETHAddr(addr) {

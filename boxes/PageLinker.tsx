@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import { PageLink, MobilePageLink } from "../components/PageLink";
+import { PageLink, MobilePageLink } from "../components/Widget/PageLink";
 
 const PageLinker = ({ mobile }: any) => {
   const router = useRouter();
