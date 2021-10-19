@@ -12,13 +12,13 @@ import {
 } from "@heroicons/react/outline";
 import { InlineIcon } from "@iconify/react";
 
-import { BSC_CHAINID, ETH_MAINNET_CHAINID, MATIC_CHAINID } from "../consts";
-import { useEagerConnect, useInactiveListener } from "../hooks";
-import { getErrorMessage, injected } from "../connectors";
+import { BSC_CHAINID, ETH_MAINNET_CHAINID, MATIC_CHAINID } from "../../consts";
+import { useEagerConnect, useInactiveListener } from "../../hooks";
+import { getErrorMessage, injected } from "../../connectors";
 
-import Avatar from "./Avatar";
-import PageLinker from "../boxes/PageLinker";
-import { Wallet, MobileWallet } from "../boxes/Wallet";
+import Avatar from "../Widget/Avatar";
+import PageLinker from "../../boxes/PageLinker";
+import { Wallet, MobileWallet } from "../../boxes/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
