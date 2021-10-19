@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const LinkContainer = (props) => {
   const items = props.links.map((link) => (
@@ -65,6 +66,17 @@ const Footer = () => {
           <div className="text-sm text-lightgray font-semibold py-1">
             Copyright © 2021 diva.cards
           </div>
+        </div>
+
+        <div>
+          <Link href="/" locale="en">
+            <a>English</a>
+          </Link>
+        </div>
+        <div>
+          <Link href="/" locale="ja">
+            <a>日本語</a>
+          </Link>
         </div>
       </div>
     </footer>

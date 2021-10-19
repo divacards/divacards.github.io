@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const FeatureText = (props) => {
   return (
@@ -15,16 +16,15 @@ const FeatureText = (props) => {
     </div>
   );
 };
-const FeatureImage = (props) => {
+const FeatureImage = ({ dataAos, img }) => {
   return (
-    <div
-      className="w-full md:w-1/2 aos-init aos-animate"
-      data-aos={props.dataAos}
-    >
-      <img
+    <div className="w-full md:w-1/2 aos-init aos-animate" data-aos={dataAos}>
+      <Image
         className="mx-auto pt-8 sm:pt-0 object-contain px-4 w-5/6 md:w-9/12"
-        src={props.img}
-      ></img>
+        src={img}
+        alt="Feature image"
+        layout="fill"
+      ></Image>
     </div>
   );
 };
@@ -58,17 +58,17 @@ const ReversedFeatureBox = (props) => {
 const Feature = () => {
   const features = [
     {
-      img: "./images/45.png",
+      img: "/images/45.png",
       title: "LOREM IPSUM",
       desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
     },
     {
-      img: "./images/Group Members.png",
+      img: "/images/Group Members.png",
       title: "LOREM IPSUM",
       desc: "Sed perspiciatis unde omnis natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo excepturi sint occaecati cupiditate architecto.",
     },
     {
-      img: "./images/45.png",
+      img: "/images/45.png",
       title: "LOREM IPSUM",
       desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
     },
