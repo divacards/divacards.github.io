@@ -1,6 +1,9 @@
 import React from "react";
+import Image from "next/image";
+import useTranslation from "next-translate/useTranslation";
 
 const Hero = () => {
+  const { t } = useTranslation("home");
   return (
     <section className="flex flex-col lg:flex-row items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 lg:py-8 max-w-screen-xl relative">
       <div
@@ -15,10 +18,10 @@ const Hero = () => {
         </p>
         <div className="mt-5 sm:mt-8 flex justify-between lg:justify-start">
           <button className="px-4 py-2 border border-transparent text-xl btn-pink focus:outline-none md:px-6   font-semibold text-white">
-            Buy Cards
+            {t("button-buy-cards")}
           </button>
           <button className="lg:mx-2 px-4 py-2 border border-transparent text-xl btn-white focus:outline-none md:px-6   font-semibold text-pink-500">
-            Air Drop
+            {t("button-airdrop")}
           </button>
         </div>
       </div>
@@ -27,7 +30,7 @@ const Hero = () => {
         className="mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2 aos-init aos-animate"
         data-aos="fade-up"
       >
-        <img
+        <Image
           height="500"
           width="1000"
           className="w-full h-full z-20 object-contain"

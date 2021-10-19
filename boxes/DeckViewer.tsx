@@ -1,5 +1,12 @@
 import React from "react";
 import { FireIcon } from "@heroicons/react/solid";
+import Image from "next/image";
+
+function getCardSrc(artist, deck, card) {
+  return `/images/card_set/${artist.name.toLowerCase()}/${deck.id}/${
+    card.poker_suite + card.poker_sign.toLowerCase()
+  }.png`;
+}
 
 const DeckViewer = ({
   title,
@@ -42,20 +49,25 @@ const DeckViewer = ({
       </section>
       <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto lg:items-center font-cursive">
         <div className="grid nn:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
-          {cards.map((card) => (
-            <div
-              key={`${artist.name}-${deck.name}-${card.id}`}
-              className="flex flex-col gap-2"
-            >
-              <img
-                className="mx-auto w-1/2 lg:w-10/12 rounded"
-                src={`/images/card_set/${artist.name.toLowerCase()}/${
-                  deck.id
-                }/${card.poker_suite + card.poker_sign.toLowerCase()}.png`}
-              ></img>
-              <span className="mx-auto font-cursive">{card.name}</span>
-            </div>
-          ))}
+          {cards.map((card) => {
+            const size = 800;
+            const src = getCardSrc(artist, deck, card);
+
+            return (
+              <div
+                key={`${artist.name}-${deck.name}-${card.id}`}
+                className="flex flex-col gap-2"
+              >
+                <Image
+                  width={size}
+                  height={size}
+                  className="mx-auto w-1/2 lg:w-10/12 rounded"
+                  src={src}
+                />
+                <span className="mx-auto font-cursive">{card.name}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
     </main>

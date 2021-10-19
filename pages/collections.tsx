@@ -1,8 +1,8 @@
 import React, { useState, useReducer } from "react";
 
 import Layout from "../components/Layout";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Layout/Header";
+import Footer from "../components/Layout/Footer";
 import { CustomSelect, CustomRadioGroup } from "../components/Custom";
 import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
@@ -52,16 +52,14 @@ const CardFilters = (props) => {
     >
       <div className="flex flex-row gap-1">
         <SuiteFilters
-          id="suite-select"
-          instanceid="suite-select"
+          // instanceid="suite-select"
           opts={props.suiteOpts}
           state={props.suite}
           onChange={props.onSuiteSelect}
         />
       </div>
       <OrderFilters
-        id="order-select"
-        instanceId="order-select"
+        // instanceId="order-select"
         state={props.order}
         onChange={props.onOrderSelect}
       />
@@ -73,12 +71,12 @@ const DeckFilters = (props) => {
   return (
     // <section className="flex flex-row justify-between mx-auto w-10/12 lg:gap-4 lg:justify-start lg-section gap-1">
     <section
-      className="flex flex-row justify-between mx-auto w-10/12 
+      className="flex flex-row justify-between mx-auto w-10/12
       lg:pl-0
       nn:mb-2
       sm:mb-2
       lg:mb-0
-      sm:w-full 
+      sm:w-full
       sm:px-6
       nn:w-full
       nn:px-6
@@ -172,40 +170,12 @@ export default function Collections() {
     [cards, ...filters].reduce((result, y) => result.filter(y));
 
   // TODO move to utils part useFilter(args)
-  const useFilter = withFilters([suiteFilter, deckFilter]) || ((x) => x);
-  // const showDeckViewer = (artistsSelected, decksMap, order) => {
-  //     const artists = artistsSelected.map((item) => item.value);
-  //     const decks = [];
-  //     if (artists.length === 0) {
-  //         // show all
-  //         decks.push(...Object.entries(decksMap));
-  //     } else {
-  //         // show selected
-  //         for (const [key, deck] of Object.entries(decksMap)) {
-  //             if (artists.includes(key)) {
-  //                 decks.push([key, deck]);
-  //             }
-  //         }
-  //     }
-
-  //     return (
-  //         <>
-  //           {decks.map(([key, deck], index) => (
-  //               <DeckViewer
-  //                 key={key + "-" + index}
-  //                 title={deck.title}
-  //                 cards={deck.cards}
-  //                 reversed={order == 1}
-  //                 useFilter={useFilter}
-  //               />
-  //           ))}
-  //         </>
-  //     );
-  // };
+  // TODO: refactor this part
+  const filterCards = withFilters([suiteFilter, deckFilter]);
 
   let sum_cards = 0;
   const arr_decks = arr_data.filter(artistsFilter).map((deck, index) => {
-    let f_cards = useFilter(deck.cards);
+    let f_cards = filterCards(deck.cards);
     sum_cards += f_cards.length;
     return {
       ...deck,
@@ -222,7 +192,7 @@ export default function Collections() {
             title={deck.title}
             cards={deck.cards}
             reversed={order == 1}
-          /* useFilter={useFilter} */
+            /* useFilter={useFilter} */
           />
         ))}
       </>
@@ -268,8 +238,8 @@ export default function Collections() {
                         lg:items-center
                         lg:px-5
                         md:space-x-10
-                        sm:w-full 
-                        sm:px-6 
+                        sm:w-full
+                        sm:px-6
                         nn:w-full
                         nn:px-6
                         font-cursive

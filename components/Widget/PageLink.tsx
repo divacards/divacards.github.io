@@ -61,3 +61,8 @@ export const MobilePageLink = ({ text, href, selected }) => {
     </Link>
   );
 };
+
+Button.displayName = "Button";
+MobileButton.displayName = "MobileButton";
+PageLink.displayName = "PageLink";
+MobilePageLink.displayName = "MobilePageLink";
