@@ -26,10 +26,10 @@ jobs:
         run: yarn install
 
       - name: build
-        run: npm run build
+        run: yarn build
 
       - name: export
-        run: npm run export
+        run: yarn export
 
       - name: add nojekyll
         run: touch ./out/.nojekyll

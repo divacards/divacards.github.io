@@ -79,7 +79,7 @@ export const Wallet = () => {
         <span className="px-2 my-auto text-highlight">
           {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
         </span>
-        <Avatar value={account}></Avatar>
+        <Avatar value={account} />
       </Popover.Button>
 
       <Popover.Panel

@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import useTranslation from "next-translate/useTranslation";
+import {
+  useTranslation,
+  useLanguageQuery,
+  LanguageSwitcher,
+} from "next-export-i18n";
 
 const Hero = () => {
   const { t } = useTranslation("home");
@@ -33,6 +37,7 @@ const Hero = () => {
         <Image
           height="500"
           width="1000"
+          loader={({ src }) => src}
           className="w-full h-full z-20 object-contain"
           src="/images/Group Members.png"
           alt="main-img"

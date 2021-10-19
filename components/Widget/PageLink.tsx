@@ -1,6 +1,11 @@
 import React from "react";
 
 import Link from "next/link";
+import {
+  useTranslation,
+  useLanguageQuery,
+  LanguageSwitcher,
+} from "next-export-i18n";
 
 const Button = React.forwardRef(
   // @ts-expect-error
@@ -45,19 +50,24 @@ const MobileButton = React.forwardRef(
 );
 
 export const PageLink = ({ text, href, selected }) => {
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
   return (
-    <Link href={href} passHref>
+    <Link href={{ href, query }} passHref>
       {/* @ts-expect-error */}
-      <Button selected={selected}>{text}</Button>
+      <Button selected={selected}>{t(text)}</Button>
     </Link>
   );
 };
 
 export const MobilePageLink = ({ text, href, selected }) => {
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+
   return (
-    <Link href={href} passHref>
+    <Link href={{ href, query }} passHref>
       {/* @ts-expect-error */}
-      <MobileButton selected={selected}>{text}</MobileButton>
+      <MobileButton selected={selected}>{t(text)}</MobileButton>
     </Link>
   );
 };
