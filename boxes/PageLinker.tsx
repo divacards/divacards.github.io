@@ -7,22 +7,22 @@ const PageLinker = ({ mobile }: any) => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
-    { href: "/", text: "link-home" },
-    { href: "/collections", text: "link-collections" },
-    { href: "/artists", text: "link-artists" },
-    { href: "/forge", text: "link-forge" },
+    { path: "/", text: "link-home" },
+    { path: "/collections", text: "link-collections" },
+    { path: "/artists", text: "link-artists" },
+    { path: "/forge", text: "link-forge" },
   ];
 
   const Child = mobile ? MobilePageLink : PageLink;
 
   return (
     <>
-      {pageLinks.map(({ text, href }) => (
+      {pageLinks.map(({ text, path }) => (
         <Child
           key={text}
           text={text}
-          href={href}
-          selected={router.pathname === href}
+          path={path}
+          selected={router.pathname === path}
         />
       ))}
     </>

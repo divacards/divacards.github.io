@@ -31,13 +31,14 @@ const Hero = () => {
       </div>
 
       <div
-        className="mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2 aos-init aos-animate"
+        className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2 aos-init aos-animate"
         data-aos="fade-up"
       >
         <Image
-          height="500"
-          width="1000"
+          height={500}
+          width={1000}
           loader={({ src }) => src}
+          unoptimized
           className="w-full h-full z-20 object-contain"
           src="/images/Group Members.png"
           alt="main-img"

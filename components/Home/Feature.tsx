@@ -18,12 +18,16 @@ const FeatureText = (props) => {
 };
 const FeatureImage = ({ dataAos, img }) => {
   return (
-    <div className="w-full md:w-1/2 aos-init aos-animate" data-aos={dataAos}>
+    <div
+      className="relative w-full md:w-1/2 aos-init aos-animate"
+      data-aos={dataAos}
+    >
       <Image
         className="mx-auto pt-8 sm:pt-0 object-contain px-4 w-5/6 md:w-9/12"
         src={img}
         alt="Feature image"
         layout="fill"
+        unoptimized
         loader={({ src }) => src}
       ></Image>
     </div>
