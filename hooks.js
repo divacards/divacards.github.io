@@ -4,7 +4,7 @@ import { useWeb3React } from "@web3-react/core";
 import { injected } from "./connectors";
 
 export function useEagerConnect() {
-  console.log("connecting");
+  console.log("connecting web3");
 
   const { activate, active } = useWeb3React();
 
