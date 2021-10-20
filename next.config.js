@@ -1,5 +1,6 @@
-const nextTranslate = require("next-translate");
-
-module.exports = nextTranslate({
+module.exports = {
+  images: {
+    loader: "custom",
+  },
   typescript: { ignoreBuildErrors: false },
-});
+};

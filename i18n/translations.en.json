@@ -1,0 +1,10 @@
+{
+    "i18n": {
+        "link-home": "Home",
+        "link-collections": "Collections",
+        "link-artists": "artists",
+        "link-forge": "Forge",
+        "button-buy-cards": "Buy Cards",
+        "button-airdrop": "Airdrop"
+    }
+}

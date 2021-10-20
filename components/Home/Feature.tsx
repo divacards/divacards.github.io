@@ -24,6 +24,7 @@ const FeatureImage = ({ dataAos, img }) => {
         src={img}
         alt="Feature image"
         layout="fill"
+        loader={({ src }) => src}
       ></Image>
     </div>
   );

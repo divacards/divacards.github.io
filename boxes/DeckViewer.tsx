@@ -63,6 +63,7 @@ const DeckViewer = ({
                   height={size}
                   className="mx-auto w-1/2 lg:w-10/12 rounded"
                   src={src}
+                  loader={({ src }) => src}
                 />
                 <span className="mx-auto font-cursive">{card.name}</span>
               </div>

@@ -1,13 +1,15 @@
 import { toSvg } from "jdenticon";
 import Image from "next/image";
 
-const Avatar = (props) => {
-  const svgString = toSvg(props.value || "random-string", 32);
+const Avatar = ({ className = "", value = "random-string", size = 40 }) => {
+  const svgString = toSvg(value, size);
 
   return (
     <Image
-      className="inline"
-      layout="fill"
+      className={className + " inline"}
+      width={size}
+      height={size}
+      loader={({ src }) => src}
       alt="avatar"
       src={`data:image/svg+xml;utf8,${encodeURIComponent(svgString)}`}
     />

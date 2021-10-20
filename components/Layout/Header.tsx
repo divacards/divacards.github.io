@@ -260,15 +260,13 @@ const Header = () => {
         </div>
       </section>
 
-      <section className="hidden lg:w-5/6 lg:flex lg:items-center lg:justify-between">
-        <nav className="flex space-x-10">
-          <PageLinker />
-        </nav>
-        <div className="flex justify-end items-center w-10/12">
-          <span className="sr-only">Open wallet</span>
-          <AccountMenu active={active} />
-        </div>
-      </section>
+      <nav className="hidden lg:flex lg:flex-row lg:w-5/6  lg:space-x-2 lg:items-center lg:justify-between">
+        <PageLinker />
+      </nav>
+      <div className="hidden lg:flex lg:justify-end lg:items-center lg:w-10/12">
+        <span className="sr-only">Open wallet</span>
+        <AccountMenu active={active} />
+      </div>
     </header>
   );
 };

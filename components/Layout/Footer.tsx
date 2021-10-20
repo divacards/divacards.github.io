@@ -1,5 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import {
+  useTranslation,
+  useLanguageQuery,
+  LanguageSwitcher,
+} from "next-export-i18n";
 
 const LinkContainer = (props) => {
   const items = props.links.map((link) => (
@@ -61,23 +66,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         <div className="flex flex-wrap place-content-center">
           <div className="text-sm text-lightgray font-semibold py-1">
             Copyright © 2021 diva.cards
           </div>
         </div>
-
-        <div>
-          <Link href="/" locale="en">
-            <a>English</a>
-          </Link>
-        </div>
-        <div>
-          <Link href="/" locale="ja">
-            <a>日本語</a>
-          </Link>
-        </div>
+        <LanguageSwitcher lang="en">English</LanguageSwitcher>|{" "}
+        <LanguageSwitcher lang="ja">日本語</LanguageSwitcher>
       </div>
     </footer>
   );
