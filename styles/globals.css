@@ -9,8 +9,8 @@
   .btn {
     @apply transition duration-150 ease-in-out;
   }
-  .btn-pink {
-    @apply bg-pink-500 hover:bg-pink-600 btn rounded;
+  .btn-themecolor {
+    @apply bg-red-500 hover:bg-red-600 btn rounded;
   }
   .btn-white {
     @apply bg-gray-100 hover:bg-gray-200 btn rounded;
@@ -21,8 +21,8 @@
   .text-lightgray {
     @apply text-gray-500 text-opacity-75;
   }
-  .text-lightpink {
-    @apply text-pink-500 text-opacity-75;
+  .text-themecolor {
+    @apply text-red-500 text-opacity-75;
   }
   .text-highlight {
     @apply text-purple-500 font-semibold;
@@ -51,7 +51,7 @@
     @apply flex flex-row justify-between lg:justify-end lg:gap-9;
   }
   .page-selected {
-    @apply bg-pink-500 font-bold text-white p-4 rounded-lg;
+    @apply bg-red-500 font-bold text-white p-4 rounded-lg;
   }
   .lg-headerbar {
     @apply h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg lg:items-center;

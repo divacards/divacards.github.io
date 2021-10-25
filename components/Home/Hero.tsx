@@ -15,16 +15,16 @@ const Hero = () => {
         data-aos="fade-in"
       >
         <h2 className="text-3xl leading-tight font-extrabold text-gray-900 xs:text-4xl sm:text-5xl md:text-6xl">
-          Your headline <span className="text-lightpink">goes here</span>
+          Simple <span className="text-themecolor">Collectables</span>
         </h2>
         <p className="mt-6 text-base font-body text-lightgray sm:text-lg md:text-xl">
-          Supplement it with an easy to read subheading.
+          Your collections does NOT end up owning you.
         </p>
         <div className="mt-5 sm:mt-8 flex justify-between lg:justify-start">
-          <button className="px-4 py-2 border border-transparent text-xl btn-pink focus:outline-none md:px-6   font-semibold text-white">
+          <button className="px-4 py-2 border border-transparent text-xl btn-themecolor focus:outline-none md:px-6 font-semibold text-white">
             {t("button-buy-cards")}
           </button>
-          <button className="lg:mx-2 px-4 py-2 border border-transparent text-xl btn-white focus:outline-none md:px-6   font-semibold text-pink-500">
+          <button className="lg:mx-2 px-4 py-2 border border-transparent text-xl btn-white focus:outline-none md:px-6 font-semibold text-red-500">
             {t("button-airdrop")}
           </button>
         </div>
@@ -40,7 +40,7 @@ const Hero = () => {
           loader={({ src }) => src}
           unoptimized
           className="w-full h-full z-20 object-contain"
-          src="/images/Group Members.png"
+          src="/images/tokyo/tokyo-tower.svg"
           alt="main-img"
         />
       </div>

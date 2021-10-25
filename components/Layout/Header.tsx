@@ -69,7 +69,7 @@ const resources = [
 const Logo = (props) => {
   return (
     <h1 className="flex items-center no-underline">
-      <span className="text-4xl text-lightpink tracking-normal font-cursive font-light md:my-5 sm:my-5 my-5">
+      <span className="text-4xl text-themecolor tracking-normal font-cursive font-light md:my-5 sm:my-5 my-5">
         <Link href="/">{props.name}</Link>
       </span>
     </h1>
@@ -83,7 +83,7 @@ const BigButton = () => {
     <button
       className="
         bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
-        items-center justify-center text-pink-400 hover:text-gray-500
+        items-center justify-center text-red-400 hover:text-gray-500
         hover:bg-gray-100 focus:outline-none focus:ring-2
         focus:ring-inset focus:ring-indigo-500"
       onTouchStart={() => {
@@ -111,7 +111,7 @@ const MobileAccountMenu = ({ active }) => {
   ) : (
     <Popover.Button
       className="bg-black bg-opacity-10 rounded-full h-12 w-12 p-2 inline-flex
-                  items-center justify-center text-pink-400 hover:text-gray-500
+                  items-center justify-center text-red-400 hover:text-gray-500
                   hover:bg-gray-100 focus:outline-none focus:ring-2
                   focus:ring-inset focus:ring-indigo-500"
     >
@@ -130,7 +130,7 @@ const Header = () => {
     <header className="flex flex-row lg-headerbar px-6 bg-white sm:px-6 md:space-x-10 justify-between">
       <div className="w-1/6">
         <span className="sr-only">Logo</span>
-        <Logo className="justify-start" name="diva.cards" />
+        <Logo className="justify-start" name="TOKYO.CARDS" />
       </div>
 
       <section className="relative">
@@ -171,7 +171,7 @@ const Header = () => {
                         <div>
                           <Popover.Button
                             className="bg-white rounded-full py-5 px-8 p-2 inline-flex
-                          items-center justify-center text-pink-400 hover:text-gray-500
+                          items-center justify-center text-red-400 hover:text-gray-500
                           hover:bg-gray-100 focus:outline-none focus:ring-2
                           focus:ring-inset focus:ring-indigo-500 "
                           >

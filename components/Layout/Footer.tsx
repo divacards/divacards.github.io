@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap place-content-center">
           <div className="text-sm text-lightgray font-semibold py-1">
-            Copyright © 2021 diva.cards
+            Copyright © 2021 tokyo.cards
           </div>
         </div>
         <LanguageSwitcher lang="en">English</LanguageSwitcher>|{" "}

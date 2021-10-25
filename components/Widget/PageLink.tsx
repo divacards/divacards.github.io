@@ -8,11 +8,10 @@ const Button = React.forwardRef(
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
-        className={`px-4 py-2 flex items-center rounded-lg text-base font-medium ${
-          selected
-            ? "bg-pink-500 text-white"
-            : "text-pink-500 hover:text-pink-900"
-        }`}
+        className={`px-4 py-2 flex items-center rounded-lg text-base font-medium ${selected
+          ? "bg-red-500 text-white"
+          : "text-red-500 hover:text-red-900"
+          }`}
         href={href}
         onClick={onClick}
         // @ts-expect-error
@@ -29,11 +28,10 @@ const MobileButton = React.forwardRef(
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
-        className={`px-3 py-2 text-base text-left font-medium rounded-lg capitalize ${
-          selected
-            ? "bg-pink-500 text-white"
-            : "text-pink-500 hover:text-pink-900"
-        }`}
+        className={`px-3 py-2 text-base text-left font-medium rounded-lg capitalize ${selected
+          ? "bg-red-500 text-white"
+          : "text-red-500 hover:text-red-900"
+          }`}
         href={href}
         onClick={onClick}
         // @ts-expect-error
