@@ -39,24 +39,19 @@ const FeatureImage = ({ dataAos, img }) => {
 const FeatureBox = (props) => {
   return (
     <div className="flex flex-col md:flex-row py-12 lg:py-16">
-      <FeatureText
-        title={props.feature.title}
-        desc={props.feature.desc}
-        dataAos="fade-right"
-      ></FeatureText>
-      <FeatureImage img={props.feature.img} dataAos="fade-left"></FeatureImage>
-    </div>
+      <FeatureText title={props.feature.title} desc={props.feature.desc} ></FeatureText>
+      <FeatureImage img={props.feature.img} dataAos=""></FeatureImage>
+    </div >
   );
 };
 
 const ReversedFeatureBox = (props) => {
   return (
     <div className="flex flex-col-reverse md:flex-row py-12">
-      <FeatureImage img={props.feature.img} dataAos="fade-right"></FeatureImage>
+      <FeatureImage img={props.feature.img} dataAos=""></FeatureImage>
       <FeatureText
         title={props.feature.title}
         desc={props.feature.desc}
-        dataAos="fade-left"
       ></FeatureText>
     </div>
   );
