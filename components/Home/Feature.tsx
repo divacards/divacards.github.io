@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { XIcon } from '@heroicons/react/solid'
+
 
 const FeatureText = (props) => {
   return (
@@ -64,18 +66,18 @@ const Feature = () => {
   const features = [
     {
       img: "/images/tokyo/tea-svgrepo-com.svg",
-      title: "Casual",
-      desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      title: "Simple",
+      desc: "Based on fan economy, tokyo.cards trading card NFT series is one of the best digital utility for community running.",
     },
     {
       img: "/images/tokyo/koi-svgrepo-com.svg",
       title: "Interactive",
-      desc: "Sed perspiciatis unde omnis natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo excepturi sint occaecati cupiditate architecto.",
+      desc: "Trade, mint, exchange or decomposing trading cards with other players in the community.",
     },
     {
       img: "/images/tokyo/ninja-warrior-svgrepo-com.svg",
       title: "Trustless",
-      desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      desc: "Built on blockchain, our trading card system runs autonomously without the need to trust and third party platform.",
     },
   ];
 
@@ -93,7 +95,7 @@ const Feature = () => {
       id="feature"
     >
       <h3 className="text-3xl leading-8 font-extrabold text-center tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        Powered by blockchain
+        <span className="text-red-500">Fundamentalism</span> + NFT
       </h3>
       {boxes}
     </section>

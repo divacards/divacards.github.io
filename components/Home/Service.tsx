@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  ChatIcon,
-  GlobeIcon,
-  LibraryIcon,
+  BeakerIcon,
+  RefreshIcon,
   LightningBoltIcon,
-} from "@heroicons/react/outline";
+  ScaleIcon,
+} from "@heroicons/react/solid";
 
 const ServiceHeader = (props) => {
   return (
@@ -37,20 +37,20 @@ const ServiceItem = (props) => {
 const Service = () => {
   const services = [
     {
-      title: "Lorem Ipsum",
-      desc: "Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize. Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize.",
+      title: "Trading",
+      desc: "Trade or exchange with anyone either with our partners or in person. Our market partner include OpenSea.io and Adam.jp, both provide wonderful services.",
     },
     {
-      title: "Lorem Ipsum",
-      desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      title: "Crafting",
+      desc: "Can't find the item you wanted anywhere ? Try crafting it with disenchanted card parts. There is a chance that you find a better item.",
     },
     {
-      title: "Lorem Ipsum",
-      desc: "Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize. Beautifully designed, expertly crafted components that follow all accessibility best practices and are easy to customize.",
+      title: "Enchanting",
+      desc: "Discover the magical power of enchanting by add more power to one of the items, or disenchant the item that is not needed any longer.",
     },
     {
-      title: "Lorem Ipsum",
-      desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      title: "Recycling",
+      desc: "Unwanted NFTs from other NFT projects are welcomed here. Instead of leaving it in the wallet, smash it into pieces and craft something new.",
     },
   ];
   const height = 40;
@@ -59,21 +59,32 @@ const Service = () => {
     <section className="flex flex-col items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 py-8 relative">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <ServiceHeader
-          title="Services"
-          sectionName="cross-chain nfts"
-          desc="Describe your awesome services. Describe your awesome services. Describe your awesome services."
+          title="Our Commuity"
+          sectionName="tokyo.cards NFTs"
+          desc="Find the right person in our community to exchange, trade or craft new collectables."
         ></ServiceHeader>
         <div className="mt-10 relative mx-auto grid lg:grid-cols-2 gap-10 content-center">
           <ServiceItem
             icon={
-              <GlobeIcon
+              <ScaleIcon
                 height={height}
                 width={width}
                 className="text-red-500"
               />
             }
-            title="Service #1"
+            title={services[0].title}
             desc={services[0].desc}
+          ></ServiceItem>
+          <ServiceItem
+            icon={
+              <BeakerIcon
+                height={height}
+                width={width}
+                className="text-red-500"
+              />
+            }
+            title={services[1].title}
+            desc={services[1].desc}
           ></ServiceItem>
           <ServiceItem
             icon={
@@ -83,29 +94,18 @@ const Service = () => {
                 className="text-red-500"
               />
             }
-            title="Service #2"
-            desc={services[1].desc}
-          ></ServiceItem>
-          <ServiceItem
-            icon={
-              <LibraryIcon
-                height={height}
-                width={width}
-                className="text-red-500"
-              />
-            }
-            title="Service #3"
+            title={services[2].title}
             desc={services[2].desc}
           ></ServiceItem>
           <ServiceItem
             icon={
-              <ChatIcon
+              <RefreshIcon
                 height={height}
                 width={width}
                 className="text-red-500"
               />
             }
-            title="Service #4"
+            title={services[3].title}
             desc={services[3].desc}
           ></ServiceItem>
         </div>
