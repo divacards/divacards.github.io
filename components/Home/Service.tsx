@@ -42,7 +42,7 @@ const Service = () => {
     },
     {
       title: "Crafting",
-      desc: "Can't find the item you wanted anywhere ? Try crafting it with disenchanted card parts. There is a chance that you find a better item.",
+      desc: "Can't find the item you wanted anywhere ? Try crafting it with disenchanted card parts. There is a chance to a better item during the process.",
     },
     {
       title: "Enchanting",
@@ -59,9 +59,9 @@ const Service = () => {
     <section className="flex flex-col items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 py-8 relative">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <ServiceHeader
-          title="Our Commuity"
+          title="A Commuity"
           sectionName="tokyo.cards NFTs"
-          desc="Find the right person in our community to exchange, trade or craft new collectables."
+          desc="Find the right person in the community to exchange, trade or craft new collectables."
         ></ServiceHeader>
         <div className="mt-10 relative mx-auto grid lg:grid-cols-2 gap-10 content-center">
           <ServiceItem
