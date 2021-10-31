@@ -4,25 +4,18 @@ import classNames from "classnames";
 import { useWeb3React } from "@web3-react/core";
 import useSWR from "swr";
 import { formatEther } from "@ethersproject/units";
-import { InlineIcon } from "@iconify/react";
 
 import { ClipboardCopyIcon } from "@heroicons/react/outline";
 import { Menu, Transition, Popover } from "@headlessui/react";
 
-import { fetcher, contractFetcher } from "../fetcher";
-import {
-  CHAIN_CONFIG,
-  BSC_CHAINID,
-  ETH_MAINNET_CHAINID,
-  MATIC_CHAINID,
-} from "../consts";
-import WETH_ABI from "../abis/WETH.json";
+import { fetcher, contractFetcher } from "../../web3/fetcher";
+import { getPaymentConfig, getCurrencyConfig } from "../../web3/consts";
+import WETH_ABI from "../../abis/WETH.json";
 
-import { ETH_ICON } from "../components/Widget/Icon";
-import Avatar from "../components/Widget/Avatar";
-import { BlockchainFilters } from "./Filter";
+import Avatar from "./Avatar";
+import { BlockchainFilters } from "../../boxes/Filter";
 
-function shortenETHAddr(addr) {
+function shortenETHAddr(addr: string) {
   const len = addr.length;
   return addr.substring(0, 8) + ".." + addr.substring(len - 6, len);
 }
@@ -57,14 +50,22 @@ const DisconnectButton = () => {
 };
 
 export const Wallet = () => {
+  const { chainId } = useWeb3React();
+  if (!chainId) {
+    return null;
+  }
+  return <__Wallet />;
+};
+
+const __Wallet = () => {
   const { library, chainId, account } = useWeb3React();
 
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
     fetcher: fetcher(library),
   });
 
-  const currencyConf = CHAIN_CONFIG[chainId].currency;
-  const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
+  const currencyConf = getCurrencyConfig(chainId);
+  const paymentConf = getPaymentConfig(chainId);
   const addr = paymentConf.contract;
   const { data: wethBalance } = useSWR([chainId, addr, "balanceOf", account], {
     fetcher: contractFetcher(library, WETH_ABI),
@@ -129,18 +130,23 @@ export const Wallet = () => {
 };
 
 export const MobileWallet = () => {
-  const { library, chainId, account } = useWeb3React();
-
+  const { chainId } = useWeb3React();
   if (!chainId) {
     return null;
   }
+  return <__MobileWallet />;
+};
+
+const __MobileWallet = () => {
+  const { library, chainId, account } = useWeb3React();
 
   const { data: balance } = useSWR([chainId, "getBalance", account, "latest"], {
     fetcher: fetcher(library),
   });
 
-  const currencyConf = CHAIN_CONFIG[chainId].currency;
-  const paymentConf = CHAIN_CONFIG[chainId].currency.payment;
+  const currencyConf = getCurrencyConfig(chainId);
+  const paymentConf = getPaymentConfig(chainId);
+
   const addr = paymentConf.contract;
   const { data: wethBalance } = useSWR([chainId, addr, "balanceOf", account], {
     fetcher: contractFetcher(library, WETH_ABI),

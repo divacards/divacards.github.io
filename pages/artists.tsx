@@ -4,7 +4,7 @@ import Footer from "../components/Layout/Footer";
 
 export default function Artists() {
   return (
-    <Layout pageTitle="diva cards">
+    <Layout pageTitle="tokyo.cards">
       <Header />
       <main>
         <section className="flex place-content-center">

@@ -4,16 +4,16 @@ import { useWeb3React } from "@web3-react/core";
 import { injected } from "./connectors";
 
 export function useEagerConnect() {
-  console.log("connecting web3");
-
   const { activate, active } = useWeb3React();
 
   const [tried, setTried] = useState(false);
 
   useEffect(() => {
+    console.log("connecting web3");
     injected.isAuthorized().then((isAuthorized) => {
       if (isAuthorized) {
-        activate(injected, undefined, true).catch(() => {
+        activate(injected, undefined, true).catch((e) => {
+          console.error(e);
           setTried(true);
         });
       } else {
@@ -36,6 +36,7 @@ export function useInactiveListener(suppress = false) {
   const { active, error, activate } = useWeb3React();
 
   useEffect(() => {
+    // @ts-expect-error
     const { ethereum } = window;
     if (ethereum && ethereum.on && !active && !error && !suppress) {
       const handleConnect = () => {

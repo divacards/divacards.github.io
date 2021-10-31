@@ -12,13 +12,17 @@ import {
 } from "@heroicons/react/outline";
 import { InlineIcon } from "@iconify/react";
 
-import { BSC_CHAINID, ETH_MAINNET_CHAINID, MATIC_CHAINID } from "../../consts";
-import { useEagerConnect, useInactiveListener } from "../../hooks";
-import { getErrorMessage, injected } from "../../connectors";
+import {
+  BSC_CHAINID,
+  ETH_MAINNET_CHAINID,
+  MATIC_CHAINID,
+} from "../../web3/consts";
+import { useEagerConnect, useInactiveListener } from "../../web3/hooks";
+import { getErrorMessage, injected } from "../../web3/connectors";
 
 import Avatar from "../Widget/Avatar";
 import PageLinker from "../../boxes/PageLinker";
-import { Wallet, MobileWallet } from "../../boxes/Wallet";
+import { Wallet, MobileWallet } from "../Widget/Wallet";
 
 // JASON
 import { Popover } from "@headlessui/react";
@@ -91,7 +95,6 @@ const BigButton = () => {
         if (!active) activate(injected);
       }}
       onClick={() => {
-        console.log("click");
         if (!active) activate(injected);
       }}
     >

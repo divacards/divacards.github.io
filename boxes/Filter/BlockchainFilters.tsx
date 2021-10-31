@@ -7,7 +7,7 @@ import {
   ETH_MAINNET_CHAINID,
   ETH_RINKEBY_CHAINID,
   MATIC_CHAINID,
-} from "../../consts";
+} from "../../web3/consts";
 
 const BSCIcon = ({ checked }) => (
   <span
