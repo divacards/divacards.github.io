@@ -3,6 +3,15 @@ export const ETH_RINKEBY_CHAINID = 4;
 export const BSC_CHAINID = 56;
 export const MATIC_CHAINID = 137;
 
+interface PaymentConfig {
+  symbol: string;
+  contract: string;
+}
+interface CurrencyConfig {
+  main: string;
+  payment: PaymentConfig;
+}
+
 export const CHAIN_CONFIG = {
   56: {
     // BSC
@@ -34,4 +43,16 @@ export const CHAIN_CONFIG = {
       },
     },
   },
+};
+
+export const isChainSupported = (chainId: number): boolean => {
+  return chainId in CHAIN_CONFIG;
+};
+
+export const getCurrencyConfig = (chainId: number): CurrencyConfig => {
+  return CHAIN_CONFIG[chainId]?.currency;
+};
+
+export const getPaymentConfig = (chainId: number): PaymentConfig => {
+  return CHAIN_CONFIG[chainId]?.currency?.payment;
 };

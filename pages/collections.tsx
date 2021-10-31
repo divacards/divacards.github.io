@@ -183,7 +183,7 @@ export default function Collections() {
   const prompt = Mustache.render(t("cards-found"), { count });
 
   return (
-    <Layout pageTitle="diva cards">
+    <Layout pageTitle="tokyo.cards">
       <Header />
       <main>
         <section
