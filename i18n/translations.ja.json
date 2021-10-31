@@ -1,10 +1,19 @@
 {
     "i18n": {
-        "link-home": "ホーム",
-        "link-collections": "コレクション",
-        "link-artists": "アーティスト",
-        "link-forge": "フォージ",
         "button-buy-cards": "カード購入",
-        "button-airdrop": "エアドロップ"
+        "button-airdrop": "エアドロップ",
+        "cards-found": "カード {{count}} 枚が見つかりました",
+        "link": {
+            "home": "ホーム",
+            "collections": "コレクション",
+            "artists": "アーティスト",
+            "forge": "フォージ",
+            "opensea-market": "OpenSea マーケット",
+            "adam-market": "Adam.jp マーケット",
+            "github": "Github",
+            "twitter": "Twitter",
+            "blog": "ブログ",
+            "app": "アプリ"
+        }
     }
 }
