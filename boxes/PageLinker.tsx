@@ -7,10 +7,10 @@ const PageLinker = ({ mobile }: any) => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
-    { path: "/", text: "link-home" },
-    { path: "/collections", text: "link-collections" },
-    { path: "/artists", text: "link-artists" },
-    { path: "/forge", text: "link-forge" },
+    { path: "/", text: "link.home" },
+    { path: "/collections", text: "link.collections" },
+    { path: "/artists", text: "link.artists" },
+    { path: "/forge", text: "link.forge" },
   ];
 
   const Child = mobile ? MobilePageLink : PageLink;

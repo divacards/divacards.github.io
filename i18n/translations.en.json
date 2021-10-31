@@ -1,10 +1,19 @@
 {
     "i18n": {
-        "link-home": "Home",
-        "link-collections": "Collections",
-        "link-artists": "Artists",
-        "link-forge": "Forge",
         "button-buy-cards": "Buy Cards",
-        "button-airdrop": "Airdrop"
+        "button-airdrop": "Airdrop",
+        "cards-found": "{{count}} cards found",
+        "link": {
+            "home": "Home",
+            "collections": "Collections",
+            "artists": "Artists",
+            "forge": "Forge",
+            "opensea-market": "OpenSea Market",
+            "adam-market": "Adam.jp Market",
+            "github": "Github",
+            "twitter": "Twitter",
+            "blog": "Blog",
+            "app": "App"
+        }
     }
 }

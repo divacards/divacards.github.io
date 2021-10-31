@@ -6,21 +6,23 @@ import {
   LanguageSwitcher,
 } from "next-export-i18n";
 
-const LinkContainer = (props) => {
-  const items = props.links.map((link) => (
-    <li key={link.link}>
+const LinkContainer = ({ links, linkTitle }) => {
+  const { t } = useTranslation();
+
+  const items = links.map((link, index) => (
+    <li key={`${link.link}.${index}`}>
       <a
         className="hover:text-pink-500 font-semibold block text-sm py-2"
         href={link.link}
       >
-        {link.title}
+        {t(`link.${link.title}`)}
       </a>
     </li>
   ));
   return (
     <div className="w-full my-8 lg:my-0 lg:w-4/12 px-4 ml-auto">
       <span className="block uppercase text-gray-500 text-sm font-semibold mb-2">
-        {props.linkTitle}
+        {linkTitle}
       </span>
       <ul className="list-unstyled text-gray-500">{items}</ul>
     </div>
@@ -29,16 +31,16 @@ const LinkContainer = (props) => {
 
 const Footer = () => {
   const links = [
-    { title: "Collections", link: "/about" },
-    { title: "Artists", link: "/pricing" },
-    { title: "App", link: "/solutions" },
+    { title: "collections", link: "/collections" },
+    { title: "artists", link: "/artists" },
+    { title: "app", link: "/app" },
   ];
   const otherLinks = [
-    { title: "Opensea Market", link: "/press" },
-    { title: "Adam.jp Market", link: "/tos" },
-    { title: "Github", link: "/privacy" },
-    { title: "Twitter", link: "/privacy" },
-    { title: "Blog", link: "/privacy" },
+    { title: "opensea-market", link: "/press" },
+    { title: "adam-market", link: "/tos" },
+    { title: "github", link: "/github" },
+    { title: "twitter", link: "/todo" },
+    { title: "blog", link: "/todo" },
   ];
 
   return (
@@ -65,10 +67,7 @@ const Footer = () => {
           {/* RIGHT */}
           <div className="w-full lg:w-6/12 lg:px-4">
             <div className="flex flex-wrap items-top mb-6">
-              <LinkContainer
-                linkTitle="Links"
-                links={links}
-              ></LinkContainer>
+              <LinkContainer linkTitle="Links" links={links}></LinkContainer>
               <LinkContainer
                 linkTitle="Other Resources"
                 links={otherLinks}
@@ -82,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer >
+    </footer>
   );
 };
 

@@ -6,39 +6,18 @@ import Footer from "../components/Layout/Footer";
 import { CustomSelect, CustomRadioGroup } from "../components/Custom";
 import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
+import { useTranslation } from "next-export-i18n";
+
+import Mustache from "mustache";
 
 //Data from JSON
 import artists from "../public/data/artists.json";
 import decks from "../public/data/decks.json";
 // import cards from "../public/data/cards.json";
-import { consistDecksArr, fetchArtists, fetchDecks } from "../util";
+import { buildDeckData, reducer } from "../util";
 
-const arr_data = consistDecksArr();
+const DECK_DATA = buildDeckData();
 
-function reducer(state, action) {
-  const reg = /change:(.*)/;
-  const key = action.type.match(reg) || [undefined, undefined];
-  switch (key[1]) {
-    case "suite":
-      let suite = state.suite;
-      let index = suite.indexOf(action.data);
-      if (index > -1) {
-        suite.splice(index, 1);
-      } else {
-        suite = [...suite, action.data];
-      }
-      return { ...state, suite };
-    case "deck":
-      let deck = action.data || { value: null };
-      return { ...state, deck: deck.value };
-    case "artist":
-      return { ...state, artist: action.data };
-    case "order":
-      return { ...state, order: action.data };
-    default:
-  }
-  return state;
-}
 const CardFilters = (props) => {
   return (
     <section
@@ -173,15 +152,16 @@ export default function Collections() {
   // TODO: refactor this part
   const filterCards = withFilters([suiteFilter, deckFilter]);
 
-  let sum_cards = 0;
-  const arr_decks = arr_data.filter(artistsFilter).map((deck, index) => {
+  let count = 0;
+  const filteredDecks = DECK_DATA.filter(artistsFilter).map((deck, index) => {
     let f_cards = filterCards(deck.cards);
-    sum_cards += f_cards.length;
+    count += f_cards.length;
     return {
       ...deck,
       cards: f_cards,
     };
   });
+
   const showDeckViewer = (decks) => {
     return (
       <>
@@ -198,6 +178,9 @@ export default function Collections() {
       </>
     );
   };
+
+  const { t } = useTranslation();
+  const prompt = Mustache.render(t("cards-found"), { count });
 
   return (
     <Layout pageTitle="diva cards">
@@ -245,9 +228,9 @@ export default function Collections() {
                         font-cursive
                     "
         >
-          {sum_cards} Cards found
+          {prompt}
         </div>
-        {showDeckViewer(arr_decks)}
+        {showDeckViewer(filteredDecks)}
       </main>
       <Footer />
     </Layout>
