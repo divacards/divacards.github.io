@@ -1,10 +1,11 @@
-import React from "react";
-import Link from "next/link";
+import React, { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
 import {
   useTranslation,
   useLanguageQuery,
   LanguageSwitcher,
 } from "next-export-i18n";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const LinkContainer = ({ links, linkTitle }) => {
   const { t } = useTranslation();
@@ -26,6 +27,52 @@ const LinkContainer = ({ links, linkTitle }) => {
       </span>
       <ul className="list-unstyled text-gray-500">{items}</ul>
     </div>
+  );
+};
+
+const LanguageSelector = () => {
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "ja", name: "日本語" },
+  ];
+
+  const [selected, setSelected] = useState(languages[0]);
+
+  return (
+    <Listbox value={selected} onChange={setSelected}>
+      <Listbox.Button className="relative inline-flex w-1/6 justify-center bg-white text-gray-700 rounded-md border border-gray-300">
+        {selected.name}
+        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+      </Listbox.Button>
+      <Transition
+        as={Fragment}
+        leave="transition ease-in duration-100"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <Listbox.Options className="relative w-1/6 right-0 mt-2 divide-y divide-gray-100 bg-white rounded border-sm border-gray-300  ring-1 ring-black ring-opacity-5 focus:outline-none">
+          {languages.map((lang, index) => (
+            <Listbox.Option
+              className="flex justify-center"
+              key={index}
+              value={lang}
+            >
+              {({ active }) => (
+                <LanguageSwitcher lang={lang.code}>
+                  <span
+                    className={`text-gray-700 w-full px-4 py-1 text-center ${
+                      active ? "bg-gray-100" : ""
+                    }`}
+                  >
+                    {lang.name}
+                  </span>
+                </LanguageSwitcher>
+              )}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
+      </Transition>
+    </Listbox>
   );
 };
 
@@ -57,12 +104,7 @@ const Footer = () => {
             <p className="text-lg mt-0 mb-2 text-gray-500">
               A community for NFT fundamentalists.
             </p>
-            <p className="text-lg mt-0 mb-2 text-gray-500">
-              <LanguageSwitcher lang="en">English</LanguageSwitcher>
-            </p>
-            <p className="text-lg mt-0 mb-2 text-gray-500">
-              <LanguageSwitcher lang="ja">日本語</LanguageSwitcher>
-            </p>
+            <LanguageSelector />
           </div>
           {/* RIGHT */}
           <div className="w-full lg:w-6/12 lg:px-4">

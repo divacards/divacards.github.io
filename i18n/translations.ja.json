@@ -3,6 +3,11 @@
         "button-buy-cards": "カード購入",
         "button-airdrop": "エアドロップ",
         "cards-found": "カード {{count}} 枚が見つかりました",
+        "hero": {
+            "header-simple": "シンプルな",
+            "header-collectables": "コレクタブル",
+            "catch-phrase": "あなたはコレクションを持つだけでなく"
+        },
         "link": {
             "home": "ホーム",
             "collections": "コレクション",
