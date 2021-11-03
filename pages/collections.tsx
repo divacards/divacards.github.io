@@ -8,8 +8,6 @@ import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
 import { useTranslation } from "next-export-i18n";
 
-import Mustache from "mustache";
-
 //Data from JSON
 import artists from "../public/data/artists.json";
 import decks from "../public/data/decks.json";
@@ -180,7 +178,7 @@ export default function Collections() {
   };
 
   const { t } = useTranslation();
-  const prompt = Mustache.render(t("cards-found"), { count });
+  const prompt = t("cards-found", { count });
 
   return (
     <Layout pageTitle="tokyo.cards">
