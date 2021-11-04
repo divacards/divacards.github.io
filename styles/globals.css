@@ -59,6 +59,12 @@
   .home-section {
     @apply container px-2 md:px-4 lg:px-8 mx-auto my-8 lg:my-16;
   }
+  .collection-section {
+    @apply container px-4 lg:px-8 mx-auto my-4;
+  }
+  .deck-section {
+    @apply container flex flex-row mx-auto my-2;
+  }
   .auto-image {
     @apply w-full h-full z-20 object-contain;
   }

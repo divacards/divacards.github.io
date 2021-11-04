@@ -14,7 +14,7 @@ const ServiceHeader = ({ section, title, description }) => {
       <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
         {title}
       </h2>
-      <p className="mt-4 max-w-screen-xl text-xl leading-7 text-lightgray lg:mx-auto">
+      <p className="mt-4 text-xl leading-7 text-lightgray lg:mx-auto">
         {description}
       </p>
     </div>

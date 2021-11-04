@@ -19,12 +19,7 @@ const DECK_DATA = buildDeckData();
 const CardFilters = (props) => {
   return (
     <section
-      className="card-filter-region mx-auto w-10/12
-      lg:pr-0
-      sm:w-full
-      sm:px-6
-      nn:w-full
-      nn:px-6
+      className="container card-filter-region mx-auto w-full
     "
     >
       <div className="flex flex-row gap-1">
@@ -45,25 +40,17 @@ const CardFilters = (props) => {
 };
 
 const DeckFilters = (props) => {
+  const { t } = useTranslation();
   return (
-    // <section className="flex flex-row justify-between mx-auto w-10/12 lg:gap-4 lg:justify-start lg-section gap-1">
     <section
-      className="flex flex-row justify-between mx-auto w-10/12
-      lg:pl-0
-      nn:mb-2
-      sm:mb-2
-      lg:mb-0
-      sm:w-full
-      sm:px-6
-      nn:w-full
-      nn:px-6
-      lg:gap-4 lg:justify-start lg-section gap-1
+      className="container flex flex-col md:flex-row justify-between mx-auto w-full
+      lg:gap-4 lg:justify-start lg-section gap-2
     "
     >
       <CustomSelect
         id="deck-select"
         instanceId="deck-select"
-        placeholder="Select a deck"
+        placeholder={t("select.deck")}
         options={props.deckOpts}
         onChange={props.onDeckSelect}
         isClearable
@@ -72,7 +59,7 @@ const DeckFilters = (props) => {
         id="artist-select"
         instanceId="artist-select"
         isMulti={true}
-        placeholder="Select artists"
+        placeholder={t("select.artist")}
         options={props.artistOpts}
         onChange={props.onArtistSelect}
       ></CustomSelect>
@@ -80,6 +67,22 @@ const DeckFilters = (props) => {
   );
 };
 
+const FilteredDeckViewer = ({ className, decks, order }) => {
+  return (
+    <section className={className}>
+      {decks.map((deck, index) => (
+        <DeckViewer
+          key={`${deck.artistsDetail.name}-${deck.id}`}
+          deck={deck}
+          title={deck.title}
+          cards={deck.cards}
+          reversed={order == 1}
+          /* useFilter={useFilter} */
+        />
+      ))}
+    </section>
+  );
+};
 export default function Collections() {
   const deckOpts = decks.data.map(({ id, name, title }) => ({
     value: id,
@@ -160,23 +163,6 @@ export default function Collections() {
     };
   });
 
-  const showDeckViewer = (decks) => {
-    return (
-      <>
-        {decks.map((deck, index) => (
-          <DeckViewer
-            key={`${deck.artistsDetail.name}-${deck.id}`}
-            deck={deck}
-            title={deck.title}
-            cards={deck.cards}
-            reversed={order == 1}
-            /* useFilter={useFilter} */
-          />
-        ))}
-      </>
-    );
-  };
-
   const { t } = useTranslation();
   const prompt = t("cards-found", { count });
 
@@ -184,51 +170,29 @@ export default function Collections() {
     <Layout pageTitle="tokyo.cards">
       <Header />
       <main>
-        <section
-          className="flex flex-col my-4 gap-2 bg-white mx-auto justify-between
-            lg:flex-row
-            2xl:max-w-screen-2xl
-            2xl:px-0
-            xl:max-w-screen-xl
-            xl:px-0
-            lg:items-center
-            lg:px-5
-          "
-        >
+        <section className="collection-section flex flex-col lg:flex-row gap-2 bg-white justify-between lg:items-center">
           <DeckFilters
             deckOpts={deckOpts}
             onDeckSelect={onDeckSelect}
             artistOpts={artistOpts}
             onArtistSelect={onArtistSelect}
-          ></DeckFilters>
+          />
           <CardFilters
             suite={suite}
             order={order}
             suiteOpts={suiteOpts}
             onSuiteSelect={onSuiteSelect}
             onOrderSelect={onOrderSelect}
-          ></CardFilters>
+          />
         </section>
-        <div
-          className="
-                        flex flex-row my-5 bg-white mx-auto justify-between
-                        2xl:max-w-screen-2xl
-                        2xl:px-0
-                        xl:max-w-screen-xl
-                        xl:px-0
-                        lg:items-center
-                        lg:px-5
-                        md:space-x-10
-                        sm:w-full
-                        sm:px-6
-                        nn:w-full
-                        nn:px-6
-                        font-cursive
-                    "
-        >
+        <span className="collection-section flex flex-row bg-white justify-between font-cursive">
           {prompt}
-        </div>
-        {showDeckViewer(filteredDecks)}
+        </span>
+        <FilteredDeckViewer
+          className="collection-section"
+          decks={filteredDecks}
+          order={order}
+        />
       </main>
       <Footer />
     </Layout>

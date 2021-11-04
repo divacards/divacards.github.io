@@ -25,29 +25,20 @@ const DeckViewer = ({
   const artist = deck.artistsDetail;
 
   return (
-    <main>
-      <section
-        className="
-        h-20
-        flex flex-row border-b border-t py-5
-        2xl:max-w-screen-2xl
-        2xl:mx-auto
-        xl:max-w-screen-xl
-        xl:mx-auto
-        lg:items-center
-        lg:mx-5"
-      >
-        <div className="flex flex-row mx-auto">
-          <FireIcon className="w-8" />
+    <div>
+      <section className="deck-section border-b border-t py-5 h-20">
+        <div className="flex flex-row mx-auto w-1/3">
+          <FireIcon className="w-full" />
         </div>
-        <div className="flex flex-row mx-auto font-cursive text-2xl">
+        <span className="w-1/3 mx-auto font-cursive text-center lg:text-2xl">
           {title}
-        </div>
-        <div className="flex flex-row mx-auto">
-          <FireIcon className="w-8" />
+        </span>
+        <div className="flex flex-row mx-auto w-1/3">
+          <FireIcon className="w-full" />
         </div>
       </section>
-      <section className="flex flex-row my-5 bg-white md:space-x-10 justify-between 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto lg:items-center font-cursive">
+
+      <section className="deck-section my-5 bg-white md:space-x-10 justify-between lg:items-center font-cursive">
         <div className="grid nn:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
           {cards.map((card) => {
             const size = 800;
@@ -72,7 +63,7 @@ const DeckViewer = ({
           })}
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

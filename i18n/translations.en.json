@@ -1,5 +1,9 @@
 {
     "i18n": {
+        "select": {
+            "deck": "Select a deck",
+            "artist": "Select artists"
+        },
         "button-buy-cards": "Buy Cards",
         "button-airdrop": "Airdrop",
         "cards-found": "{{count}} cards found",
