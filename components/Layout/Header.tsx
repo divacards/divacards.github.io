@@ -27,7 +27,7 @@ const BigButton = () => {
   // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
     <button
-      className="btn-popover-open "
+      className="btn-popover-open"
       onTouchStart={() => {
         console.log("touch");
         if (!active) activate(injected);
@@ -98,10 +98,10 @@ const PopoverCover = ({ open, children }) => {
 
 const MobileMenuPopover = () => {
   return (
-    <Popover className="inline-flex">
+    <Popover>
       {({ open }) => (
         <>
-          <Popover.Button className="btn-popover-open ">
+          <Popover.Button className="btn-popover-open">
             <span className="sr-only">Open menu</span>
             <MenuIcon className="h-6 w-6" aria-hidden="true" />
           </Popover.Button>
@@ -121,7 +121,7 @@ const MobileMenuPopover = () => {
 
 const MobileWalletPopover = ({ active }) => {
   return (
-    <Popover className="inline-flex">
+    <Popover>
       {({ open }) => (
         <>
           <MobileAccountMenu active={active} />
