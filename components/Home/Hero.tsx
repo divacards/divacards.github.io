@@ -28,7 +28,7 @@ const Hero = () => {
 
       <div
         className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2"
-        data-aos="fade-up"
+        data-aos=""
       >
         <Image
           height={500}
