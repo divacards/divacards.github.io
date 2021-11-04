@@ -21,7 +21,7 @@ const LinkContainer = ({ links, linkTitle }) => {
     </li>
   ));
   return (
-    <div className="w-full my-8 lg:my-0 lg:w-4/12 px-4 ml-auto">
+    <div className="w-full my-4 lg:my-0 lg:w-4/12 px-4 ml-auto">
       <span className="block uppercase text-gray-500 text-sm font-semibold mb-2">
         {linkTitle}
       </span>
@@ -40,7 +40,7 @@ const LanguageSelector = () => {
 
   return (
     <Listbox value={selected} onChange={setSelected}>
-      <Listbox.Button className="relative inline-flex w-1/6 justify-center bg-white text-gray-700 rounded-md border border-gray-300">
+      <Listbox.Button className="relative inline-flex w-1/3 lg:w-1/6 justify-center bg-white text-gray-700 rounded-md border border-gray-300">
         {selected.name}
         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
       </Listbox.Button>
@@ -50,7 +50,7 @@ const LanguageSelector = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <Listbox.Options className="relative w-1/6 right-0 mt-2 divide-y divide-gray-100 bg-white rounded border-sm border-gray-300  ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Listbox.Options className="relative w-1/3 lg:w-1/6 right-0 mt-2 divide-y divide-gray-100 bg-white rounded border-sm border-gray-300  ring-1 ring-black ring-opacity-5 focus:outline-none">
           {languages.map((lang, index) => (
             <Listbox.Option
               className="flex justify-center"
@@ -90,6 +90,8 @@ const Footer = () => {
     { title: "blog", link: "/todo" },
   ];
 
+  const { t } = useTranslation();
+
   return (
     <footer className="flex justify-center bg-gray-100 text-black py-4">
       <div className="container max-w-screen-xl px-4">
@@ -101,20 +103,18 @@ const Footer = () => {
                 TOKYO.CARDS
               </span>
             </h3>
-            <p className="text-lg mt-0 mb-2 text-gray-500">
-              A community for NFT fundamentalists.
-            </p>
-            <LanguageSelector />
+            <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>
+            <div className="my-2 lg:my-4">
+              <LanguageSelector />
+            </div>
           </div>
           {/* RIGHT */}
-          <div className="w-full lg:w-6/12 lg:px-4">
-            <div className="flex flex-wrap items-top mb-6">
-              <LinkContainer linkTitle="Links" links={links}></LinkContainer>
-              <LinkContainer
-                linkTitle="Other Resources"
-                links={otherLinks}
-              ></LinkContainer>
-            </div>
+          <div className="flex flex-row items-top mb-6 w-full lg:w-6/12 lg:px-4">
+            <LinkContainer linkTitle={t("footer.links")} links={links} />
+            <LinkContainer
+              linkTitle={t("footer.other-links")}
+              links={otherLinks}
+            />
           </div>
         </div>
         <div className="flex flex-wrap place-content-center">
