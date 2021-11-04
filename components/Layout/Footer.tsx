@@ -55,13 +55,13 @@ const LanguageSelector = () => {
             >
               {({ active }) => (
                 <LanguageSwitcher lang={lang.code}>
-                  <a
-                    className={`text-gray-700 w-full px-4 py-1 text-center ${
+                  <span
+                    className={`text-gray-700 w-full px-4 py-1 text-center cursor-pointer ${
                       active ? "bg-gray-100" : ""
                     }`}
                   >
                     {lang.name}
-                  </a>
+                  </span>
                 </LanguageSwitcher>
               )}
             </Listbox.Option>
