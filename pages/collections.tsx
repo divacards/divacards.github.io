@@ -59,6 +59,7 @@ const DeckFilters = (props) => {
         id="artist-select"
         instanceId="artist-select"
         isMulti={true}
+        isClearable
         placeholder={t("select.artist")}
         options={props.artistOpts}
         onChange={props.onArtistSelect}
