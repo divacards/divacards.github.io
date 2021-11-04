@@ -5,10 +5,10 @@ import { useTranslation } from "next-export-i18n";
 const FeatureText = ({ title, description }) => {
   return (
     <div className="w-full md:w-1/2 p-4 md:p-0 md:pt-12">
-      <h3 className="text-2xl md:text-3xl text-center md:text-justify font-bold tracking-wide leading-tight pb-6">
+      <h3 className="text-2xl lg:text-3xl text-center md:text-justify font-bold tracking-wide leading-tight pb-6">
         {title}
       </h3>
-      <p className="text-lg md:text-xl lg:text-2xl text-lightgray max-w-lg">
+      <p className="text-xl lg:text-2xl text-lightgray max-w-lg">
         {description}
       </p>
     </div>
@@ -35,7 +35,7 @@ const FeatureImage = ({ dataAos, img }) => {
 
 const FeatureBox = ({ feature }) => {
   return (
-    <div className="flex flex-col md:flex-row py-8 lg:py-16">
+    <div className="flex flex-col md:flex-row py-6 lg:py-8">
       <FeatureText title={feature.title} description={feature.description} />
       <FeatureImage img={feature.img} dataAos=""></FeatureImage>
     </div>
@@ -44,7 +44,7 @@ const FeatureBox = ({ feature }) => {
 
 const ReversedFeatureBox = ({ feature }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row py-4 lg:py-16">
+    <div className="flex flex-col-reverse md:flex-row py-6 lg:py-8">
       <FeatureImage img={feature.img} dataAos=""></FeatureImage>
       <FeatureText title={feature.title} description={feature.description} />
     </div>

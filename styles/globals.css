@@ -9,6 +9,9 @@
   .btn {
     @apply transition duration-150 ease-in-out;
   }
+  .btn-hero {
+    @apply lg:ml-0 lg:mr-4 py-1 sm:py-2 md:py-3 lg:py-4 w-5/12 lg:w-1/3 border border-transparent text-lg sm:text-xl focus:outline-none font-semibold;
+  }
   .btn-themecolor {
     @apply bg-red-500 hover:bg-red-600 btn rounded;
   }
@@ -53,8 +56,11 @@
   .page-selected {
     @apply bg-red-500 font-bold text-white p-4 rounded-lg;
   }
-  .lg-headerbar {
-    @apply h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg lg:items-center;
+  .lg-header-bar {
+    @apply h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg items-center;
+  }
+  .logo-text {
+    @apply text-4xl text-themecolor tracking-normal font-cursive font-light align-middle my-2;
   }
   .home-section {
     @apply container px-2 md:px-4 lg:px-8 mx-auto my-8 lg:my-16;
@@ -76,5 +82,8 @@
   }
   .service-grid {
     @apply grid lg:grid-cols-2 gap-2 lg:gap-8 content-center;
+  }
+  .language-switch {
+    @apply my-1 w-1/3 md:w-24 lg:w-36 bg-white rounded border border-gray-300;
   }
 }
