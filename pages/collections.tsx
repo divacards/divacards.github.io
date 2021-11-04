@@ -169,33 +169,29 @@ export default function Collections() {
 
   return (
     <Layout pageTitle="tokyo.cards">
-      <Header />
-      <main>
-        <section className="collection-section flex flex-col lg:flex-row gap-2 bg-white justify-between lg:items-center">
-          <DeckFilters
-            deckOpts={deckOpts}
-            onDeckSelect={onDeckSelect}
-            artistOpts={artistOpts}
-            onArtistSelect={onArtistSelect}
-          />
-          <CardFilters
-            suite={suite}
-            order={order}
-            suiteOpts={suiteOpts}
-            onSuiteSelect={onSuiteSelect}
-            onOrderSelect={onOrderSelect}
-          />
-        </section>
-        <span className="collection-section flex flex-row bg-white justify-between font-cursive">
-          {prompt}
-        </span>
-        <FilteredDeckViewer
-          className="collection-section"
-          decks={filteredDecks}
-          order={order}
+      <section className="collection-section flex flex-col lg:flex-row gap-2 bg-white justify-between lg:items-center">
+        <DeckFilters
+          deckOpts={deckOpts}
+          onDeckSelect={onDeckSelect}
+          artistOpts={artistOpts}
+          onArtistSelect={onArtistSelect}
         />
-      </main>
-      <Footer />
+        <CardFilters
+          suite={suite}
+          order={order}
+          suiteOpts={suiteOpts}
+          onSuiteSelect={onSuiteSelect}
+          onOrderSelect={onOrderSelect}
+        />
+      </section>
+      <span className="collection-section flex flex-row bg-white justify-between font-cursive">
+        {prompt}
+      </span>
+      <FilteredDeckViewer
+        className="collection-section"
+        decks={filteredDecks}
+        order={order}
+      />
     </Layout>
   );
 }

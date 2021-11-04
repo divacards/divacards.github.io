@@ -124,7 +124,7 @@ const Header = () => {
   useInactiveListener(!triedEager);
 
   return (
-    <header className="flex flex-row lg-header-bar px-4 bg-white md:space-x-10 justify-between">
+    <header className="flex flex-row header-bar px-4 bg-white md:space-x-10 justify-between">
       <Logo name="TOKYO.CARDS" />
 
       <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">

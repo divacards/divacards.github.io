@@ -6,13 +6,9 @@ import { Invoker } from "../components/Widget/Invoker";
 export default function Forge() {
   return (
     <Layout pageTitle="tokyo.cards">
-      <Header />
-      <main>
-        <section className="flex place-content-center">
-          <Invoker />
-        </section>
-      </main>
-      <Footer />
+      <section className="flex place-content-center">
+        <Invoker />
+      </section>
     </Layout>
   );
 }

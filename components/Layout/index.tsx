@@ -2,6 +2,8 @@ import React from "react";
 import Head from "next/head";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export function getLibrary(provider) {
   const library = new Web3Provider(provider);
@@ -9,16 +11,18 @@ export function getLibrary(provider) {
   return library;
 }
 
-const Layout = (props) => {
+const Layout = ({ pageTitle, children }) => {
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <main className="bg-body 2xl:pt-8 xl:pt-8">
-        <Head>
-          <title>{props.pageTitle}</title>
-        </Head>
-        {props.children}
-      </main>
-    </Web3ReactProvider>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </Web3ReactProvider>
+    </>
   );
 };
 export default Layout;

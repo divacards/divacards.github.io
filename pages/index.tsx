@@ -8,14 +8,10 @@ import Feature from "../components/Home/Feature";
 export default function Index() {
   return (
     <Layout pageTitle="tokyo.cards">
-      <Header />
-      <main>
-        <Hero />
-        <Feature />
-        <Service />
-        {/* <About /> */}
-      </main>
-      <Footer />
+      <Hero />
+      <Feature />
+      <Service />
+      {/* <About /> */}
     </Layout>
   );
 }
