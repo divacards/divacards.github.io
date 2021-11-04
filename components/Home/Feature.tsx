@@ -1,19 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { XIcon } from '@heroicons/react/solid'
+import { useTranslation } from "next-export-i18n";
 
-
-const FeatureText = (props) => {
+const FeatureText = ({ title, description }) => {
   return (
-    <div
-      className="w-full md:w-1/2 p-4 md:p-0 md:pt-12 aos-init aos-animate"
-      data-aos={props.dataAos}
-    >
+    <div className="w-full md:w-1/2 p-4 md:p-0 md:pt-12 aos-init aos-animate">
       <h3 className="text-2xl md:text-3xl text-center md:text-justify font-bold tracking-wide leading-tight pb-6">
-        {props.title}
+        {title}
       </h3>
       <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg">
-        {props.desc}
+        {description}
       </p>
     </div>
   );
@@ -36,43 +32,47 @@ const FeatureImage = ({ dataAos, img }) => {
   );
 };
 
-const FeatureBox = (props) => {
+const FeatureBox = ({ feature }) => {
   return (
     <div className="flex flex-col md:flex-row py-12 lg:py-16">
-      <FeatureText title={props.feature.title} desc={props.feature.desc} ></FeatureText>
-      <FeatureImage img={props.feature.img} dataAos=""></FeatureImage>
-    </div >
+      <FeatureText
+        title={feature.title}
+        description={feature.description}
+      ></FeatureText>
+      <FeatureImage img={feature.img} dataAos=""></FeatureImage>
+    </div>
   );
 };
 
-const ReversedFeatureBox = (props) => {
+const ReversedFeatureBox = ({ feature }) => {
   return (
     <div className="flex flex-col-reverse md:flex-row py-12">
-      <FeatureImage img={props.feature.img} dataAos=""></FeatureImage>
+      <FeatureImage img={feature.img} dataAos=""></FeatureImage>
       <FeatureText
-        title={props.feature.title}
-        desc={props.feature.desc}
+        title={feature.title}
+        description={feature.description}
       ></FeatureText>
     </div>
   );
 };
 
 const Feature = () => {
+  const { t } = useTranslation();
   const features = [
     {
       img: "/images/tokyo/tea-svgrepo-com.svg",
-      title: "Simple",
-      desc: "Based on fan economy, tokyo.cards trading card NFT series is one of the best digital utility for community running.",
+      title: t("feature.simple-title"),
+      description: t("feature.simple-description"),
     },
     {
       img: "/images/tokyo/koi-svgrepo-com.svg",
-      title: "Interactive",
-      desc: "Trade, mint, exchange or decomposing trading cards with other players in the community.",
+      title: t("feature.interactive-title"),
+      description: t("feature.interactive-description"),
     },
     {
       img: "/images/tokyo/ninja-warrior-svgrepo-com.svg",
-      title: "Trustless",
-      desc: "Built on blockchain, our trading card system runs autonomously without the need to trust and third party platform.",
+      title: t("feature.trustless-title"),
+      description: t("feature.trustless-description"),
     },
   ];
 
