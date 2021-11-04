@@ -19,6 +19,11 @@
             "twitter": "Twitter",
             "blog": "ブログ",
             "app": "アプリ"
+        },
+        "footer": {
+            "links": "リンク",
+            "other-links": "リソース",
+            "summary": "NFT ファンダメンタリストのコミュニティ"
         }
     }
 }
