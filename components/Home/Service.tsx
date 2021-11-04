@@ -7,27 +7,29 @@ import {
 } from "@heroicons/react/solid";
 import { useTranslation } from "next-export-i18n";
 
-const ServiceHeader = ({ sectionName, title, desc }) => {
+const ServiceHeader = ({ section, title, description }) => {
   return (
-    <div className="lg:text-center">
-      <p className="uppercase font-semibold text-red-400">{sectionName}</p>
+    <div className="lg:text-center p-4 md:p-0">
+      <p className="uppercase font-semibold text-red-400">{section}</p>
       <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
         {title}
       </h2>
       <p className="mt-4 max-w-screen-xl text-xl leading-7 text-lightgray lg:mx-auto">
-        {desc}
+        {description}
       </p>
     </div>
   );
 };
 
-const ServiceItem = ({ icon, title, desc }) => {
+const ServiceItem = ({ icon, title, description }) => {
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-4 auto-padding">
       <div>{icon}</div>
-      <div>
-        <h3 className="mb-2 font-semibold text-gray">{title}</h3>
-        <p className="leading-normal text-lightgray">{desc}</p>
+      <div className="my-2 lg:my-4">
+        <h3 className="mb-2 font-semibold text-gray lg:text-2xl">{title}</h3>
+        <p className="leading-normal text-lightgray lg:text-xl">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -39,54 +41,49 @@ const Service = () => {
   const services = [
     {
       Icon: ScaleIcon,
-      title: "Trading",
-      desc: "Trade or exchange with anyone either with our partners or in person. Our market partner include OpenSea.io and Adam.jp, both provide wonderful services.",
+      title: t("service.trading-title"),
+      description: t("service.trading-description"),
     },
     {
       Icon: BeakerIcon,
-      title: "Crafting",
-      desc: "Can't find the item you wanted anywhere ? Try crafting it with disenchanted card parts. There is a chance to a better item during the process.",
+      title: t("service.crafting-title"),
+      description: t("service.crafting-description"),
     },
     {
       Icon: LightningBoltIcon,
-      title: "Enchanting",
-      desc: "Discover the magical power of enchanting by add more power to one of the items, or disenchant the item that is not needed any longer.",
+      title: t("service.enchanting-title"),
+      description: t("service.enchanting-description"),
     },
     {
       Icon: RefreshIcon,
-      title: "Recycling",
-      desc: "Unwanted NFTs from other NFT projects are welcomed here. Instead of leaving it in the wallet, smash it into pieces and craft something new.",
+      title: t("service.recycling-title"),
+      description: t("service.recycling-description"),
     },
   ];
 
   return (
-    <section className="flex flex-col items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 py-8 relative">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ServiceHeader
-          title={t("service.header-title")}
-          sectionName={t("service.header-section")}
-          desc={t("service.header-description")}
-        ></ServiceHeader>
-        <div className="mt-10 relative mx-auto grid lg:grid-cols-2 gap-10 content-center">
-          {services.map(({ Icon, title, desc }, index) => {
-            const height = 40;
-            const width = 40;
-            return (
-              <ServiceItem
-                key={`service-${index}`}
-                icon={
-                  <Icon
-                    height={height}
-                    width={width}
-                    className="text-red-500"
-                  />
-                }
-                title={title}
-                desc={desc}
-              />
-            );
-          })}
-        </div>
+    <section id="service" className="home-section">
+      <ServiceHeader
+        title={t("service.header-title")}
+        section={t("service.header-section")}
+        description={t("service.header-description")}
+      ></ServiceHeader>
+      <div className="service-grid-top relative mx-auto service-grid">
+        {services.map(({ Icon, title, description }, index) => {
+          const height = 40;
+          const width = 40;
+          const icon = (
+            <Icon height={height} width={width} className="text-red-500" />
+          );
+          return (
+            <ServiceItem
+              key={`service-${index}`}
+              icon={icon}
+              title={title}
+              description={description}
+            />
+          );
+        })}
       </div>
     </section>
   );

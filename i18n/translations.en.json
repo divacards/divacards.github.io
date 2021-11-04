@@ -37,14 +37,14 @@
             "header-title": "A Community",
             "header-section": "tokyo.cards NFTs",
             "header-description": "Find the right person in the community to exchange, trade or craft new collectables.",
-            "trading-title": "",
-            "trading-description": "",
-            "crafting-title": "",
-            "crafting-description": "",
-            "enchanting-title": "",
-            "enchanting-description": "",
-            "recycling-title": "",
-            "recycling-description": ""
+            "trading-title": "Trading",
+            "trading-description": "Trade or exchange with anyone either with our partners or in person. Our market partner include OpenSea.io and Adam.jp, both provide wonderful services.",
+            "crafting-title": "Crafting",
+            "crafting-description": "Can't find the item you wanted anywhere ? Try crafting it with disenchanted card parts. There is a chance to a better item during the process.",
+            "enchanting-title": "Enchanting",
+            "enchanting-description": "Discover the magical power of enchanting by add more power to one of the items, or disenchant the item that is not needed any longer.",
+            "recycling-title": "Recycling",
+            "recycling-description": "Unwanted NFTs from other NFT projects are welcomed here. Instead of leaving it in the wallet, smash it into pieces and craft something new."
         }
     }
 }

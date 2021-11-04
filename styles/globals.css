@@ -19,7 +19,7 @@
     @apply px-4 py-2 text-sm bg-black text-white;
   }
   .text-lightgray {
-    @apply text-gray-500 text-opacity-75;
+    @apply text-gray-600 text-opacity-75;
   }
   .text-themecolor {
     @apply text-red-500 text-opacity-75;
@@ -55,5 +55,20 @@
   }
   .lg-headerbar {
     @apply h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg lg:items-center;
+  }
+  .home-section {
+    @apply container px-2 md:px-4 lg:px-8 mx-auto my-8 lg:my-16;
+  }
+  .auto-image {
+    @apply w-full h-full z-20 object-contain;
+  }
+  .auto-padding {
+    @apply px-4 py-2 md:px-0;
+  }
+  .service-grid-top {
+    @apply mt-2 lg:mt-8;
+  }
+  .service-grid {
+    @apply grid lg:grid-cols-2 gap-2 lg:gap-8 content-center;
   }
 }

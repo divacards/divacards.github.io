@@ -5,11 +5,8 @@ import { useTranslation } from "next-export-i18n";
 const Hero = () => {
   const { t } = useTranslation("home");
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:justify-around mx-auto mt-10 px-6 lg:px-20 lg:py-8 max-w-screen-xl relative">
-      <div
-        className="text-center lg:text-left w-4/5 sm:w-2/3 lg:w-1/2 mx-auto py-4 aos-init aos-animate"
-        data-aos="fade-in"
-      >
+    <section className="flex flex-col lg:flex-row items-center lg:justify-around home-section">
+      <div className="text-center lg:text-left w-4/5 sm:w-2/3 lg:w-1/2 mx-auto py-4">
         <h2 className="text-3xl leading-tight font-extrabold text-gray-900 xs:text-4xl sm:text-5xl md:text-6xl">
           {t("hero.header-simple")}
           <span className="text-themecolor">
@@ -30,7 +27,7 @@ const Hero = () => {
       </div>
 
       <div
-        className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2 aos-init aos-animate"
+        className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2"
         data-aos="fade-up"
       >
         <Image
@@ -38,9 +35,9 @@ const Hero = () => {
           width={1000}
           loader={({ src }) => src}
           unoptimized
-          className="w-full h-full z-20 object-contain"
           src="/images/tokyo/tokyo-tower.svg"
-          alt="main-img"
+          alt="Main image"
+          className="w-full h-full z-20 object-contain"
         />
       </div>
     </section>
