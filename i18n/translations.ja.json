@@ -1,8 +1,12 @@
 {
     "i18n": {
+        "select": {
+            "deck": "デック選択",
+            "artist": "アーティスト選択"
+        },
         "button-buy-cards": "カード購入",
         "button-airdrop": "エアドロップ",
-        "cards-found": "カード {{count}} 枚が見つかりました",
+        "cards-found": "{{count}} 枚のカードが見つかりました",
         "hero": {
             "header-simple": "シンプルな",
             "header-collectables": "コレクタブル",

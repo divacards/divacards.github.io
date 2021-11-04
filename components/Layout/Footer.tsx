@@ -1,6 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { useTranslation, LanguageSwitcher } from "next-export-i18n";
+import {
+  useTranslation,
+  LanguageSwitcher,
+  useLanguageQuery,
+} from "next-export-i18n";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const LinkContainer = ({ links, linkTitle }) => {
@@ -27,17 +31,25 @@ const LinkContainer = ({ links, linkTitle }) => {
 };
 
 const LanguageSelector = () => {
-  const languages = [
-    { code: "en", name: "English" },
-    { code: "ja", name: "日本語" },
-  ];
+  const languages = {
+    en: { code: "en", name: "English" },
+    ja: { code: "ja", name: "日本語" },
+  };
 
-  const [selected, setSelected] = useState(languages[0]);
+  const [selected, setSelected] = useState("en");
+  const [query] = useLanguageQuery();
+
+  useEffect(() => {
+    if (query) {
+      setSelected(query.lang);
+    }
+    return () => {};
+  }, [query]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>
       <Listbox.Button className="relative inline-flex w-1/3 lg:w-1/6 justify-center bg-white text-gray-700 rounded-md border border-gray-300">
-        {selected.name}
+        {languages[selected].name}
         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
       </Listbox.Button>
       <Transition
@@ -47,11 +59,11 @@ const LanguageSelector = () => {
         leaveTo="opacity-0"
       >
         <Listbox.Options className="relative w-1/3 lg:w-1/6 right-0 mt-2 divide-y divide-gray-100 bg-white rounded border-sm border-gray-300  ring-1 ring-black ring-opacity-5 focus:outline-none">
-          {languages.map((lang, index) => (
+          {Object.values(languages).map((lang, index) => (
             <Listbox.Option
               className="flex justify-center"
               key={index}
-              value={lang}
+              value={lang.code}
             >
               {({ active }) => (
                 <LanguageSwitcher lang={lang.code}>
@@ -90,7 +102,7 @@ const Footer = () => {
 
   return (
     <footer className="flex justify-center bg-gray-100 text-black py-4">
-      <div className="container max-w-screen-xl px-4">
+      <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
