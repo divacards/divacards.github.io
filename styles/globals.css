@@ -12,6 +12,15 @@
   .btn-hero {
     @apply lg:ml-0 lg:mr-4 py-1 sm:py-2 md:py-3 lg:py-4 w-5/12 lg:w-1/3 border border-transparent text-lg sm:text-xl focus:outline-none font-semibold;
   }
+  .btn-popover-common {
+    @apply inline-flex items-center justify-center rounded-full p-2 text-pink-400 hover:text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none;
+  }
+  .btn-popover-open {
+    @apply btn-popover-common bg-black bg-opacity-10 h-12 w-12;
+  }
+  .btn-popover-close {
+    @apply btn-popover-common bg-white h-16 w-16;
+  }
   .btn-themecolor {
     @apply bg-red-500 hover:bg-red-600 btn rounded;
   }
@@ -56,8 +65,8 @@
   .page-selected {
     @apply bg-red-500 font-bold text-white p-4 rounded-lg;
   }
-  .lg-header-bar {
-    @apply h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg items-center;
+  .header-bar {
+    @apply sticky top-0 z-50 w-full h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg items-center;
   }
   .logo-text {
     @apply text-4xl text-themecolor tracking-normal font-cursive font-light align-middle my-2;
@@ -72,7 +81,7 @@
     @apply container flex flex-row mx-auto my-2;
   }
   .auto-image {
-    @apply w-full h-full z-10 object-contain;
+    @apply w-full h-full object-contain;
   }
   .auto-padding {
     @apply px-4 py-2 md:px-0;
