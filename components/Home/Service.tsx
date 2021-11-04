@@ -11,10 +11,10 @@ const ServiceHeader = ({ section, title, description }) => {
   return (
     <div className="lg:text-center p-4 md:p-0">
       <p className="uppercase font-semibold text-red-400">{section}</p>
-      <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+      <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900">
         {title}
       </h2>
-      <p className="mt-4 text-xl leading-7 text-lightgray lg:mx-auto">
+      <p className="mt-4 text-2xl leading-7 text-lightgray lg:mx-auto">
         {description}
       </p>
     </div>
@@ -26,10 +26,10 @@ const ServiceItem = ({ icon, title, description }) => {
     <div className="flex space-x-4 auto-padding">
       <div>{icon}</div>
       <div className="my-2 lg:my-4">
-        <h3 className="mb-2 font-semibold text-gray lg:text-2xl">{title}</h3>
-        <p className="leading-normal text-lightgray lg:text-xl">
-          {description}
-        </p>
+        <h3 className="mb-2 font-semibold text-gray text-2xl lg:text-3xl">
+          {title}
+        </h3>
+        <p className="leading-normal text-lightgray text-xl">{description}</p>
       </div>
     </div>
   );

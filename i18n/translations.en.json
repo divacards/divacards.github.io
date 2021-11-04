@@ -8,7 +8,7 @@
         "button-airdrop": "Airdrop",
         "cards-found": "{{count}} cards found",
         "hero": {
-            "header-simple": "Simple",
+            "header-simple": "Simple ",
             "header-collectables": "Collectables",
             "catch-phrase": "Your collections does NOT end up owning you."
         },

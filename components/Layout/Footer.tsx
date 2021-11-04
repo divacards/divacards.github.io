@@ -48,8 +48,8 @@ const LanguageSelector = () => {
 
   return (
     <Listbox value={selected} onChange={setSelected}>
-      <Listbox.Button className="relative inline-flex w-1/3 lg:w-1/6 justify-center bg-white text-gray-700 rounded-md border border-gray-300">
-        {languages[selected].name}
+      <Listbox.Button className="language-switch px-1 inline-flex justify-between items-center text-gray-700 ">
+        <span className="px-1 py-1">{languages[selected].name}</span>
         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
       </Listbox.Button>
       <Transition
@@ -58,17 +58,17 @@ const LanguageSelector = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <Listbox.Options className="relative w-1/3 lg:w-1/6 right-0 mt-2 divide-y divide-gray-100 bg-white rounded border-sm border-gray-300  ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Listbox.Options className="language-switch divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none">
           {Object.values(languages).map((lang, index) => (
             <Listbox.Option
-              className="flex justify-center"
+              className="flex flex-col justify-center"
               key={index}
               value={lang.code}
             >
               {({ active }) => (
                 <LanguageSwitcher lang={lang.code}>
                   <span
-                    className={`text-gray-700 w-full px-4 py-1 text-center cursor-pointer ${
+                    className={`container text-gray-700 px-3 py-1 w-full text-center cursor-pointer ${
                       active ? "bg-gray-100" : ""
                     }`}
                   >
@@ -106,11 +106,9 @@ const Footer = () => {
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
-            <h3 className="text-3xl font-semibold mb-4 md:mb-0">
-              <span className="text-4xl text-themecolor tracking-normal font-cursive font-light md:my-5 sm:my-5 my-5">
-                TOKYO.CARDS
-              </span>
-            </h3>
+            <span className="text-4xl text-themecolor logo-text">
+              TOKYO.CARDS
+            </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>
             <div className="my-2 lg:my-4">
               <LanguageSelector />
