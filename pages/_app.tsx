@@ -13,7 +13,8 @@ function MyApp({ Component, pageProps }) {
     AOS.init({
       // once: true,
       easing: "ease-out-sine",
-      duration: 600,
+      duration: 1000,
+      delay: 100,
     });
   }, []);
 
