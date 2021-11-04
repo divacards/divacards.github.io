@@ -72,7 +72,7 @@ const __Wallet = () => {
   });
 
   return (
-    <Popover className="relative">
+    <Popover>
       <Popover.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300">
         <span className="px-2 my-auto text-highlight">
           {balance ? formatEther(balance) : ""} {currencyConf.main}
