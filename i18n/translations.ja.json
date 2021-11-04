@@ -24,6 +24,27 @@
             "links": "リンク",
             "other-links": "リソース",
             "summary": "NFT ファンダメンタリストのコミュニティ"
+        },
+        "feature": {
+            "simple-title": "シンプル",
+            "simple-description": "Based on fan economy, tokyo.cards trading card NFT series is one of the best digital utility for community running.",
+            "interactive-title": "互換性",
+            "interactive-description": "Trade, mint, exchange or decomposing trading cards with other players in the community.",
+            "trustless-title": "トラストレス",
+            "trustless-description": "Built on blockchain, our trading card system runs autonomously without the need to trust and third party platform."
+        },
+        "service": {
+            "header-title": "コミュニティ",
+            "header-section": "tokyo.cards NFT",
+            "header-description": "Find the right person in the community to exchange, trade or craft new collectables.",
+            "trading-title": "",
+            "trading-description": "",
+            "crafting-title": "",
+            "crafting-description": "",
+            "enchanting-title": "",
+            "enchanting-description": "",
+            "recycling-title": "",
+            "recycling-description": ""
         }
     }
 }

@@ -1,16 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import {
-  useTranslation,
-  useLanguageQuery,
-  LanguageSwitcher,
-} from "next-export-i18n";
+import { useTranslation, LanguageSwitcher } from "next-export-i18n";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const LinkContainer = ({ links, linkTitle }) => {
   const { t } = useTranslation();
 
-  const items = links.map((link, index) => (
+  const items = links.map((link: any, index: number) => (
     <li key={`${link.link}.${index}`}>
       <a
         className="hover:text-pink-500 font-semibold block text-sm py-2"
@@ -59,13 +55,13 @@ const LanguageSelector = () => {
             >
               {({ active }) => (
                 <LanguageSwitcher lang={lang.code}>
-                  <span
+                  <a
                     className={`text-gray-700 w-full px-4 py-1 text-center ${
                       active ? "bg-gray-100" : ""
                     }`}
                   >
                     {lang.name}
-                  </span>
+                  </a>
                 </LanguageSwitcher>
               )}
             </Listbox.Option>
