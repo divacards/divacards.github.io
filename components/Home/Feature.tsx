@@ -27,7 +27,7 @@ const FeatureImage = ({ dataAos, img }) => {
         unoptimized
         src={img}
         alt="Feature image"
-        className="w-full h-full z-20 object-contain"
+        className="auto-image"
       ></Image>
     </div>
   );

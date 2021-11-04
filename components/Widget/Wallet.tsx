@@ -86,7 +86,7 @@ const __Wallet = () => {
       <Popover.Panel
         className="flex flex-col origin-top-right absolute rounded
           divide-y-2 divide-pink-300 px-2 right-0 mt-2
-          shadow-lg bg-white z-10"
+          shadow-lg bg-white z-20"
       >
         <div className="flex flex-row py-2 space-x-20 justify-between">
           <div className="flex flex-row gap-1">
@@ -153,7 +153,7 @@ const __MobileWallet = () => {
   });
 
   return (
-    <div className="my-auto divide-y-2 divide-pink-300">
+    <div className="my-auto z-20 divide-y-2 divide-pink-300">
       <div className="flex flex-row justify-between py-2">
         <div className="flex flex-row gap-2">
           <span className="text-black font-semibold opacity-75 m-auto">

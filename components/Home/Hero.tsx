@@ -37,7 +37,7 @@ const Hero = () => {
           unoptimized
           src="/images/tokyo/tokyo-tower.svg"
           alt="Main image"
-          className="w-full h-full z-20 object-contain"
+          className="auto-image"
         />
       </div>
     </section>
