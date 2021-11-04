@@ -163,7 +163,7 @@ const Header = () => {
                   //@ts-expect-error
                   focus
                   static
-                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
+                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-20"
                 >
                   <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                     <div className="pt-5 pb-6 px-5 h-screen"></div>
@@ -228,7 +228,7 @@ const Header = () => {
                   //@ts-expect-error
                   focus
                   static
-                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-10"
+                  className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-20"
                 >
                   <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
                     <div className="pt-5 pb-6 px-5 h-screen"></div>
