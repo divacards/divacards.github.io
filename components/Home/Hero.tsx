@@ -8,8 +8,10 @@ const Hero = () => {
     <section className="flex flex-col lg:flex-row items-center lg:justify-around home-section">
       <div className="text-center lg:text-left w-10/12 lg:w-1/2 mx-auto py-4">
         <h2 className="leading-tight font-extrabold text-gray-900 text-3xl md:text-6xl">
-          {t("hero.header-simple")}
-          <span className="text-themecolor">
+          <span className="break-words block my-3">
+            {t("hero.header-simple")}
+          </span>
+          <span className="text-themecolor break-words block">
             {t("hero.header-collectables")}
           </span>
         </h2>
