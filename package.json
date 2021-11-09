@@ -21,26 +21,25 @@
     "aos": "^2.3.4",
     "jdenticon": "^3.1.0",
     "mustache": "^4.2.0",
-    "next": "12.0.1",
+    "next": "12.0.4-canary.0",
     "next-export-i18n": "^1.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-select": "^5.1.0",
+    "react-select": "^5.2.0",
     "sharp": "^0.29.1",
     "swr": "^1.0.1"
   },
   "devDependencies": {
-    "@iconify/react": "^3.0.1",
+    "@iconify/react": "^3.1.0-beta.5",
     "@types/node": "^16.11.0",
     "@types/react": "^17.0.30",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.0",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint-config-next": "12.0.3",
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.3.0",
     "prettier": "2.4.1",
-    "tailwindcss": "^2.2.17",
-    "typescript": "^4.4.4",
-    "yarn": "^1.22.10"
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.4.4"
   }
 }
