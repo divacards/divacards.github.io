@@ -29,7 +29,7 @@ const ServiceItem = ({ icon, title, description }) => {
         <h3 className="mb-2 font-semibold text-gray text-2xl lg:text-3xl">
           {title}
         </h3>
-        <p className="leading-normal text-lightgray text-xl">{description}</p>
+        <p className="leading-normal text-themecolor text-xl">{description}</p>
       </div>
     </div>
   );

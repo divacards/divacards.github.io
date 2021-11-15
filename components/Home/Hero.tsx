@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center lg:justify-around home-section">
       <div className="text-center lg:text-left w-10/12 lg:w-1/2 mx-auto py-4">
-        <h2 className="leading-tight font-extrabold text-gray-900 text-3xl md:text-6xl">
+        <h2 className="leading-tight font-extrabold text-themecolor-bright text-3xl md:text-6xl">
           <span className="break-words block my-3">
             {t("hero.header-simple")}
           </span>
@@ -15,7 +15,7 @@ const Hero = () => {
             {t("hero.header-collectables")}
           </span>
         </h2>
-        <p className="mt-5 font-body text-lightgray text-base sm:text-lg md:text-xl">
+        <p className="mt-5 font-body text-description text-base sm:text-lg md:text-xl">
           {t("hero.catch-phrase")}
         </p>
         <div className="mt-5 flex justify-between lg:justify-start">

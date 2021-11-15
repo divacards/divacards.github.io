@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .bg-body {
-    color: "#F0F0F0";
-  }
   .btn {
     @apply transition duration-150 ease-in-out;
   }
@@ -30,11 +27,14 @@
   .btn-black {
     @apply px-4 py-2 text-sm bg-black text-white;
   }
-  .text-lightgray {
-    @apply text-gray-600 text-opacity-75;
+  .text-description {
+    @apply text-diablo-dark-gold text-opacity-75;
+  }
+  .text-themecolor-bright {
+    @apply text-cinnabar text-opacity-75;
   }
   .text-themecolor {
-    @apply text-red-500 text-opacity-75;
+    @apply text-brick-red text-opacity-75;
   }
   .text-highlight {
     @apply text-purple-500 font-semibold;
@@ -66,7 +66,7 @@
     @apply bg-red-500 font-bold text-white p-4 rounded-lg;
   }
   .header-bar {
-    @apply sticky top-0 z-50 w-full h-16 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto shadow xl:rounded-lg 2xl:rounded-lg items-center;
+    @apply sticky top-0 z-50 w-full h-16 items-center px-4 md:px-4 sm:px-10 lg:px-20 2xl:px-40;
   }
   .logo-text {
     @apply text-4xl text-themecolor tracking-normal font-cursive font-light align-middle my-2;

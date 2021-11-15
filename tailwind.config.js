@@ -24,6 +24,44 @@ module.exports = {
       screens: {
         nn: { max: "639px" },
       },
+      colors: {
+        'port-gore': {
+          DEFAULT: '#222142',
+        },
+        'cloud-burst': {
+          DEFAULT: '#212161',
+        },
+        'seance': {
+          DEFAULT: '#622182',
+        },
+        'medium-red-violet': {
+          DEFAULT: '#B031B0',
+        },
+        'rose': {
+          DEFAULT: '#F71476',
+        },
+        'maroon-flush': {
+          DEFAULT: '#C41A5E',
+        },
+        'mulberry-wood': {
+          DEFAULT: '#690848',
+        },
+        'cod-gray': {
+          DEFAULT: '#141010',
+        },
+        'claret': {
+          DEFAULT: '#821537',
+        },
+        'cinnabar': {
+          DEFAULT: '#ED4640',
+        },
+        'brick-red': {
+          DEFAULT: '#C72E42',
+        },
+        'diablo-dark-gold': {
+          DEFAULT: '#D49E43'
+        }
+      }
     },
   },
   variants: {
