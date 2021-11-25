@@ -49,8 +49,17 @@ module.exports = {
         'cod-gray': {
           DEFAULT: '#141010',
         },
+        'merino': {
+          DEFAULT: '#F7F1EB',
+        },
+        'swirl': {
+          DEFAULT: '#DBD2CA',
+        },
         'claret': {
           DEFAULT: '#821537',
+        },
+        'celery': {
+          DEFAULT: '#AACF55',
         },
         'cinnabar': {
           DEFAULT: '#ED4640',
@@ -60,6 +69,12 @@ module.exports = {
         },
         'diablo-dark-gold': {
           DEFAULT: '#D49E43'
+        },
+        'razzmatazz': {
+          DEFAULT: '#FA115B'
+        },
+        'supernova': {
+          DEFAULT: '#FEC303'
         }
       }
     },
