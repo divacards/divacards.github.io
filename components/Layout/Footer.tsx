@@ -22,7 +22,7 @@ const LinkContainer = ({ links, linkTitle }) => {
   ));
   return (
     <div className="w-full my-4 lg:my-0 lg:w-4/12 px-4 ml-auto">
-      <span className="block uppercase text-gray-500 text-sm font-semibold mb-2">
+      <span className="block uppercase font-cursive text-cinnabar text-2xl font-semibold mb-2">
         {linkTitle}
       </span>
       <ul className="list-unstyled text-gray-500">{items}</ul>
@@ -100,7 +100,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-swirl text-black py-4">
+    <footer className="flex justify-center bg-swirl text-black py-4 rounded-t-3xl">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
