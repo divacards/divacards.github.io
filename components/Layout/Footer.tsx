@@ -43,7 +43,7 @@ const LanguageSelector = () => {
     if (query) {
       setSelected(query.lang);
     }
-    return () => {};
+    return () => { };
   }, [query]);
 
   return (
@@ -68,9 +68,8 @@ const LanguageSelector = () => {
               {({ active }) => (
                 <LanguageSwitcher lang={lang.code}>
                   <span
-                    className={`container text-gray-700 px-3 py-1 w-full text-center cursor-pointer ${
-                      active ? "bg-gray-100" : ""
-                    }`}
+                    className={`container text-gray-700 px-3 py-1 w-full text-center cursor-pointer ${active ? "bg-gray-100" : ""
+                      }`}
                   >
                     {lang.name}
                   </span>
@@ -101,12 +100,12 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-gray-100 text-black py-4">
+    <footer className="flex justify-center bg-swirl text-black py-4">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
-            <span className="text-4xl text-themecolor logo-text">
+            <span className="text-4xl text-cinnabar logo-text">
               TOKYO.CARDS
             </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>

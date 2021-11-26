@@ -25,7 +25,7 @@ const ServiceItem = ({ icon, title, description }) => {
   return (
     <div className="flex space-x-4 auto-padding">
       <div>{icon}</div>
-      <div className="my-2 lg:my-4">
+      <div className="">
         <h3 className="mb-2 font-semibold text-description text-2xl lg:text-3xl">
           {title}
         </h3>
