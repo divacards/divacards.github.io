@@ -3,9 +3,8 @@ import { FireIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 function getCardSrc(artist, deck, card) {
-  return `/images/card_set/${artist.name.toLowerCase()}/${deck.id}/${
-    card.poker_suite + card.poker_sign.toLowerCase()
-  }.png`;
+  return `/images/card_set/${artist.name.toLowerCase()}/${deck.id}/${card.poker_suite + card.poker_sign.toLowerCase()
+    }.png`;
 }
 
 const DeckViewer = ({
@@ -26,19 +25,19 @@ const DeckViewer = ({
 
   return (
     <div>
-      <section className="deck-section border-b border-t py-5 h-20">
-        <div className="flex flex-row mx-auto w-1/3">
+      <section className="deck-section py-5 h-20">
+        <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
           <FireIcon className="w-full" />
         </div>
-        <span className="w-1/3 mx-auto font-cursive text-center lg:text-2xl">
+        <span className="w-1/3 mx-auto font-cursive text-center lg:text-2xl text-cinnabar place-self-center">
           {title}
         </span>
-        <div className="flex flex-row mx-auto w-1/3">
+        <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
           <FireIcon className="w-full" />
         </div>
       </section>
 
-      <section className="deck-section my-5 bg-white md:space-x-10 justify-between lg:items-center font-cursive">
+      <section className="deck-section my-5 md:space-x-10 justify-between lg:items-center font-cursive">
         <div className="grid nn:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-3 mx-auto relative">
           {cards.map((card) => {
             const size = 800;

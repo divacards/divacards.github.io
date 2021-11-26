@@ -78,7 +78,7 @@ const FilteredDeckViewer = ({ className, decks, order }) => {
           title={deck.title}
           cards={deck.cards}
           reversed={order == 1}
-          /* useFilter={useFilter} */
+        /* useFilter={useFilter} */
         />
       ))}
     </section>
@@ -169,7 +169,7 @@ export default function Collections() {
 
   return (
     <Layout pageTitle="tokyo.cards">
-      <section className="collection-section flex flex-col lg:flex-row gap-2 bg-white justify-between lg:items-center">
+      <section className="collection-section flex flex-col lg:flex-row gap-2 justify-between lg:items-center">
         <DeckFilters
           deckOpts={deckOpts}
           onDeckSelect={onDeckSelect}
@@ -184,7 +184,7 @@ export default function Collections() {
           onOrderSelect={onOrderSelect}
         />
       </section>
-      <span className="collection-section flex flex-row bg-white justify-between font-cursive">
+      <span className="collection-section flex flex-row justify-between font-cursive text-diablo-dark-gold">
         {prompt}
       </span>
       <FilteredDeckViewer
