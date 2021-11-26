@@ -6,6 +6,7 @@ import {
   useLanguageQuery,
 } from "next-export-i18n";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import { LogoIcon } from "../Custom/CustomIcons";
 
 const LinkContainer = ({ links, linkTitle }) => {
   const { t } = useTranslation();
@@ -100,12 +101,13 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-swirl text-black py-4 rounded-t-3xl">
+    <footer className="flex justify-center bg-swirl text-black py-4 rounded-t-3xl border-t-4 border-claret">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
             <span className="text-4xl text-cinnabar logo-text">
+              <LogoIcon height="50px" width="50px" style="inline m-2" />
               TOKYO.CARDS
             </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>
