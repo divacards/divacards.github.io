@@ -107,7 +107,7 @@ const Footer = () => {
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
             <span className="text-4xl text-cinnabar logo-text">
-              <LogoIcon height="50px" width="50px" style="inline m-2" />
+              <LogoIcon height="50px" width="50px" style="inline m-1" />
               TOKYO.CARDS
             </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>

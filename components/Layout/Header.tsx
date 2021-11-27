@@ -13,6 +13,7 @@ import { injected } from "../../web3/connectors";
 import PageLinker from "../../boxes/PageLinker";
 import Avatar from "../Widget/Avatar";
 import { Wallet, MobileWallet } from "../Widget/Wallet";
+import { LogoIcon } from "../Custom/CustomIcons";
 
 const Logo = ({ name }) => {
   return (
@@ -143,8 +144,9 @@ const Header = () => {
 
   return (
     <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray border-b-4 border-claret">
-      <Logo name="TOKYO.CARDS" />
 
+      <Logo name="TOKYO.CARDS" />
+      <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />
       <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
         <MobileMenuPopover />
         <MobileWalletPopover active={active} />
