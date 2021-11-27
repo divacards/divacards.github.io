@@ -5,7 +5,7 @@ const OrderFilters = ({ state, onChange }) => {
   switch (state) {
     case 0:
       return (
-        <div className="flex flex-row border-solid border-2 border-pink-400 rounded h-9">
+        <div className="flex flex-row border-solid border-2 border-diablo-dark-gold rounded h-9 text-cinnabar">
           <SortAscendingIcon
             className="w-8 m-auto"
             onClick={(e) => onChange(1)}
@@ -14,7 +14,7 @@ const OrderFilters = ({ state, onChange }) => {
       );
     case 1:
       return (
-        <div className="flex flex-row border-solid border-2 border-light-blue-500 rounded h-9">
+        <div className="flex flex-row border-solid border-2 border-diablo-dark-gold rounded h-9 text-cinnabar">
           <SortDescendingIcon
             className="w-8 m-auto"
             onClick={(e) => onChange(0)}

@@ -14,7 +14,7 @@ const LinkContainer = ({ links, linkTitle }) => {
   const items = links.map((link: any, index: number) => (
     <li key={`${link.link}.${index}`}>
       <a
-        className="hover:text-pink-500 font-semibold block text-sm py-2"
+        className="hover:text-cinnabar font-semibold block text-sm py-2"
         href={link.link}
       >
         {t(`link.${link.title}`)}
