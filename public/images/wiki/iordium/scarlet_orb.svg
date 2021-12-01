@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="264px" height="264px" viewBox="0 0 264 264" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Scarlet Tashax Orb</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Scarlet-Tashax-Orb" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Scarlet-Orb" transform="translate(133.500000, 132.500000) rotate(-360.000000) translate(-133.500000, -132.500000) translate(49.000000, 48.000000)">
+            <circle id="Oval" fill="#FD6DAA" transform="translate(84.500000, 84.500000) rotate(-315.000000) translate(-84.500000, -84.500000) " cx="84.5" cy="84.5" r="84.5"></circle>
+            <polygon id="Polygon" fill="#890C5F" transform="translate(83.792893, 83.792893) rotate(-315.000000) translate(-83.792893, -83.792893) " points="27.2928932 27.2928932 113.08919 54.4965969 140.292893 140.292893 54.4965969 113.08919"></polygon>
+            <polygon id="Polygon" fill="#C4195E" transform="translate(84.146447, 84.146447) rotate(-315.000000) translate(-84.146447, -84.146447) " points="33.1464466 32.6464466 104.807985 63.282344 135.146447 135.646447 63.4849081 105.010549"></polygon>
+            <polygon id="Polygon" fill="#680848" transform="translate(83.792893, 83.792893) rotate(-315.000000) translate(-83.792893, -83.792893) " points="38.2928932 38.2928932 93.2611013 74.3246851 129.292893 129.292893 74.3246851 93.2611013"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "category": 0,
+            "name": "arcane_mote",
+            "name_en": "Arcane Iordium Mote",
+            "name_jp": "Arcane Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 1,
+            "category": 0,
+            "name": "violet_mote",
+            "name_en": "Violet Iordium Mote",
+            "name_jp": "Violet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 2,
+            "category": 0,
+            "name": "lima_mote",
+            "name_en": "Lima Iordium Mote",
+            "name_jp": "Lima Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 3,
+            "category": 0,
+            "name": "scarlet_mote",
+            "name_en": "Scarlet Iordium Mote",
+            "name_jp": "Scarlet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 4,
+            "category": 0,
+            "name": "arcane_small",
+            "name_en": "Arcane Iordium Mote",
+            "name_jp": "Arcane Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 5,
+            "category": 0,
+            "name": "violet_small",
+            "name_en": "Violet Iordium Mote",
+            "name_jp": "Violet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 6,
+            "category": 0,
+            "name": "lima_small",
+            "name_en": "Lima Iordium Mote",
+            "name_jp": "Lima Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 7,
+            "category": 0,
+            "name": "scarlet_small",
+            "name_en": "Scarlet Iordium Mote",
+            "name_jp": "Scarlet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 8,
+            "category": 0,
+            "name": "arcane_large",
+            "name_en": "Arcane Iordium Mote",
+            "name_jp": "Arcane Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 9,
+            "category": 0,
+            "name": "violet_large",
+            "name_en": "Violet Iordium Mote",
+            "name_jp": "Violet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 10,
+            "category": 0,
+            "name": "lima_large",
+            "name_en": "Lima Iordium Mote",
+            "name_jp": "Lima Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 11,
+            "category": 0,
+            "name": "scarlet_large",
+            "name_en": "Scarlet Iordium Mote",
+            "name_jp": "Scarlet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 12,
+            "category": 0,
+            "name": "arcane_orb",
+            "name_en": "Arcane Iordium Mote",
+            "name_jp": "Arcane Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 13,
+            "category": 0,
+            "name": "violet_orb",
+            "name_en": "Violet Iordium Mote",
+            "name_jp": "Violet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 14,
+            "category": 0,
+            "name": "lima_orb",
+            "name_en": "Lima Iordium Mote",
+            "name_jp": "Lima Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        },
+        {
+            "id": 15,
+            "category": 0,
+            "name": "scarlet_orb",
+            "name_en": "Scarlet Iordium Mote",
+            "name_jp": "Scarlet Iordium Mote",
+            "description_en": "s",
+            "description_jp": "s",
+            "element_set": 0,
+            "rarity": 0
+        }
+    ]
+}

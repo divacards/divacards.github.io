@@ -9,7 +9,7 @@ const PageLinker = ({ mobile }: any) => {
     // TODO: text translation
     { path: "/", text: "link.home" },
     { path: "/collections", text: "link.collections" },
-    { path: "/artists", text: "link.artists" },
+    { path: "/wiki", text: "link.wiki" },
     { path: "/forge", text: "link.forge" },
   ];
 

@@ -18,6 +18,10 @@ module.exports = {
       cursive: ['"Germania One"', "cursive"],
     },
     extend: {
+      borderWidth: {
+        '5': '5px',
+        '6': '6px',
+      },
       boxShadow: {
         gray: "0 4px 8px 0 rgba(0, 0, 0, 0.39)",
       },
@@ -30,6 +34,9 @@ module.exports = {
         },
         'cloud-burst': {
           DEFAULT: '#212161',
+        },
+        'obsidian-dark': {
+          DEFAULT: '#292929',
         },
         'seance': {
           DEFAULT: '#622182',

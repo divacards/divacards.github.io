@@ -2,10 +2,18 @@
 import artists from "../public/data/artists.json";
 import decks from "../public/data/decks.json";
 import cards from "../public/data/cards.json";
+import elements from "../public/data/elements.json";
+import element_sets from "../public/data/element_sets.json";
 
 export const fetchArtists = () => {
   let result = {};
   artists.data.forEach((artist) => (result[artist.id] = artist));
+  return result;
+};
+
+export const fetchCategories = () => {
+  let result = {};
+  artists.data.forEach((category) => (result[category.id] = category));
   return result;
 };
 
@@ -20,12 +28,30 @@ export const fetchDecks = () => {
   return { ...result };
 };
 
+export const fetchElementSets = () => {
+  let result = {};
+  element_sets.data.forEach((element_set) => (result[element_set.id] = element_set));
+
+  Object.keys(result).forEach((id) => {
+    // memory lack gc
+    result[id].items.length = 0;
+  });
+  return { ...result };
+};
+
 interface Deck {
   id: string;
   name: string;
   cards: string[];
   artists: number;
   rarity: number;
+}
+
+interface ElementSet {
+  id: string;
+  name: string;
+  items: string[];
+  category: number;
 }
 
 export const buildDeckData = () => {
@@ -37,6 +63,19 @@ export const buildDeckData = () => {
     .map((deck: Deck) => ({
       ...deck,
       artistsDetail: artists[deck.artists],
+    }))
+    .sort((x, y) => (x.rarity < y.rarity ? 1 : -1));
+};
+
+export const buildElementSetData = () => {
+  let categories = fetchCategories();
+  let element_sets: any = fetchElementSets();
+  elements.data.forEach((element) => element_sets[element.element_set].items.push(element));
+
+  return Object.values(element_sets)
+    .map((element_set: ElementSet) => ({
+      ...element_set,
+      categoryDetail: categories[element_set.category],
     }))
     .sort((x, y) => (x.rarity < y.rarity ? 1 : -1));
 };

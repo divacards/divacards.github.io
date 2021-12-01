@@ -1,6 +1,7 @@
 {
     "i18n": {
         "select": {
+            "category": "Select a category",
             "deck": "Select a deck",
             "artist": "Select artists"
         },
@@ -15,7 +16,7 @@
         "link": {
             "home": "Home",
             "collections": "Collections",
-            "artists": "Artists",
+            "wiki": "Wiki",
             "forge": "Forge",
             "opensea-market": "OpenSea Market",
             "adam-market": "Adam.jp Market",
