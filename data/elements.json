@@ -1,0 +1,176 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "category": 0,
+            "color": "arcane",
+            "size": "mote",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_uncommon_spade",
+            "rarity": 1
+        },
+        {
+            "id": 1,
+            "category": 0,
+            "color": "violet",
+            "size": "mote",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_uncommon_diamond",
+            "rarity": 1
+        },
+        {
+            "id": 2,
+            "category": 0,
+            "color": "lima",
+            "size": "mote",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_uncommon_club",
+            "rarity": 1
+        },
+        {
+            "id": 3,
+            "category": 0,
+            "color": "scarlet",
+            "size": "mote",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_uncommon_heart",
+            "rarity": 1
+        },
+        {
+            "id": 4,
+            "category": 0,
+            "color": "arcane",
+            "size": "shard",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_rare_spade",
+            "rarity": 2
+        },
+        {
+            "id": 5,
+            "category": 0,
+            "color": "violet",
+            "size": "shard",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_rare_diamond",
+            "rarity": 2
+        },
+        {
+            "id": 6,
+            "category": 0,
+            "color": "lima",
+            "size": "shard",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_rare_club",
+            "rarity": 2
+        },
+        {
+            "id": 7,
+            "category": 0,
+            "color": "scarlet",
+            "size": "shard",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_rare_heart",
+            "rarity": 2
+        },
+        {
+            "id": 8,
+            "category": 0,
+            "color": "arcane",
+            "size": "core",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_epic_spade",
+            "rarity": 3
+        },
+        {
+            "id": 9,
+            "category": 0,
+            "color": "violet",
+            "size": "core",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_epic_diamond",
+            "rarity": 3
+        },
+        {
+            "id": 10,
+            "category": 0,
+            "color": "lima",
+            "size": "core",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_epic_club",
+            "rarity": 3
+        },
+        {
+            "id": 11,
+            "category": 0,
+            "color": "scarlet",
+            "size": "core",
+            "description": "s",
+            "element_set": 0,
+            "usage": "stack_upgrade_x_10",
+            "obtain": "disenchant_epic_heart",
+            "rarity": 3
+        },
+        {
+            "id": 12,
+            "category": 0,
+            "color": "arcane",
+            "size": "orb",
+            "description": "s",
+            "element_set": 0,
+            "obtain": "disenchant_legendary_spade",
+            "rarity": 4
+        },
+        {
+            "id": 13,
+            "category": 0,
+            "color": "violet",
+            "size": "orb",
+            "description": "s",
+            "element_set": 0,
+            "obtain": "disenchant_legendary_diamond",
+            "rarity": 4
+        },
+        {
+            "id": 14,
+            "category": 0,
+            "color": "lima",
+            "size": "orb",
+            "description": "s",
+            "element_set": 0,
+            "obtain": "disenchant_legendary_club",
+            "rarity": 4
+        },
+        {
+            "id": 15,
+            "category": 0,
+            "color": "scarlet",
+            "size": "orb",
+            "description": "s",
+            "element_set": 0,
+            "obtain": "disenchant_legendary_heart",
+            "rarity": 4
+        }
+    ]
+}
