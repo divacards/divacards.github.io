@@ -10,6 +10,20 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: 'lufddo';
+  src: url("fonts/lufddo.otf");
+}
+
+@font-face {
+  font-family: 'katakamna';
+  src: url("fonts/katakamna.ttf") format("truetype");
+}
+
+.lufddo {
+  font-family: 'lufddo' !important;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */

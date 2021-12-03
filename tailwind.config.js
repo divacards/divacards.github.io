@@ -77,17 +77,41 @@ module.exports = {
         'diablo-dark-gold': {
           DEFAULT: '#D49E43'
         },
+        'obsidian-gold': {
+          DEFAULT: '#765A22'
+        },
         'razzmatazz': {
           DEFAULT: '#FA115B'
         },
         'supernova': {
           DEFAULT: '#FEC303'
+        },
+        'rarity-common': {
+          DEFAULT: '#FFFFFF'
+        },
+        'rarity-uncommon': {
+          DEFAULT: '#20FC03'
+        },
+        'rarity-rare': {
+          DEFAULT: '#0B71DE'
+        },
+        'rarity-epic': {
+          DEFAULT: '#9245FF'
+        },
+        'rarity-legendary': {
+          DEFAULT: '#F57C02'
+        },
+        'rarity-artifact': {
+          DEFAULT: '#E6CC81'
         }
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ['hover']
+
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

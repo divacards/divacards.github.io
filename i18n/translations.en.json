@@ -50,6 +50,47 @@
             "enchanting-description": "Discover the magical power of enchanting by add more power to one of the items, or disenchant the item that is not needed any longer.",
             "recycling-title": "Recycling",
             "recycling-description": "Unwanted NFTs from other NFT projects are welcomed here. Instead of leaving it in the wallet, smash it into pieces and craft something new."
+        },
+        "elements": {
+            "color": "Color",
+            "iordium": "Iordium",
+            "arcane": "Arcane",
+            "violet": "Violet",
+            "scarlet": "Scarlet",
+            "lima": "Lima",
+            "mote": "Mote",
+            "shard": "Shard",
+            "core": "Core",
+            "orb": "Orb",
+            "usage": {
+                "stack_upgrade_x_10": "Usage: Turn 10 into a greater one"
+            },
+            "obtain": {
+                "disenchant_uncommon_heart": "Obtainable by disenchanting non-mineral heart cards of uncommon quality.",
+                "disenchant_uncommon_diamond": "Obtainable by disenchanting non-mineral diamond cards of uncommon quality.",
+                "disenchant_uncommon_club": "Obtainable by disenchanting non-mineral club cards of uncommon quality.",
+                "disenchant_uncommon_spade": "Obtainable by disenchanting non-mineral spade cards of uncommon quality.",
+                "disenchant_rare_heart": "Obtainable by disenchanting non-mineral heart cards of rare quality.",
+                "disenchant_rare_diamond": "Obtainable by disenchanting non-mineral diamond cards of rare quality.",
+                "disenchant_rare_club": "Obtainable by disenchanting non-mineral club cards of rare quality.",
+                "disenchant_rare_spade": "Obtainable by disenchanting non-mineral spade cards of rare quality.",
+                "disenchant_epic_heart": "Obtainable by disenchanting non-mineral heart cards of epic quality.",
+                "disenchant_epic_diamond": "Obtainable by disenchanting non-mineral diamond cards of epic quality.",
+                "disenchant_epic_club": "Obtainable by disenchanting non-mineral club cards of epic quality.",
+                "disenchant_epic_spade": "Obtainable by disenchanting non-mineral spade cards of epic quality.",
+                "disenchant_legendary_heart": "Obtainable by disenchanting non-mineral heart cards of legendary quality.",
+                "disenchant_legendary_diamond": "Obtainable by disenchanting non-mineral diamond cards of legendary quality.",
+                "disenchant_legendary_club": "Obtainable by disenchanting non-mineral club cards of legendary quality.",
+                "disenchant_legendary_spade": "Obtainable by disenchanting non-mineral spade cards of legendary quality."
+            }
+        },
+        "rarity": {
+            "common": "Common",
+            "uncommon": "Uncommon",
+            "rare": "Rare",
+            "epic": "Epic",
+            "legendary": "Legendary",
+            "artifact": "Artifact"
         }
     }
 }

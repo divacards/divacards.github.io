@@ -50,6 +50,47 @@
             "enchanting-description": "アイテムにパワーを加えたり、不要になったアイテムをディスエンチャントしたりして、エンチャントの不思議な力を発見してください。",
             "recycling-title": "リサイクル",
             "recycling-description": "他のNFTプロジェクトで不要になったNFTをここでは歓迎します。お財布に入れたままにするのではなく、粉々にして新しいものを作りましょう。"
+        },
+        "elements": {
+            "color": "色",
+            "iordium": "イオディエム",
+            "arcane": "アーケイン",
+            "violet": "バイオレット",
+            "scarlet": "緋",
+            "lima": "リマ",
+            "mote": "粉塵",
+            "shard": "シャード",
+            "core": "核",
+            "orb": "オーブ",
+            "usage": {
+                "stack_upgrade_x_10": "使用: 十枚でアップグレード"
+            },
+            "obtain": {
+                "disenchant_uncommon_heart": "稀有品質の非鉱物性のハートカードを分解して入手することができます。",
+                "disenchant_uncommon_diamond": "稀有品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
+                "disenchant_uncommon_club": "稀有品質の非鉱物性のクラブカードを分解して入手することができます。",
+                "disenchant_uncommon_spade": "稀有品質の非鉱物性のスペードカードを分解して入手することができます。",
+                "disenchant_rare_heart": "稀世品質の非鉱物性のハートカードを分解して入手することができます。",
+                "disenchant_rare_diamond": "稀世品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
+                "disenchant_rare_club": "稀世品質の非鉱物性のクラブカードを分解して入手することができます。",
+                "disenchant_rare_spade": "稀世品質の非鉱物性のスペードカードを分解して入手することができます。",
+                "disenchant_epic_heart": "エピック品質の非鉱物性のハートカードを分解して入手することができます。",
+                "disenchant_epic_diamond": "エピック品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
+                "disenchant_epic_club": "エピック品質の非鉱物性のクラブカードを分解して入手することができます。",
+                "disenchant_epic_spade": "エピック品質の非鉱物性のスペードカードを分解して入手することができます。",
+                "disenchant_legendary_heart": "レジェンド品質の非鉱物性のハートカードを分解して入手することができます。",
+                "disenchant_legendary_diamond": "レジェンド品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
+                "disenchant_legendary_club": "レジェンド品質の非鉱物性のクラブカードを分解して入手することができます。",
+                "disenchant_legendary_spade": "レジェンド品質の非鉱物性のスペードカードを分解して入手することができます。"
+            }
+        },
+        "rarity": {
+            "common": "一般",
+            "uncommon": "稀有",
+            "rare": "希世",
+            "epic": "エピック",
+            "legendary": "レジェンド",
+            "artifact": "アーチファクト"
         }
     }
 }
