@@ -52,6 +52,7 @@ interface ElementSet {
   name: string;
   items: string[];
   category: number;
+  rarity: number;
 }
 
 export const buildDeckData = () => {
