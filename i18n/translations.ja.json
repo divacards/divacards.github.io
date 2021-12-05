@@ -66,22 +66,22 @@
                 "stack_upgrade_x_10": "使用: 十枚でアップグレード"
             },
             "obtain": {
-                "disenchant_uncommon_heart": "稀有品質の非鉱物性のハートカードを分解して入手することができます。",
-                "disenchant_uncommon_diamond": "稀有品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
-                "disenchant_uncommon_club": "稀有品質の非鉱物性のクラブカードを分解して入手することができます。",
-                "disenchant_uncommon_spade": "稀有品質の非鉱物性のスペードカードを分解して入手することができます。",
-                "disenchant_rare_heart": "稀世品質の非鉱物性のハートカードを分解して入手することができます。",
-                "disenchant_rare_diamond": "稀世品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
-                "disenchant_rare_club": "稀世品質の非鉱物性のクラブカードを分解して入手することができます。",
-                "disenchant_rare_spade": "稀世品質の非鉱物性のスペードカードを分解して入手することができます。",
-                "disenchant_epic_heart": "エピック品質の非鉱物性のハートカードを分解して入手することができます。",
-                "disenchant_epic_diamond": "エピック品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
-                "disenchant_epic_club": "エピック品質の非鉱物性のクラブカードを分解して入手することができます。",
-                "disenchant_epic_spade": "エピック品質の非鉱物性のスペードカードを分解して入手することができます。",
-                "disenchant_legendary_heart": "レジェンド品質の非鉱物性のハートカードを分解して入手することができます。",
-                "disenchant_legendary_diamond": "レジェンド品質の非鉱物性のダイアモンドカードを分解して入手することができます。",
-                "disenchant_legendary_club": "レジェンド品質の非鉱物性のクラブカードを分解して入手することができます。",
-                "disenchant_legendary_spade": "レジェンド品質の非鉱物性のスペードカードを分解して入手することができます。"
+                "disenchant_uncommon_heart": "稀有品質且つ非プライマルの ❤ カードを分解して入手することができます。",
+                "disenchant_uncommon_diamond": "稀有品質且つ非プライマルの ♢ カードを分解して入手することができます。",
+                "disenchant_uncommon_club": "稀有品質且つ非プライマルの ♧ カードを分解して入手することができます。",
+                "disenchant_uncommon_spade": "稀有品質且つ非プライマルの ♤ カードを分解して入手することができます。",
+                "disenchant_rare_heart": "稀世品質且つ非プライマルの ❤ カードを分解して入手することができます。",
+                "disenchant_rare_diamond": "稀世品質非プライマルの ♢ カードを分解して入手することができます。",
+                "disenchant_rare_club": "稀世品質且つ非プライマルの ♧ カードを分解して入手することができます。",
+                "disenchant_rare_spade": "稀世品質且つ非プライマルの ♤ カードを分解して入手することができます。",
+                "disenchant_epic_heart": "エピック品質且つ非プライマルの ❤ カードを分解して入手することができます。",
+                "disenchant_epic_diamond": "エピック品質且つ非プライマルの ♢ カードを分解して入手することができます。",
+                "disenchant_epic_club": "エピック品質且つ非プライマルの ♧ カードを分解して入手することができます。",
+                "disenchant_epic_spade": "エピック品質且つ非プライマルの ♤ カードを分解して入手することができます。",
+                "disenchant_legendary_heart": "レジェンド品質且つ非プライマルの ❤ カードを分解して入手することができます。",
+                "disenchant_legendary_diamond": "レジェンド品質且つ非プライマルの ♢ カードを分解して入手することができます。",
+                "disenchant_legendary_club": "レジェンド品質且つ非プライマルの ♧ カードを分解して入手することができます。",
+                "disenchant_legendary_spade": "レジェンド品質且つ非プライマルの ♤ カードを分解して入手することができます。"
             }
         },
         "rarity": {

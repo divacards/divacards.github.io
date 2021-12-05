@@ -65,13 +65,13 @@ const ElementViewer = ({
         <div>
             <section className="deck-section py-5 h-20">
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
-                    <FireIcon className="w-full" />
+                    <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
                     {title}
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
-                    <FireIcon className="w-full" />
+                    <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
             </section>
 
@@ -84,7 +84,7 @@ const ElementViewer = ({
                         return (
                             <div
                                 key={`${elementSet.name}-${deck.name}-${card.id}`}
-                                className="flex flex-col gap-2 border-obsidian-gold border-4 bg-cod-gray justify-between hover:bg-obsidian-dark hover:border-diablo-dark-gold hover:animate-pulse"
+                                className="flex flex-col gap-2 border-obsidian-gold border-4 bg-cod-gray justify-between hover:animate-pulse cursor-pointer"
                             >
                                 <div className="align-middle nn:h-48 sm:h-52 lg:h-52 2xl:h-80 flex m-auto">
                                     <Image
@@ -102,10 +102,8 @@ const ElementViewer = ({
                                 }</div>
                                 <div> <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div> </div>
                                 <div className="m-5 text-diablo-dark-gold">
-                                    <span className={`block ${getRarityColor(card)}`}>
-                                        {t(`rarity.${getRarityText(card)}`)}
-                                    </span>
-                                    <span className="block">{t(`elements.${card.color}`)} {t("elements.color")}</span>
+                                    <span className={`block ${getRarityColor(card)}`}> {t(`rarity.${getRarityText(card)}`)} </span>
+                                    <span className="block">{t(`elements.${card.color}`)}</span>
                                     <span className="block text-rarity-uncommon text-xs font-sans mt-2">{card.usage ? t(`elements.usage.${card.usage}`, { card_size }) : ""}</span>
                                     <span className="block text-rarity-artifact text-xs font-sans mt-2">"{card.obtain ? t(`elements.obtain.${card.obtain}`) : ""}"</span>
                                 </div>
