@@ -49,7 +49,7 @@ const CategoryFilters = (props) => {
         instanceId="deck-select"
         placeholder={t("select.category")}
         options={props.categoryOpts}
-        onChange={props.onDeckSelect}
+        onChange={props.onCategorySelect}
         isClearable
       ></CustomSelect>
     </section>
@@ -88,14 +88,14 @@ export default function Wiki() {
   ];
 
   const [state, dispatch] = useReducer(reducer, {
-    deck: null,
+    category: null,
     artist: [],
     suite: [],
     order: 0,
   });
   const { suite, deck, artist, order } = state;
   const onSuiteSelect = (data) => dispatch({ type: "change:suite", data });
-  const onDeckSelect = (data) => dispatch({ type: "change:deck", data });
+  const onCategorySelect = (data) => dispatch({ type: "change:category", data });
   const onArtistSelect = (data) => dispatch({ type: "change:artist", data });
   const onOrderSelect = (data) => dispatch({ type: "change:order", data });
 
@@ -150,14 +150,14 @@ export default function Wiki() {
   });
 
   const { t } = useTranslation();
-  const prompt = t("cards-found", { count });
+  const prompt = t("items-found", { count });
 
   return (
     <Layout pageTitle="tokyo.cards">
       <section className="collection-section flex flex-col lg:flex-row gap-2 justify-between lg:items-center">
         <CategoryFilters
           categoryOpts={categoryOpts}
-          onDeckSelect={onDeckSelect}
+          onCategorySelect={onCategorySelect}
         />
         <WikiFilters
           suite={suite}

@@ -8,6 +8,7 @@
         "button-buy-cards": "Buy Cards",
         "button-airdrop": "Airdrop",
         "cards-found": "{{count}} cards found",
+        "items-found": "{{count}} items found",
         "hero": {
             "header-simple": "Simple ",
             "header-collectables": "Collectables",

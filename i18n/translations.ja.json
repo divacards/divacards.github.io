@@ -8,6 +8,7 @@
         "button-buy-cards": "カード購入",
         "button-airdrop": "エアドロップ",
         "cards-found": "{{count}} 枚のカードが見つかりました",
+        "items-found": "{{count}} 枚のアイテムが見つかりました",
         "hero": {
             "header-simple": "シンプルな",
             "header-collectables": "コレクタブル",
