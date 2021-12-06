@@ -12,7 +12,9 @@
         "hero": {
             "header-simple": "Simple ",
             "header-collectables": "Collectables",
-            "catch-phrase": "Your collections does NOT end up owning you."
+            "catch-phrase": "Your collections does NOT end up owning you.",
+            "header-collections": "Collections",
+            "description-collections": "This is the list of collections that is minted under Tokyo.Cards. Items from non-primal collections can be disenchanted into primal items. Only someone with a disenchant item is able to perform disenchant."
         },
         "link": {
             "home": "Home",

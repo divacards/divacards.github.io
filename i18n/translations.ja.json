@@ -12,7 +12,9 @@
         "hero": {
             "header-simple": "シンプルな",
             "header-collectables": "コレクタブル",
-            "catch-phrase": "コミュニティー自立型コレクション"
+            "catch-phrase": "コミュニティー自立型コレクション",
+            "header-collections": "コレクション",
+            "description-collections": "コレクションリストです。プライマル以外のコレクションのアイテムは、プライマルのアイテムにディスエンチャントすることができます。ディスエンチャントを行うことができるのは、ディスエンチャントアイテムを持っている人のみ。"
         },
         "link": {
             "home": "ホーム",

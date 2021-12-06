@@ -1,18 +1,22 @@
 import React, { useState, useReducer } from "react";
 
 import Layout from "../components/Layout";
-import { CustomSelect } from "../components/Custom";
-import ElementViewer from "../boxes/ElementViewer";
+import Header from "../components/Layout/Header";
+import Footer from "../components/Layout/Footer";
+import { CustomSelect, CustomRadioGroup } from "../components/Custom";
+import DeckViewer from "../boxes/DeckViewer";
 import { SuiteFilters, OrderFilters } from "../boxes/Filter";
 import { useTranslation } from "next-export-i18n";
 
 //Data from JSON
-import categories from "../public/data/categories.json";
-import { buildElementSetData, reducer } from "../util";
+import artists from "../public/data/artists.json";
+import decks from "../public/data/decks.json";
+// import cards from "../public/data/cards.json";
+import { buildDeckData, reducer } from "../util";
 
-const DECK_DATA = buildElementSetData();
+const DECK_DATA = buildDeckData();
 
-const WikiFilters = (props) => {
+const CardFilters = (props) => {
   return (
     <section
       className="container card-filter-region mx-auto w-full
@@ -20,12 +24,14 @@ const WikiFilters = (props) => {
     >
       <div className="flex flex-row gap-1">
         <SuiteFilters
-          opts={props.qualityOpts}
+          // instanceid="suite-select"
+          opts={props.suiteOpts}
           state={props.suite}
           onChange={props.onSuiteSelect}
         />
       </div>
       <OrderFilters
+        // instanceId="order-select"
         state={props.order}
         onChange={props.onOrderSelect}
       />
@@ -33,7 +39,7 @@ const WikiFilters = (props) => {
   );
 };
 
-const CategoryFilters = (props) => {
+const DeckFilters = (props) => {
   const { t } = useTranslation();
   return (
     <section
@@ -44,10 +50,19 @@ const CategoryFilters = (props) => {
       <CustomSelect
         id="deck-select"
         instanceId="deck-select"
-        placeholder={t("select.category")}
-        options={props.categoryOpts}
-        onChange={props.onCategorySelect}
+        placeholder={t("select.deck")}
+        options={props.deckOpts}
+        onChange={props.onDeckSelect}
         isClearable
+      ></CustomSelect>
+      <CustomSelect
+        id="artist-select"
+        instanceId="artist-select"
+        isMulti={true}
+        isClearable
+        placeholder={t("select.artist")}
+        options={props.artistOpts}
+        onChange={props.onArtistSelect}
       ></CustomSelect>
     </section>
   );
@@ -57,8 +72,8 @@ const FilteredDeckViewer = ({ className, decks, order }) => {
   return (
     <section className={className}>
       {decks.map((deck, index) => (
-        <ElementViewer
-          key={`${deck.categoryDetail.name}-${deck.id}`}
+        <DeckViewer
+          key={`${deck.artistsDetail.name}-${deck.id}`}
           deck={deck}
           title={deck.title}
           cards={deck.cards}
@@ -69,30 +84,33 @@ const FilteredDeckViewer = ({ className, decks, order }) => {
     </section>
   );
 };
-export default function Wiki() {
-  const categoryOpts = categories.data.map(({ id, name }) => ({
+export default function Collections() {
+  const deckOpts = decks.data.map(({ id, name, title }) => ({
+    value: id,
+    label: title,
+  }));
+  const artistOpts = artists.data.map(({ id, name }) => ({
     value: id,
     label: name,
   }));
 
-  const qualityOpts = [
-    { value: "common", label: "Common" },
-    { value: "uncommon", label: "Uncommon" },
-    { value: "rare", label: "Rare" },
-    { value: "epic", label: "Epic" },
-    { value: "legendary", label: "Legendary" },
-    { value: "artifact", label: "Artifact" },
+  const suiteOpts = [
+    { value: "s", label: "Spades" },
+    { value: "h", label: "Hearts" },
+    { value: "c", label: "Clubs" },
+    { value: "d", label: "Diamonds" },
+    { value: "j", label: "Jokers" },
   ];
 
   const [state, dispatch] = useReducer(reducer, {
-    category: null,
+    deck: null,
     artist: [],
     suite: [],
     order: 0,
   });
   const { suite, deck, artist, order } = state;
   const onSuiteSelect = (data) => dispatch({ type: "change:suite", data });
-  const onCategorySelect = (data) => dispatch({ type: "change:category", data });
+  const onDeckSelect = (data) => dispatch({ type: "change:deck", data });
   const onArtistSelect = (data) => dispatch({ type: "change:artist", data });
   const onOrderSelect = (data) => dispatch({ type: "change:order", data });
 
@@ -138,7 +156,7 @@ export default function Wiki() {
 
   let count = 0;
   const filteredDecks = DECK_DATA.filter(artistsFilter).map((deck, index) => {
-    let f_cards = filterCards(deck.items);
+    let f_cards = filterCards(deck.cards);
     count += f_cards.length;
     return {
       ...deck,
@@ -147,19 +165,21 @@ export default function Wiki() {
   });
 
   const { t } = useTranslation();
-  const prompt = t("items-found", { count });
+  const prompt = t("cards-found", { count });
 
   return (
     <Layout pageTitle="tokyo.cards">
       <section className="collection-section flex flex-col lg:flex-row gap-2 justify-between lg:items-center">
-        <CategoryFilters
-          categoryOpts={categoryOpts}
-          onCategorySelect={onCategorySelect}
+        <DeckFilters
+          deckOpts={deckOpts}
+          onDeckSelect={onDeckSelect}
+          artistOpts={artistOpts}
+          onArtistSelect={onArtistSelect}
         />
-        <WikiFilters
+        <CardFilters
           suite={suite}
           order={order}
-          qualityOpts={qualityOpts}
+          suiteOpts={suiteOpts}
           onSuiteSelect={onSuiteSelect}
           onOrderSelect={onOrderSelect}
         />
