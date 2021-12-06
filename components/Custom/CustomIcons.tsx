@@ -21,7 +21,7 @@ export const LogoIcon = ({ height, width, style }) => {
 export const Primal = ({ height, width, style }) => {
     return (
         <svg width="65px" height="66px" viewBox="0 0 65 66" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g id="NonPrimal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="NonPrimal" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="Acky" transform="translate(-267.000000, -916.000000)" fill="currentColor">
                     <g id="Group" transform="translate(267.000000, 916.000000)">
                         <path d="M38.2852408,24.1459207 C44.6576599,12.2387188 45.1899364,-0.440053991 55.3226545,9.69266405 C65.4535935,19.8236031 52.6903939,20.2668142 40.7494783,26.6005304 C40.420762,26.1386944 40.0493025,25.6979346 39.6350999,25.2837319 C39.2110243,24.8596564 38.7591105,24.480386 38.2852408,24.1459207 Z M26.4799535,40.9782454 C20.260761,52.8524075 19.7589327,65.3889231 9.69266405,55.3226545 C-0.375422294,45.2545681 12.0779034,44.6648408 23.9179818,38.4064717 C24.2630611,38.9032273 24.6569805,39.3763322 25.09974,39.8190918 C25.5328615,40.2522133 25.9950217,40.6385978 26.4799535,40.9782454 Z" id="Combined-Shape"></path>
@@ -39,7 +39,7 @@ export const Primal = ({ height, width, style }) => {
 export const NonPrimal = ({ height, width, style }) => {
     return (
         <svg width="65px" height="66px" viewBox="0 0 65 66" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g id="Card-Samples" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Card-Samples" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="Primal" transform="translate(-267.000000, -916.000000)" fill="currentColor">
                     <g id="Group" transform="translate(267.000000, 916.000000)">
                         <path d="M38.2852408,24.1459207 C44.6576599,12.2387188 45.1899364,-0.440053991 55.3226545,9.69266405 C65.4535935,19.8236031 52.6903939,20.2668142 40.7494783,26.6005304 C40.420762,26.1386944 40.0493025,25.6979346 39.6350999,25.2837319 C39.2110243,24.8596564 38.7591105,24.480386 38.2852408,24.1459207 Z M26.4799535,40.9782454 C20.260761,52.8524075 19.7589327,65.3889231 9.69266405,55.3226545 C-0.375422294,45.2545681 12.0779034,44.6648408 23.9179818,38.4064717 C24.2630611,38.9032273 24.6569805,39.3763322 25.09974,39.8190918 C25.5328615,40.2522133 25.9950217,40.6385978 26.4799535,40.9782454 Z" id="Combined-Shape"></path>
