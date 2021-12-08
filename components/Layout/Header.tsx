@@ -48,12 +48,14 @@ const AccountMenu = ({ active }) => {
 };
 
 const MobileAccountMenu = ({ active }) => {
+
+  const { library, chainId, account } = useWeb3React();
   return !active ? (
     <BigButton />
   ) : (
     <Popover.Button className="btn-popover-open">
       <span className="sr-only">Open wallet</span>
-      <Avatar className="h-6 w-6" aria-hidden="true" />
+      <Avatar className="h-6 w-6" aria-hidden="true" value={account} />
     </Popover.Button>
   );
 };

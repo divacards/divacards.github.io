@@ -73,19 +73,19 @@ const __Wallet = () => {
 
   return (
     <Popover>
-      <Popover.Button className="flex flex-row rounded-full border-2 ml-4 px-4 py-2 divide-x divide-pink-300">
-        <span className="px-2 my-auto text-highlight">
+      <Popover.Button className="flex flex-row rounded-full border-2 ml-4 border-diablo-dark-gold">
+        {/* <span className="px-2 my-auto text-highlight">
           {balance ? formatEther(balance) : ""} {currencyConf.main}
         </span>
         <span className="px-2 my-auto text-highlight">
           {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
-        </span>
-        <Avatar value={account} />
+        </span> */}
+        <Avatar className="h-6 w-6" value={account} />
       </Popover.Button>
 
       <Popover.Panel
         className="flex flex-col origin-top-right absolute rounded
-          divide-y-2 divide-pink-300 px-2 right-0 mt-2
+          divide-y-2 divide-cinnabar px-2 right-0 mt-5
           shadow-lg bg-white z-20"
       >
         <div className="flex flex-row py-2 space-x-20 justify-between">
@@ -109,15 +109,13 @@ const __Wallet = () => {
         <div className="py-2">
           <WalletItem
             label="Balance:"
-            value={`${balance ? formatEther(balance) : ""} ${
-              currencyConf.main
-            }`}
+            value={`${balance ? formatEther(balance) : ""} ${currencyConf.main
+              }`}
           />
           <WalletItem
             label="Wrapped Balance:"
-            value={`${wethBalance ? formatEther(wethBalance) : ""} ${
-              paymentConf.symbol
-            }`}
+            value={`${wethBalance ? formatEther(wethBalance) : ""} ${paymentConf.symbol
+              }`}
           />
           <WalletItem label="Items Count:" value={3} />
           <div className="flex flex-row mt-2">
@@ -153,7 +151,7 @@ const __MobileWallet = () => {
   });
 
   return (
-    <div className="my-auto z-20 divide-y-2 divide-pink-300">
+    <div className="my-auto z-20 divide-y-2 divide-cinnabar">
       <div className="flex flex-row justify-between py-2">
         <div className="flex flex-row gap-2">
           <span className="text-black font-semibold opacity-75 m-auto">
@@ -179,9 +177,8 @@ const __MobileWallet = () => {
         />
         <WalletItem
           label="Wrapped Balance:"
-          value={`${wethBalance ? formatEther(wethBalance) : ""} ${
-            paymentConf.symbol
-          }`}
+          value={`${wethBalance ? formatEther(wethBalance) : ""} ${paymentConf.symbol
+            }`}
         />
         <WalletItem label="Items Count:" value={3} />
         <div className="flex flex-row mt-4">
