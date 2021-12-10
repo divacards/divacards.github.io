@@ -1,0 +1,12 @@
+{
+    "attributes": [
+        {
+            "trait_type": "number_inside",
+            "value": 1
+        }
+    ],
+    "description": "When you purchase this option, you will receive a single Card of a random variety. Enjoy and take good care of your collection!",
+    "external_url": "https://example.com/?token_id=0",
+    "image": "https://storage.googleapis.com/opensea-prod.appspot.com/factory/0.png",
+    "name": "Single Tokyo Card"
+}
