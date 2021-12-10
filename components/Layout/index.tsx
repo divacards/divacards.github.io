@@ -19,7 +19,7 @@ const Layout = ({ pageTitle, children }) => {
       </Head>
       <Web3ReactProvider getLibrary={getLibrary}>
         <Header />
-        <main>{children}</main>
+        <main className="md:px-4 sm:px-10 lg:px-20 2xl:px-40">{children}</main>
         <Footer />
       </Web3ReactProvider>
     </>
