@@ -1,0 +1,12 @@
+{
+    "attributes": [
+        {
+            "trait_type": "number_inside",
+            "value": 1 
+        }
+    ],
+    "description": "This lootbox contains some Diva Items! It can also be traded!",
+    "external_url": "https://example.com/?token_id=0",
+    "image": "https://storage.googleapis.com/opensea-prod.appspot.com/box/0.png",
+    "name": "Diva Loot Box b"
+}
