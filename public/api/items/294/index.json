@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "2 of Clubs"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "2"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Clubs"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "の"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "2 of Clubs", 
+    "external_url": "https://diva.cards/api/items/294/"
+}

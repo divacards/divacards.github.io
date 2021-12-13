@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "King of Clubs"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "King"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Clubs"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "を"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "King of Clubs", 
+    "external_url": "https://diva.cards/api/items/2694/"
+}

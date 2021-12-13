@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "Real Joker"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "Real"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Joker"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "き"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Legendary"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "Real Joker", 
+    "external_url": "https://diva.cards/api/items/2868/"
+}
