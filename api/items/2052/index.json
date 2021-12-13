@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "10 of Heart"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "10"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Heart"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "あ"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "10 of Heart", 
+    "external_url": "https://diva.cards/api/items/2052/"
+}

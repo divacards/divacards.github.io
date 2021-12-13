@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "Queen of Heart"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "Queen"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Heart"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "ま"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "Queen of Heart", 
+    "external_url": "https://diva.cards/api/items/2514/"
+}

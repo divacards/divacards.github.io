@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "Ace of Clubs"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "Ace"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Clubs"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "か"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "Ace of Clubs", 
+    "external_url": "https://diva.cards/api/items/59/"
+}

@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "King of Spades"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "King"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Spades"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "え"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "King of Spades", 
+    "external_url": "https://diva.cards/api/items/2595/"
+}

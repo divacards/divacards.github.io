@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name", 
+            "value": "Jack of Clubs"
+        }, 
+        {
+            "trait_type": "Face", 
+            "value": "Jack"
+        }, 
+        {
+            "trait_type": "House", 
+            "value": "Clubs"
+        }, 
+        {
+            "trait_type": "Kana", 
+            "value": "あ"
+        }, 
+        {
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
+        }
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "Jack of Clubs", 
+    "external_url": "https://diva.cards/api/items/2214/"
+}

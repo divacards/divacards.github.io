@@ -1,41 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Deck",
-            "value": 0
-        },
+            "trait_type": "Name", 
+            "value": "Ace of Spades"
+        }, 
         {
-            "display_type": "number",
-            "trait_type": "Deck",
-            "value": 0
-        },
+            "trait_type": "Face", 
+            "value": "Ace"
+        }, 
         {
-            "trait_type": "DeckName",
-            "value": "MNEMONICS at A Bar"
-        },
+            "trait_type": "House", 
+            "value": "Spades"
+        }, 
         {
-            "trait_type": "Sign",
-            "value": "A"
-        },
+            "trait_type": "Kana", 
+            "value": "あ"
+        }, 
         {
-            "trait_type": "Suite",
-            "value": "Joker"
-        },
-        {
-            "trait_type": "Kana",
-            "value": "つ"
-        },
-        {
-            "trait_type": "Mnemonic",
-            "value": "acquire"
-        },
-        {
-            "trait_type": "Rarity",
-            "value": "Epic"
+            "trait_type": "Rarity", 
+            "value": "Uncommon"
         }
-    ],
-    "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "",
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
-    "name": "acquire.joker.a"
+    ], 
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
+    "description": "Trading Poker Cards from Diva.Cards", 
+    "name": "Ace of Spades", 
+    "external_url": "https://diva.cards/api/items/0/"
 }
