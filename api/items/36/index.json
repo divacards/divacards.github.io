@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
+            "trait_type": "Name",
             "value": "Ace of Spades"
-        }, 
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Ace"
-        }, 
+        },
         {
-            "trait_type": "House", 
+            "trait_type": "House",
             "value": "Spades"
-        }, 
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "ゆ"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Epic"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Ace of Spades", 
-    "external_url": "https://diva.cards/api/items/36/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/36/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Ace of Spades"
 }

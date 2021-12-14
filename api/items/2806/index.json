@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "King of Diamond"
-        }, 
+            "trait_type": "Name",
+            "value": "King of Diamonds"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "King"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Diamond"
-        }, 
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "ゃ"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Rare"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "King of Diamond", 
-    "external_url": "https://diva.cards/api/items/2806/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/2806/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "King of Diamonds"
 }

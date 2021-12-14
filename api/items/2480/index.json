@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
+            "trait_type": "Name",
             "value": "Queen of Clubs"
-        }, 
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Queen"
-        }, 
+        },
         {
-            "trait_type": "House", 
+            "trait_type": "House",
             "value": "Clubs"
-        }, 
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "ぇ"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Rare"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Queen of Clubs", 
-    "external_url": "https://diva.cards/api/items/2480/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/2480/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Queen of Clubs"
 }
