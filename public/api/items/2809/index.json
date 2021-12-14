@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
+            "trait_type": "Name",
             "value": "Fake Joker"
-        }, 
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Fake"
-        }, 
+        },
         {
-            "trait_type": "House", 
+            "trait_type": "House",
             "value": "Joker"
-        }, 
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "い"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
+            "trait_type": "Rarity",
             "value": "Legendary"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Fake Joker", 
-    "external_url": "https://diva.cards/api/items/2809/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/2809/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Fake Joker"
 }

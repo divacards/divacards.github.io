@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "Ace of Diamond"
-        }, 
+            "trait_type": "Name",
+            "value": "Ace of Diamonds"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Ace"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Diamond"
-        }, 
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "こ"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Epic"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Ace of Diamond", 
-    "external_url": "https://diva.cards/api/items/171/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/171/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Ace of Diamonds"
 }

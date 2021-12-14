@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "Ace of Heart"
-        }, 
+            "trait_type": "Name",
+            "value": "Ace of Hearts"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Ace"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Heart"
-        }, 
+            "trait_type": "House",
+            "value": "Hearts"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "は"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Epic"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Ace of Heart", 
-    "external_url": "https://diva.cards/api/items/133/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/133/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Ace of Hearts"
 }

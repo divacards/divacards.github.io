@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "Queen of Diamond"
-        }, 
+            "trait_type": "Name",
+            "value": "Queen of Diamonds"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Queen"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Diamond"
-        }, 
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "る"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Rare"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Queen of Diamond", 
-    "external_url": "https://diva.cards/api/items/2579/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/2579/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Queen of Diamonds"
 }

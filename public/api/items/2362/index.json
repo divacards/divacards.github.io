@@ -1,28 +1,28 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "Jack of Diamond"
-        }, 
+            "trait_type": "Name",
+            "value": "Jack of Diamonds"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "Jack"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Diamond"
-        }, 
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "り"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
-            "value": "Uncommon"
+            "trait_type": "Rarity",
+            "value": "Rare"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "Jack of Diamond", 
-    "external_url": "https://diva.cards/api/items/2362/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/api/items/2362/",
+    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "name": "Jack of Diamonds"
 }
