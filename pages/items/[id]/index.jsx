@@ -24,11 +24,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export default ({ res }) => {
-    const router = useRouter()
-    const { id } = router.query
-    console.log(res)
-
+export default function Items({ res }) {
     return (
         <Layout pageTitle="tokyo.cards">
             <section className="deck-section py-5 h-20">
@@ -57,7 +53,7 @@ export default ({ res }) => {
                 <div className="text-cinnabar col-span-2 m-5">
                     {res.name}
                     {res.attributes.map((attr, index) => (
-                        <div>{attr.trait_type}: {attr.value}</div>
+                        <div key={index}>{attr.trait_type}: {attr.value}</div>
                     ))}
                 </div>
 
