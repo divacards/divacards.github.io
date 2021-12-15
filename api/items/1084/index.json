@@ -1,28 +1,38 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
+            "trait_type": "Name",
             "value": "6 of Spades"
-        }, 
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "6"
-        }, 
+        },
         {
-            "trait_type": "House", 
+            "trait_type": "House",
             "value": "Spades"
-        }, 
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "お"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
+            "display_type": "String",
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "display_type": "String",
+            "trait_type": "Deck",
+            "value": "Akki"
+        },
+        {
+            "trait_type": "Rarity",
             "value": "Uncommon"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "6 of Spades", 
-    "external_url": "https://diva.cards/api/items/1084/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/items/1084/",
+    "image": "https://diva.cards/images/card_set/akki/1084.jpg",
+    "name": "6 of Spades"
 }

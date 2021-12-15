@@ -1,28 +1,38 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
-            "value": "6 of Diamond"
-        }, 
+            "trait_type": "Name",
+            "value": "6 of Diamonds"
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "6"
-        }, 
+        },
         {
-            "trait_type": "House", 
-            "value": "Diamond"
-        }, 
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "な"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
+            "display_type": "String",
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "display_type": "String",
+            "trait_type": "Deck",
+            "value": "Akki"
+        },
+        {
+            "trait_type": "Rarity",
             "value": "Uncommon"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "6 of Diamond", 
-    "external_url": "https://diva.cards/api/items/1262/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/items/1262/",
+    "image": "https://diva.cards/images/card_set/akki/1262.jpg",
+    "name": "6 of Diamonds"
 }
