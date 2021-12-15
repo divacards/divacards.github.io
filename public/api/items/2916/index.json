@@ -1,0 +1,44 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Mineral",
+            "value": "Iodium"
+        },
+        {
+            "trait_type": "Size",
+            "value": "Mote"
+        },
+        {
+            "trait_type": "Color",
+            "value": "Arcane"
+        },
+        {
+            "trait_type": "House",
+            "value": "Joker"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Real"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "諸"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Iodium"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Uncommon"
+        }
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/items/2916/",
+    "image": "https://diva.cards/images/card_set/primal/2916.jpg",
+    "name": "Iodium Mote"
+}
