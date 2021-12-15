@@ -17,14 +17,12 @@
             "value": "つ"
         },
         {
-            "display_type": "String",
             "trait_type": "Card Type",
             "value": "Non-Primal"
         },
         {
-            "display_type": "String",
             "trait_type": "Deck",
-            "value": "Akki"
+            "value": "Acky"
         },
         {
             "trait_type": "Rarity",
