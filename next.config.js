@@ -3,4 +3,8 @@ module.exports = {
     loader: "custom",
   },
   typescript: { ignoreBuildErrors: false },
+  webpack: (config) => {
+    config.experiments = { topLevelAwait: true }
+    return config;
+  }
 };
