@@ -1,28 +1,38 @@
 {
     "attributes": [
         {
-            "trait_type": "Name", 
+            "trait_type": "Name",
             "value": "5 of Clubs"
-        }, 
+        },
         {
-            "trait_type": "Face", 
+            "trait_type": "Face",
             "value": "5"
-        }, 
+        },
         {
-            "trait_type": "House", 
+            "trait_type": "House",
             "value": "Clubs"
-        }, 
+        },
         {
-            "trait_type": "Kana", 
+            "trait_type": "Kana",
             "value": "ま"
-        }, 
+        },
         {
-            "trait_type": "Rarity", 
+            "display_type": "String",
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "display_type": "String",
+            "trait_type": "Deck",
+            "value": "Akki"
+        },
+        {
+            "trait_type": "Rarity",
             "value": "Uncommon"
         }
-    ], 
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png", 
-    "description": "Trading Poker Cards from Diva.Cards", 
-    "name": "5 of Clubs", 
-    "external_url": "https://diva.cards/api/items/948/"
+    ],
+    "description": "Trading Poker Cards from Diva.Cards",
+    "external_url": "https://diva.cards/items/948/",
+    "image": "https://diva.cards/images/card_set/akki/948.jpg",
+    "name": "5 of Clubs"
 }

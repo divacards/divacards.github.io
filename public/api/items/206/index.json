@@ -17,12 +17,22 @@
             "value": "わ"
         },
         {
+            "display_type": "String",
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "display_type": "String",
+            "trait_type": "Deck",
+            "value": "Akki"
+        },
+        {
             "trait_type": "Rarity",
             "value": "Epic"
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/api/items/206/",
-    "image": "https://diva.cards/images/card_set/anderson/0/ja.png",
+    "external_url": "https://diva.cards/items/206/",
+    "image": "https://diva.cards/images/card_set/akki/206.jpg",
     "name": "Ace of Diamonds"
 }
