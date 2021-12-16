@@ -42,7 +42,7 @@ export default function Items() {
             </section>
             <section className="grid grid-cols-3 gap-4">
                 <div className="text-cinnabar text-center m-5">
-                    <Image
+                    {/* <Image
                         height={500}
                         width={250}
                         loader={({ src }) => src}
@@ -50,7 +50,7 @@ export default function Items() {
                         src={res.image}
                         alt="Main image"
                         className="auto-image"
-                    />
+                    /> */}
                 </div>
                 <div className="text-cinnabar col-span-2 m-5">
                     {res.name}
