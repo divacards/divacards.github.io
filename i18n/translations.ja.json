@@ -95,6 +95,9 @@
             "epic": "エピック",
             "legendary": "レジェンド",
             "artifact": "アーチファクト"
+        },
+        "items": {
+            "detail": "アイテム詳細"
         }
     }
 }

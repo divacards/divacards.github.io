@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
+import { useTranslation } from "next-export-i18n";
 import Layout from "../components/Layout";
 
 
@@ -22,6 +23,7 @@ function getTrait(trait, attributes) {
 
 export default function Items() {
 
+    const { t } = useTranslation();
     const [res, setContents] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -44,14 +46,14 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    <div className="font-cursive text-diablo-dark-gold text-2xl"> Item Details </div>
+                    <div className="font-cursive text-diablo-dark-gold text-xl"> {t("items.detail")} </div>
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
             </section>
             <section className="grid grid-cols-2 md:grid-cols-4 gap-2 my-3">
-                <div className="w-48 h-96 relative  border-diablo-dark-gold rounded-lg text-center">
+                <div className="w-full h-96 relative  border-diablo-dark-gold rounded-lg text-center">
                     {res.image && (<Image
                         loader={({ src }) => src}
                         layout="fill"
@@ -62,9 +64,7 @@ export default function Items() {
                         className="rounded-lg"
                     />)}
                 </div>
-                <div className="text-cinnabar">
-                </div>
-                <div className="text-cinnabar px-2">
+                <div className="text-cinnabar p-4 border-2 rounded-lg border-diablo-dark-gold">
                     {res.attributes && (
                         <div className={`text-2xl font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
                             {res && res.name}
@@ -80,7 +80,10 @@ export default function Items() {
                             {getTrait('Card Type', res.attributes).value}
                         </div>
                     )}
-                    <div className={`text-xs text-rarity-artifact`}>{res && res.description}</div>
+                    <div className={`text-xs text-rarity-artifact`}>
+                        {res && res.description}
+                    </div>
+
                 </div>
                 <div className="text-cinnabar grid grid-cols-2 gap-2 text-center align-middle">
                     {res.attributes && res.attributes.map((attr, index) => (
@@ -90,6 +93,10 @@ export default function Items() {
                         </div>
                     ))}
                 </div>
+                <div className="text-cinnabar p-4 border-2 rounded-lg border-diablo-dark-gold">
+                    Total Supply: 200
+                </div>
+
             </section>
         </Layout>
     );
