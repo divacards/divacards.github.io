@@ -8,6 +8,14 @@ function getQPara(arg) {
     return urlParams.get(arg);
 }
 
+function getRarityColor(rarity) {
+    if (["uncommon", "rare", "epic", "legendary"].indexOf(rarity.toLowerCase()) > -1) {
+        return `rarity-${rarity.toLowerCase()}`
+    } else {
+        return "diablo-dark-gold"
+    }
+}
+
 export default function Items() {
 
     const [res, setContents] = useState([]);
@@ -18,7 +26,6 @@ export default function Items() {
         fetch(`https://diva.cards/api/items/${id}/`)
             .then(response => response.json())
             .then((data) => {
-                console.log(data)
                 setLoading(false)
                 setContents(data)
             })
@@ -33,29 +40,35 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    {res && res.name}
+                    <div className="font-cursive text-diablo-dark-gold text-2xl">{res && res.name}</div>
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
             </section>
-            <section className="grid grid-cols-3 gap-4">
-                <div className="text-cinnabar text-center m-5">
+            <section className="grid grid-cols-2 md:grid-cols-4 gap-2 my-3">
+                <div className="w-48 h-96 relative border-2 border-diablo-dark-gold rounded-lg text-center">
                     {res.image && (<Image
-                        height={500}
-                        width={250}
                         loader={({ src }) => src}
+                        layout="fill"
+                        objectFit="cover"
                         unoptimized
                         src={res.image}
-                        alt="Main image"
-                        className="auto-image"
+                        alt={res.name}
+                        className="rounded-lg"
                     />)}
                 </div>
-                <div className="text-cinnabar col-span-2 m-5">
-                    {res && res.name}
+                <div className="text-cinnabar grid grid-cols-2 gap-2 text-center align-middle">
                     {res.attributes && res.attributes.map((attr, index) => (
-                        <div key={index} >{attr.trait_type}: {attr.value}</div>
+                        <div key={index} className={`text-sm border-2 rounded-lg border-${getRarityColor(attr.value)}`}>
+                            <div className='my-4 font-cursive'>{attr.trait_type}</div>
+                            <div className={`text-${getRarityColor(attr.value)}`}>{attr.value}</div>
+                        </div>
                     ))}
+                </div>
+                <div className="text-cinnabar">
+                </div>
+                <div className="text-cinnabar">
                 </div>
 
             </section>
