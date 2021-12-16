@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/1022/",
+    "external_url": "https://diva.cards/items?id=1022",
     "image": "https://diva.cards/images/card_set/akki/1022.jpg",
     "name": "5 of Hearts"
 }

@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2510/",
+    "external_url": "https://diva.cards/items?id=2510",
     "image": "https://diva.cards/images/card_set/akki/2510.jpg",
     "name": "Queen of Hearts"
 }

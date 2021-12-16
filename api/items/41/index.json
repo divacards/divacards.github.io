@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/41/",
+    "external_url": "https://diva.cards/items?id=41",
     "image": "https://diva.cards/images/card_set/akki/41.jpg",
     "name": "Ace of Spades"
 }

@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2543/",
+    "external_url": "https://diva.cards/items?id=2543",
     "image": "https://diva.cards/images/card_set/akki/2543.jpg",
     "name": "Queen of Diamonds"
 }

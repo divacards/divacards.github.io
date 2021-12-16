@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2121/",
+    "external_url": "https://diva.cards/items?id=2121",
     "image": "https://diva.cards/images/card_set/akki/2121.jpg",
     "name": "10 of Diamonds"
 }

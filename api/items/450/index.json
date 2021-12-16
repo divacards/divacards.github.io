@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/450/",
+    "external_url": "https://diva.cards/items?id=450",
     "image": "https://diva.cards/images/card_set/akki/450.jpg",
     "name": "3 of Spades"
 }

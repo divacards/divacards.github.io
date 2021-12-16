@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/499/",
+    "external_url": "https://diva.cards/items?id=499",
     "image": "https://diva.cards/images/card_set/akki/499.jpg",
     "name": "3 of Clubs"
 }

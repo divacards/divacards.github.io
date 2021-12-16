@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/112/",
+    "external_url": "https://diva.cards/items?id=112",
     "image": "https://diva.cards/images/card_set/akki/112.jpg",
     "name": "Ace of Hearts"
 }

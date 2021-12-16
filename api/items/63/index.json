@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/63/",
+    "external_url": "https://diva.cards/items?id=63",
     "image": "https://diva.cards/images/card_set/akki/63.jpg",
     "name": "Ace of Clubs"
 }

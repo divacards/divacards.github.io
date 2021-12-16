@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/401/",
+    "external_url": "https://diva.cards/items?id=401",
     "image": "https://diva.cards/images/card_set/akki/401.jpg",
     "name": "2 of Diamonds"
 }
