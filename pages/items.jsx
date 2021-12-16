@@ -33,8 +33,7 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    {res.name}
-                    {/* static */}
+                    {res && res.name}
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
@@ -42,7 +41,7 @@ export default function Items() {
             </section>
             <section className="grid grid-cols-3 gap-4">
                 <div className="text-cinnabar text-center m-5">
-                    {/* <Image
+                    {res.image && (<Image
                         height={500}
                         width={250}
                         loader={({ src }) => src}
@@ -50,11 +49,11 @@ export default function Items() {
                         src={res.image}
                         alt="Main image"
                         className="auto-image"
-                    /> */}
+                    />)}
                 </div>
                 <div className="text-cinnabar col-span-2 m-5">
-                    {res.name}
-                    {res.attributes.map((attr, index) => (
+                    {res && res.name}
+                    {res.attributes && res.attributes.map((attr, index) => (
                         <div key={index} >{attr.trait_type}: {attr.value}</div>
                     ))}
                 </div>
