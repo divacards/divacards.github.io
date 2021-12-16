@@ -1,28 +1,6 @@
-import { useRouter } from 'next/router'
-import Layout from "../../../components/Layout";
-import Image from "next/image";
-import useSWR from 'swr'
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
-
-function useItem(id) {
-
-    const { data, error } = useSWR(`/api/items/${id}/`, fetcher);
-
-    return {
-        item: data,
-        isLoading: !error && !data,
-        isError: error
-    }
-}
+import Layout from "../components/Layout";
 
 export default function Items() {
-    const router = useRouter()
-    const { id } = router.query
-    console.log(id);
-    const { item, isLoading, isError } = useItem(id)
-    // console.log(error)
-    // console.log(res)
 
     return (
         <Layout pageTitle="tokyo.cards">
@@ -31,7 +9,7 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    aa
+                    static
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>

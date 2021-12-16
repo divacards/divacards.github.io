@@ -87,8 +87,7 @@ const LanguageSelector = () => {
 const Footer = () => {
   const links = [
     { title: "collections", link: "/collections" },
-    { title: "artists", link: "/artists" },
-    { title: "app", link: "/app" },
+    { title: "wiki", link: "/wiki" },
   ];
   const otherLinks = [
     { title: "opensea-market", link: "/press" },
