@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/180/",
+    "external_url": "https://diva.cards/items?id=180",
     "image": "https://diva.cards/images/card_set/akki/180.jpg",
     "name": "Ace of Diamonds"
 }

@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/1990/",
+    "external_url": "https://diva.cards/items?id=1990",
     "image": "https://diva.cards/images/card_set/akki/1990.jpg",
     "name": "10 of Spades"
 }

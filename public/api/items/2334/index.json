@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2334/",
+    "external_url": "https://diva.cards/items?id=2334",
     "image": "https://diva.cards/images/card_set/akki/2334.jpg",
     "name": "Jack of Diamonds"
 }

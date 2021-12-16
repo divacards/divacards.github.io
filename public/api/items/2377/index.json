@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2377/",
+    "external_url": "https://diva.cards/items?id=2377",
     "image": "https://diva.cards/images/card_set/akki/2377.jpg",
     "name": "Queen of Spades"
 }

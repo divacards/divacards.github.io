@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/2202/",
+    "external_url": "https://diva.cards/items?id=2202",
     "image": "https://diva.cards/images/card_set/akki/2202.jpg",
     "name": "Jack of Spades"
 }

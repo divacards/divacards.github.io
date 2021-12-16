@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items/808/",
+    "external_url": "https://diva.cards/items?id=808",
     "image": "https://diva.cards/images/card_set/akki/808.jpg",
     "name": "4 of Hearts"
 }
