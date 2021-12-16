@@ -11,6 +11,7 @@ function getQPara(arg) {
 export default function Items() {
 
     const [res, setContents] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const id = getQPara("id");
@@ -18,9 +19,12 @@ export default function Items() {
             .then(response => response.json())
             .then((data) => {
                 console.log(data)
+                setLoading(false)
                 setContents(data)
             })
     }, []);
+
+    if (loading || !res) return <div> Loading... </div>
 
     return (
         <Layout pageTitle="tokyo.cards">
@@ -29,8 +33,8 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    {/* {res.name} */}
-                    static
+                    {res.name}
+                    {/* static */}
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
