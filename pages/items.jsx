@@ -16,6 +16,10 @@ function getRarityColor(rarity) {
     }
 }
 
+function getTrait(trait, attributes) {
+    return attributes.find(ele => ele.trait_type == trait)
+}
+
 export default function Items() {
 
     const [res, setContents] = useState([]);
@@ -40,7 +44,7 @@ export default function Items() {
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
                 </div>
                 <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
-                    <div className="font-cursive text-diablo-dark-gold text-2xl">{res && res.name}</div>
+                    <div className="font-cursive text-diablo-dark-gold text-2xl"> Item Details </div>
                 </span>
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
@@ -58,19 +62,34 @@ export default function Items() {
                         className="rounded-lg"
                     />)}
                 </div>
+                <div className="text-cinnabar">
+                </div>
+                <div className="text-cinnabar px-2">
+                    {res.attributes && (
+                        <div className={`text-2xl font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
+                            {res && res.name}
+                        </div>
+                    )}
+                    {res.attributes && (
+                        <div className={`text-base font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
+                            {getTrait('Rarity', res.attributes).value}
+                        </div>
+                    )}
+                    {res.attributes && (
+                        <div className={`text-sm font-cursive text-diablo-dark-gold`}>
+                            {getTrait('Card Type', res.attributes).value}
+                        </div>
+                    )}
+                    <div className={`text-xs text-rarity-artifact`}>{res && res.description}</div>
+                </div>
                 <div className="text-cinnabar grid grid-cols-2 gap-2 text-center align-middle">
                     {res.attributes && res.attributes.map((attr, index) => (
-                        <div key={index} className={`text-sm border-2 rounded-lg border-${getRarityColor(attr.value)}`}>
-                            <div className='my-4 font-cursive'>{attr.trait_type}</div>
+                        <div key={index} className={`text-sm border-2 rounded-lg border-diablo-dark-gold`}>
+                            <div className='my-3 font-cursive'>{attr.trait_type}</div>
                             <div className={`text-${getRarityColor(attr.value)}`}>{attr.value}</div>
                         </div>
                     ))}
                 </div>
-                <div className="text-cinnabar">
-                </div>
-                <div className="text-cinnabar">
-                </div>
-
             </section>
         </Layout>
     );
