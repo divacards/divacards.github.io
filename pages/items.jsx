@@ -47,11 +47,11 @@ export default function Items() {
                 </div>
             </section>
             <section className="grid grid-cols-2 md:grid-cols-4 gap-2 my-3">
-                <div className="w-48 h-96 relative border-2 border-diablo-dark-gold rounded-lg text-center">
+                <div className="w-48 h-96 relative  border-diablo-dark-gold rounded-lg text-center">
                     {res.image && (<Image
                         loader={({ src }) => src}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         unoptimized
                         src={res.image}
                         alt={res.name}
