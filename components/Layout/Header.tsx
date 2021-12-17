@@ -30,7 +30,6 @@ const BigButton = () => {
     <button
       className="btn-popover-open"
       onTouchStart={() => {
-        console.log("touch");
         if (!active) activate(injected);
       }}
       onClick={() => {

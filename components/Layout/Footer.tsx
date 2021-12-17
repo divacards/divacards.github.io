@@ -100,7 +100,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-swirl text-black py-4 rounded-t-3xl border-t-4 border-claret">
+    <footer className="flex justify-center bg-swirl text-black py-4 border-t-4 border-razzmatazz">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}

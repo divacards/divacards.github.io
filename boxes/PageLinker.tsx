@@ -10,7 +10,7 @@ const PageLinker = ({ mobile }: any) => {
     { path: "/", text: "link.home" },
     { path: "/collections", text: "link.collections" },
     { path: "/wiki", text: "link.wiki" },
-    { path: "/forge", text: "link.forge" },
+    { path: "/temple", text: "link.temple" },
   ];
 
   const Child = mobile ? MobilePageLink : PageLink;
