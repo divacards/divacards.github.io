@@ -100,7 +100,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-swirl text-black py-4 border-t-4 border-razzmatazz">
+    <footer className="flex justify-center bg-bunker text-black py-4 border-t-4 border-obsidian-gold">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
@@ -124,7 +124,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-wrap place-content-center">
-          <div className="text-sm text-lightgray font-semibold py-1">
+          <div className="text-sm text-cinnabar font-semibold py-1">
             Copyright © 2021 tokyo.cards
           </div>
         </div>

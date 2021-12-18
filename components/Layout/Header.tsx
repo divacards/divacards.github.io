@@ -1,12 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { useWeb3React } from "@web3-react/core";
-import { Transition, Popover } from "@headlessui/react";
-import {
-  MenuIcon,
-  SwitchHorizontalIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+import { Popover } from "@headlessui/react";
+import PopoverCover from "../Custom/CustomPopover";
+import { MenuIcon, SwitchHorizontalIcon, } from "@heroicons/react/outline";
 
 import { useEagerConnect, useInactiveListener } from "../../web3/hooks";
 import { injected } from "../../web3/connectors";
@@ -59,45 +56,6 @@ const MobileAccountMenu = ({ active }) => {
   );
 };
 
-const PopoverCover = ({ open, children }) => {
-  return (
-    <Transition
-      show={open}
-      as={Popover.Panel}
-      enter="duration-200 ease-out"
-      enterFrom="opacity-0 scale-95"
-      enterTo="opacity-100 scale-100"
-      leave="duration-100 ease-in"
-      leaveFrom="opacity-100 scale-100"
-      leaveTo="opacity-0 scale-95"
-      //@ts-expect-error
-      focus
-      static
-      className="fixed bottom-0 inset-x-0 transition transform origin-bottom lg:hidden z-20"
-    >
-      <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
-        <div className="pt-5 pb-6 px-5 h-screen"></div>
-      </div>
-      <div className="bg-black bg-opacity-50 divide-y-2 divide-gray-50">
-        <div className="pt-5 pb-6 px-5">
-          <div className="flex items-center justify-between">
-            <div />
-            <div className="-mr-2">
-              <Popover.Button className="btn-popover-close">
-                <span className="sr-only">Close menu</span>
-                <XIcon className="h-6 w-6" aria-hidden="true" />
-              </Popover.Button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-        {children}
-      </div>
-    </Transition>
-  );
-};
-
 const MobileMenuPopover = () => {
   return (
     <Popover>
@@ -144,7 +102,7 @@ const Header = () => {
   useInactiveListener(!triedEager);
 
   return (
-    <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray border-b-4 border-claret">
+    <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray border-b-4 border-supernova">
 
       <Logo name="TOKYO.CARDS" />
       <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />

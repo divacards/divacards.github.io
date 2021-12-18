@@ -1,12 +1,14 @@
 import Layout from "../components/Layout";
-import React, { useState } from 'react';
-import { Invoker } from "../components/Widget/Invoker";
+import Image from "next/image";
+import React, { useState, useEffect } from 'react';
+// import { Invoker } from "../components/Widget/Invoker";
 import {
   TagIcon,
   BriefcaseIcon,
   CurrencyYenIcon,
   GiftIcon,
   CubeIcon,
+  XIcon
 } from "@heroicons/react/outline";
 
 const tabs = [
@@ -17,13 +19,69 @@ const tabs = [
   { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
-function Inventory() {
+const inv_slots = [0, 2, 10, 13, 15, 20, 21, 23, 45, 233, 343, 459, 500, 532, 921, 2929]
+
+function ItemPopOver({ state, setState }) {
   return (
-    <div className="grid grid-cols-5 gap-4">
-      Inventory
-    </div>
+    state.modal_on ?
+      <div className="popover-inventory bg-black bg-opacity-80 text-center">
+        <button
+          className="popover-inventory-close"
+          onClick={() => {
+            setState({ modal_on: false, item_data: undefined })
+          }}
+        >
+          <XIcon className="text-diablo-dark-gold w-8 h-8 inline" />
+        </button>
+        <div
+          className="my-20 w-3/4 mx-auto"
+        >
+          <div className="w-full h-96 relative text-center">
+            {state.item_data.image && (<Image
+              loader={({ src }) => src}
+              layout="fill"
+              objectFit="contain"
+              unoptimized
+              src={state.item_data.image}
+              alt={state.item_data.name}
+              className="rounded-lg"
+            />)}
+          </div>
+          <span className="font-cursive">{state.item_data && state.item_data.name}</span>
+        </div>
+      </div>
+      : <></>
   )
 }
+
+function Inventory() {
+  const [state, setState] = useState({ modal_on: false, item_data: undefined });
+  return (
+    <>
+      <ItemPopOver state={state} setState={setState} />
+      <div className="flex flex-wrap gap-1 text-center p-2">
+        {inv_slots.map((slot) => {
+          return (
+            <button
+              key={slot}
+              className="w-10 h-10 pb-full border-supernova rounded-lg bg-gray-700"
+              onClick={() => {
+                fetch(`https://diva.cards/api/items/${slot}/`)
+                  .then(response => response.json())
+                  .then((data) => {
+                    setState({ modal_on: true, item_data: data })
+                  })
+              }}
+            >
+              {slot}
+            </button>
+          )
+        })}
+      </div>
+    </>
+  )
+}
+
 function Omikuji() {
   return <div key="omikuji">Omikuji</div>
 }
@@ -48,10 +106,10 @@ export default function Temple() {
   return (
     <Layout pageTitle="tokyo.cards">
       <section className="text-white">
-        <div className="h-20 bg-gray-700 mt-2 rounded">
+        <div className="h-20 bg-gray-700 mt-2">
         </div>
         <div className="grid grid-cols-10 gap-2 my-3">
-          <div className="col-span-8 bg-black rounded p-5">
+          <div className="col-span-8 bg-black rounded">
             {tabs.map(({ title, Icon, Comp }, index) => {
               if (state.index == index) {
                 return <Comp key={index} />
@@ -68,7 +126,6 @@ export default function Temple() {
                     bg-${state.index == index ? 'supernova' : 'black'}
                     border-${state.index == index ? 'razzmatazz' : 'supernova'}`
                   }
-                  onTouchStart={() => { switchTab(index) }}
                   onClick={() => { switchTab(index) }}
                 >
                   <Icon key={`i-${index}`} className="w-6 mx-1 text-razzmatazz" />

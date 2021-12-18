@@ -76,7 +76,7 @@ const ElementViewer = ({
             </section>
 
             <section className="deck-section my-5 md:space-x-10 justify-between lg:items-center font-cursive">
-                <div className="grid nn:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 justify-items-left gap-3 mx-auto relative w-full">
+                <div className="grid nn:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-left gap-3 mx-auto relative w-full">
                     {cards.map((card) => {
                         const card_size = t(`elements.${card.size}`);
                         const size = "100%";
@@ -84,7 +84,7 @@ const ElementViewer = ({
                         return (
                             <div
                                 key={`${elementSet.name}-${deck.name}-${card.id}`}
-                                className="flex flex-col gap-2 border-obsidian-gold border-4 bg-cod-gray justify-between hover:animate-pulse cursor-pointer"
+                                className="flex flex-col rounded-lg gap-2 border-supernova border-2 bg-cod-gray justify-between"
                             >
                                 <div className="align-middle nn:h-48 sm:h-52 lg:h-52 2xl:h-80 flex m-auto">
                                     <Image
