@@ -1,7 +1,7 @@
 import { XIcon } from "@heroicons/react/outline";
 
 import { Transition, Popover } from "@headlessui/react";
-export default function ({ open, children }) {
+export default function CustomPopover({ open, children }) {
     return (
         <Transition
             show={open}

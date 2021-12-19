@@ -15,8 +15,8 @@ const tabs = [
   { "title": "Inventory", Icon: BriefcaseIcon, Comp: Inventory },
   { "title": "Omikuji", Icon: TagIcon, Comp: Omikuji },
   { "title": "Souvenir", Icon: GiftIcon, Comp: Souvenir },
-  { "title": "Forge", Icon: CubeIcon, Comp: Forge },
-  { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
+  // { "title": "Forge", Icon: CubeIcon, Comp: Forge },
+  // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
 const inv_slots = [0, 2, 10, 13, 15, 20, 21, 23, 45, 233, 343, 459, 500, 532, 921, 2929]
@@ -109,7 +109,7 @@ export default function Temple() {
         <div className="h-20 bg-gray-700 mt-2">
         </div>
         <div className="grid grid-cols-10 gap-2 my-3">
-          <div className="col-span-8 bg-black rounded">
+          <div className="col-span-8 bg-black rounded-lg">
             {tabs.map(({ title, Icon, Comp }, index) => {
               if (state.index == index) {
                 return <Comp key={index} />
