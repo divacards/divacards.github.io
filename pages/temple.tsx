@@ -11,7 +11,6 @@ import {
   CurrencyYenIcon,
   GiftIcon,
   CubeIcon,
-  XIcon
 } from "@heroicons/react/outline";
 import { route } from "next/dist/server/router";
 
@@ -122,8 +121,8 @@ export default function Temple() {
                 <button
                   key={`b-${index}`}
                   className={
-                    `w-full p-2  mb-2 flex auto-padding border-r-4 rounded
-                    bg-${state.index == index ? 'supernova' : 'black'}
+                    `w-full p-2  mb-2 flex auto-padding border-l-4 rounded
+                    bg-${state.index == index ? 'diablo-dark-gold' : 'black'}
                     border-${state.index == index ? 'razzmatazz' : 'supernova'}`
                   }
                   onClick={() => { switchTab(index) }}

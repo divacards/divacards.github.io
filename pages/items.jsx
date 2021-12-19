@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import { useTranslation } from "next-export-i18n";
 import Layout from "../components/Layout";
+import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/solid";
+import { useRouter } from 'next/router';
 
 
 function getQPara(arg) {
@@ -26,14 +28,20 @@ export default function Items() {
     const { t } = useTranslation();
     const [res, setContents] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [isInternal, setFrom] = useState(undefined);
+    const router = useRouter();
 
     useEffect(() => {
         const id = getQPara("id");
+        const host = window.location.hostname;
+        const isFromInternal = document.referrer.indexOf(host) > -1;
+
         fetch(`https://diva.cards/api/items/${id}/`)
             .then(response => response.json())
             .then((data) => {
                 setLoading(false)
                 setContents(data)
+                setFrom(isFromInternal);
             })
     }, []);
 
@@ -41,6 +49,15 @@ export default function Items() {
 
     return (
         <Layout pageTitle="tokyo.cards">
+            <button
+                className="block h-14 w-14 border-2 border-supernova bg-cinnabar rounded-full fixed z-40 bottom-5 right-5 drop-shadow-lg"
+                onClick={() => {
+                    isInternal ? router.back() : router.push("/")
+
+                }}
+            >
+                {isInternal ? <ArrowLeftIcon className="h-8 w-8 m-auto text-supernova" /> : <HomeIcon className="h-8 w-8 m-auto text-supernova" />}
+            </button>
             <section className="deck-section py-5 h-20">
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
                     <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
