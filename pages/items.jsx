@@ -49,13 +49,13 @@ export default function Items() {
     return (
         <Layout pageTitle="tokyo.cards">
             <button
-                className="block h-14 w-14 border-2 border-supernova bg-cinnabar rounded-full fixed z-40 bottom-5 right-5 drop-shadow-lg"
+                className="block h-14 w-14 bg-supernova rounded-full fixed z-40 bottom-5 right-5 drop-shadow-lg"
                 onClick={() => {
                     isInternal ? router.back() : router.push("/")
 
                 }}
             >
-                {isInternal ? <ArrowLeftIcon className="h-8 w-8 m-auto text-supernova" /> : <HomeIcon className="h-8 w-8 m-auto text-supernova" />}
+                {isInternal ? <ArrowLeftIcon className="h-8 w-8 m-auto text-cinnabar" /> : <HomeIcon className="h-8 w-8 m-auto text-cinnabar" />}
             </button>
             <section className="deck-section py-5 h-20">
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
