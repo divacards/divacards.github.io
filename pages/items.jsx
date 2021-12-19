@@ -34,7 +34,7 @@ export default function Items() {
     useEffect(() => {
         const id = getQPara("id");
         const host = window.location.hostname;
-        const isFromInternal = document.referrer.indexOf(host) > -1;
+        const isFromInternal = document.referrer.indexOf(host) > -1 || document.referrer == '';
 
         fetch(`https://diva.cards/api/items/${id}/`)
             .then(response => response.json())
