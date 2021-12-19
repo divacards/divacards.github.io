@@ -1,17 +1,19 @@
 import Layout from "../components/Layout";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
-// import { Invoker } from "../components/Widget/Invoker";
+import { Invoker } from "../components/Widget/Invoker";
+import { isChainSupported } from "../web3/consts";
 
 import {
   TagIcon,
   BriefcaseIcon,
-  CurrencyYenIcon,
   GiftIcon,
+  ArrowCircleUpIcon,
+  ExclamationIcon,
   CubeIcon,
+  CurrencyYenIcon,
 } from "@heroicons/react/outline";
-import { route } from "next/dist/server/router";
 
 const tabs = [
   { "title": "Inventory", Icon: BriefcaseIcon, Comp: Inventory },
@@ -24,7 +26,23 @@ const tabs = [
 const inv_slots = [0, 2, 10, 13, 15, 20, 21, 23, 45, 233, 343, 459, 500, 532, 921, 2929]
 
 function Inventory() {
+
   const router = useRouter();
+  const { active, error, chainId } = useWeb3React();
+
+  if (!chainId) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    );
+  } else if (!isChainSupported(chainId)) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    )
+  }
 
   return (
     <>
@@ -46,13 +64,52 @@ function Inventory() {
 }
 
 function Omikuji() {
-  return <div key="omikuji">Omikuji</div>
+  const { active, error, chainId } = useWeb3React();
+
+  if (!chainId) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    );
+  } else if (!isChainSupported(chainId)) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    )
+  }
+  return (
+    <div key="omikuji">
+
+      <Invoker />
+    </div>
+  )
 }
 function Forge() {
   return <div key="forge">Forge</div>
 }
 function Souvenir() {
-  return <div key="souvenir">Souvenir</div>
+  const { active, error, chainId } = useWeb3React();
+
+  if (!chainId) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    );
+  } else if (!isChainSupported(chainId)) {
+    return (
+      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
+        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
+      </div>
+    )
+  }
+  return (
+    <div key="souvenir">
+      {`${active} ${error} ${chainId}`}
+    </div>
+  )
 }
 function Bounty() {
   return <div key="bounty">Bounty</div>
@@ -61,44 +118,47 @@ function Bounty() {
 export default function Temple() {
 
   const [state, setState] = useState({ index: 0 });
-  const { library, chainId, account } = useWeb3React();
 
   function switchTab(index) {
     setState({ index: index })
   }
-  return (<Layout pageTitle="tokyo.cards">
-    <section className="text-white">
-      <div className="h-20 bg-gray-700 mt-2">
+
+  return (
+    <Layout pageTitle="tokyo.cards">
+      <div className="text-white">
       </div>
-      <div className="grid grid-cols-10 gap-2 my-3">
-        <div className="col-span-8 bg-black rounded-lg">
-          {tabs.map(({ title, Icon, Comp }, index) => {
-            if (state.index == index) {
-              return <Comp key={index} />
-            }
-          })}
+      <section className="text-white">
+        <div className="h-20 bg-gray-700 mt-2">
         </div>
-        <div className="col-span-2">
-          {tabs.map(({ title, Icon }, index) => {
-            return (
-              <button
-                key={`b-${index}`}
-                className={
-                  `w-full p-2  mb-2 flex auto-padding border-l-4 rounded black
+        <div className="grid grid-cols-10 gap-2 my-3">
+          <div className="col-span-8 bg-black rounded-lg">
+            {tabs.map(({ title, Icon, Comp }, index) => {
+              if (state.index == index) {
+                return <Comp key={index} />
+              }
+            })}
+          </div>
+          <div className="col-span-2">
+            {tabs.map(({ title, Icon }, index) => {
+              return (
+                <button
+                  key={`b-${index}`}
+                  className={
+                    `w-full p-2  mb-2 flex auto-padding border-l-4 rounded black
                     border-${state.index == index ? 'razzmatazz' : 'supernova'}`
-                }
-                onClick={() => { switchTab(index) }}
-              >
-                <Icon key={`i-${index}`} className={`w-6 mx-1 text-${state.index == index ? 'razzmatazz' : 'supernova'}`} />
-                <span key={`s-${index}`} className={
-                  `font-cursive text-razzmatazz hidden sm:block ml-2`
-                }>{title}</span>
-              </button>
-            )
-          })}
+                  }
+                  onClick={() => { switchTab(index) }}
+                >
+                  <Icon key={`i-${index}`} className={`w-6 mx-1 text-${state.index == index ? 'razzmatazz' : 'supernova'}`} />
+                  <span key={`s-${index}`} className={
+                    `font-cursive text-razzmatazz hidden sm:block ml-2`
+                  }>{title}</span>
+                </button>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </section>
-  </Layout>
+      </section>
+    </Layout>
   );
 }
