@@ -99,6 +99,13 @@
         },
         "items": {
             "detail": "アイテム詳細"
+        },
+        "temple": {
+            "inventory": "インベントリ",
+            "omikuji": "おみくじ",
+            "souvenir": "おみやげ",
+            "forge": "フォージ",
+            "bounty": "バウンティ"
         }
     }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import { useTranslation } from "next-export-i18n";
 import Layout from "../components/Layout";
-import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/solid";
+import { ArrowLeftIcon, HomeIcon, ArrowCircleDownIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
 
 
@@ -70,16 +70,20 @@ export default function Items() {
             </section>
             <section className="grid grid-cols-2 md:grid-cols-4 gap-2 my-3">
                 <div className="w-full h-96 relative  border-diablo-dark-gold rounded-lg text-center">
-                    {res.image && (<Image
+                    {res.image ? (<Image
                         loader={({ src }) => src}
-                        playceholder="blur"
                         layout="fill"
                         objectFit="contain"
                         unoptimized
                         src={res.image}
                         alt={res.name}
                         className="rounded-lg"
-                    />)}
+                    />) : (
+                        <div className="font-cursive text-supernova mt-40">
+                            Loading
+                            <ArrowCircleDownIcon className="h-8 w-8 inline animate-bounce" />
+                        </div>
+                    )}
                 </div>
                 <div className="text-cinnabar p-4 border-2 rounded-lg border-diablo-dark-gold">
                     {res.attributes && (

@@ -99,6 +99,13 @@
         },
         "items": {
             "detail": "Item Details"
+        },
+        "temple": {
+            "inventory": "Inventory",
+            "omikuji": "Omikuji",
+            "souvenir": "Souvenir",
+            "forge": "Forge",
+            "bounty": "Bounty"
         }
     }
 }

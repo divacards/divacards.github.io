@@ -4,6 +4,7 @@ import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
 import { Invoker } from "../components/Widget/Invoker";
 import { isChainSupported } from "../web3/consts";
+import { useTranslation } from "next-export-i18n";
 
 import {
   TagIcon,
@@ -16,9 +17,9 @@ import {
 } from "@heroicons/react/outline";
 
 const tabs = [
-  { "title": "Inventory", Icon: BriefcaseIcon, Comp: Inventory },
-  { "title": "Omikuji", Icon: TagIcon, Comp: Omikuji },
-  { "title": "Souvenir", Icon: GiftIcon, Comp: Souvenir },
+  { title: "Inventory", Icon: BriefcaseIcon, Comp: Inventory },
+  { title: "Omikuji", Icon: TagIcon, Comp: Omikuji },
+  { title: "Souvenir", Icon: GiftIcon, Comp: Souvenir },
   // { "title": "Forge", Icon: CubeIcon, Comp: Forge },
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
@@ -80,9 +81,8 @@ function Omikuji() {
     )
   }
   return (
-    <div key="omikuji">
-
-      <Invoker />
+    <div key="omikuji" className="m-10 font-cursive text-diablo-dark-gold text-center">
+      Get your "Omikuji" (おみくじ) and see your fortune
     </div>
   )
 }
@@ -106,8 +106,8 @@ function Souvenir() {
     )
   }
   return (
-    <div key="souvenir">
-      {`${active} ${error} ${chainId}`}
+    <div key="souvenir" className="m-10 font-cursive text-diablo-dark-gold text-center">
+      Get your lucky charm
     </div>
   )
 }
@@ -117,6 +117,7 @@ function Bounty() {
 
 export default function Temple() {
 
+  const { t } = useTranslation();
   const [state, setState] = useState({ index: 0 });
 
   function switchTab(index) {
@@ -125,14 +126,24 @@ export default function Temple() {
 
   return (
     <Layout pageTitle="tokyo.cards">
-      <div className="text-white">
-      </div>
-      <section className="text-white">
-        <div className="h-20 bg-gray-700 mt-2">
+      <section className="deck-section py-5 h-20">
+        <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
+          <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
         </div>
+        <span className="w-1/3 mx-auto lufddo text-center lg:text-2xl text-diablo-dark-gold place-self-center">
+          <div className="font-cursive text-diablo-dark-gold text-xl">
+            {t(`temple.${tabs[state.index].title.toLowerCase()}`)}
+          </div>
+        </span>
+        <div className="flex flex-row mx-auto w-1/3 text-cinnabar">
+          <div className="border-obsidian-gold border-b-2 w-1/2 m-auto" > </div>
+        </div>
+      </section>
+
+      <section className="text-white">
         <div className="grid grid-cols-10 gap-2 my-3">
           <div className="col-span-8 bg-black rounded-lg">
-            {tabs.map(({ title, Icon, Comp }, index) => {
+            {tabs.map(({ Comp }, index) => {
               if (state.index == index) {
                 return <Comp key={index} />
               }
@@ -152,7 +163,9 @@ export default function Temple() {
                   <Icon key={`i-${index}`} className={`w-6 mx-1 text-${state.index == index ? 'razzmatazz' : 'supernova'}`} />
                   <span key={`s-${index}`} className={
                     `font-cursive text-razzmatazz hidden sm:block ml-2`
-                  }>{title}</span>
+                  }>
+                    {t(`temple.${title.toLowerCase()}`)}
+                  </span>
                 </button>
               )
             })}
