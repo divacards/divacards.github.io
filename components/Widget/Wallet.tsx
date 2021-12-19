@@ -1,12 +1,11 @@
 import { StatusOfflineIcon } from "@heroicons/react/solid";
-import React, { Fragment, useEffect } from "react";
-import classNames from "classnames";
+import React from "react";
 import { useWeb3React } from "@web3-react/core";
 import useSWR from "swr";
 import { formatEther } from "@ethersproject/units";
 
 import { ClipboardCopyIcon } from "@heroicons/react/outline";
-import { Menu, Transition, Popover } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 
 import { fetcher, contractFetcher } from "../../web3/fetcher";
 import { getPaymentConfig, getCurrencyConfig } from "../../web3/consts";
