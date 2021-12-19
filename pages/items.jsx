@@ -33,8 +33,7 @@ export default function Items() {
 
     useEffect(() => {
         const id = getQPara("id");
-        const host = window.location.hostname;
-        const isFromInternal = document.referrer.indexOf(host) > -1 || document.referrer == '';
+        const isFromInternal = window.history.length != 1;
 
         fetch(`https://diva.cards/api/items/${id}/`)
             .then(response => response.json())
@@ -73,6 +72,7 @@ export default function Items() {
                 <div className="w-full h-96 relative  border-diablo-dark-gold rounded-lg text-center">
                     {res.image && (<Image
                         loader={({ src }) => src}
+                        playceholder="blur"
                         layout="fill"
                         objectFit="contain"
                         unoptimized
