@@ -82,7 +82,7 @@ function Omikuji() {
   }
   return (
     <div key="omikuji" className="m-10 font-cursive text-diablo-dark-gold text-center">
-      Get your "Omikuji" (おみくじ) and see your fortune
+      Get your Omikuji (おみくじ) and see your fortune
     </div>
   )
 }
@@ -142,7 +142,7 @@ export default function Temple() {
 
       <section className="text-white">
         <div className="grid grid-cols-10 gap-2 my-3">
-          <div className="col-span-8 bg-black rounded-lg">
+          <div className="col-span-8 bg-obsidian-dark rounded-br-lg rounded-tr-lg lg:rounded-lg">
             {tabs.map(({ Comp }, index) => {
               if (state.index == index) {
                 return <Comp key={index} />
