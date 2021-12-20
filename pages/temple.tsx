@@ -47,7 +47,7 @@ function Inventory() {
 
   return (
     <>
-      <div className="flex flex-wrap gap-1 text-center p-2">
+      <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
         {inv_slots.map((slot) => {
           return (
             <button

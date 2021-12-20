@@ -14,11 +14,10 @@ const FeatureText = ({ title, description }) => {
     </div>
   );
 };
-const FeatureImage = ({ dataAos, img }) => {
+const FeatureImage = ({ img }) => {
   return (
     <div
       className="relative w-full md:w-1/2 flex justify-center"
-      data-aos={dataAos}
     >
       <Image
         height={200} // NOTE: can also use layout="fill" to hide on smartphone
@@ -37,7 +36,7 @@ const FeatureBox = ({ feature }) => {
   return (
     <div className="flex flex-col md:flex-row py-6 lg:py-8">
       <FeatureText title={feature.title} description={feature.description} />
-      <FeatureImage img={feature.img} dataAos=""></FeatureImage>
+      <FeatureImage img={feature.img} ></FeatureImage>
     </div>
   );
 };
@@ -45,7 +44,7 @@ const FeatureBox = ({ feature }) => {
 const ReversedFeatureBox = ({ feature }) => {
   return (
     <div className="flex flex-col-reverse md:flex-row py-6 lg:py-8">
-      <FeatureImage img={feature.img} dataAos=""></FeatureImage>
+      <FeatureImage img={feature.img}></FeatureImage>
       <FeatureText title={feature.title} description={feature.description} />
     </div>
   );

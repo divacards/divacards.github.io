@@ -28,10 +28,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2"
-        data-aos=""
-      >
+      <div className="relative mx-auto mt-6 mb-16 lg:m-0 w-full lg:w-1/2" >
         <Image
           height={500}
           width={1000}

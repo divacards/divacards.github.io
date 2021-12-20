@@ -1,22 +1,10 @@
-import AOS from "aos";
-import { useEffect, useState } from "react";
 import Head from "next/head";
-
-import "aos/dist/aos.css";
 
 import "../styles/globals.css";
 import "../styles/icon.css";
 import "../styles/iconfix.css";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    AOS.init({
-      // once: true,
-      easing: "ease-out-sine",
-      duration: 1000,
-      delay: 100,
-    });
-  }, []);
 
   return (
     <>
