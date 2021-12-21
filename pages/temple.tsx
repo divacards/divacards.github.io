@@ -1,9 +1,9 @@
 import Layout from "../components/Layout";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
 import { Invoker } from "../components/Widget/Invoker";
-import { isChainSupported } from "../web3/consts";
+import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
 
 import {
@@ -24,12 +24,23 @@ const tabs = [
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
-const inv_slots = [0, 2, 10, 13, 15, 20, 21, 23, 45, 233, 343, 459, 500, 532, 921, 2929]
-
 function Inventory() {
-
   const router = useRouter();
-  const { active, error, chainId } = useWeb3React();
+  const { account, chainId } = useWeb3React();
+  const [res, setContents] = useState({ assets: [] });
+
+  useEffect(() => {
+    if (chainId) {
+      const assets_endpoint = getOpenseaAssetsEndpoint(chainId, account, null, null)
+      fetch(assets_endpoint)
+        .then(response => response.json())
+        .then((data) => {
+          setContents(data)
+        })
+    } else {
+      console.log("No Chain ID")
+    }
+  }, [chainId]);
 
   if (!chainId) {
     return (
@@ -48,14 +59,17 @@ function Inventory() {
   return (
     <>
       <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
-        {inv_slots.map((slot) => {
+        {res && res.assets.map((item) => {
           return (
             <button
-              key={slot}
+              key={item.num_sales}
               className="w-10 h-10 pb-full border-supernova rounded-lg bg-gray-700"
-              onClick={() => { router.push(`/items?id=${slot}`) }}
+              onClick={() => {
+                const item_type = item.traits.length == 1 ? "box" : "card";
+                router.push(`/items?id=${item.num_sales}&asset_type=${item_type}`)
+              }}
             >
-              {slot}
+              {item.num_sales}
             </button>
           )
         })}
