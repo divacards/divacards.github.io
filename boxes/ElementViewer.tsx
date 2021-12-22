@@ -84,7 +84,7 @@ const ElementViewer = ({
                         return (
                             <div
                                 key={`${elementSet.name}-${deck.name}-${card.id}`}
-                                className="flex flex-col rounded-lg gap-2 border-supernova border-2 bg-cod-gray justify-between"
+                                className="flex flex-col rounded-lg gap-2 bg-obsidian-gray justify-between"
                             >
                                 <div className="align-middle nn:h-48 sm:h-52 lg:h-52 2xl:h-80 flex m-auto">
                                     <Image

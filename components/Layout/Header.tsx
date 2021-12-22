@@ -102,24 +102,26 @@ const Header = () => {
   useInactiveListener(!triedEager);
 
   return (
-    <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray border-b-4 border-razzmatazz">
+    <>
+      <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray">
+        <Logo name="TOKYO.CARDS" />
+        <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />
+        <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
+          <MobileMenuPopover />
+          <MobileWalletPopover active={active} />
+        </section>
 
-      <Logo name="TOKYO.CARDS" />
-      <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />
-      <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
-        <MobileMenuPopover />
-        <MobileWalletPopover active={active} />
-      </section>
-
-      <nav className="container hidden h-auto lg:flex lg:justify-center">
-        <span className="sr-only">Page links</span>
-        <PageLinker />
-      </nav>
-      <nav className="container hidden lg:flex lg:justify-end lg:w-2/12">
-        <span className="sr-only">Open wallet</span>
-        <AccountMenu active={active} />
-      </nav>
-    </header>
+        <nav className="container hidden h-auto lg:flex lg:justify-center">
+          <span className="sr-only">Page links</span>
+          <PageLinker />
+        </nav>
+        <nav className="container hidden lg:flex lg:justify-end lg:w-2/12">
+          <span className="sr-only">Open wallet</span>
+          <AccountMenu active={active} />
+        </nav>
+      </header>
+      <div className="fixed w-full h-1 top-18 mx-0 p-0 bg-gradient-to-r from-razzmatazz to-blue-500 left-0"></div>
+    </>
   );
 };
 
