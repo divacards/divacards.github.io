@@ -15,6 +15,13 @@ function Box(props) {
         ref.current.rotation.y += 0.005
     ))
     // Return the view, these are regular Threejs elements expressed in JSX
+
+    if (!props.boxTexture) {
+        return (
+            <div key="canvas_loading">Loading</div>
+        )
+    }
+
     return (
         <mesh
             {...props}
@@ -109,44 +116,47 @@ export default function Items() {
                         </Suspense>
                     </Canvas>)}
                 </div>
-                <div className="text-cinnabar p-4 rounded-lg bg-obsidian-gray w-full lg:w-5/12">
-                    {res.attributes && isBox && (
-                        <>
-                            <div className={`text-2xl font-cursive text-rarity-artifact`}>
-                                {res && res.name}
-                            </div>
-                            <div className={`text-base font-cursive text-diablo-dark-gold`}>
-                                Limited
-                            </div>
-                            <div className={`text-sm font-cursive text-diablo-dark-gold`}>
-                                Box
-                            </div>
-                            <div className={`text-xs font text-rarity-uncommon`}>
-                                {res.attributes[0].value} item inside
-                            </div>
-                        </>
-                    )}
-                    {res.attributes && !(isBox) && (
-                        <>
-                            <div className={`text-2xl font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
-                                {res && res.name}
-                            </div>
-                            <div className={`text-base font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
-                                {getTrait('Rarity', res.attributes).value}
-                            </div>
-                            <div className={`text-sm font-cursive text-diablo-dark-gold`}>
-                                {getTrait('Card Type', res.attributes).value}
-                            </div>
-                        </>
-                    )}
-                    <div className={`text-xs text-rarity-artifact`}>
-                        {res && res.description}
+                <div className="text-cinnabar  w-full lg:w-5/12 flex flex-wrap gap-4">
+                    <div className="bg-obsidian-gray w-full p-4 rounded-lg">
+                        {res.attributes && isBox && (
+                            <>
+                                <div className={`text-2xl font-cursive text-rarity-artifact`}>
+                                    {res && res.name}
+                                </div>
+                                <div className={`text-base font-cursive text-diablo-dark-gold`}>
+                                    Limited
+                                </div>
+                                <div className={`text-sm font-cursive text-diablo-dark-gold`}>
+                                    Box
+                                </div>
+                                <div className={`text-xs font text-rarity-uncommon`}>
+                                    {res.attributes[0].value} item inside
+                                </div>
+                            </>
+                        )}
+                        {res.attributes && !(isBox) && (
+                            <>
+                                <div className={`text-2xl font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
+                                    {res && res.name}
+                                </div>
+                                <div className={`text-base font-cursive text-${getRarityColor(getTrait('Rarity', res.attributes).value)}`}>
+                                    {getTrait('Rarity', res.attributes).value}
+                                </div>
+                                <div className={`text-sm font-cursive text-diablo-dark-gold`}>
+                                    {getTrait('Card Type', res.attributes).value}
+                                </div>
+                            </>
+                        )}
+                        <div className={`text-xs text-rarity-artifact`}>
+                            {res && res.description}
+                        </div>
+                    </div>
+                    <div className="text-cinnabar p-4 rounded-lg w-full bg-obsidian-gray">
+                        Total Supply: 200
                     </div>
                 </div>
 
-                <div className="text-cinnabar p-4 rounded-lg w-full lg:w-5/12 bg-obsidian-gray">
-                    Total Supply: 200
-                </div>
+                {/* NFT Traits */}
                 <div className="text-cinnabar flex flex-wrap gap-2 text-center justify-start place-content-center w-full">
                     {res.attributes && !(isBox) && res.attributes.map((attr, index) => (
                         attr.trait_type == "Name" ? (<></>) : (
