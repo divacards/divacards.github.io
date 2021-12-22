@@ -56,7 +56,7 @@ function getTrait(trait, attributes) {
 
 export default function Items() {
 
-    const { account, chainId } = useWeb3React();
+    // const { account, chainId } = useWeb3React();
     const { t } = useTranslation();
     const [res, setContents] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -104,7 +104,7 @@ export default function Items() {
             </section>
             <section className="flex flex-wrap gap-5 m-3">
                 <div className="w-full h-96 relative border-diablo-dark-gold rounded-lg text-center lg:w-6/12">
-                    {res && (<Canvas>
+                    {res.image && (<Canvas>
                         <Suspense fallback={null}>
                             <ambientLight />
                             <pointLight position={[10, 10, 10]} />
@@ -157,17 +157,15 @@ export default function Items() {
                 </div>
 
                 {/* NFT Traits */}
-                <div className="text-cinnabar flex flex-wrap gap-2 text-center justify-start place-content-center w-full">
+                <div className="text-cinnabar flex flex-wrap gap-2 text-center justify-start place-content-center w-full" key="traits">
                     {res.attributes && !(isBox) && res.attributes.map((attr, index) => (
-                        attr.trait_type == "Name" ? (<></>) : (
-                            <div key={index} className={`text-sm rounded-lg h-24 w-24 p-2 bg-obsidian-gray relative`}>
-                                <div className='absolute'>{attr.trait_type}</div>
-                                <div className={`absolute top-10 w-20 text-${getRarityColor(attr.value)}`}>{attr.value}</div>
+                        attr.trait_type == "Name" ? (null) : (
+                            <div key={`c-${index}`} className={`text-sm rounded-lg h-24 w-24 p-2 bg-obsidian-gray relative`}>
+                                <div key={`title-${index}`} className='absolute'>{attr.trait_type}</div>
+                                <div key={`value-${index}`} className={`absolute top-10 w-20 text-${getRarityColor(attr.value)}`}>{attr.value}</div>
                             </div>)
                     ))}
                 </div>
-
-
             </section>
         </Layout>
     );
