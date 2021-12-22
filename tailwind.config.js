@@ -56,6 +56,9 @@ module.exports = {
         'cod-gray': {
           DEFAULT: '#141010',
         },
+        'obsidian-gray': {
+          DEFAULT: '#202020',
+        },
         'merino': {
           DEFAULT: '#F7F1EB',
         },

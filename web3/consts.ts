@@ -61,8 +61,7 @@ export const CHAIN_CONFIG = {
       { asset_type: "cards", contract_addr: "0xDd79d5DF94d986b87EE7440913166992c13a87Af" }
     ],
     opensea: {
-      // domain: "https://testnets-api.opensea.io"
-      domain: "http://localhost:8010/proxy"
+      domain: "https://friendly-barnacle.herokuapp.com/rinkeby"
     }
   },
 };
