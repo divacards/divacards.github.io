@@ -68,7 +68,7 @@ const MobileMenuPopover = () => {
 
           <PopoverCover open={open}>
             <div className="pt-5 pb-6 px-5">
-              <nav className="flex flex-col mt-6 gap-2">
+              <nav className="flex flex-wrap justify-around gap-2">
                 <PageLinker mobile />
               </nav>
             </div>

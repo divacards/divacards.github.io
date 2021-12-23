@@ -2,23 +2,25 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import { PageLink, MobilePageLink } from "../components/Widget/PageLink";
+import { faRocket, faHouseChimney, faFile, faBookSkull } from '@fortawesome/free-solid-svg-icons'
 
 const PageLinker = ({ mobile }: any) => {
   const router = useRouter();
   const pageLinks = [
     // TODO: text translation
-    { path: "/", text: "link.home" },
-    { path: "/collections", text: "link.collections" },
-    { path: "/wiki", text: "link.wiki" },
-    { path: "/temple", text: "link.temple" },
+    { path: "/", text: "link.home", icon: faHouseChimney },
+    { path: "/collections", text: "link.collections", icon: faFile },
+    { path: "/wiki", text: "link.wiki", icon: faBookSkull },
+    { path: "/temple", text: "link.temple", icon: faRocket },
   ];
 
   const Child = mobile ? MobilePageLink : PageLink;
 
   return (
     <>
-      {pageLinks.map(({ text, path }) => (
+      {pageLinks.map(({ text, path, icon }) => (
         <Child
+          icon={icon}
           key={text}
           text={text}
           path={path}

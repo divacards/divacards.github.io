@@ -69,11 +69,11 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-cod-gray text-black py-4 border-t-4 border-obsidian-gold">
-      <div className="container px-4">
+    <footer className="flex justify-center bg-cod-gray text-black py-4 border-t-4 border-obsidian-gold px-4 md:px-4 sm:px-10 lg:px-20 2xl:px-40">
+      <div className="container">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
-          <div className="w-full lg:w-6/12 px-4">
+          <div className="w-full lg:w-6/12">
             <span className="text-4xl text-cinnabar logo-text">
               TOKYO.CARDS
               <LogoIcon height="40px" width="40px" style="inline ml-4" />
@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
           </div>
           {/* RIGHT */}
-          <div className="flex flex-row my-6 lg:my-0 w-full lg:w-6/12 px-4 text-4xl gap-2 text-diablo-dark-gold justify-center">
+          <div className="flex flex-row my-6 lg:my-0 w-full lg:w-6/12 px-4 text-4xl gap-4 text-diablo-dark-gold justify-center">
             <a className="inline-block hover:text-razzmatazz" href="https://github.com" >
               <FontAwesomeIcon icon={faGithubSquare} />
             </a>

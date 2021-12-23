@@ -3,13 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
 import { Invoker } from "../components/Widget/Invoker";
+import { faWallet, faDice, faGifts } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
 
 import {
-  TagIcon,
-  BriefcaseIcon,
-  GiftIcon,
   ArrowCircleUpIcon,
   ExclamationIcon,
   CubeIcon,
@@ -17,9 +16,9 @@ import {
 } from "@heroicons/react/outline";
 
 const tabs = [
-  { title: "Inventory", Icon: BriefcaseIcon, Comp: Inventory },
-  { title: "Omikuji", Icon: TagIcon, Comp: Omikuji },
-  { title: "Souvenir", Icon: GiftIcon, Comp: Souvenir },
+  { title: "Inventory", Icon: faWallet, Comp: Inventory },
+  { title: "Omikuji", Icon: faDice, Comp: Omikuji },
+  { title: "Souvenir", Icon: faGifts, Comp: Souvenir },
   // { "title": "Forge", Icon: CubeIcon, Comp: Forge },
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
@@ -174,7 +173,13 @@ export default function Temple() {
                   }
                   onClick={() => { switchTab(index) }}
                 >
-                  <Icon key={`i-${index}`} className={`w-6 mx-1 text-${state.index == index ? 'razzmatazz' : 'supernova'}`} />
+
+                  <FontAwesomeIcon
+                    icon={Icon}
+                    key={`i-${index}`}
+                    className={`w-6 mx-1 text-2xl text-${state.index == index ? 'razzmatazz' : 'supernova'}`}
+                  />
+                  {/* <Icon key={`i-${index}`} className={`w-6 mx-1 text-${state.index == index ? 'razzmatazz' : 'supernova'}`} /> */}
                   <span key={`s-${index}`} className={
                     `font-cursive text-razzmatazz hidden sm:block ml-2`
                   }>

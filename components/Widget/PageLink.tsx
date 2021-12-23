@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link";
 import { useTranslation, useLanguageQuery } from "next-export-i18n";
 
@@ -8,7 +8,7 @@ const Button = React.forwardRef(
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
-        className={`px-2 md:px-6 lg:px-8 py-2 rounded-lg text-base font-semibold ${selected ? "bg-red-500 text-white" : "text-red-500 hover:text-red-900"
+        className={`px-2 md:px-6 lg:px-8 py-2 rounded-lg text-base font-semibold ${selected ? "bg-diablo-dark-gold text-white" : "text-diablo-dark-gold hover:text-red-900"
           }`}
         href={href}
         onClick={onClick}
@@ -23,23 +23,23 @@ const Button = React.forwardRef(
 
 const MobileButton = React.forwardRef(
   // @ts-expect-error
-  ({ onClick, href, children, selected }, ref) => {
+  ({ onClick, href, children, selected, icon }, ref) => {
     return (
       <button
-        className={`px-3 py-2 text-base text-left font-medium rounded-lg capitalize ${selected ? "bg-red-500 text-white" : "text-red-500 hover:text-red-900"
-          }`}
+        className={`w-20 h-20  text-center rounded-full ${selected ? "bg-diablo-dark-gold text-white" : "text-razzmatazz hover:text-red-900"}`}
         href={href}
         onClick={onClick}
         // @ts-expect-error
         ref={ref}
       >
-        {children}
+        <FontAwesomeIcon icon={icon} className="text-3xl" />
+        {/* {children} */}
       </button>
     );
   }
 );
 
-export const PageLink = ({ text, path, selected }) => {
+export const PageLink = ({ text, path, selected, icon }) => {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
@@ -51,14 +51,19 @@ export const PageLink = ({ text, path, selected }) => {
   );
 };
 
-export const MobilePageLink = ({ text, path, selected }) => {
+export const MobilePageLink = ({ text, path, selected, icon }) => {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
   return (
     <Link href={{ pathname: path, query }} passHref>
       {/* @ts-expect-error */}
-      <MobileButton selected={selected}>{t(text)}</MobileButton>
+      <MobileButton
+        selected={selected}
+        icon={icon}
+      >
+        {t(text)}
+      </MobileButton>
     </Link>
   );
 };

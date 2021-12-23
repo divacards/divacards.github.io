@@ -15,7 +15,6 @@ function Box(props) {
         ref.current.rotation.y += 0.005
     ))
     // Return the view, these are regular Threejs elements expressed in JSX
-
     if (!props.boxTexture) {
         return (
             <div key="canvas_loading">Loading</div>
