@@ -5,17 +5,22 @@ import { useTranslation, useLanguageQuery } from "next-export-i18n";
 
 const Button = React.forwardRef(
   // @ts-expect-error
-  ({ onClick, href, children, selected }, ref) => {
+  ({ onClick, href, children, selected, icon }, ref) => {
+    const dark_gold = "border-diablo-dark-gold text-diablo-dark-gold"
+    const obsidian_gold = "border-obsidian-gold text-obsidian-gold"
     return (
       <button
-        className={`border-b-5 border-transparent px-2 md:px-6 lg:px-8 py-2 text-base font-semibold ${selected ? "border-obsidian-gold text-diablo-dark-gold" : "text-diablo-dark-gold hover:text-red-100"
-          }`}
+        className={
+          `border-t-8 border-transparent px-2 md:px-6 lg:px-8
+          ${selected ? dark_gold : `${obsidian_gold} hover:${dark_gold}`}`
+        }
         href={href}
         onClick={onClick}
         // @ts-expect-error
         ref={ref}
       >
-        {children}
+        <FontAwesomeIcon icon={icon} className="text-2xl" />
+        {/* {children} */}
       </button>
     );
   }
@@ -46,7 +51,7 @@ export const PageLink = ({ text, path, selected, icon }) => {
   return (
     <Link href={{ pathname: path, query }} passHref>
       {/* @ts-expect-error */}
-      <Button selected={selected}>{t(text)}</Button>
+      <Button selected={selected} icon={icon}>{t(text)}</Button>
     </Link>
   );
 };

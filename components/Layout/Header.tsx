@@ -110,7 +110,7 @@ const Header = () => {
           <MobileWalletPopover active={active} />
         </section>
 
-        <nav className="container hidden h-auto lg:flex lg:justify-center">
+        <nav className="container hidden h-full lg:flex lg:justify-center gap-2">
           <span className="sr-only">Page links</span>
           <PageLinker />
         </nav>
