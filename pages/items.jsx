@@ -25,6 +25,7 @@ function Box(props) {
         <mesh
             {...props}
             ref={ref}
+            rotation={[Math.PI / -8, 0, 0]}
             scale={1}
         >
             <boxGeometry args={props.isBox ? [2, 2, 2] : [1.6, 3.2, 0.01]} />

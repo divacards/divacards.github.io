@@ -105,7 +105,7 @@ const Header = () => {
     <>
       <header className="flex flex-row header-bar md:space-x-10 justify-between bg-cod-gray">
         <Logo name="TOKYO.CARDS" />
-        <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />
+        <LogoIcon height="48px" width="48px" style="inline m-1 text-diablo-dark-gold" />
         <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
           <MobileMenuPopover />
           <MobileWalletPopover active={active} />
