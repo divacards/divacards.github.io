@@ -6,30 +6,10 @@ import {
   useLanguageQuery,
 } from "next-export-i18n";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopyright } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare, faTwitterSquare, faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { LogoIcon } from "../Custom/CustomIcons";
-
-const LinkContainer = ({ links, linkTitle }) => {
-  const { t } = useTranslation();
-
-  const items = links.map((link: any, index: number) => (
-    <li key={`${link.link}.${index}`}>
-      <a
-        className="hover:text-cinnabar font-semibold block text-sm py-2"
-        href={link.link}
-      >
-        {t(`link.${link.title}`)}
-      </a>
-    </li>
-  ));
-  return (
-    <div className="w-full my-4 lg:my-0 lg:w-4/12 px-4 ml-auto">
-      <span className="block uppercase font-cursive text-cinnabar text-2xl font-semibold mb-2">
-        {linkTitle}
-      </span>
-      <ul className="list-unstyled text-gray-500">{items}</ul>
-    </div>
-  );
-};
 
 const LanguageSelector = () => {
   const languages = {
@@ -85,29 +65,18 @@ const LanguageSelector = () => {
 };
 
 const Footer = () => {
-  const links = [
-    { title: "collections", link: "/collections" },
-    { title: "wiki", link: "/wiki" },
-  ];
-  const otherLinks = [
-    { title: "opensea-market", link: "/press" },
-    { title: "adam-market", link: "/tos" },
-    { title: "github", link: "/github" },
-    { title: "twitter", link: "/todo" },
-    { title: "blog", link: "/todo" },
-  ];
 
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-bunker text-black py-4 border-t-4 border-obsidian-gold">
+    <footer className="flex justify-center bg-cod-gray text-black py-4 border-t-4 border-obsidian-gold">
       <div className="container px-4">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12 px-4">
             <span className="text-4xl text-cinnabar logo-text">
-              <LogoIcon height="50px" width="50px" style="inline m-1" />
               TOKYO.CARDS
+              <LogoIcon height="40px" width="40px" style="inline ml-4" />
             </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>
             <div className="my-2 lg:my-4">
@@ -115,17 +84,21 @@ const Footer = () => {
             </div>
           </div>
           {/* RIGHT */}
-          <div className="flex flex-row items-top mb-6 w-full lg:w-6/12 lg:px-4">
-            <LinkContainer linkTitle={t("footer.links")} links={links} />
-            <LinkContainer
-              linkTitle={t("footer.other-links")}
-              links={otherLinks}
-            />
+          <div className="flex flex-row my-6 lg:my-0 w-full lg:w-6/12 px-4 text-4xl gap-2 text-diablo-dark-gold justify-center">
+            <a className="inline-block hover:text-razzmatazz" href="https://github.com" >
+              <FontAwesomeIcon icon={faGithubSquare} />
+            </a>
+            <a className="inline-block hover:text-razzmatazz" href="https://github.com" >
+              <FontAwesomeIcon icon={faTwitterSquare} />
+            </a>
+            <a className="inline-block hover:text-razzmatazz" href="https://github.com" >
+              <FontAwesomeIcon icon={faDiscord} />
+            </a>
           </div>
         </div>
         <div className="flex flex-wrap place-content-center">
           <div className="text-sm text-cinnabar font-semibold py-1">
-            Copyright © 2021 tokyo.cards
+            <FontAwesomeIcon icon={faCopyright} /> Copyright © 2021 tokyo.cards
           </div>
         </div>
       </div>

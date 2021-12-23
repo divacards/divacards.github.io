@@ -103,7 +103,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex flex-row header-bar bg-white md:space-x-10 justify-between bg-cod-gray">
+      <header className="flex flex-row header-bar md:space-x-10 justify-between bg-cod-gray">
         <Logo name="TOKYO.CARDS" />
         <LogoIcon height="50px" width="50px" style="inline m-1 text-diablo-dark-gold" />
         <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
@@ -120,7 +120,7 @@ const Header = () => {
           <AccountMenu active={active} />
         </nav>
       </header>
-      <div className="fixed w-full h-1 top-18 mx-0 p-0 bg-gradient-to-r from-razzmatazz to-blue-500 left-0"></div>
+      <div className="fixed w-full h-1 top-18 mx-0 p-0 bg-gradient-to-r from-razzmatazz to-blue-500 left-0 z-30"></div>
     </>
   );
 };
