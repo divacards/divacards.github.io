@@ -25,7 +25,7 @@ function Box(props) {
         <mesh
             {...props}
             ref={ref}
-            rotation={[Math.PI / -8, 0, 0]}
+            rotation={props.isBox ? [Math.PI / -8, 0, 0] : [0, 0, 0]}
             scale={1}
         >
             <boxGeometry args={props.isBox ? [2, 2, 2] : [1.6, 3.2, 0.01]} />
@@ -86,10 +86,10 @@ export default function Items() {
     return (
         <Layout pageTitle="tokyo.cards">
             <button
-                className="block h-14 w-14 bg-supernova rounded-full fixed z-40 bottom-5 right-5 drop-shadow-lg"
+                className="block h-14 w-14 bg-diablo-dark-gold rounded-full fixed z-40 bottom-5 right-5 drop-shadow-lg text-white"
                 onClick={() => { isInternal ? router.back() : router.push("/") }}
             >
-                {isInternal ? <ArrowLeftIcon className="h-8 w-8 m-auto text-cinnabar" /> : <HomeIcon className="h-8 w-8 m-auto text-cinnabar" />}
+                {isInternal ? <ArrowLeftIcon className="h-8 w-8 m-auto" /> : <HomeIcon className="h-8 w-8 m-auto" />}
             </button>
             <section className="deck-section py-5 h-20">
                 <div className="flex flex-row mx-auto w-1/3 text-cinnabar">

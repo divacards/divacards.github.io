@@ -6,8 +6,8 @@ const Hero = () => {
   const { t } = useTranslation("home");
   return (
     <section className="flex flex-col lg:flex-row items-center lg:justify-around home-section">
-      <div className="text-center lg:text-left w-10/12 lg:w-1/2 mx-auto py-4">
-        <h2 className="leading-tight font-extrabold text-themecolor-bright text-3xl md:text-6xl">
+      <div className="text-left w-10/12 lg:w-1/2 mx-auto py-4">
+        <h2 className="leading-tight font-extrabold text-themecolor-bright text-4xl md:text-6xl">
           <span className="break-words block my-3">
             {t("hero.header-simple")}
           </span>

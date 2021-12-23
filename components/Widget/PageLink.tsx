@@ -8,7 +8,7 @@ const Button = React.forwardRef(
   ({ onClick, href, children, selected }, ref) => {
     return (
       <button
-        className={`px-2 md:px-6 lg:px-8 py-2 rounded-lg text-base font-semibold ${selected ? "bg-diablo-dark-gold text-white" : "text-diablo-dark-gold hover:text-red-900"
+        className={`border-b-5 border-transparent px-2 md:px-6 lg:px-8 py-2 text-base font-semibold ${selected ? "border-obsidian-gold text-diablo-dark-gold" : "text-diablo-dark-gold hover:text-red-100"
           }`}
         href={href}
         onClick={onClick}

@@ -22,7 +22,6 @@ const Logo = ({ name }) => {
 
 const BigButton = () => {
   const { activate, active } = useWeb3React();
-  // className="block no-underline md:inline-block md:mt-0 md:ml-8 font-semibold px-6 py-2 text-white focus:outline-none"
   return (
     <button
       className="btn-popover-open"
@@ -105,7 +104,7 @@ const Header = () => {
     <>
       <header className="flex flex-row header-bar md:space-x-10 justify-between bg-cod-gray">
         <Logo name="TOKYO.CARDS" />
-        <LogoIcon height="48px" width="48px" style="inline m-1 text-diablo-dark-gold" />
+        <LogoIcon height="50px" width="50px" style="h-8 w-8 lg:h-20 lg:w-20 inline m-1 text-diablo-dark-gold" />
         <section className="flex -mr-2 space-x-2 md:space-x-3 lg:hidden">
           <MobileMenuPopover />
           <MobileWalletPopover active={active} />
