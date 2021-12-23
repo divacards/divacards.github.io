@@ -25,9 +25,9 @@ function Box(props) {
         <mesh
             {...props}
             ref={ref}
-            scale={2}
+            scale={1}
         >
-            <boxGeometry args={props.isBox ? [1, 1, 1] : [0.8, 1.6, 0.01]} />
+            <boxGeometry args={props.isBox ? [2, 2, 2] : [1.6, 3.2, 0.01]} />
             <meshStandardMaterial
                 map={colorMap}
             />
