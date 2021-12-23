@@ -39,7 +39,7 @@ const LanguageSelector = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <Listbox.Options className="language-switch divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Listbox.Options className="absolute language-switch divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none">
           {Object.values(languages).map((lang, index) => (
             <Listbox.Option
               className="flex flex-col justify-center"
