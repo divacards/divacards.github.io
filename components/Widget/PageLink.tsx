@@ -26,7 +26,7 @@ const MobileButton = React.forwardRef(
   ({ onClick, href, children, selected, icon }, ref) => {
     return (
       <button
-        className={`w-20 h-20  text-center rounded-full ${selected ? "bg-diablo-dark-gold text-white" : "text-razzmatazz hover:text-red-900"}`}
+        className={`w-16 h-16  text-center rounded-full ${selected ? "bg-diablo-dark-gold text-white" : "text-razzmatazz hover:text-red-900"}`}
         href={href}
         onClick={onClick}
         // @ts-expect-error
