@@ -73,12 +73,6 @@ const __Wallet = () => {
   return (
     <Popover>
       <Popover.Button className="flex flex-row rounded-full border-2 ml-4 border-diablo-dark-gold">
-        {/* <span className="px-2 my-auto text-highlight">
-          {balance ? formatEther(balance) : ""} {currencyConf.main}
-        </span>
-        <span className="px-2 my-auto text-highlight">
-          {wethBalance ? formatEther(wethBalance) : ""} {paymentConf.symbol}
-        </span> */}
         <Avatar className="h-6 w-6" value={account} />
       </Popover.Button>
 

@@ -1,21 +1,20 @@
 import Layout from "../components/Layout";
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core";
+import { contractFetcher } from "../web3/fetcher";
+import LOOTBOX_ABI from "../abis/LOOTBOX.json";
 import { useRouter } from 'next/router';
-import { Invoker } from "../components/Widget/Invoker";
 import { faWallet, faDice, faGifts } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
+import { isChainSupported, getOpenseaAssetsEndpoint, getAssetConfig } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
 import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
+import { getCardAsset } from "../components/Custom/CardIcons";
+import { getItemColor, getItemType } from "../util/item";
+import { ArrowCircleUpIcon, ExclamationIcon, InboxIcon, } from "@heroicons/react/outline";
 
-import {
-  ArrowCircleUpIcon,
-  ExclamationIcon,
-  InboxIcon,
-  CubeIcon,
-  CurrencyYenIcon,
-} from "@heroicons/react/outline";
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons'
+
 
 const tabs = [
   { title: "Inventory", Icon: faWallet, Comp: Inventory },
@@ -25,9 +24,53 @@ const tabs = [
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
+function ItemCount({ item, library, chainId, account }) {
+  const [count, setCount] = useState(undefined)
+  const lootboxFetcher = contractFetcher(library, LOOTBOX_ABI);
+  const assetConf = getAssetConfig(chainId, "lootbox");
+  const addr = assetConf.contract_addr;
+
+  useEffect(() => { getItemBalance() }, [chainId]);
+
+  const getItemBalance = async () => {
+    try {
+      let balance = await lootboxFetcher(chainId, addr, "balanceOf", account, parseInt(item.token_id));
+      setCount(balance.toNumber())
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  return (
+    <div className="absolute -left-3 -top-3 bg-diablo-dark-gold w-auto h-6 text-centerk rounded-full text-xs py-1 px-2">
+      {count ?
+        (<span>{count}</span>) :
+        (<FontAwesomeIcon
+          key={`corner-lt-${item.token_id}`}
+          icon={faCircleNotch} className="inline-block animate-spin" />)}
+    </div>
+  )
+}
+
+function Item({ item, router, library, chainId, account }) {
+  const Asset = getCardAsset("chest");
+  return (
+    <button
+      key={item.token_id}
+      className={`w-15 h-15 pb-full border-${getItemColor(item)} p-2  border-2 rounded-lg relative`}
+      onClick={() => {
+        router.push(`/items?id=${item.token_id}&asset_type=${getItemType(item)}`)
+      }}
+    >
+      <ItemCount item={item} library={library} chainId={chainId} account={account} />
+      <Asset className="h-10 w-10" />
+    </button>
+  )
+}
+
 function Inventory() {
   const router = useRouter();
-  const { account, chainId } = useWeb3React();
+  const { library, account, chainId } = useWeb3React();
   const [res, setContents] = useState({ assets: [] });
 
   useEffect(() => {
@@ -59,19 +102,15 @@ function Inventory() {
       return (
         <>
           <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
-            {res && res.assets.map((item) => {
-              return (
-                <button
-                  key={item.num_sales}
-                  className="w-10 h-10 pb-full border-supernova rounded-lg bg-gray-700"
-                  onClick={() => {
-                    const item_type = item.traits.length == 1 ? "box" : "card";
-                    router.push(`/items?id=${item.num_sales}&asset_type=${item_type}`)
-                  }}
-                >
-                  {item.num_sales}
-                </button>
-              )
+            {res && res.assets.map((item, index) => {
+              return (<Item
+                key={index}
+                item={item}
+                router={router}
+                library={library}
+                chainId={chainId}
+                account={account}
+              />)
             })}
           </div>
         </>

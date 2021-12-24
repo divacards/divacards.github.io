@@ -5,7 +5,8 @@ import { useWeb3React } from "@web3-react/core";
 import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useTexture } from "@react-three/drei"
+import { useTexture } from "@react-three/drei";
+import { getRarityColor, getTrait } from "../util/item";
 
 function Box(props) {
     // This reference gives us direct access to the THREE.Mesh object
@@ -41,19 +42,6 @@ function getQPara(arg) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(arg);
 }
-
-function getRarityColor(rarity) {
-    if (["uncommon", "rare", "epic", "legendary"].indexOf(rarity.toString().toLowerCase()) > -1) {
-        return `rarity-${rarity.toLowerCase()}`
-    } else {
-        return "diablo-dark-gold"
-    }
-}
-
-function getTrait(trait, attributes) {
-    return attributes.find(ele => ele.trait_type == trait)
-}
-
 export default function Items() {
 
     // const { account, chainId } = useWeb3React();

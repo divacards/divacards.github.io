@@ -11,6 +11,10 @@ interface CurrencyConfig {
   main: string;
   payment: PaymentConfig;
 }
+interface AssetConfig {
+  asset_type: string;
+  contract_addr: string;
+}
 
 export const CHAIN_CONFIG = {
   56: {
@@ -66,17 +70,6 @@ export const CHAIN_CONFIG = {
   },
 };
 
-export const getOpenseaAssetsEndpoint = (chainId: number, ownerAddr: string, offset: any, limit: any) => {
-  const host = CHAIN_CONFIG[chainId]?.opensea?.domain;
-  const url = `${host}/assets?owner=${ownerAddr}&`;
-
-  const contractStr = CHAIN_CONFIG[chainId]?.collectables?.map((item) => {
-    return `asset_contract_addresses=${item.contract_addr}`
-  }).join("&")
-
-  return `${url}${contractStr}&offset=${offset ? offset : '0'}&limit=${limit ? limit : '20'}&format=json`
-}
-
 export const isChainSupported = (chainId: number): boolean => {
   return chainId in CHAIN_CONFIG;
 };
@@ -88,3 +81,19 @@ export const getCurrencyConfig = (chainId: number): CurrencyConfig => {
 export const getPaymentConfig = (chainId: number): PaymentConfig => {
   return CHAIN_CONFIG[chainId]?.currency?.payment;
 };
+
+export const getAssetConfig = (chainId: number, asset_type: string): AssetConfig => {
+  const collectables = CHAIN_CONFIG[chainId]?.collectables;
+  return collectables.find(element => element.asset_type == asset_type);
+}
+
+export const getOpenseaAssetsEndpoint = (chainId: number, ownerAddr: string, offset: any, limit: any) => {
+  const host = CHAIN_CONFIG[chainId]?.opensea?.domain;
+  const url = `${host}/assets?owner=${ownerAddr}&`;
+
+  const contractStr = CHAIN_CONFIG[chainId]?.collectables?.map((item) => {
+    return `asset_contract_addresses=${item.contract_addr}`
+  }).join("&")
+
+  return `${url}${contractStr}&offset=${offset ? offset : '0'}&limit=${limit ? limit : '20'}&format=json`
+}
