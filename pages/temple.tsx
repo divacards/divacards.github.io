@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
 import { Invoker } from "../components/Widget/Invoker";
@@ -7,10 +7,12 @@ import { faWallet, faDice, faGifts } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
+import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
 
 import {
   ArrowCircleUpIcon,
   ExclamationIcon,
+  InboxIcon,
   CubeIcon,
   CurrencyYenIcon,
 } from "@heroicons/react/outline";
@@ -31,6 +33,7 @@ function Inventory() {
   useEffect(() => {
     if (chainId) {
       const assets_endpoint = getOpenseaAssetsEndpoint(chainId, account, null, null)
+      setContents(undefined)
       fetch(assets_endpoint)
         .then(response => response.json())
         .then((data) => {
@@ -42,81 +45,69 @@ function Inventory() {
   }, [chainId]);
 
   if (!chainId) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    );
+    return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
   } else if (!isChainSupported(chainId)) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    )
+    return (<PlaceHoldStatus message="Unsupported chain" Icon={ExclamationIcon} />);
   }
 
-  return (
-    <>
-      <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
-        {res && res.assets.map((item) => {
-          return (
-            <button
-              key={item.num_sales}
-              className="w-10 h-10 pb-full border-supernova rounded-lg bg-gray-700"
-              onClick={() => {
-                const item_type = item.traits.length == 1 ? "box" : "card";
-                router.push(`/items?id=${item.num_sales}&asset_type=${item_type}`)
-              }}
-            >
-              {item.num_sales}
-            </button>
-          )
-        })}
-      </div>
-    </>
-  )
+  if (res) {
+    if (res.assets.length == 0) {
+      // Inventory is empty
+      return (<PlaceHoldStatus message="Inventory is Empty" Icon={InboxIcon} />);
+    } else {
+      // Inventory is not empty
+      return (
+        <>
+          <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
+            {res && res.assets.map((item) => {
+              return (
+                <button
+                  key={item.num_sales}
+                  className="w-10 h-10 pb-full border-supernova rounded-lg bg-gray-700"
+                  onClick={() => {
+                    const item_type = item.traits.length == 1 ? "box" : "card";
+                    router.push(`/items?id=${item.num_sales}&asset_type=${item_type}`)
+                  }}
+                >
+                  {item.num_sales}
+                </button>
+              )
+            })}
+          </div>
+        </>
+      )
+    }
+  } else {
+    return (<SpinLoading />)
+  }
+
+
 }
 
 function Omikuji() {
   const { active, error, chainId } = useWeb3React();
-
   if (!chainId) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    );
+    return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
   } else if (!isChainSupported(chainId)) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    )
+    return (<PlaceHoldStatus message="Unsupported chain" Icon={ExclamationIcon} />);
   }
+
   return (
     <div key="omikuji" className="m-10 font-cursive text-diablo-dark-gold text-center">
       Get your Omikuji (おみくじ) and see your fortune
     </div>
   )
 }
+
 function Forge() {
   return <div key="forge">Forge</div>
 }
 function Souvenir() {
   const { active, error, chainId } = useWeb3React();
-
   if (!chainId) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Please connect the wallet <ArrowCircleUpIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    );
+    return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
   } else if (!isChainSupported(chainId)) {
-    return (
-      <div className="font-cursive p-auto w-full h-auto text-center my-20 text-supernova">
-        Unsupported chain <ExclamationIcon className="h-8 w-8 inline animate-bounce" />
-      </div>
-    )
+    return (<PlaceHoldStatus message="Unsupported chain" Icon={ExclamationIcon} />);
   }
   return (
     <div key="souvenir" className="m-10 font-cursive text-diablo-dark-gold text-center">
@@ -124,6 +115,7 @@ function Souvenir() {
     </div>
   )
 }
+
 function Bounty() {
   return <div key="bounty">Bounty</div>
 }
