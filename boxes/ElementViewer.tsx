@@ -26,6 +26,25 @@ function getRarityColor(card) {
     }
 }
 
+function getRarityBgColor(card) {
+    switch (card.rarity) {
+        case 0:
+            return "bg-rarity-common"
+        case 1:
+            return "bg-rarity-uncommon"
+        case 2:
+            return "bg-rarity-rare"
+        case 3:
+            return "bg-rarity-epic"
+        case 4:
+            return "bg-rarity-legendary"
+        case 5:
+            return "bg-rarity-artifact"
+        default:
+            return "bg-rarity-common"
+    }
+}
+
 function getRarityBorderColor(card) {
     switch (card.rarity) {
         case 0:
@@ -106,6 +125,7 @@ const ElementViewer = ({
                                 key={`${elementSet.name}-${deck.name}-${card.id}`}
                                 className={`flex flex-col border-2 rounded-lg gap-2 bg-obsidian-gray justify-between ${getRarityBorderColor(card)}`}
                             >
+                                <div className={`${getRarityBgColor}`}>  </div>
                                 <div className="align-middle nn:h-48 sm:h-52 lg:h-52 2xl:h-80 flex m-auto">
                                     <Image
                                         layout="intrinsic"

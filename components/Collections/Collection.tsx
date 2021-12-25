@@ -5,8 +5,8 @@ import { useTranslation } from "next-export-i18n";
 const CollectionItem = () => {
     const { t } = useTranslation("home");
     return (
-        <section className="flex justify-around home-section">
-            <div className="flex-1">
+        <section className="flex justify-around home-section flex-wrap">
+            <div className="w-full lg:w-1/2 mb-10">
                 <Image
                     height={1000}
                     width={1000}
@@ -18,7 +18,7 @@ const CollectionItem = () => {
                 />
             </div>
 
-            <div className="flex-1">
+            <div className="w-full lg:w-1/2 mb-10">
                 <Image
                     height={1000}
                     width={1000}
