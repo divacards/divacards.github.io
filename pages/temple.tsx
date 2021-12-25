@@ -1,19 +1,17 @@
 import Layout from "../components/Layout";
 import React, { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core";
-import { contractFetcher } from "../web3/fetcher";
-import LOOTBOX_ABI from "../abis/LOOTBOX.json";
 import { useRouter } from 'next/router';
 import { faWallet, faDice, faGifts } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { isChainSupported, getOpenseaAssetsEndpoint, getAssetConfig } from "../web3/consts";
+import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
 import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
 import { getCardAsset } from "../components/Custom/CardIcons";
 import { getItemColor, getItemType } from "../util/item";
 import { ArrowCircleUpIcon, ExclamationIcon, InboxIcon, } from "@heroicons/react/outline";
 
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons'
+import { ItemStatus } from "../components/Custom/Web3";
 
 
 const tabs = [
@@ -23,34 +21,6 @@ const tabs = [
   // { "title": "Forge", Icon: CubeIcon, Comp: Forge },
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
-
-function ItemCount({ item, library, chainId, account }) {
-  const [count, setCount] = useState(undefined)
-  const lootboxFetcher = contractFetcher(library, LOOTBOX_ABI);
-  const assetConf = getAssetConfig(chainId, "lootbox");
-  const addr = assetConf.contract_addr;
-
-  useEffect(() => { getItemBalance() }, [chainId]);
-
-  const getItemBalance = async () => {
-    try {
-      let balance = await lootboxFetcher(chainId, addr, "balanceOf", account, parseInt(item.token_id));
-      setCount(balance.toNumber())
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  return (
-    <div className="absolute -left-3 -top-3 bg-diablo-dark-gold w-auto h-6 text-centerk rounded-full text-xs py-1 px-2">
-      {count ?
-        (<span>{count}</span>) :
-        (<FontAwesomeIcon
-          key={`corner-lt-${item.token_id}`}
-          icon={faCircleNotch} className="inline-block animate-spin" />)}
-    </div>
-  )
-}
 
 function Item({ item, router, library, chainId, account }) {
   const Asset = getCardAsset("chest");
@@ -62,7 +32,9 @@ function Item({ item, router, library, chainId, account }) {
         router.push(`/items?id=${item.token_id}&asset_type=${getItemType(item)}`)
       }}
     >
-      <ItemCount item={item} library={library} chainId={chainId} account={account} />
+      <ItemStatus
+        className="absolute -left-3 -top-3 bg-diablo-dark-gold w-auto h-6 text-centerk rounded-full text-xs py-1 px-2"
+        method="balanceOf" token_id={item.token_id} library={library} chainId={chainId} account={account} />
       <Asset className="h-10 w-10" />
     </button>
   )
@@ -83,7 +55,8 @@ function Inventory() {
           setContents(data)
         })
     } else {
-      console.log("No Chain ID")
+      // console.log("No Chain ID")
+      // do nothing
     }
   }, [chainId]);
 
@@ -199,8 +172,7 @@ export default function Temple() {
                 <button
                   key={`b-${index}`}
                   className={
-                    `w-full p-2  mb-2 flex auto-padding border-l-4 rounded black
-                    border-${state.index == index ? 'razzmatazz' : 'supernova'}`
+                    `w-full p-2  mb-2 flex auto-padding border-l-4 rounded border-${state.index == index ? 'razzmatazz' : 'supernova'}`
                   }
                   onClick={() => { switchTab(index) }}
                 >

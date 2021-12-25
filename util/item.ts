@@ -26,3 +26,7 @@ export function getItemColor(item) {
         return getRarityColor(rarity)
     }
 }
+export function getQPara(arg) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(arg);
+}

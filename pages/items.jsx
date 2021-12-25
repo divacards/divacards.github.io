@@ -2,11 +2,40 @@ import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useTranslation } from "next-export-i18n";
 import Layout from "../components/Layout";
 import { useWeb3React } from "@web3-react/core";
-import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/solid";
+import { isChainSupported } from "../web3/consts";
+import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
+import { ArrowLeftIcon, HomeIcon, ArrowCircleUpIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useTexture } from "@react-three/drei";
-import { getRarityColor, getTrait } from "../util/item";
+import { getRarityColor, getTrait, getQPara } from "../util/item";
+import { ItemStatus } from "../components/Custom/Web3";
+
+
+function ChainActionPanel({ isBox, item_id }) {
+
+    const { library, account, chainId } = useWeb3React();
+    if (!chainId) {
+        return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
+    } else if (!isChainSupported(chainId)) {
+        return (<PlaceHoldStatus message="Unsupported chain" Icon={ExclamationIcon} />);
+    }
+
+    return (
+        <>
+            <div>Total Supply:
+                <ItemStatus className="inline mx-2"
+                    method="totalSupply" token_id={item_id} library={library} account={account} chainId={chainId}
+                />
+            </div>
+            <div>Owns:
+                <ItemStatus className="inline mx-2"
+                    method="balanceOf" token_id={item_id} library={library} account={account} chainId={chainId}
+                />
+            </div>
+        </>
+    )
+}
 
 function Box(props) {
     // This reference gives us direct access to the THREE.Mesh object
@@ -16,11 +45,7 @@ function Box(props) {
         ref.current.rotation.y += 0.005
     ))
     // Return the view, these are regular Threejs elements expressed in JSX
-    if (!props.boxTexture) {
-        return (
-            <div key="canvas_loading">Loading</div>
-        )
-    }
+    if (!props.boxTexture) { return (<SpinLoading />) }
 
     return (
         <mesh
@@ -37,16 +62,11 @@ function Box(props) {
     )
 }
 
-
-function getQPara(arg) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(arg);
-}
 export default function Items() {
 
-    // const { account, chainId } = useWeb3React();
     const { t } = useTranslation();
     const [res, setContents] = useState([]);
+    const [item_id, setItemId] = useState(undefined);
     const [loading, setLoading] = useState(false);
     const [isInternal, setFrom] = useState(undefined);
     const [isBox, setAssetType] = useState(false);
@@ -54,6 +74,7 @@ export default function Items() {
 
     useEffect(() => {
         const id = getQPara("id");
+        setItemId(id);
         const item_type = getQPara("asset_type") == "box" ? "box" : "items";
         if (item_type == "box") {
             setAssetType(true)
@@ -69,7 +90,7 @@ export default function Items() {
             })
     }, []);
 
-    if (loading || !res) return <div> Loading... </div>
+    if (loading || !res) return <SpinLoading />
 
     return (
         <Layout pageTitle="tokyo.cards">
@@ -92,7 +113,7 @@ export default function Items() {
             </section>
             <section className="flex flex-wrap gap-5 m-3">
                 <div className="w-full h-96 relative border-diablo-dark-gold rounded-lg text-center lg:w-6/12">
-                    {res.image && (<Canvas>
+                    {res.image ? (<Canvas>
                         <Suspense fallback={null}>
                             <ambientLight />
                             <pointLight position={[10, 10, 10]} />
@@ -102,7 +123,7 @@ export default function Items() {
                                 isBox={isBox}
                             />
                         </Suspense>
-                    </Canvas>)}
+                    </Canvas>) : <SpinLoading />}
                 </div>
                 <div className="text-cinnabar  w-full lg:w-5/12 flex flex-wrap gap-4">
                     <div className="bg-obsidian-gray w-full p-4 rounded-lg">
@@ -139,8 +160,9 @@ export default function Items() {
                             {res && res.description}
                         </div>
                     </div>
+
                     <div className="text-cinnabar p-4 rounded-lg w-full bg-obsidian-gray">
-                        Total Supply: 200
+                        <ChainActionPanel isBox={isBox} item_id={item_id} />
                     </div>
                 </div>
 
@@ -155,6 +177,6 @@ export default function Items() {
                     ))}
                 </div>
             </section>
-        </Layout>
+        </Layout >
     );
 }
