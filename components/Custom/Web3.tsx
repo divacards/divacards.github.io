@@ -1,4 +1,4 @@
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons'
+import { faCircleNotch, faBoxOpen } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { contractFetcher } from "../..//web3/fetcher";
 import LOOTBOX_ABI from "../../abis/LOOTBOX.json";
@@ -40,7 +40,7 @@ export function ItemStatus({ isBox, method, className, token_id, library, chainI
     )
 }
 
-export function ItemAction({ method, className, token_id, library, chainId, account, isBox }) {
+export function ItemAction({ method, token_id, library, chainId, account, isBox }) {
     const lootboxFetcher = contractFetcher(library, LOOTBOX_ABI);
     const assetConf = getAssetConfig(chainId, "lootbox");
     const addr = assetConf.contract_addr;
@@ -58,10 +58,8 @@ export function ItemAction({ method, className, token_id, library, chainId, acco
     return (
         <button
             className="text-diablo-dark-gold border-2 border-diablo-dark-gold py-2 px-4 my-2 font-cursive"
-            onClick={() => {
-                action();
-            }}
-        >
+            onClick={() => { action(); }} >
+            <FontAwesomeIcon icon={faBoxOpen} className="inline-block mr-2" />
             Unpack
         </button>
     )

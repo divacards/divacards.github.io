@@ -7,7 +7,7 @@ import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus"
 import { ArrowLeftIcon, HomeIcon, ArrowCircleUpIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useTexture } from "@react-three/drei";
+import { useTexture, SpotLight } from "@react-three/drei";
 import { getRarityColor, getTrait, getQPara } from "../util/item";
 import { ItemStatus, ItemAction } from "../components/Custom/Web3";
 
@@ -22,17 +22,25 @@ function ChainActionPanel({ isBox, item_id }) {
     }
 
     return (
-        <>
-            <div>Total Supply:
+        <div className="flex flex-wrap space-around h-full content-between font-cursive">
+            <div className="w-full">
+                Total Supply:
                 <ItemStatus className="inline mx-2"
-                    method="totalSupply" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
+                    method="totalSupply"
+                    token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
             </div>
-            <div>Owns:
+
+            <div className="w-full mb-2">
+                Owns:
                 <ItemStatus className="inline mx-2"
-                    method="balanceOf" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
+                    method="balanceOf"
+                    token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
             </div>
-            <ItemAction method="unpack" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
-        </>
+            <div className="w-full border-t-2 pt-2 border-razzmatazz">
+                <ItemAction method="unpack"
+                    token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
+            </div>
+        </div>
     )
 }
 
@@ -114,10 +122,11 @@ export default function Items() {
                 <div className="w-full h-96 relative border-diablo-dark-gold rounded-lg text-center lg:w-6/12">
                     {res.image ? (<Canvas>
                         <Suspense fallback={null}>
-                            <ambientLight />
+                            <fog attach="fog" args={['#0E93AD', 0, 1000]} />
                             <pointLight position={[10, 10, 10]} />
                             <Box
                                 position={[0, 0, 2]}
+                                rotation={[0, -0.2, 0]}
                                 boxTexture={res.image}
                                 isBox={isBox}
                             />
@@ -125,7 +134,7 @@ export default function Items() {
                     </Canvas>) : <SpinLoading />}
                 </div>
                 <div className="text-cinnabar  w-full lg:w-5/12 flex flex-wrap gap-4">
-                    <div className="bg-obsidian-gray w-full p-4 rounded-lg">
+                    <div className="bg-obsidian-gray w-full p-4 rounded-lg border-2 border-supernova">
                         {res.attributes && isBox && (
                             <>
                                 <div className={`text-2xl font-cursive text-rarity-artifact`}>
@@ -160,7 +169,7 @@ export default function Items() {
                         </div>
                     </div>
 
-                    <div className="text-cinnabar p-4 rounded-lg w-full bg-obsidian-gray">
+                    <div className="text-cinnabar p-4 rounded-lg w-full bg-obsidian-gray border-razzmatazz border-2">
                         <ChainActionPanel isBox={isBox} item_id={item_id} />
                     </div>
                 </div>
