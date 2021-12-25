@@ -26,6 +26,26 @@ function getRarityColor(card) {
     }
 }
 
+function getRarityBorderColor(card) {
+    switch (card.rarity) {
+        case 0:
+            return "border-rarity-common"
+        case 1:
+            return "border-rarity-uncommon"
+        case 2:
+            return "border-rarity-rare"
+        case 3:
+            return "border-rarity-epic"
+        case 4:
+            return "border-rarity-legendary"
+        case 5:
+            return "border-rarity-artifact"
+        default:
+            return "border-rarity-common"
+    }
+}
+
+
 function getRarityText(card) {
     switch (card.rarity) {
         case 0:
@@ -84,7 +104,7 @@ const ElementViewer = ({
                         return (
                             <div
                                 key={`${elementSet.name}-${deck.name}-${card.id}`}
-                                className="flex flex-col rounded-lg gap-2 bg-obsidian-gray justify-between"
+                                className={`flex flex-col border-2 rounded-lg gap-2 bg-obsidian-gray justify-between ${getRarityBorderColor(card)}`}
                             >
                                 <div className="align-middle nn:h-48 sm:h-52 lg:h-52 2xl:h-80 flex m-auto">
                                     <Image
@@ -96,7 +116,7 @@ const ElementViewer = ({
                                         loader={({ src }) => src}
                                     />
                                 </div>
-                                <div className={`font-sans text-center ${getRarityColor(card)}`}>{
+                                <div className={`font-sans text-center ${getRarityColor(card)} `}>{
                                     t(`elements.${deck.name}`) + " " +
                                     t(`elements.${card.size}`)
                                 }</div>
