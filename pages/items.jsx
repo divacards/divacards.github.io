@@ -9,12 +9,12 @@ import { useRouter } from 'next/router';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useTexture } from "@react-three/drei";
 import { getRarityColor, getTrait, getQPara } from "../util/item";
-import { ItemStatus } from "../components/Custom/Web3";
-
+import { ItemStatus, ItemAction } from "../components/Custom/Web3";
 
 function ChainActionPanel({ isBox, item_id }) {
 
     const { library, account, chainId } = useWeb3React();
+
     if (!chainId) {
         return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
     } else if (!isChainSupported(chainId)) {
@@ -25,14 +25,13 @@ function ChainActionPanel({ isBox, item_id }) {
         <>
             <div>Total Supply:
                 <ItemStatus className="inline mx-2"
-                    method="totalSupply" token_id={item_id} library={library} account={account} chainId={chainId}
-                />
+                    method="totalSupply" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
             </div>
             <div>Owns:
                 <ItemStatus className="inline mx-2"
-                    method="balanceOf" token_id={item_id} library={library} account={account} chainId={chainId}
-                />
+                    method="balanceOf" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
             </div>
+            <ItemAction method="unpack" token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
         </>
     )
 }

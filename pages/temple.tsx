@@ -7,8 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
 import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
-import { getCardAsset } from "../components/Custom/CardIcons";
-import { getItemColor, getItemType } from "../util/item";
+import { getItemColor, getItemType, getItemAssetbyItem, getTrait } from "../util/item";
 import { ArrowCircleUpIcon, ExclamationIcon, InboxIcon, } from "@heroicons/react/outline";
 
 import { ItemStatus } from "../components/Custom/Web3";
@@ -22,20 +21,28 @@ const tabs = [
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
-function Item({ item, router, library, chainId, account }) {
-  const Asset = getCardAsset("chest");
+function ItemTrait({ className, item, trait }) {
+  if (getItemType(item) == "box") {
+    return <></>
+  }
   return (
-    <button
-      key={item.token_id}
-      className={`w-15 h-15 pb-full border-${getItemColor(item)} p-2  border-2 rounded-lg relative`}
-      onClick={() => {
-        router.push(`/items?id=${item.token_id}&asset_type=${getItemType(item)}`)
-      }}
-    >
-      <ItemStatus
-        className="absolute -left-3 -top-3 bg-diablo-dark-gold w-auto h-6 text-centerk rounded-full text-xs py-1 px-2"
-        method="balanceOf" token_id={item.token_id} library={library} chainId={chainId} account={account} />
-      <Asset className="h-10 w-10" />
+    <div className={className}>{getTrait(trait, item.traits).value}</div>
+  )
+}
+
+function Item({ item, router, library, chainId, account }) {
+  const Asset = getItemAssetbyItem(item);
+  return (
+    <button key={item.token_id}
+      className={`w-18 h-18 pb-full border-${getItemColor(item)} p-4  border-2 rounded-lg relative`}
+      onClick={() => { router.push(`/items?id=${item.token_id}&asset_type=${getItemType(item)}`) }}>
+      <ItemTrait item={item} trait="Inscription"
+        className={`absolute -left-3 -bottom-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
+      <ItemTrait item={item} trait="Deck"
+        className={`absolute -left-3 -top-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
+      <ItemStatus method="balanceOf" token_id={item.token_id} library={library} chainId={chainId} account={account}
+        className={`absolute -right-3 -bottom-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
+      <Asset className="h-12 w-12" />
     </button>
   )
 }
@@ -73,20 +80,18 @@ function Inventory() {
     } else {
       // Inventory is not empty
       return (
-        <>
-          <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
-            {res && res.assets.map((item, index) => {
-              return (<Item
-                key={index}
-                item={item}
-                router={router}
-                library={library}
-                chainId={chainId}
-                account={account}
-              />)
-            })}
-          </div>
-        </>
+        <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
+          {res && res.assets.map((item, index) => {
+            return (<Item
+              key={index}
+              item={item}
+              router={router}
+              library={library}
+              chainId={chainId}
+              account={account}
+            />)
+          })}
+        </div>
       )
     }
   } else {
