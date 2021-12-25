@@ -40,7 +40,8 @@ function Item({ item, router, library, chainId, account }) {
         className={`absolute -left-3 -bottom-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
       <ItemTrait item={item} trait="Deck"
         className={`absolute -left-3 -top-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
-      <ItemStatus method="balanceOf" token_id={item.token_id} library={library} chainId={chainId} account={account}
+      <ItemStatus
+        method="balanceOf" token_id={item.token_id} library={library} chainId={chainId} account={account} isBox={getItemType(item) == "box"}
         className={`absolute -right-3 -bottom-3 bg-${getItemColor(item)} w-auto h-6 text-centerk rounded-full text-xs py-1 px-2`} />
       <Asset className="h-12 w-12" />
     </button>
