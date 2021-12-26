@@ -110,7 +110,7 @@ const __Wallet = () => {
             value={`${wethBalance ? formatEther(wethBalance) : ""} ${paymentConf.symbol
               }`}
           />
-          <WalletItem label="Items Count:" value={3} />
+          {/* <WalletItem label="Items Count:" value={3} /> */}
           <div className="flex flex-row mt-2">
             <DisconnectButton />
           </div>
@@ -173,7 +173,7 @@ const __MobileWallet = () => {
           value={`${wethBalance ? formatEther(wethBalance) : ""} ${paymentConf.symbol
             }`}
         />
-        <WalletItem label="Items Count:" value={3} />
+        {/* <WalletItem label="Items Count:" value={3} /> */}
         <div className="flex flex-row mt-4">
           <DisconnectButton />
         </div>

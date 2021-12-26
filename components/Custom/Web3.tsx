@@ -24,20 +24,27 @@ export function ItemStatus({ isBox, method, className, token_id, library, chainI
 
     const getItemStatus = async () => {
         try {
-            let balance = await getMethod();
-            setCount(balance.toNumber())
+            let res = await getMethod();
+            console.log(res.toNumber())
+            setCount(res.toNumber())
         } catch (e) {
             console.error(e);
         }
     }
 
-    return (
-        <div className={className}>
-            {count ?
-                (<span>{count}</span>) :
-                (<FontAwesomeIcon icon={faCircleNotch} className="inline-block animate-spin" />)}
-        </div>
-    )
+    if (count != undefined) {
+        return (
+            <div className={className}>
+                <span>{count}</span>
+            </div>
+        )
+    } else {
+        return (
+            <div className={className}>
+                <FontAwesomeIcon icon={faCircleNotch} className="inline-block animate-spin" />
+            </div>
+        )
+    }
 }
 
 export function ItemAction({ method, token_id, library, chainId, account, isBox }) {
