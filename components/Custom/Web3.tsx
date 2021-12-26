@@ -25,7 +25,6 @@ export function ItemStatus({ isBox, method, className, token_id, library, chainI
     const getItemStatus = async () => {
         try {
             let res = await getMethod();
-            console.log(res.toNumber())
             setCount(res.toNumber())
         } catch (e) {
             console.error(e);

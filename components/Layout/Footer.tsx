@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import { faGithubSquare, faTwitterSquare, faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { LogoIcon } from "../Custom/CustomIcons";
+import OpenseaLogo from "../../assets/brands/opensea.svg"
 
 const LanguageSelector = () => {
   const languages = {
@@ -69,8 +70,8 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-center bg-cod-gray text-black py-4 border-t-4 border-obsidian-gold px-4 md:px-4 sm:px-10 lg:px-20 2xl:px-40">
-      <div className="container">
+    <footer className="flex justify-center bg-cod-gray text-black py-4 border-t-4 border-obsidian-gold px-4 sm:px-4 lg:px-20 2xl:px-40">
+      <div className="w-full">
         <div className="flex flex-wrap justify-around">
           {/* LEFT */}
           <div className="w-full lg:w-6/12">
@@ -79,6 +80,10 @@ const Footer = () => {
               <LogoIcon height="40px" width="40px" style="inline ml-4" />
             </span>
             <p className="text-lg my-2 text-gray-500">{t("footer.summary")}</p>
+            <div className="w-36 text-white text-xs my-10">
+              Powered By <OpenseaLogo />
+            </div>
+
             <div className="my-2 lg:my-4">
               <LanguageSelector />
             </div>

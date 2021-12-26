@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import React, { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core";
 import { useRouter } from 'next/router';
-import { faWallet, faDice, faGifts } from '@fortawesome/free-solid-svg-icons'
+import { faWallet, faToriiGate, faGifts } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isChainSupported, getOpenseaAssetsEndpoint } from "../web3/consts";
 import { useTranslation } from "next-export-i18n";
@@ -15,19 +15,15 @@ import { ItemStatus } from "../components/Custom/Web3";
 
 const tabs = [
   { title: "Inventory", Icon: faWallet, Comp: Inventory },
-  { title: "Omikuji", Icon: faDice, Comp: Omikuji },
+  { title: "Omikuji", Icon: faToriiGate, Comp: Omikuji },
   { title: "Souvenir", Icon: faGifts, Comp: Souvenir },
   // { "title": "Forge", Icon: CubeIcon, Comp: Forge },
   // { "title": "Bounty", Icon: CurrencyYenIcon, Comp: Bounty }
 ]
 
 function ItemTrait({ className, item, trait }) {
-  if (getItemType(item) == "box") {
-    return <></>
-  }
-  return (
-    <div className={className}>{getTrait(trait, item.traits).value}</div>
-  )
+  if (getItemType(item) == "box") { return <></> }
+  return (<div className={className}>{getTrait(trait, item.traits).value}</div>)
 }
 
 function Item({ item, router, library, chainId, account }) {
@@ -63,7 +59,6 @@ function Inventory() {
           setContents(data)
         })
     } else {
-      // console.log("No Chain ID")
       // do nothing
     }
   }, [chainId]);
@@ -112,7 +107,7 @@ function Omikuji() {
 
   return (
     <div key="omikuji" className="m-10 font-cursive text-diablo-dark-gold text-center">
-      Get your Omikuji (おみくじ) and see your fortune
+
     </div>
   )
 }
@@ -120,6 +115,7 @@ function Omikuji() {
 function Forge() {
   return <div key="forge">Forge</div>
 }
+
 function Souvenir() {
   const { active, error, chainId } = useWeb3React();
   if (!chainId) {
@@ -129,7 +125,6 @@ function Souvenir() {
   }
   return (
     <div key="souvenir" className="m-10 font-cursive text-diablo-dark-gold text-center">
-      Get your lucky charm
     </div>
   )
 }
@@ -165,11 +160,9 @@ export default function Temple() {
 
       <section className="text-white">
         <div className="grid grid-cols-10 gap-2 my-3">
-          <div className="col-span-8 bg-obsidian-dark rounded-br-lg rounded-tr-lg lg:rounded-lg">
+          <div className="col-span-8 bg-obsidian-dark rounded-br-lg rounded-tr-lg sm:rounded-lg">
             {tabs.map(({ Comp }, index) => {
-              if (state.index == index) {
-                return <Comp key={index} />
-              }
+              if (state.index == index) { return <Comp key={index} /> }
             })}
           </div>
           <div className="col-span-2">

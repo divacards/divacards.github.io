@@ -7,7 +7,7 @@ import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus"
 import { ArrowLeftIcon, HomeIcon, ArrowCircleUpIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useTexture, SpotLight } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import { getRarityColor, getTrait, getQPara } from "../util/item";
 import { ItemStatus, ItemAction } from "../components/Custom/Web3";
 
@@ -49,7 +49,9 @@ function Box(props) {
     const colorMap = useTexture(props.boxTexture)
     const ref = useRef()
     useFrame((state, delta) => (
-        ref.current.rotation.y += 0.005
+        // props.isBox ?
+        // (ref.current.rotation.x = ref.current.rotation.y += delta * 0.1) :
+        (ref.current.rotation.y += 0.005)
     ))
     // Return the view, these are regular Threejs elements expressed in JSX
     if (!props.boxTexture) { return (<SpinLoading />) }
