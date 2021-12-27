@@ -1,4 +1,5 @@
-import { faCircleNotch, faBoxOpen } from '@fortawesome/free-solid-svg-icons'
+import { faCircleNotch, faBoxOpen, faBagShopping } from '@fortawesome/free-solid-svg-icons'
+import { faEthereum } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { contractFetcher } from "../..//web3/fetcher";
 import LOOTBOX_ABI from "../../abis/LOOTBOX.json";
@@ -6,39 +7,111 @@ import ITEM_ABI from "../../abis/ITEM.json";
 import { getAssetConfig } from "../../web3/consts";
 import { OpenSeaPort, Network } from "opensea-js";
 import { OrderSide } from 'opensea-js/lib/types'
+import { SpinLoading, PulseLoading } from "./CustomStatus";
+import { BigNumber } from "@ethersproject/bignumber";
+import { formatEther } from "@ethersproject/units";
 
 import React, { useState, useEffect } from 'react';
 
-export function OrderView({ className, tokenAddr, chainId, account, library }) {
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+export function OrderView({
+    className,
+    chainId,
+    account,
+    library,
+    innerText,
+    tokenAddr,
+    totalSellOrder,
+    tokenId
+}) {
+
+    const [order, setOrder] = useState(undefined)
+    const [error, setError] = useState(undefined)
 
     const getSeaport = () => {
         const seaport = new OpenSeaPort(library.provider, {
             networkName: Network.Rinkeby
         })
-        console.log(library)
         return seaport;
     }
 
-    const getBuyOrders = async () => {
+    const getOrder = async (orderQuery) => {
         const seaport = getSeaport();
-        const order = await seaport.api.getOrder({
+        await delay(2000 + getRandomInt(3) * 1000);
+        try {
+            const order = await seaport.api.getOrder(orderQuery);
+            setOrder(order);
+        } catch (error) {
+            setError(error)
+            console.error(error);
+            // expected output: ReferenceError: nonExistentFunction is not defined
+            // Note - error messages will vary depending on browser
+        }
+    }
+
+    useEffect(() => {
+        getOrder({
+            owner: "0x2f7C0c95f8d44579303BDb382d3fc76C22127eab",
             asset_contract_address: getAssetConfig(chainId, "lootbox").contract_addr,
-            token_ids: [0],
+            token_ids: [tokenId],
             side: OrderSide.Sell
-        });
-        console.log(order)
-        console.log(account)
+        })
+    }, [chainId]);
+
+
+    const buy = async (order) => {
+        const seaport = getSeaport();
         const accountAddress = account;
         await seaport.fulfillOrder({ order, accountAddress })
     }
 
-    return (
-        <button
-            onClick={() => { getBuyOrders() }}
-            className="p-2 bg-black">
-            haha
-        </button>
-    )
+    if (error) {
+        return (
+            <div className="mt-2 flex flex-wrap h-56 justify-center">
+                <PulseLoading />
+            </div>
+        )
+    }
+    if (!order) {
+        return (
+            <div className="mt-2 flex flex-wrap h-56 justify-center">
+                <SpinLoading />
+            </div>
+        )
+    } else {
+        return (
+            <div className="mt-2 flex flex-wrap h-56">
+                <div className="w-full px-2 text-2xl">{order.asset.name}</div>
+                <div className="w-full text-left px-2 text-xs text-rarity-uncommon font-sans">{order.asset.description}</div>
+                <div className="w-full text-left px-2 text-xl text-supernova">
+                    <FontAwesomeIcon icon={faEthereum} className="inline-block mr-2" />
+                    {formatEther(BigNumber.from(order.basePrice.toNumber().toString()))}
+                </div>
+                <div className="w-full px-2">
+                    <div className="h-2 bg-gradient-to-r from-razzmatazz to-blue-500 rounded-lg">
+                        <div className={`h-2 bg-supernova rounded-lg w-${parseFloat(`${order.asset.numSales / totalSellOrder * 100}`).toFixed()}%`}></div>
+                    </div>
+                </div>
+
+                <div className="w-full text-left px-2 text-xl text-supernova text-right">
+                    {order.asset.numSales} Sold
+                </div>
+                <button
+                    onClick={() => { buy(order) }}
+                    className={className}>
+                    <FontAwesomeIcon icon={faBagShopping} className="inline-block mr-2" />
+                    {innerText}
+                </button>
+            </div>
+        )
+    }
 }
 
 export function ItemStatus({ isBox, method, className, token_id, library, chainId, account }) {

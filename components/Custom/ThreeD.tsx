@@ -3,17 +3,18 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import React, { useRef, Suspense } from 'react';
 import { SpinLoading } from "./CustomStatus";
 
-export function ThreeCanvas({ fogColor, pntLgtPos, boxTexture, isBox }) {
+export function ThreeCanvas({ fogColor, pntLgtPos, boxTexture, isBox, objPos, objScale }) {
     return (
         <Canvas>
             <Suspense fallback={null}>
                 <fog attach="fog" args={fogColor} />
                 <pointLight position={pntLgtPos} />
                 <Box
-                    position={[0, 0, 2]}
+                    position={objPos ? objPos : [0, 0, 2]}
                     rotation={[0, -0.2, 0]}
                     boxTexture={boxTexture}
                     isBox={isBox}
+                    objScale={objScale}
                 />
             </Suspense>
         </Canvas>
@@ -37,7 +38,7 @@ export function Box(props) {
             {...props}
             ref={ref}
             rotation={props.isBox ? [Math.PI / -8, 0, 0] : [0, 0, 0]}
-            scale={1}
+            scale={props.objScale}
         >
             <boxGeometry args={props.isBox ? [2, 2, 2] : [1.6, 3.2, 0.01]} />
             <meshStandardMaterial

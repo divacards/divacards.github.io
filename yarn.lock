@@ -2402,7 +2402,7 @@ async-eventemitter@^0.2.2:
   dependencies:
     async "^2.4.0"
 
-"async-eventemitter@github:ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c":
+async-eventemitter@ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c:
   version "0.2.3"
   resolved "https://codeload.github.com/ahultgren/async-eventemitter/tar.gz/fa06e39e56786ba541c180061dbf2c0a5bbf951c"
   dependencies:
@@ -9091,6 +9091,11 @@ table@^6.0.9:
     slice-ansi "^4.0.0"
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
+
+tailwindcss-percentage-width@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-percentage-width/-/tailwindcss-percentage-width-1.0.1.tgz#d1dfb9d1fa2d6bc6f77ed9914766e73f03539d14"
+  integrity sha512-U2G1EczjOFKjM3OPxzDlr98kcE0E3d7Qk5D2Z4YVIGmIuXW9U0CrgJy5taLsaUsBJu6kYAtXwH8056L+l26BUA==
 
 tailwindcss@^2.2.19:
   version "2.2.19"

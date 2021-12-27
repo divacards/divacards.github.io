@@ -95,6 +95,8 @@ export default function Items() {
             <section className="flex flex-wrap gap-5 m-3">
                 <div className="w-full h-96 relative border-diablo-dark-gold rounded-lg text-center lg:w-6/12">
                     {res.image ? (<ThreeCanvas
+                        objScale={1}
+                        objPos={undefined}
                         fogColor={['#0E93AD', 0, 1000]}
                         pntLgtPos={[10, 10, 10]}
                         boxTexture={res.image}

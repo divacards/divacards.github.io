@@ -1,4 +1,4 @@
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons'
+import { faCircleNotch, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const SpinLoading = () => {
@@ -8,6 +8,14 @@ export const SpinLoading = () => {
         </div>
     );
 };
+
+export const PulseLoading = () => {
+    return (
+        <div className="text-3xl h-full p-auto w-auto h-auto text-center text-supernova flex flex-wrap justify-center content-center">
+            <FontAwesomeIcon icon={faWaveSquare} className="inline-block animate-pulse" />
+        </div>
+    );
+}
 
 export const PlaceHoldStatus = ({ message, Icon }) => {
     return (
