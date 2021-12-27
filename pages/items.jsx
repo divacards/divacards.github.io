@@ -6,10 +6,9 @@ import { isChainSupported } from "../web3/consts";
 import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus";
 import { ArrowLeftIcon, HomeIcon, ArrowCircleUpIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useTexture } from "@react-three/drei";
 import { getRarityColor, getTrait, getQPara } from "../util/item";
 import { ItemStatus, ItemAction } from "../components/Custom/Web3";
+import { ThreeCanvas } from "../components/Custom/ThreeD";
 
 function ChainActionPanel({ isBox, item_id }) {
 
@@ -41,33 +40,6 @@ function ChainActionPanel({ isBox, item_id }) {
                     token_id={item_id} library={library} account={account} chainId={chainId} isBox={isBox} />
             </div>
         </div>
-    )
-}
-
-function Box(props) {
-    // This reference gives us direct access to the THREE.Mesh object
-    const colorMap = useTexture(props.boxTexture)
-    const ref = useRef()
-    useFrame((state, delta) => (
-        // props.isBox ?
-        // (ref.current.rotation.x = ref.current.rotation.y += delta * 0.1) :
-        (ref.current.rotation.y += 0.005)
-    ))
-    // Return the view, these are regular Threejs elements expressed in JSX
-    if (!props.boxTexture) { return (<SpinLoading />) }
-
-    return (
-        <mesh
-            {...props}
-            ref={ref}
-            rotation={props.isBox ? [Math.PI / -8, 0, 0] : [0, 0, 0]}
-            scale={1}
-        >
-            <boxGeometry args={props.isBox ? [2, 2, 2] : [1.6, 3.2, 0.01]} />
-            <meshStandardMaterial
-                map={colorMap}
-            />
-        </mesh>
     )
 }
 
@@ -122,18 +94,12 @@ export default function Items() {
             </section>
             <section className="flex flex-wrap gap-5 m-3">
                 <div className="w-full h-96 relative border-diablo-dark-gold rounded-lg text-center lg:w-6/12">
-                    {res.image ? (<Canvas>
-                        <Suspense fallback={null}>
-                            <fog attach="fog" args={['#0E93AD', 0, 1000]} />
-                            <pointLight position={[10, 10, 10]} />
-                            <Box
-                                position={[0, 0, 2]}
-                                rotation={[0, -0.2, 0]}
-                                boxTexture={res.image}
-                                isBox={isBox}
-                            />
-                        </Suspense>
-                    </Canvas>) : <SpinLoading />}
+                    {res.image ? (<ThreeCanvas
+                        fogColor={['#0E93AD', 0, 1000]}
+                        pntLgtPos={[10, 10, 10]}
+                        boxTexture={res.image}
+                        isBox={isBox} />
+                    ) : <SpinLoading />}
                 </div>
                 <div className="text-cinnabar  w-full lg:w-5/12 flex flex-wrap gap-4">
                     <div className="bg-obsidian-gray w-full p-4 rounded-lg border-2 border-supernova">

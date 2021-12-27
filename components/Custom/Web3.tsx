@@ -4,8 +4,42 @@ import { contractFetcher } from "../..//web3/fetcher";
 import LOOTBOX_ABI from "../../abis/LOOTBOX.json";
 import ITEM_ABI from "../../abis/ITEM.json";
 import { getAssetConfig } from "../../web3/consts";
+import { OpenSeaPort, Network } from "opensea-js";
+import { OrderSide } from 'opensea-js/lib/types'
 
 import React, { useState, useEffect } from 'react';
+
+export function OrderView({ className, tokenAddr, chainId, account, library }) {
+
+    const getSeaport = () => {
+        const seaport = new OpenSeaPort(library.provider, {
+            networkName: Network.Rinkeby
+        })
+        console.log(library)
+        return seaport;
+    }
+
+    const getBuyOrders = async () => {
+        const seaport = getSeaport();
+        const order = await seaport.api.getOrder({
+            asset_contract_address: getAssetConfig(chainId, "lootbox").contract_addr,
+            token_ids: [0],
+            side: OrderSide.Sell
+        });
+        console.log(order)
+        console.log(account)
+        const accountAddress = account;
+        await seaport.fulfillOrder({ order, accountAddress })
+    }
+
+    return (
+        <button
+            onClick={() => { getBuyOrders() }}
+            className="p-2 bg-black">
+            haha
+        </button>
+    )
+}
 
 export function ItemStatus({ isBox, method, className, token_id, library, chainId, account }) {
     const [count, setCount] = useState(undefined)

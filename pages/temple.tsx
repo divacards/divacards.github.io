@@ -10,7 +10,7 @@ import { SpinLoading, PlaceHoldStatus } from "../components/Custom/CustomStatus"
 import { getItemColor, getItemType, getItemAssetbyItem, getTrait } from "../util/item";
 import { ArrowCircleUpIcon, ExclamationIcon, InboxIcon, } from "@heroicons/react/outline";
 
-import { ItemStatus } from "../components/Custom/Web3";
+import { ItemStatus, OrderView } from "../components/Custom/Web3";
 
 
 const tabs = [
@@ -76,7 +76,7 @@ function Inventory() {
     } else {
       // Inventory is not empty
       return (
-        <div className="flex flex-wrap gap-5 text-center p-2 justify-start place-content-center m-2">
+        <div className="flex flex-wrap gap-5 text-center p-4 justify-start place-content-center m-2">
           {res && res.assets.map((item, index) => {
             return (<Item
               key={index}
@@ -98,7 +98,7 @@ function Inventory() {
 }
 
 function Omikuji() {
-  const { active, error, chainId } = useWeb3React();
+  const { library, account, chainId } = useWeb3React();
   if (!chainId) {
     return (<PlaceHoldStatus message="Please connect the wallet" Icon={ArrowCircleUpIcon} />);
   } else if (!isChainSupported(chainId)) {
@@ -107,7 +107,7 @@ function Omikuji() {
 
   return (
     <div key="omikuji" className="m-10 font-cursive text-diablo-dark-gold text-center">
-
+      <OrderView tokenAddr={"aa"} chainId={chainId} account={account} library={library} className="" />
     </div>
   )
 }
