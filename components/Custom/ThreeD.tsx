@@ -23,7 +23,7 @@ export function ThreeCanvas({ fogColor, pntLgtPos, boxTexture, isBox }) {
 export function Box(props) {
     // This reference gives us direct access to the THREE.Mesh object
     const colorMap = useTexture(props.boxTexture)
-    const ref = useRef()
+    const ref = useRef(null)
     useFrame((state, delta) => (
         // props.isBox ?
         // (ref.current.rotation.x = ref.current.rotation.y += delta * 0.1) :
