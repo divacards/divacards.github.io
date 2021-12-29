@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "3 of Clubs"
+            "value": "Four of Clubs"
         },
         {
             "trait_type": "Face",
-            "value": "3"
+            "value": "Four"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=520",
-    "image": "https://diva.cards/images/card_set/akki/520.jpg",
-    "name": "3 of Clubs"
+    "external_url": "https://tokyo.cards/items?id=520",
+    "image": "https://tokyo.cards/images/card_set/akki/520.jpg",
+    "name": "Four of Clubs"
 }

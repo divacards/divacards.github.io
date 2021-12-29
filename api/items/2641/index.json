@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "King of Spades"
+            "value": "Ace of Spades"
         },
         {
             "trait_type": "Face",
-            "value": "King"
+            "value": "Ace"
         },
         {
             "trait_type": "House",
@@ -26,11 +26,11 @@
         },
         {
             "trait_type": "Rarity",
-            "value": "Rare"
+            "value": "Epic"
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=2641",
-    "image": "https://diva.cards/images/card_set/akki/2641.jpg",
-    "name": "King of Spades"
+    "external_url": "https://tokyo.cards/items?id=2641",
+    "image": "https://tokyo.cards/images/card_set/akki/2641.jpg",
+    "name": "Ace of Spades"
 }

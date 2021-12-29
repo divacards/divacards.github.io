@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "9 of Hearts"
+            "value": "Ten of Hearts"
         },
         {
             "trait_type": "Face",
-            "value": "9"
+            "value": "Ten"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=1869",
-    "image": "https://diva.cards/images/card_set/akki/1869.jpg",
-    "name": "9 of Hearts"
+    "external_url": "https://tokyo.cards/items?id=1869",
+    "image": "https://tokyo.cards/images/card_set/akki/1869.jpg",
+    "name": "Ten of Hearts"
 }

@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "Queen of Clubs"
+            "value": "King of Clubs"
         },
         {
             "trait_type": "Face",
-            "value": "Queen"
+            "value": "King"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=2455",
-    "image": "https://diva.cards/images/card_set/akki/2455.jpg",
-    "name": "Queen of Clubs"
+    "external_url": "https://tokyo.cards/items?id=2455",
+    "image": "https://tokyo.cards/images/card_set/akki/2455.jpg",
+    "name": "King of Clubs"
 }

@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "Jack of Spades"
+            "value": "Queen of Spades"
         },
         {
             "trait_type": "Face",
-            "value": "Jack"
+            "value": "Queen"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=2182",
-    "image": "https://diva.cards/images/card_set/akki/2182.jpg",
-    "name": "Jack of Spades"
+    "external_url": "https://tokyo.cards/items?id=2182",
+    "image": "https://tokyo.cards/images/card_set/akki/2182.jpg",
+    "name": "Queen of Spades"
 }

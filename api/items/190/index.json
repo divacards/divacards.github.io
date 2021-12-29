@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "Ace of Diamonds"
+            "value": "Two of Diamonds"
         },
         {
             "trait_type": "Face",
-            "value": "Ace"
+            "value": "Two"
         },
         {
             "trait_type": "House",
@@ -26,11 +26,11 @@
         },
         {
             "trait_type": "Rarity",
-            "value": "Epic"
+            "value": "Uncommon"
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=190",
-    "image": "https://diva.cards/images/card_set/akki/190.jpg",
-    "name": "Ace of Diamonds"
+    "external_url": "https://tokyo.cards/items?id=190",
+    "image": "https://tokyo.cards/images/card_set/akki/190.jpg",
+    "name": "Two of Diamonds"
 }

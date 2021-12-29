@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "7 of Hearts"
+            "value": "Eight of Hearts"
         },
         {
             "trait_type": "Face",
-            "value": "7"
+            "value": "Eight"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=1405",
-    "image": "https://diva.cards/images/card_set/akki/1405.jpg",
-    "name": "7 of Hearts"
+    "external_url": "https://tokyo.cards/items?id=1405",
+    "image": "https://tokyo.cards/images/card_set/akki/1405.jpg",
+    "name": "Eight of Hearts"
 }

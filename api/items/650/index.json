@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "4 of Spades"
+            "value": "Five of Spades"
         },
         {
             "trait_type": "Face",
-            "value": "4"
+            "value": "Five"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=650",
-    "image": "https://diva.cards/images/card_set/akki/650.jpg",
-    "name": "4 of Spades"
+    "external_url": "https://tokyo.cards/items?id=650",
+    "image": "https://tokyo.cards/images/card_set/akki/650.jpg",
+    "name": "Five of Spades"
 }

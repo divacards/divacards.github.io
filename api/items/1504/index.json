@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "7 of Diamonds"
+            "value": "Eight of Diamonds"
         },
         {
             "trait_type": "Face",
-            "value": "7"
+            "value": "Eight"
         },
         {
             "trait_type": "House",
@@ -30,7 +30,7 @@
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=1504",
-    "image": "https://diva.cards/images/card_set/akki/1504.jpg",
-    "name": "7 of Diamonds"
+    "external_url": "https://tokyo.cards/items?id=1504",
+    "image": "https://tokyo.cards/images/card_set/akki/1504.jpg",
+    "name": "Eight of Diamonds"
 }

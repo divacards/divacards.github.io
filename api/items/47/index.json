@@ -2,11 +2,11 @@
     "attributes": [
         {
             "trait_type": "Name",
-            "value": "Ace of Spades"
+            "value": "Two of Spades"
         },
         {
             "trait_type": "Face",
-            "value": "Ace"
+            "value": "Two"
         },
         {
             "trait_type": "House",
@@ -26,11 +26,11 @@
         },
         {
             "trait_type": "Rarity",
-            "value": "Epic"
+            "value": "Uncommon"
         }
     ],
     "description": "Trading Poker Cards from Diva.Cards",
-    "external_url": "https://diva.cards/items?id=47",
-    "image": "https://diva.cards/images/card_set/akki/47.jpg",
-    "name": "Ace of Spades"
+    "external_url": "https://tokyo.cards/items?id=47",
+    "image": "https://tokyo.cards/images/card_set/akki/47.jpg",
+    "name": "Two of Spades"
 }
