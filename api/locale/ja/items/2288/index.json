@@ -1,0 +1,36 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name",
+            "value": "ハートのクイーン"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Queen"
+        },
+        {
+            "trait_type": "House",
+            "value": "Hearts"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "な"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Acky"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Rare"
+        }
+    ],
+    "description": "ノンプリマル・カード。 このカードセットは、かの有名な吉沢明歩（アッキー）へのオマージュです。 あなたもどこかで彼女のビデオを見たことがあるのではないでしょうか。  スカーレットのプライマルカードに分解することができます。でも、それをできる人はどこにいるのですか？",
+    "external_url": "https://tokyo.cards/items?id=2288",
+    "image": "https://tokyo.cards/images/card_set/akki/2288.jpg",
+    "name": "ハートのクイーン"
+}

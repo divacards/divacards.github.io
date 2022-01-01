@@ -1,0 +1,12 @@
+{
+    "attributes": [
+        {
+            "trait_type": "number_inside",
+            "value": 1
+        }
+    ],
+    "description": "しばらく置いてから開封して、中身を確認したほうがいいですね。",
+    "external_url": "https://tokyo.cards/items?id=2&asset_type=box",
+    "image": "https://tokyo.cards/images/box/2.jpg",
+    "name": "御守り"
+}

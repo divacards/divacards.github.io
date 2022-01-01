@@ -1,0 +1,36 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name",
+            "value": "クラブのクイーン"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Queen"
+        },
+        {
+            "trait_type": "House",
+            "value": "Clubs"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "の"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Acky"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Rare"
+        }
+    ],
+    "description": "ノンプリマル・カード。 このカードセットは、かの有名な吉沢明歩（アッキー）へのオマージュです。 あなたもどこかで彼女のビデオを見たことがあるのではないでしょうか。  リマのプライマルカードに分解することができる。ディスエンチャンターは珍しい、もしかしたらカンガルーと一緒に住んでいるのかもしれない。",
+    "external_url": "https://tokyo.cards/items?id=2238",
+    "image": "https://tokyo.cards/images/card_set/akki/2238.jpg",
+    "name": "クラブのクイーン"
+}

@@ -1,0 +1,36 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name",
+            "value": "ダイアモンドの三"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Three"
+        },
+        {
+            "trait_type": "House",
+            "value": "Diamonds"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "れ"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Acky"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Uncommon"
+        }
+    ],
+    "description": "ノンプリマル・カード。 このカードセットは、かの有名な吉沢明歩（アッキー）へのオマージュです。 あなたもどこかで彼女のビデオを見たことがあるのではないでしょうか。  ヴァイオレットのプライマルカードにディスエンチャントすることができる。ふむ、オークションハウスにはディスエンチャント屋が一人いるのか。",
+    "external_url": "https://tokyo.cards/items?id=420",
+    "image": "https://tokyo.cards/images/card_set/akki/420.jpg",
+    "name": "ダイアモンドの三"
+}

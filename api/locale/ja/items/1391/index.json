@@ -1,0 +1,36 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name",
+            "value": "クラブの八"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Eight"
+        },
+        {
+            "trait_type": "House",
+            "value": "Clubs"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "る"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Acky"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Uncommon"
+        }
+    ],
+    "description": "ノンプリマル・カード。 このカードセットは、かの有名な吉沢明歩（アッキー）へのオマージュです。 あなたもどこかで彼女のビデオを見たことがあるのではないでしょうか。  リマのプライマルカードに分解することができる。ディスエンチャンターは珍しい、もしかしたらカンガルーと一緒に住んでいるのかもしれない。",
+    "external_url": "https://tokyo.cards/items?id=1391",
+    "image": "https://tokyo.cards/images/card_set/akki/1391.jpg",
+    "name": "クラブの八"
+}

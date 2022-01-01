@@ -1,0 +1,12 @@
+{
+    "attributes": [
+        {
+            "trait_type": "number_inside",
+            "value": 1
+        }
+    ],
+    "description": "おみくじは運勢を占うもの、開けるときは慎重に。",
+    "external_url": "https://tokyo.cards/items?id=1&asset_type=box",
+    "image": "https://tokyo.cards/images/box/1.jpg",
+    "name": "おみくじ"
+}

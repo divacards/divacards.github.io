@@ -1,0 +1,28 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Card Type",
+            "value": "Enchant"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Bones"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Common"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "兎"
+        },
+        {
+            "trait_type": "Name",
+            "value": "Rabbit Head"
+        }
+    ],
+    "description": "ウサギは大変だったでしょう。",
+    "external_url": "https://tokyo.cards/items?id=2933",
+    "image": "https://tokyo.cards/images/common/1.jpg",
+    "name": "うさぎの頭皮"
+}

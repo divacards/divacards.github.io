@@ -1,0 +1,36 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Name",
+            "value": "Real Joker"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Real"
+        },
+        {
+            "trait_type": "House",
+            "value": "Joker"
+        },
+        {
+            "trait_type": "Inscription",
+            "value": "ふ"
+        },
+        {
+            "trait_type": "Card Type",
+            "value": "Non-Primal"
+        },
+        {
+            "trait_type": "Deck",
+            "value": "Acky"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Legendary"
+        }
+    ],
+    "description": "ノンプリマル・カード。 このカードセットは、かの有名な吉沢明歩（アッキー）へのオマージュです。 あなたもどこかで彼女のビデオを見たことがあるのではないでしょうか。  ウサギとカンガルーの力！？",
+    "external_url": "https://tokyo.cards/items?id=2889",
+    "image": "https://tokyo.cards/images/card_set/akki/2889.jpg",
+    "name": "Real Joker"
+}
